@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "@mosch/gatsby-source-github": "^0.3.0",
     "gatsby": "^1.9.153",
     "gatsby-link": "^1.6.34",
     "gatsby-plugin-react-helmet": "^2.0.3",
@@ -13,7 +12,8 @@
     "gatsby-transformer-remark": "^1.7.28",
     "lodash": "^4.17.4",
     "react-helmet": "^5.2.0",
-    "styled-components": "^2.4.0"
+    "styled-components": "^2.4.0",
+    "styled-tools": "^0.2.4"
   },
   "keywords": [
     "gatsby"
@@ -22,11 +22,12 @@
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "dev": "cross-env NODE_ENV=development TOKEN= gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "cross-env": "^5.1.3",
     "prettier": "^1.10.2"
   }
 }
