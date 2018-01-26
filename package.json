@@ -11,19 +11,20 @@
     "gatsby-source-filesystem": "^1.5.11",
     "gatsby-transformer-remark": "^1.7.28",
     "lodash": "^4.17.4",
+    "react-burger-menu": "^2.2.3",
+    "react-headroom": "^2.2.2",
     "react-helmet": "^5.2.0",
     "styled-components": "^2.4.0",
     "styled-tools": "^0.2.4"
   },
-  "keywords": [
-    "gatsby"
-  ],
+  "keywords": ["gatsby"],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
     "dev": "cross-env NODE_ENV=development TOKEN= gatsby develop",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
+    "format":
+      "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {

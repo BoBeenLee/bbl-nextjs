@@ -2,7 +2,30 @@ import React from "react";
 import Link from "gatsby-link";
 import PostPage from "./PostPage";
 
-export const pageQuery = graphql`
+/**
+ * languages {
+    nodes {
+      name
+      color
+    }
+  }
+ */
+
+const IndexPage = ({ data }) => {
+  console.log(data);
+  const { allMarkdownRemark, githubData } = data;
+  return (
+    <div>
+      <p>Welcome to your new Gatsby site.</p>
+      <p>Now go build something great.</p>
+      <Link to="/page-2/">Go to page 2</Link>
+      <h2>Index</h2>
+      <PostPage allMarkdownRemark={allMarkdownRemark} />
+    </div>
+  );
+};
+
+export const indexQuery = graphql`
   query IndexQuery {
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
@@ -66,29 +89,5 @@ export const pageQuery = graphql`
     }
   }
 `;
-
-/**
- * languages {
-    nodes {
-      name
-      color
-    }
-  }
- */
-
-const IndexPage = ({ data }) => {
-  console.log(data);
-  const { allMarkdownRemark, githubData } = data;
-  return (
-    <div>
-      <h1>Hi people</h1>
-      <p>Welcome to your new Gatsby site.</p>
-      <p>Now go build something great.</p>
-      <Link to="/page-2/">Go to page 2</Link>
-      <h2>Index</h2>
-      <PostPage allMarkdownRemark={allMarkdownRemark} />
-    </div>
-  );
-};
 
 export default IndexPage;
