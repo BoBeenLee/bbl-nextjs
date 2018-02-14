@@ -7,10 +7,13 @@ import "./index.css";
 const TemplateWrapper = ({ children }) => (
   <div id="outer-container">
     <Helmet
-      title="Gatsby Default Starter"
+      title="BoBeenLee"
       meta={[
-        { name: "description", content: "Sample" },
-        { name: "keywords", content: "sample, something" }
+        { name: "description", content: "BoBeenLee" },
+        {
+          name: "keywords",
+          content: "BoBeenLee, BoBinLee, React, React Native, JS"
+        }
       ]}
     />
     <Header />

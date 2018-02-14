@@ -45,7 +45,7 @@ class Header extends Component {
                 textDecoration: "none"
               }}
             >
-              Gatsby
+              White
             </Link>
           </span>
         </div>

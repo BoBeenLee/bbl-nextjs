@@ -1,11 +1,11 @@
-
+/*
 const test = `
 query {
   repository(owner:"torvalds",name:"linux"){
     description
   }
 }
-`;
+`;*/
 
 module.exports = {
   siteMetadata: {
@@ -21,14 +21,23 @@ module.exports = {
         name: "posts"
       }
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/**/images/`
+      }
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     "gatsby-transformer-remark",
     {
       resolve: "gatsby-source-github-api",
       options: {
-        token: process.env.TOKEN,
+        token: process.env.GITHUB_TOKEN,
         variables: {
-          "user": "BoBinLee",
-          "count": 100
+          user: "BoBinLee",
+          count: 100
         },
         graphQLQuery: `query($user: String = "", $count: Int = 1) {
           user(login: $user) {
