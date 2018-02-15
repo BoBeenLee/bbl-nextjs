@@ -3,11 +3,9 @@ import PropTypes from 'prop-types';
 import Link from "gatsby-link";
 
 class PostPage extends Component {
-    static propTypes = {
-        allMarkdownRemark: PropTypes.object
-    }
   render() {
-    const { allMarkdownRemark } = this.props;
+    const { allMarkdownRemark } = this.props.data;
+  
     return (
       <ul>
         {allMarkdownRemark.edges.map(post => (
@@ -21,5 +19,24 @@ class PostPage extends Component {
     );
   }
 }
+
+export const query = graphql`
+  query AllMarkdownQuery {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { published: { eq: true } } }
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            path
+          }
+        }
+      }
+    }
+  }
+`;
 
 export default PostPage;

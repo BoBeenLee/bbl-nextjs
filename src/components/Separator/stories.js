@@ -1,7 +1,7 @@
 import React from "react";
 import { storiesOf, action } from "@kadira/storybook";
 import styled from "styled-components";
-import { GithubCard, PortfolioCard } from "./";
+import { Seperator } from "./";
 
 const Root = styled.div`
   display: grid;
@@ -15,14 +15,10 @@ const Child = styled.div`
   grid-row: 2;
 `;
 
-storiesOf("Card", module)
+storiesOf("Seperator", module)
   .addDecorator(getStory => <Root>{getStory()}</Root>)
-  .add("with GithubCard", () => (
+  .add("with Seperator", () => (
     <Child>
-      <GithubCard onPress={action("clicked")} />
-    </Child>
-  )).add("with PortfolioCard", () => (
-    <Child>
-      <PortfolioCard onPress={action("clicked")} />
+      <Seperator />
     </Child>
   ));

@@ -1,7 +1,7 @@
 import React from "react";
 import { storiesOf, action } from "@kadira/storybook";
 import styled from "styled-components";
-import { GithubCard, PortfolioCard } from "./";
+import { SubTitle, ContentTitle } from "./";
 
 const Root = styled.div`
   display: grid;
@@ -15,14 +15,15 @@ const Child = styled.div`
   grid-row: 2;
 `;
 
-storiesOf("Card", module)
+storiesOf("Title", module)
   .addDecorator(getStory => <Root>{getStory()}</Root>)
-  .add("with GithubCard", () => (
+  .add("with SubTitle", () => (
     <Child>
-      <GithubCard onPress={action("clicked")} />
+      <SubTitle onPress={action("clicked")} />
     </Child>
-  )).add("with PortfolioCard", () => (
+  ))
+  .add("with ContentTitle", () => (
     <Child>
-      <PortfolioCard onPress={action("clicked")} />
+      <ContentTitle onPress={action("clicked")} />
     </Child>
   ));

@@ -7,7 +7,7 @@ const HeaderBox = ({ children, isOpenHeader, ...props }) => {
   const styles = Object.assign({}, { backgroundColor: "#b2b2b2" });
   return (
     <Headroom
-      className={isOpenHeader && "headroom-transform-none"}
+      className={isOpenHeader ? "headroom-transform-none" : ""}
       style={styles}
       {...props}
     >
