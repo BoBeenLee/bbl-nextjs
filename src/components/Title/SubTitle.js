@@ -9,10 +9,15 @@ const Root = styled.div`
 `;
 
 class SubTitle extends Component {
-  static propTypes = {};
-  static defaultProps = {};
+  static propTypes = {
+    title: PropTypes.string
+  };
+  static defaultProps = {
+    title: "Hello World"
+  };
   render() {
-    return <Root>Hello</Root>;
+    const { title, ...rest } = this.props;
+    return <Root {...rest}>{title}</Root>;
   }
 }
 

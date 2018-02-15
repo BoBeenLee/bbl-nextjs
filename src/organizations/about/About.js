@@ -1,16 +1,23 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import { SubTitle, ContentTitle } from "../../components/Title";
+import { Separator } from "../../components/Separator";
 
 const Root = styled.div`
-  border-radius: 50%;
 `;
 
 class About extends Component {
   static propTypes = {};
   static defaultProps = {};
   render() {
-    return <Root> HelloWOrld</Root>;
+    return (
+      <Root>
+        <SubTitle title={"About"} />
+
+        <Separator />
+      </Root>
+    );
   }
 }
 

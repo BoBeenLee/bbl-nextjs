@@ -1,6 +1,7 @@
-import About from './About';
-import Education from './Education';
+import About from "./About";
+import Education from "./Education";
 import Experience from "./Experience";
-import Skill from './Skill';
+import Activity from "./Activity";
+import Skill from "./Skill";
 
-export { About, Education, Experience, Skill };
+export { About, Education, Experience, Activity, Skill };

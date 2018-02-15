@@ -23,6 +23,7 @@ const TitleBox = styled(ContentTitle)`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  cursor: pointer;
 `;
 
 const ContentBox = styled(LineText)`
@@ -35,30 +36,25 @@ const BottomSeparator = styled(Separator)`
   margin: 40px 0;
 `;
 
-class Experience extends Component {
+class Activity extends Component {
   static propTypes = {};
   static defaultProps = {};
   render() {
     const items = [
       {
-        title: "Buxi",
-        period: "2017.8 - 2017.11",
-        role: "React Developer"
+        name: "Nexters",
+        url: "http://teamnexters.com/",
+        description: "Developer"
       },
       {
-        title: "Coupang",
-        period: "2015.6 - 2017.7",
-        role: "Fullstack Developer"
-      },
-      {
-        title: "DailyHotel",
-        period: "2014.11 - 2015.1",
-        role: "Developer Intern"
+        name: "SOPT",
+        url: "http://sopt.org/wp/",
+        description: "Developer"
       }
     ];
     return (
       <Root>
-        <SubTitleBox title={"Experience"} />
+        <SubTitleBox title={"Activity"} />
         {_.map(items, item => this._renderItem(item))}
         <BottomSeparator />
       </Root>
@@ -68,11 +64,14 @@ class Experience extends Component {
   _renderItem = item => {
     return (
       <ItemBox>
-        <TitleBox title={item.role} />
-        <ContentBox>{`${item.title} / ${item.period}`}</ContentBox>
+        <TitleBox
+          onClick={() => window.open(item.url, "_blank")}
+          title={item.name}
+        />
+        <ContentBox>{item.description}</ContentBox>
       </ItemBox>
     );
   };
 }
 
-export default Experience;
+export default Activity;

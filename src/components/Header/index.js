@@ -45,7 +45,9 @@ const HeaderTitle = styled.div`
 
 const Logo = styled.div`
   grid-column: 1;
+  width: 200px;
   font-weight: bold;
+  padding: 0 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
