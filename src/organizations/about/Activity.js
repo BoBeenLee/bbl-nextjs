@@ -63,7 +63,7 @@ class Activity extends Component {
 
   _renderItem = item => {
     return (
-      <ItemBox>
+      <ItemBox key={item.name}>
         <TitleBox
           onClick={() => window.open(item.url, "_blank")}
           title={item.name}

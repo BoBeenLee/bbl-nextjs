@@ -3,29 +3,30 @@ import PropTypes from "prop-types";
 import _ from "lodash";
 import { slide as BurgerMenu } from "react-burger-menu";
 import styled from "styled-components";
+import MenuIcon from "react-icons/lib/md/menu";
 import theme from "../../constants/theme";
 import { MenuItem } from "./";
 import { Separator } from "../Separator";
+import "./menu.css";
 
 const styles = {
   bmBurgerButton: {
-    position: "absolute",
-    width: "36px",
-    height: "30px",
-    left: "0px",
-    top: "1.2em"
+    position: "relative",
+    width: "20px",
+    height: "15px"
   },
   bmBurgerBars: {
-    background: "#373a47"
+    background: theme.primary
   },
   bmCrossButton: {
-    height: "24px",
-    width: "24px"
+    height: "12px",
+    width: "12px"
   },
   bmCross: {
     background: "#bdc3c7"
   },
   bmMenu: {
+    top: 0,
     background: theme.bgColor
     // fontSize: "18px"
   },
@@ -36,6 +37,7 @@ const styles = {
     color: "#b8b7ad"
   },
   bmOverlay: {
+    top: 0,
     left: 0,
     background: "rgba(0, 0, 0, 0.3)"
   }
@@ -45,6 +47,13 @@ const HeaderBox = styled.div`
   display: flex !important;
   flex-direction: row;
   height: ${props => props.theme.headerHeight};
+`;
+
+const ContentBox = styled.div`
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
 `;
 
 const BottomSeparator = styled(Separator)`
@@ -64,14 +73,13 @@ class Menu extends Component {
   render() {
     const menus = [
       { name: "Home", url: "/" },
-      { name: "Introduction", url: "/intro" },
-      { name: "Portfolio", url: "/production" },
-      { name: "Github", url: "/github" },
-      { name: "Tistory", url: "/tistory" }
+      { name: "About", url: "/about" },
+      { name: "Post", url: "/post" }
     ];
     const { isOpen, toggleMenu, ...rest } = this.props;
     return (
       <BurgerMenu
+        id="menu"
         right
         styles={styles}
         isOpen={isOpen}
@@ -82,7 +90,9 @@ class Menu extends Component {
         <HeaderBox>
           <BottomSeparator />
         </HeaderBox>
-        {_.map(menus, menu => <MenuItem key={menu.name} {...menu} />)}
+        <ContentBox>
+          {_.map(menus, menu => <MenuItem key={menu.name} {...menu} />)}
+        </ContentBox>
       </BurgerMenu>
     );
   }

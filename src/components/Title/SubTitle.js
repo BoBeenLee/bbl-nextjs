@@ -3,7 +3,7 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 
 const Root = styled.div`
-  font-size: 36px;
+  font-size: 30px;
   font-weight: 100;
   color: ${props => props.theme.third};
 `;

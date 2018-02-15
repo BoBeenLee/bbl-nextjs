@@ -73,10 +73,12 @@ class Skill extends Component {
 
   _renderItem = item => {
     return (
-      <ItemBox>
+      <ItemBox key={item.name}>
         <ContentTitle title={item.name} />
         <SkillsBox>
-          {_.map(item.skills, skill => <SkillItemBox>{skill}</SkillItemBox>)}
+          {_.map(item.skills, (skill, index) => (
+            <SkillItemBox key={index}>{skill}</SkillItemBox>
+          ))}
         </SkillsBox>
       </ItemBox>
     );

@@ -36,7 +36,7 @@ const HeaderBox = ({ children, isOpenHeader, ...props }) => {
 const HeaderTitle = styled.div`
   grid-column: 2;
   display: grid;
-  grid-template-columns: 30% repeat(3, 1fr);
+  grid-template-columns: 30% repeat(4, 1fr);
   grid-template-rows: auto;
   ${media.desktop`
     width: ${props => props.theme.desktopSize}px;
@@ -76,7 +76,10 @@ const MenuBox = styled.div`
   display: none;
   width: 100px;
   ${media.mobile`
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   `};
 `;
 
@@ -144,6 +147,9 @@ class Header extends Component {
             </TitleBox>
             <TitleBox>
               <Title to="/about">About</Title>
+            </TitleBox>
+            <TitleBox>
+              <Title to="/portfolio">Portfolio</Title>
             </TitleBox>
             <TitleBox>
               <Title to="/post">Post</Title>

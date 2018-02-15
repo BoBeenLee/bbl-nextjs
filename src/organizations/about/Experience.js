@@ -67,7 +67,7 @@ class Experience extends Component {
 
   _renderItem = item => {
     return (
-      <ItemBox>
+      <ItemBox key={item.title}>
         <TitleBox title={item.role} />
         <ContentBox>{`${item.title} / ${item.period}`}</ContentBox>
       </ItemBox>
