@@ -6,11 +6,8 @@
 
 const path = require("path");
 
-exports.createPages = ({ boundActionCreators, graphql }) => {
-  const { createPage } = boundActionCreators;
-
+const injectPostTemplate = (createPage, graphql) => {
   const postTemplate = path.resolve("src/templates/post.js");
-
   return graphql(`
     {
       allMarkdownRemark {
@@ -41,4 +38,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
   });
 };
 
-// You can delete this file if you're not using it
+exports.createPages = ({ boundActionCreators, graphql }) => {
+  const { createPage } = boundActionCreators;
+  return Promise.all([injectPostTemplate(createPage, graphql)]);
+};
