@@ -9,7 +9,9 @@ import { withThemes } from "../hoc";
 import "./index.css";
 import { Footer } from "../components/Footer";
 
-const Root = styled.div``;
+const Root = styled.div`
+  height: 100%;
+`;
 
 const ContainerBox = styled.div`
   display: grid;
@@ -17,6 +19,9 @@ const ContainerBox = styled.div`
     "header"
     "content"
     "footer";
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  height: 100%;
 `;
 
 const HeaderBox = styled.header`

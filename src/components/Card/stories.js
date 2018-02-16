@@ -1,7 +1,7 @@
 import React from "react";
 import { storiesOf, action } from "@kadira/storybook";
 import styled from "styled-components";
-import { GithubCard, PortfolioCard } from "./";
+import { GithubCard, PortfolioCard, PostCard } from "./";
 
 const Root = styled.div`
   display: grid;
@@ -26,5 +26,10 @@ storiesOf("Card", module)
   .add("with PortfolioCard", () => (
     <Child>
       <PortfolioCard onPress={action("clicked")} />
+    </Child>
+  ))
+  .add("with PostCard", () => (
+    <Child>
+      <PostCard onPress={action("clicked")} />
     </Child>
   ));

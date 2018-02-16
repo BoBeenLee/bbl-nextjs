@@ -4,9 +4,10 @@ import _ from "lodash";
 import { slide as BurgerMenu } from "react-burger-menu";
 import styled from "styled-components";
 import MenuIcon from "react-icons/lib/md/menu";
-import theme from "../../constants/theme";
+import { theme, menu as menus } from "../../constants";
 import { MenuItem } from "./";
 import { Separator } from "../Separator";
+
 import "./menu.css";
 
 const styles = {
@@ -71,11 +72,6 @@ class Menu extends Component {
     toggleMenu: () => {}
   };
   render() {
-    const menus = [
-      { name: "Home", url: "/" },
-      { name: "About", url: "/about" },
-      { name: "Post", url: "/post" }
-    ];
     const { isOpen, toggleMenu, ...rest } = this.props;
     return (
       <BurgerMenu
@@ -91,7 +87,7 @@ class Menu extends Component {
           <BottomSeparator />
         </HeaderBox>
         <ContentBox>
-          {_.map(menus, menu => <MenuItem key={menu.name} {...menu} />)}
+          {_.map(menus, menu => <MenuItem key={menu.name} onPress={toggleMenu} {...menu} />)}
         </ContentBox>
       </BurgerMenu>
     );

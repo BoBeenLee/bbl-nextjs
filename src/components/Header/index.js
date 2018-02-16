@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import Link from "gatsby-link";
+import { IndexLink } from "react-router-dom";
 import Headroom from "react-headroom";
 import styled from "styled-components";
 import { media } from "../../utils/StyleUtils";
-import "./headroom.css";
 import { Menu } from "../Menu";
-import { relative } from "path";
+import { theme, menu as titles, isHome } from "../../constants";
 import { Separator } from "../Separator";
+import "./headroom.css";
 
 const Root = styled.div`
   /* margin: 0 auto; */
@@ -107,16 +108,19 @@ class Header extends Component {
   };
 
   toggleHeader = value => {
+    const { isOpenMenu } = this.state;
+    if(isOpenMenu) {
+      return;
+    }
     this.setState({
       isOpenHeader: value,
-      isOpenMenu: false
     });
   };
 
-  toggleMenu = state => {
+  toggleMenu = value => {
     this.setState({
-      isOpenHeader: state.isOpen,
-      isOpenMenu: state.isOpen
+      isOpenHeader: true,
+      isOpenMenu: value.isOpen
     });
   };
 
@@ -142,18 +146,7 @@ class Header extends Component {
                 White
               </Link>
             </Logo>
-            <TitleBox>
-              <Title to="/">Home</Title>
-            </TitleBox>
-            <TitleBox>
-              <Title to="/about">About</Title>
-            </TitleBox>
-            <TitleBox>
-              <Title to="/portfolio">Portfolio</Title>
-            </TitleBox>
-            <TitleBox>
-              <Title to="/post">Post</Title>
-            </TitleBox>
+            {_.map(titles, this._renderTitleItem)}
           </HeaderTitle>
           <MenuBox>
             <Menu isOpen={isOpenMenu} toggleMenu={this.toggleMenu} />
@@ -165,6 +158,22 @@ class Header extends Component {
       </HeaderBox>
     );
   }
+
+  _renderTitleItem = title => {
+    const { url, name } = title;
+    return (
+      <TitleBox>
+        <Title
+          exact={isHome(url)}
+          strict
+          activeStyle={{ color: theme.secondary }}
+          to={url}
+        >
+          {name}
+        </Title>
+      </TitleBox>
+    );
+  };
 }
 
 export default Header;

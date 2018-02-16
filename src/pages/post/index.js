@@ -1,23 +1,26 @@
 import React, { Component } from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
+import styled from "styled-components";
 import Link from "gatsby-link";
+import _ from "lodash";
+import { PostCard } from "../../components/Card";
+
+const Root = styled.div`
+  padding-top: 20px;
+`;
 
 class PostPage extends Component {
   render() {
     const { allMarkdownRemark } = this.props.data;
-  
-    return (
-      <ul>
-        {allMarkdownRemark.edges.map(post => (
-          <li>
-            <Link key={post.node.id} to={post.node.frontmatter.path}>
-              {post.node.frontmatter.title}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    );
+    const posts = allMarkdownRemark.edges;
+    console.log(allMarkdownRemark, posts);
+    return <Root>{_.map(posts, this._renderPostItem)}</Root>;
   }
+  _renderPostItem = ({ node }) => {
+    console.log(node);
+    const { id, frontmatter: { title, path } } = node;
+    return <PostCard key={id} url={path} title={title} />;
+  };
 }
 
 export const query = graphql`

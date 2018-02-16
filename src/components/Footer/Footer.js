@@ -9,8 +9,8 @@ const Root = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  height: 300px;
   background-color: ${props => props.theme.lineColor};
+  height: 300px;
   ${media.mobile`
         height: 200px;
     `};
