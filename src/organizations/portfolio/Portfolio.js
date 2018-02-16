@@ -13,7 +13,9 @@ const SubTitleBox = styled(SubTitle)`
   padding-bottom: 10px;
 `;
 
-const ContentBox = styled.div``;
+const ContentBox = styled.div`
+  padding-top: 20px;
+`;
 
 class Portfolio extends Component {
   static propTypes = {};

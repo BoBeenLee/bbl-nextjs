@@ -1,5 +1,21 @@
 export const productions = [
   {
+    name: "buxi",
+    period: "",
+    githubRepoName: [],
+    skills: [
+      "ReactJS",
+      "styled-component",
+      "NodeJS",
+      "Redux",
+      "Redux-Saga",
+      "Webpack",
+    ],
+    summary: "",
+    githubUrl: "",
+    linkUrl: "https://www.buxikorea.com/"
+  },
+  {
     name: "flass",
     period: "",
     githubRepoName: ["flass"],
@@ -13,7 +29,9 @@ export const productions = [
       "Sass",
       "Rails"
     ],
-    summary: ""
+    summary: "",
+    githubUrl: "https://github.com/Nexters/flass",
+    linkUrl: "http://flass.me"
   },
   {
     name: "onepage",
@@ -24,12 +42,15 @@ export const productions = [
       "Retrofit2",
       "Butterknife",
       "Spring Boot",
-      "Java8",
       "QueryDSL",
       "SwaggerUI",
       "Mockito",
       "MySQL"
-    ]
+    ],
+    summary: "",
+    githubUrl: "https://github.com/OnePageAndroid",
+    linkUrl:
+      "https://play.google.com/store/apps/details?id=kr.nexters.onepage&hl=ko"
   },
   {
     name: "intersection",
@@ -42,13 +63,20 @@ export const productions = [
       "Spring Framework",
       "Hibernate",
       "PostgreSQL"
-    ]
+    ],
+    summary: "",
+    githubUrl: "https://github.com/BoBinLee/map",
+    linkUrl:
+      "https://play.google.com/store/apps/details?id=com.nexters.intersection.intersectionapp"
   },
   {
     name: "team42",
     period: "",
     githubRepoName: [],
-    skills: ["Bootstrap", "jQuery", "velocity", "lessJS"]
+    skills: ["Bootstrap", "jQuery", "velocity", "lessJS"],
+    summary: "",
+    githubUrl: "",
+    linkUrl: "http://team42.net/"
   },
   {
     name: "skhualarm",
@@ -64,7 +92,11 @@ export const productions = [
       "Jsoup",
       "Quartz",
       "MariaDB"
-    ]
+    ],
+    summary: "",
+    githubUrl: "https://github.com/BoBinLee/SkhuApp",
+    linkUrl:
+      "https://play.google.com/store/apps/details?id=com.skhu.bobinlee.skhuapp&hl=ko"
   },
   {
     name: "competition",
@@ -79,12 +111,18 @@ export const productions = [
       "Tiles",
       "MyBatis",
       "MariaDB"
-    ]
+    ],
+    summary: "",
+    githubUrl: "https://github.com/BoBinLee/SkhuCompetition.Server",
+    linkUrl: ""
   },
   {
     name: "softhome",
     period: "",
     githubRepoName: [],
-    skills: ["jQuery", "PrototypeJs", "JPageJs", "JSP", "MyBatis", "RDB"]
+    skills: ["jQuery", "PrototypeJs", "JPageJs", "JSP", "MyBatis", "RDB"],
+    summary: "",
+    githubUrl: "https://github.com/BoBinLee/swhome",
+    linkUrl: ""
   }
 ];

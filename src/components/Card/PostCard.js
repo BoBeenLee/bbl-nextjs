@@ -34,7 +34,7 @@ const TitleBox = styled(SubTitle)`
 
 const LinkBox = styled(Link)`
   grid-area: link;
-  padding-top: 15px;
+  padding-top: 20px;
   padding-left: 3px;
   font-size: 13px;
   color: ${props => props.theme.secondary};

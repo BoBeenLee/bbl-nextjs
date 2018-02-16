@@ -109,11 +109,11 @@ class Header extends Component {
 
   toggleHeader = value => {
     const { isOpenMenu } = this.state;
-    if(isOpenMenu) {
+    if (isOpenMenu) {
       return;
     }
     this.setState({
-      isOpenHeader: value,
+      isOpenHeader: value
     });
   };
 
@@ -159,10 +159,10 @@ class Header extends Component {
     );
   }
 
-  _renderTitleItem = title => {
+  _renderTitleItem = (title, index) => {
     const { url, name } = title;
     return (
-      <TitleBox>
+      <TitleBox key={index}>
         <Title
           exact={isHome(url)}
           strict

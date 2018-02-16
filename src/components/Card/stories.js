@@ -11,7 +11,7 @@ const Root = styled.div`
 `;
 
 const Child = styled.div`
-  margin-top: 10px;
+  margin-top: 30px;
   grid-column: 2;
   grid-row: 1;
 `;
