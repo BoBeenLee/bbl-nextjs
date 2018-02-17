@@ -5,6 +5,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "date-fns": "^1.29.0",
+    "dotenv": "^5.0.0",
     "gatsby": "^1.9.153",
     "gatsby-image": "^1.0.37",
     "gatsby-link": "^1.6.34",
@@ -39,7 +40,7 @@
   "main": "n/a",
   "scripts": {
     "prod": "cross-env NODE_ENV=production gatsby serve -p 80",
-    "build": "cross-env gatsby build",
+    "build": "cross-env NODE_ENV=production gatsby build",
     "ngrok": "ngrok http 8000",
     "dev": "cross-env NODE_ENV=development gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
