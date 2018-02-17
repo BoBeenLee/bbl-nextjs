@@ -42,3 +42,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators;
   return Promise.all([injectPostTemplate(createPage, graphql)]);
 };
+
+exports.modifyWebpackConfig = ({ config, stage }) => {
+  return config;
+};
