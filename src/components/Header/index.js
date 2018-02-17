@@ -8,7 +8,12 @@ import { Menu } from "../Menu";
 import { theme, menu as titles, isHome } from "../../constants";
 import { Separator } from "../Separator";
 import QuokkaIcon from "./images/quokka.png";
-import "./headroom.css";
+
+const RootWrapper = styled.div`
+  .headroom-transform-none .headroom {
+    transform: none !important;
+  }
+`;
 
 const Root = styled.div`
   /* margin: 0 auto; */
@@ -141,28 +146,30 @@ class Header extends Component {
   render() {
     const { isOpenHeader, isOpenMenu } = this.state;
     return (
-      <HeaderBox
-        isOpenHeader={isOpenHeader}
-        onUnpin={() => this.toggleHeader(false)}
-        onPin={() => this.toggleHeader(true)}
-      >
-        <Root>
-          <HeaderTitle>
-            <Logo>
-              <LogoLink to="/">
-                <IconBox src={QuokkaIcon} alt="bobeenlee" />
-              </LogoLink>
-            </Logo>
-            {_.map(titles, this._renderTitleItem)}
-          </HeaderTitle>
-          <MenuBox>
-            <Menu isOpen={isOpenMenu} toggleMenu={this.toggleMenu} />
-          </MenuBox>
-          <SeperatorBottomBox>
-            <SeperatorBottom />
-          </SeperatorBottomBox>
-        </Root>
-      </HeaderBox>
+      <RootWrapper>
+        <HeaderBox
+          isOpenHeader={isOpenHeader}
+          onUnpin={() => this.toggleHeader(false)}
+          onPin={() => this.toggleHeader(true)}
+        >
+          <Root>
+            <HeaderTitle>
+              <Logo>
+                <LogoLink to="/">
+                  <IconBox src={QuokkaIcon} alt="bobeenlee" />
+                </LogoLink>
+              </Logo>
+              {_.map(titles, this._renderTitleItem)}
+            </HeaderTitle>
+            <MenuBox>
+              <Menu isOpen={isOpenMenu} toggleMenu={this.toggleMenu} />
+            </MenuBox>
+            <SeperatorBottomBox>
+              <SeperatorBottom />
+            </SeperatorBottomBox>
+          </Root>
+        </HeaderBox>
+      </RootWrapper>
     );
   }
 

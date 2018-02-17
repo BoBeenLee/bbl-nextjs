@@ -8,7 +8,6 @@ import GithubIcon from "react-icons/lib/go/mark-github";
 import LinkIcon from "react-icons/lib/go/link";
 import { media } from "../../utils/StyleUtils";
 import { Separator } from "../Separator";
-import "./PortfolioCard.css";
 
 const Root = styled.div`
   display: grid;
@@ -195,20 +194,6 @@ class PortfolioCard extends Component {
         </SliderBox>
       </GalleryBox>
     );
-
-    /*
-   <MainImageItem>
-          <ImageBox
-            outerWrapperClassName={"main-image-wrapper"}
-            sizes={mainImage.node.sizes}
-          />
-        </MainImageItem>
-        {_.map(otherImage, (image, index) => (
-          <ImageItem key={index}>
-            <Img sizes={image.node.sizes} />
-          </ImageItem>
-        ))}
-    */
   };
 }
 

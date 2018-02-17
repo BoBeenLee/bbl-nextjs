@@ -8,7 +8,11 @@ import { theme, menu as menus } from "../../constants";
 import { MenuItem } from "./";
 import { Separator } from "../Separator";
 
-import "./menu.css";
+const Root = styled.div`
+  #menu {
+    top: 0;
+  }
+`;
 
 const styles = {
   bmBurgerButton: {
@@ -74,22 +78,26 @@ class Menu extends Component {
   render() {
     const { isOpen, toggleMenu, ...rest } = this.props;
     return (
-      <BurgerMenu
-        id="menu"
-        right
-        styles={styles}
-        isOpen={isOpen}
-        onStateChange={toggleMenu}
-        pageWrapId={"page-box"}
-        outerContainerId={"outer-container"}
-      >
-        <HeaderBox>
-          <BottomSeparator />
-        </HeaderBox>
-        <ContentBox>
-          {_.map(menus, menu => <MenuItem key={menu.name} onPress={toggleMenu} {...menu} />)}
-        </ContentBox>
-      </BurgerMenu>
+      <Root>
+        <BurgerMenu
+          id="menu"
+          right
+          styles={styles}
+          isOpen={isOpen}
+          onStateChange={toggleMenu}
+          pageWrapId={"page-box"}
+          outerContainerId={"outer-container"}
+        >
+          <HeaderBox>
+            <BottomSeparator />
+          </HeaderBox>
+          <ContentBox>
+            {_.map(menus, menu => (
+              <MenuItem key={menu.name} onPress={toggleMenu} {...menu} />
+            ))}
+          </ContentBox>
+        </BurgerMenu>
+      </Root>
     );
   }
 }
