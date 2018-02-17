@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import Link from "gatsby-link";
 import PropTypes from "prop-types";
 import _ from "lodash";
 import FacebookIcon from "./images/facebook.svg";
@@ -12,7 +13,7 @@ const Root = styled.div`
     grid-template-areas: ". . ." ". icon ." ". . .";
     position: relative;
     height: 100%;
-    grid-template-rows: 100px 250px 150px;
+    grid-template-rows: 20% 250px auto;
 }`;
 
 const IconBox = styled.div`
@@ -29,20 +30,7 @@ const RotateBox = styled.div`
   /* transform: rotateX(20deg); */
 `;
 
-const FacebookIconBox = styled.div`
-  grid-area: facebook;
-  text-align: right;
-`;
-
-const InstagramIconBox = styled.div`
-  grid-area: instagram;
-  text-align: center;
-`;
-
-const LinkedInIconBox = styled.div`
-  grid-area: linkedin;
-  text-align: left;
-`;
+const LinkBox = styled.a``;
 
 const Icon = styled.img`
   width: 40px;
@@ -60,9 +48,18 @@ class Rotate extends Component {
     return (
       <Root>
         <IconBox zDeg={zDeg}>
-          <Icon src={FacebookIcon} />
-          <Icon src={InstagramIcon} />
-          <Icon src={LinkedInIcon} />
+          <LinkBox href="https://www.facebook.com/bobin.lee.9" target="_blank">
+            <Icon src={FacebookIcon} />
+          </LinkBox>
+          <LinkBox href="https://www.instagram.com/bobeenlee_" target="_blank">
+            <Icon src={InstagramIcon} />
+          </LinkBox>
+          <LinkBox
+            href="https://www.linkedin.com/in/%EB%B3%B4%EB%B9%88-%EC%9D%B4-035613a5/"
+            target="_blank"
+          >
+            <Icon src={LinkedInIcon} />
+          </LinkBox>
         </IconBox>
       </Root>
     );
