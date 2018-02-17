@@ -7,6 +7,7 @@ import { media } from "../../utils/StyleUtils";
 import { Menu } from "../Menu";
 import { theme, menu as titles, isHome } from "../../constants";
 import { Separator } from "../Separator";
+import QuokkaIcon from "./images/quokka.png";
 import "./headroom.css";
 
 const Root = styled.div`
@@ -46,12 +47,19 @@ const HeaderTitle = styled.div`
 
 const Logo = styled.div`
   grid-column: 1;
-  width: 200px;
-  font-weight: bold;
   padding: 0 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+`;
+
+const LogoLink = styled(Link)`
+  width: 45px;
+  height: 45px;
+`;
+
+const IconBox = styled.img`
+  border-radius: 20px;
 `;
 
 const TitleBox = styled.div`
@@ -139,16 +147,9 @@ class Header extends Component {
         <Root>
           <HeaderTitle>
             <Logo>
-              <Link
-                to="/"
-                style={{
-                  fontSize: 18,
-                  color: "black",
-                  textDecoration: "none"
-                }}
-              >
-                White
-              </Link>
+              <LogoLink to="/">
+                <IconBox src={QuokkaIcon} alt="bobeenlee" />
+              </LogoLink>
             </Logo>
             {_.map(titles, this._renderTitleItem)}
           </HeaderTitle>

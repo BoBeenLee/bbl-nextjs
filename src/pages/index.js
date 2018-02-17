@@ -1,23 +1,16 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Link from "gatsby-link";
+import styled from "styled-components";
+import { Rotate } from "../organizations/home";
 
-/**
- * languages {
-    nodes {
-      name
-      color
-    }
-  }
- */
+const Root = styled.div`
+`;
 
 const HomePage = () => {
   return (
-    <div>
-      <Link to="/intro">Intro</Link>
-      <Link to="/github">GithubPage</Link>
-      <Link to="/post">PostPage</Link>
-      <Link to="/portfolio">portfolioPage</Link>
-    </div>
+    <Root>
+      <Rotate />
+    </Root>
   );
 };
 

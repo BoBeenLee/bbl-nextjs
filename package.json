@@ -38,6 +38,7 @@
   "scripts": {
     "prod": "cross-env NODE_ENV=production gatsby serve",
     "build": "cross-env gatsby build",
+    "ngrok": "ngrok http 8000",
     "dev": "cross-env NODE_ENV=development gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
     "storybook": "start-storybook -p 9001 -c .storybook",

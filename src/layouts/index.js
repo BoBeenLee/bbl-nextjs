@@ -67,24 +67,14 @@ class TemplateWrapper extends Component {
     this.setState({ isShowStatePopup: false });
   };
 
-  handleMotion = () => {
-    var absolute = event.absolute;
-    var alpha = event.alpha;
-    var beta = event.beta;
-    var gamma = event.gamma;
-    console.log("handleMotion");
-  };
-
   componentDidMount() {
     window.addEventListener("offline", this.handleOffline);
     window.addEventListener("online", this.handleOnline);
-    window.addEventListener("devicemotion", this.handleMotion, true);
   }
 
   render() {
     const { children } = this.props;
     const { isShowStatePopup } = this.state;
-
     return (
       <Root id="outer-container">
         <StatePopupBox isShowStatePopup={isShowStatePopup}>
@@ -107,12 +97,15 @@ class TemplateWrapper extends Component {
   }
 
   _renderHelmet = () => {
-    const metas = _.map(_.pick(config, ['description', 'keywords']), (value, key) => {
-      return {
-        name: key,
-        content: value
-      };
-    });
+    const metas = _.map(
+      _.pick(config, ["description", "keywords"]),
+      (value, key) => {
+        return {
+          name: key,
+          content: value
+        };
+      }
+    );
     return <Helmet title="BoBeen Lee" meta={metas} />;
   };
 }
