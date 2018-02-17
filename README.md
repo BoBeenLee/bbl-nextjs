@@ -10,6 +10,7 @@
 + Google Analystic support
 + [Storybook](https://github.com/storybooks/storybook) usage in development
 + Image Optimization
++ Dockerfile
 
 #### Running in Development
 `npm run dev`

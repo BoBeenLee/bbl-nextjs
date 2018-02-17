@@ -36,6 +36,7 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
+    "prod": "cross-env NODE_ENV=production gatsby serve",
     "build": "cross-env gatsby build",
     "dev": "cross-env NODE_ENV=development gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
