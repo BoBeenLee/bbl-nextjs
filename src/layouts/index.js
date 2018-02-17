@@ -9,7 +9,7 @@ import { BottomPopup } from "../components/Popup";
 import { withThemes } from "../hoc";
 import { Footer } from "../components/Footer";
 import config from "../../config/SiteConfig";
-import "./index.css";
+import "./styles";
 
 const Root = styled.div`
   height: 100%;
