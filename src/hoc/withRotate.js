@@ -15,7 +15,7 @@ function withRotate(TargetComponent) {
       orientation: 0
     };
 
-    _hasDeviceOrientation = !!window.DeviceOrientationEvent;
+    _hasDeviceOrientation = () => !!window.DeviceOrientationEvent;
 
     componentDidMount() {
       if (!this._hasDeviceOrientation) {
