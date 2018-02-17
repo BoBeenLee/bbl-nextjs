@@ -7,6 +7,8 @@ query {
 }
 `;*/
 
+const config = require("./config/SiteConfig");
+
 module.exports = {
   siteMetadata: {
     title: "BoBeen Lee"
@@ -40,6 +42,12 @@ module.exports = {
         head: false,
         // Setting this parameter is optional
         anonymize: true
+      }
+    },
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        color: config.themeColor
       }
     },
     {
@@ -106,6 +114,15 @@ module.exports = {
            }
           }
         }`
+      }
+    },
+    {
+      resolve: `gatsby-plugin-react-css-modules`,
+      options: {
+        filetypes: {
+          ".scss": { syntax: "postcss-scss" }
+        },
+        exclude: `\/global\/`
       }
     }
   ]
