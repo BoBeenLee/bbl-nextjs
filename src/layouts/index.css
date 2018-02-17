@@ -4,6 +4,8 @@
 /* @import "./slick.min.css"; */
 /* @import "./slick-theme.min.css"; */
 
+html,
+body,
 #___gatsby {
   height: 100%;
 }
@@ -12,12 +14,11 @@ html {
   font-family: "Roboto", sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  height: 100%;
 }
 body {
   margin: 0;
-  height: 100%;
 }
+
 article,
 aside,
 details,

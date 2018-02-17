@@ -59,6 +59,8 @@ const LogoLink = styled(Link)`
 `;
 
 const IconBox = styled.img`
+  width: 45px;
+  height: 45px;
   border-radius: 20px;
 `;
 
