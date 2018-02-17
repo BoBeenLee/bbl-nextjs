@@ -4,5 +4,5 @@ WORKDIR /user/src/app
 ADD . /user/src/app
 RUN npm install --global gatsby-cli
 RUN npm i
-EXPOSE 9000
+EXPOSE 80
 CMD ["npm", "run", "prod"]
