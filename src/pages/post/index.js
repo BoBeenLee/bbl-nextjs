@@ -13,11 +13,9 @@ class PostPage extends Component {
   render() {
     const { allMarkdownRemark } = this.props.data;
     const posts = allMarkdownRemark.edges;
-    console.log(allMarkdownRemark, posts);
     return <Root>{_.map(posts, this._renderPostItem)}</Root>;
   }
   _renderPostItem = ({ node }) => {
-    console.log(node);
     const { id, frontmatter: { title, path } } = node;
     return <PostCard key={id} url={path} title={title} />;
   };
