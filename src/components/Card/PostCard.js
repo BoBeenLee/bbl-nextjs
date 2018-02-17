@@ -41,7 +41,7 @@ const LinkBox = styled(Link)`
   text-decoration: none;
 
   &:hover {
-    opacity: 0.7;
+    opacity: 0.6;
   }
 `;
 

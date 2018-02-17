@@ -9,7 +9,7 @@ query {
 
 module.exports = {
   siteMetadata: {
-    title: "Gatsby Default Starter"
+    title: "BoBeen Lee"
   },
   plugins: [
     "gatsby-plugin-react-helmet",
@@ -31,6 +31,17 @@ module.exports = {
     "gatsby-transformer-remark",
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-114339461-1",
+        // Puts tracking script in the head instead of the body
+        head: false,
+        // Setting this parameter is optional
+        anonymize: true
+      }
+    },
     {
       resolve: "gatsby-source-github-api",
       options: {

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import { Fade } from 'react-reveal';
 import Octoface from "react-icons/lib/go/octoface";
 import ContactMail from "react-icons/lib/md/contact-mail";
 import { media } from "../../utils/StyleUtils";
@@ -40,6 +41,9 @@ const ContactBox = styled.div`
 const ContactItemBox = styled.a`
   color: ${props => props.theme.primary};
   padding: 0 0;
+  &:hover {
+    color: ${props => props.theme.secondary};
+  }
 `;
 
 class Footer extends Component {
@@ -50,10 +54,10 @@ class Footer extends Component {
       <Root>
         <CopyrightBox>@ 2018</CopyrightBox>
         <ContactBox>
-          <ContactItemBox href="https://github.com/BoBinLee">
+          <ContactItemBox href="https://github.com/BoBinLee" target="_blank">
             <Octoface size={20} />
           </ContactItemBox>
-          <ContactItemBox href="mailto:globaldev@naver.com">
+          <ContactItemBox href="mailto:globaldev@naver.com" target="_blank">
             <ContactMail size={20} />
           </ContactItemBox>
         </ContactBox>

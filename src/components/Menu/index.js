@@ -1,7 +1,4 @@
-import MenuItem from './MenuItem';
-import Menu from './Menu';
+import MenuItem from "./MenuItem";
+import Menu from "./Menu";
 
-export {
-  Menu,
-  MenuItem
-};
+export { Menu, MenuItem };

@@ -66,6 +66,10 @@ const Title = styled(Link)`
   padding: 0.5em;
   color: ${({ active, theme }) => (active ? theme.secondary : theme.primary)};
   text-decoration: none;
+  &:hover {
+    color: ${props => props.theme.secondary};
+  }
+
   ${media.mobile`
     display: none;
     `};

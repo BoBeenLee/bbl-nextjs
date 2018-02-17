@@ -2,12 +2,14 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import styled from "styled-components";
+import _ from "lodash";
 import { media } from "../utils/StyleUtils";
 import Header from "../components/Header";
 import { BottomPopup } from "../components/Popup";
 import { withThemes } from "../hoc";
-import "./index.css";
 import { Footer } from "../components/Footer";
+import config from "../../config/SiteConfig";
+import "./index.css";
 
 const Root = styled.div`
   height: 100%;
@@ -90,16 +92,7 @@ class TemplateWrapper extends Component {
             We'll keep trying, but there may be a problem with your connection.
           </span>
         </StatePopupBox>
-        <Helmet
-          title="BoBeenLee"
-          meta={[
-            { name: "description", content: "BoBeenLee" },
-            {
-              name: "keywords",
-              content: "BoBeenLee, BoBinLee, React, React Native, JS"
-            }
-          ]}
-        />
+        {this._renderHelmet()}
         <ContainerBox>
           <HeaderBox>
             <Header />
@@ -112,6 +105,16 @@ class TemplateWrapper extends Component {
       </Root>
     );
   }
+
+  _renderHelmet = () => {
+    const metas = _.map(_.pick(config, ['description', 'keywords']), (value, key) => {
+      return {
+        name: key,
+        content: value
+      };
+    });
+    return <Helmet title="BoBeen Lee" meta={metas} />;
+  };
 }
 
 export default withThemes(TemplateWrapper);

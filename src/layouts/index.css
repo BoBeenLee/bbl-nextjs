@@ -50,6 +50,7 @@ template {
   display: none;
 }
 a {
+  transition: all 0.5s;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }

@@ -12,7 +12,7 @@ const Root = styled.div`
 class PorfolioPage extends Component {
   render() {
     const { data } = this.props;
-    console.log(data);
+    // console.log(data);
     return (
       <Root>
         <Portfolio images={data} />
@@ -31,7 +31,7 @@ export const query = graphql`
             quality: 80
             traceSVG: { background: "#f2f8f3", color: "#d6ebd9" }
           ) {
-            ...GatsbyImageSharpSizes_tracedSVG
+            ...GatsbyImageSharpSizes
           }
         }
       }
@@ -44,7 +44,7 @@ export const query = graphql`
             quality: 80
             traceSVG: { background: "#f2f8f3", color: "#d6ebd9" }
           ) {
-            ...GatsbyImageSharpSizes_tracedSVG
+            ...GatsbyImageSharpSizes
           }
         }
       }
@@ -59,7 +59,7 @@ export const query = graphql`
             quality: 80
             traceSVG: { background: "#f2f8f3", color: "#d6ebd9" }
           ) {
-            ...GatsbyImageSharpSizes_tracedSVG
+            ...GatsbyImageSharpSizes
           }
         }
       }
@@ -72,7 +72,7 @@ export const query = graphql`
             quality: 80
             traceSVG: { background: "#f2f8f3", color: "#d6ebd9" }
           ) {
-            ...GatsbyImageSharpSizes_tracedSVG
+            ...GatsbyImageSharpSizes
           }
         }
       }
@@ -87,7 +87,7 @@ export const query = graphql`
             quality: 80
             traceSVG: { background: "#f2f8f3", color: "#d6ebd9" }
           ) {
-            ...GatsbyImageSharpSizes_tracedSVG
+            ...GatsbyImageSharpSizes
           }
         }
       }
@@ -100,7 +100,7 @@ export const query = graphql`
             quality: 80
             traceSVG: { background: "#f2f8f3", color: "#d6ebd9" }
           ) {
-            ...GatsbyImageSharpSizes_tracedSVG
+            ...GatsbyImageSharpSizes
           }
         }
       }
