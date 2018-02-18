@@ -12,8 +12,8 @@ const Root = styled.div`
     display: grid;
     grid-template-areas: ". . ." ". icon ." ". . .";
     position: relative;
-    height: 100%;
-    grid-template-rows: 20% 250px auto;
+    height: 450px;
+    grid-template-rows: 20% 50% 30%;
 }`;
 
 const IconBox = styled.div`

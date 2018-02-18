@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import { Fade } from 'react-reveal';
-import Octoface from "react-icons/lib/go/octoface";
-import ContactMail from "react-icons/lib/md/contact-mail";
+import { Fade } from "react-reveal";
+import OctofaceIcon from "react-icons/lib/go/octoface";
+import GoBookIcon from "react-icons/lib/go/book";
+import ContactMailIcon from "react-icons/lib/md/contact-mail";
 import { media } from "../../utils/StyleUtils";
 
 const Root = styled.div`
@@ -54,11 +55,17 @@ class Footer extends Component {
       <Root>
         <CopyrightBox>@ 2018</CopyrightBox>
         <ContactBox>
+          {/* <ContactItemBox
+            href="https://bobinlee.github.io/bbl/"
+            target="_blank"
+          >
+            <GoBookIcon size={20} />
+          </ContactItemBox> */}
           <ContactItemBox href="https://github.com/BoBinLee" target="_blank">
-            <Octoface size={20} />
+            <OctofaceIcon size={20} />
           </ContactItemBox>
           <ContactItemBox href="mailto:globaldev@naver.com" target="_blank">
-            <ContactMail size={20} />
+            <ContactMailIcon size={20} />
           </ContactItemBox>
         </ContactBox>
       </Root>

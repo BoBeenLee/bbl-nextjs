@@ -95,7 +95,7 @@ class PostCard extends Component {
         <TitleBox title={title} />
         <DateBox>
           <NameBox>Date:</NameBox>
-          {format(new Date(date), "MMMM D,YYYY")}
+          {format(new Date(date), "MMMM D, YYYY")}
         </DateBox>
         <LinkBox to={url}>
           View Article<BookIcon size={25} />
