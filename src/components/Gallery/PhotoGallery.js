@@ -1,115 +1,37 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import Img from "gatsby-image";
-import Slider from "react-slick";
 import PropTypes from "prop-types";
 import _ from "lodash";
-import GithubIcon from "react-icons/lib/go/mark-github";
-import LinkIcon from "react-icons/lib/go/link";
+import Img from "gatsby-image";
+import Slider from "react-slick";
 import { media } from "../../utils/StyleUtils";
-import { Separator } from "../Separator";
-import { PhotoGallery } from "../Gallery";
 
-const Root = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  color: ${props => props.theme.primary};
+var settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  centerMode: true
+};
+
+const SliderBox = styled(Slider)`
+  width: 100%;
+  /* width: 600px; */
 `;
 
-const NameBox = styled.div`
-  grid-column: 1;
-  grid-row: 1;
-  font-size: 20px;
-  padding-left: 10px;
+const ImageBox = styled.div`
+  padding: 10px 10px 30px 10px;
 `;
 
-const PeriodBox = styled.div`
-  grid-column: 2;
-  grid-row: 1;
-  font-size: 13px;
-  color: ${props => props.theme.third};
-`;
-
-const LinkBox = styled.div`
-  grid-column: 3;
-  grid-row: 1;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-end;
-`;
-
-const IconBox = styled.a`
-  margin-left: 10px;
-  color: ${props => props.theme.primary};
-  text-decoration: none;
-  &:hover {
-    color: ${props => props.theme.secondary};
-  }
-`;
-
-const SkillsBox = styled.div`
-  grid-column: 1/4;
-  grid-row: 2;
-  font-size: 13px;
-  color: ${props => props.theme.secondary};
-  padding: 15px 0px 10px 10px;
-`;
-
-const SkillItem = styled.div`
-  display: inline-block;
-  margin-right: 10px;
-`;
-
-const SummaryBox = styled.div`
-  grid-column: 1/4;
-  grid-row: 3;
-`;
-
-const PhotoGalleryBox = styled.div`
-  grid-column: 2/3;
-  grid-row: 4;
-  margin: 20px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 767px;
-
-  ${media.mobile`
-    grid-column: 1/4;
-  `};
-`;
-
-const BottomSeparator = styled(Separator)`
-  grid-column: 1/5;
-  grid-row: 5;
-  margin: 40px 0;
-`;
-
-class PortfolioCard extends Component {
+class PhotoGallery extends Component {
   static propTypes = {
-    name: PropTypes.string,
-    period: PropTypes.string,
-    skills: PropTypes.arrayOf(PropTypes.string),
-    summary: PropTypes.string,
-    images: PropTypes.arrayOf(PropTypes.object),
-    githubUrl: PropTypes.string,
-    linkUrl: PropTypes.string
+    currentIndex: 0,
+    data: PropTypes.array,
+    renderItem: PropTypes.func,
+    images: PropTypes.arrayOf(PropTypes.object)
   };
   static defaultProps = {
-    name: "flass",
-    period: "2016-01 ~ 2017-01",
-    skills: [
-      "ReactJS",
-      "React-Router",
-      "Mocha",
-      "Redux",
-      "Material UI",
-      "Webpack",
-      "Sass",
-      "Rails"
-    ],
-    summary: "INTRO",
     images: _.times(5, () => {
       const obj = {
         node: {
@@ -126,51 +48,25 @@ class PortfolioCard extends Component {
         }
       };
       return obj;
-    }),
-    githubUrl: "https://github.com/BoBinLee/map",
-    linkUrl:
-      "https://play.google.com/store/apps/details?id=com.nexters.intersection.intersectionapp"
+    })
   };
-  render() {
-    const {
-      name,
-      period,
-      skills,
-      summary,
-      githubUrl,
-      linkUrl,
-      images
-    } = this.props;
 
+  render() {
+    const { images } = this.props;
+
+    if (_.isEmpty(images)) {
+      return <div />;
+    }
     return (
-      <Root>
-        <NameBox>{name}</NameBox>
-        <PeriodBox>{period}</PeriodBox>
-        <LinkBox>
-          {githubUrl && (
-            <IconBox href={githubUrl} target="_blank">
-              <GithubIcon disabled size={20} />
-            </IconBox>
-          )}
-          {linkUrl && (
-            <IconBox href={linkUrl} target="_blank">
-              <LinkIcon size={20} />
-            </IconBox>
-          )}
-        </LinkBox>
-        <SkillsBox>{_.map(skills, this._renderSkillItem)}</SkillsBox>
-        <SummaryBox>{summary}</SummaryBox>
-        <PhotoGalleryBox>
-          <PhotoGallery images={images} />
-        </PhotoGalleryBox>
-        <BottomSeparator />
-      </Root>
+      <SliderBox {...settings}>
+        {_.map(images, (image, index) => (
+          <ImageBox key={index}>
+            <Img sizes={image.node.sizes} />
+          </ImageBox>
+        ))}
+      </SliderBox>
     );
   }
-
-  _renderSkillItem = (skill, index) => {
-    return <SkillItem key={index}>{skill}</SkillItem>;
-  };
 }
 
-export default PortfolioCard;
+export default PhotoGallery;

@@ -1,6 +1,6 @@
 
 ## Prototype
-- ???
+- [Storybook](https://bobinlee.github.io/bbl)
 
 ## Feature
 + [Web APIs You [Probably] Didn't Know Existed](https://www.youtube.com/watch?v=EZpdEljk5dY)
@@ -18,6 +18,8 @@
 ## Deploy
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+
+[![Deploy to Storybook]](https://github.com/storybooks/storybook-deployer)
 
 ## Caution
 + when you want to do offline test, maybe it doesn't work in development mode. change production mode.

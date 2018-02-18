@@ -5,6 +5,7 @@ import Headroom from "react-headroom";
 import styled from "styled-components";
 import { media } from "../../utils/StyleUtils";
 import { Menu } from "../Menu";
+import { Avatar } from "../Avatar";
 import { theme, menu as titles, isHome } from "../../constants";
 import { Separator } from "../Separator";
 import QuokkaIcon from "./images/quokka.png";
@@ -63,10 +64,9 @@ const LogoLink = styled(Link)`
   height: 45px;
 `;
 
-const IconBox = styled.img`
+const IconBox = styled(Avatar)`
   width: 45px;
   height: 45px;
-  border-radius: 20px;
 `;
 
 const TitleBox = styled.div`

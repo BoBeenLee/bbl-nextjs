@@ -11,8 +11,8 @@ const Root = styled.div`
 `;
 
 const Child = styled.div`
-  grid-column: 2;
-  grid-row: 2;
+  grid-column: 1;
+  grid-row: 1;
 `;
 
 storiesOf("Avatar", module)

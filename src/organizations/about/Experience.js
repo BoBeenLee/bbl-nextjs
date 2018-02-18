@@ -5,6 +5,7 @@ import _ from "lodash";
 import { SubTitle, ContentTitle } from "../../components/Title";
 import { Separator } from "../../components/Separator";
 import { LineText } from "../../components/Text";
+import { media } from "../../utils/StyleUtils";
 
 const Root = styled.div``;
 
@@ -17,6 +18,10 @@ const ItemBox = styled.div`
   grid-template-columns: 1fr 1fr;
   padding-left: 10px;
   margin-bottom: 15px;
+
+  ${media.mobile`
+    grid-template-columns: 1fr;
+  `};
 `;
 
 const TitleBox = styled(ContentTitle)`

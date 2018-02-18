@@ -4,7 +4,7 @@ import { configure, addDecorator } from "@kadira/storybook";
 import _ from "lodash";
 import { BrowserRouter } from "react-router-dom";
 import theme from "../src/constants/theme";
-import "../src/layouts/index.css";
+import '../src/layouts/styles';
 
 const req = require.context("../", true, /.stories.js$/);
 

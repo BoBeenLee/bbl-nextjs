@@ -15,9 +15,9 @@ const Child = styled.div`
   grid-row: 2;
 `;
 
-storiesOf("Avatar", module)
+storiesOf("Tag", module)
   .addDecorator(getStory => <Root>{getStory()}</Root>)
-  .add("with Avatar", () => (
+  .add("with Tag", () => (
     <Child>
       <Tag onPress={action("clicked")} />
     </Child>
