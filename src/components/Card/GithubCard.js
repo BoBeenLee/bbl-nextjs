@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, PureComponent } from "react";
 import distanceInWordsToNow from "date-fns/distance_in_words_to_now";
 import PropTypes from "prop-types";
 import styled from "styled-components";
@@ -30,7 +30,7 @@ const DescriptionBox = styled.div`
   grid-row: 2;
 `;
 
-class GithubCard extends Component {
+class GithubCard extends PureComponent {
   static propTypes = {
     name: PropTypes.string,
     description: PropTypes.string,

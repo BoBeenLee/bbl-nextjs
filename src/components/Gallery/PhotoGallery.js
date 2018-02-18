@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, PureComponent } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import _ from "lodash";
@@ -24,11 +24,8 @@ const ImageBox = styled.div`
   padding: 10px 10px 30px 10px;
 `;
 
-class PhotoGallery extends Component {
+class PhotoGallery extends PureComponent {
   static propTypes = {
-    currentIndex: 0,
-    data: PropTypes.array,
-    renderItem: PropTypes.func,
     images: PropTypes.arrayOf(PropTypes.object)
   };
   static defaultProps = {

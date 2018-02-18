@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, PureComponent } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
@@ -7,7 +7,7 @@ const Root = styled.div`
   border: 1px solid ${props => props.theme.lineColor};
 `;
 
-class Separator extends Component {
+class Separator extends PureComponent {
   static propTypes = {};
   static defaultProps = {};
   render() {

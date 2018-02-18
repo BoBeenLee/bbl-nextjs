@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, PureComponent } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import _ from "lodash";
@@ -17,7 +17,7 @@ const ContentBox = styled.div`
   padding-top: 20px;
 `;
 
-class Portfolio extends Component {
+class Portfolio extends PureComponent {
   static propTypes = {};
   static defaultProps = {};
   render() {

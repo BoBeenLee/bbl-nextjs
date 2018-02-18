@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, PureComponent } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import { SubTitle, ContentTitle } from "../../components/Title";
@@ -20,7 +20,7 @@ const BottomSeparator = styled(Separator)`
   margin: 40px 0;
 `;
 
-class Education extends Component {
+class Education extends PureComponent {
   static propTypes = {};
   static defaultProps = {};
   render() {

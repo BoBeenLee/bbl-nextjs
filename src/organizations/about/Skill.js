@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, PureComponent } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import _ from "lodash";
@@ -58,7 +58,7 @@ const items = {
   }
 };
 
-class Skill extends Component {
+class Skill extends PureComponent {
   static propTypes = {};
   static defaultProps = {};
   render() {

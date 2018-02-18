@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, PureComponent } from "react";
 import styled from "styled-components";
 import Img from "gatsby-image";
 import Slider from "react-slick";
@@ -87,7 +87,7 @@ const BottomSeparator = styled(Separator)`
   margin: 40px 0;
 `;
 
-class PortfolioCard extends Component {
+class PortfolioCard extends PureComponent {
   static propTypes = {
     name: PropTypes.string,
     period: PropTypes.string,

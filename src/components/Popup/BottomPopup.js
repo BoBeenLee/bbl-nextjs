@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, PureComponent } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
@@ -16,7 +16,7 @@ const Root = styled.div`
   bottom: 0;
 `;
 
-class BottomPopup extends Component {
+class BottomPopup extends PureComponent {
   static propTypes = {};
   static defaultProps = {};
   render() {

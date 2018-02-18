@@ -1,15 +1,14 @@
-import React, { Component } from "react";
+import React, { Component, PureComponent } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import Img from "gatsby-image";
 import { Portfolio } from "../../organizations/portfolio";
-import getPortfolioQuery from "../../graphql/queries/portfolio";
 
 const Root = styled.div`
   padding-top: 20px;
 `;
 
-class PorfolioPage extends Component {
+class PorfolioPage extends PureComponent {
   render() {
     const { data } = this.props;
     // console.log(data);

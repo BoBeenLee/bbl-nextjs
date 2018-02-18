@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, PureComponent } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
@@ -14,7 +14,7 @@ const Root = styled.div`
   padding-top: 20px;
 `;
 
-class AboutPage extends Component {
+class AboutPage extends PureComponent {
   static propTypes = {};
   static defaultProps = {};
   render() {

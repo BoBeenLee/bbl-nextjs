@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, PureComponent } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import { Fade } from "react-reveal";
@@ -47,7 +47,7 @@ const ContactItemBox = styled.a`
   }
 `;
 
-class Footer extends Component {
+class Footer extends PureComponent {
   static propTypes = {};
   static defaultProps = {};
   render() {

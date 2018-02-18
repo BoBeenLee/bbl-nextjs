@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, PureComponent } from "react";
 import Link from "gatsby-link";
 import styled from "styled-components";
 import PropTypes from "prop-types";
@@ -16,7 +16,7 @@ const MenuLink = styled(Link)`
   }
 `;
 
-class MenuItem extends Component {
+class MenuItem extends PureComponent {
   static propTypes = {
     name: PropTypes.string,
     url: PropTypes.string,

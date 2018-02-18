@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, PureComponent } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import _ from "lodash";
@@ -40,7 +40,7 @@ const OrganizationBox = styled.div`
 
 const OrganizationItemBox = styled.div``;
 
-class GithubProfile extends Component {
+class GithubProfile extends PureComponent {
   static propTypes = {
     avatarUrl: PropTypes.string,
     email: PropTypes.string,

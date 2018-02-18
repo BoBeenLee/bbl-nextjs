@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, PureComponent } from "react";
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
@@ -6,7 +6,7 @@ const Root = styled.img`
     border-radius: 50%;
 `;
 
-class Avatar extends Component {
+class Avatar extends PureComponent {
     static propTypes = {
         avatarUrl: PropTypes.string
     }

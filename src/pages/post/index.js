@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, PureComponent } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import Link from "gatsby-link";
@@ -9,7 +9,7 @@ const Root = styled.div`
   padding-top: 20px;
 `;
 
-class PostPage extends Component {
+class PostPage extends PureComponent {
   render() {
     const { allMarkdownRemark } = this.props.data;
     const posts = allMarkdownRemark.edges;

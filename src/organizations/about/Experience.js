@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, PureComponent } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import _ from "lodash";
@@ -40,7 +40,7 @@ const BottomSeparator = styled(Separator)`
   margin: 40px 0;
 `;
 
-class Experience extends Component {
+class Experience extends PureComponent {
   static propTypes = {};
   static defaultProps = {};
   render() {

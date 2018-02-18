@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, PureComponent } from "react";
 import { format } from "date-fns";
 import PropTypes from "prop-types";
 import styled from "styled-components";
@@ -75,7 +75,7 @@ const BottomSeparator = styled(Separator)`
   margin: 40px 0px;
 `;
 
-class PostCard extends Component {
+class PostCard extends PureComponent {
   static propTypes = {
     title: PropTypes.string,
     date: PropTypes.string,

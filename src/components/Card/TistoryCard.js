@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { Component, PureComponent } from "react";
 
-class TistoryCard extends Component {
+class TistoryCard extends PureComponent {
   render() {
     return <div />;
   }

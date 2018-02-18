@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, PureComponent } from "react";
 import PropTypes from "prop-types";
 import _ from "lodash";
 import { slide as BurgerMenu } from "react-burger-menu";
@@ -65,7 +65,7 @@ const BottomSeparator = styled(Separator)`
   border-width: 2px;
 `;
 
-class Menu extends Component {
+class Menu extends PureComponent {
   static propTypes = {
     isOpen: PropTypes.bool,
     toggleMenu: PropTypes.func
