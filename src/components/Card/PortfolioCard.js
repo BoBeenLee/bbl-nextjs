@@ -127,9 +127,9 @@ class PortfolioCard extends Component {
       };
       return obj;
     }),
-    githubUrl: "https://github.com/BoBinLee/map",
+    githubUrl: "",
     linkUrl:
-      "https://play.google.com/store/apps/details?id=com.nexters.intersection.intersectionapp"
+      ""
   };
   render() {
     const {

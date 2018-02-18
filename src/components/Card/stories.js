@@ -25,7 +25,11 @@ storiesOf("Card", module)
   ))
   .add("with PortfolioCard", () => (
     <Child>
-      <PortfolioCard onPress={action("clicked")} />
+      <PortfolioCard
+        githubUrl="https://github.com/BoBinLee/map"
+        linkUrl="https://play.google.com/store/apps/details?id=com.nexters.intersection.intersectionapp"
+        onPress={action("clicked")}
+      />
     </Child>
   ))
   .add("with PostCard", () => (
