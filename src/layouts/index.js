@@ -79,7 +79,7 @@ class TemplateWrapper extends Component {
       <Root id="outer-container">
         <StatePopupBox isShowStatePopup={isShowStatePopup}>
           <span>
-            We'll keep trying, but there may be a problem with your connection.
+            Your computer seems to be offline. We'll keep trying, but there may be a problem with your connection.
           </span>
         </StatePopupBox>
         {this._renderHelmet()}

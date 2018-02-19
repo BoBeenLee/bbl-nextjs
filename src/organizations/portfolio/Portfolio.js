@@ -31,7 +31,7 @@ class Portfolio extends PureComponent {
 
   _renderPortfolioCard = production => {
     const { images } = this.props;
-    const { name, period, skills, summary = "" } = production;
+    const { name, period, skills, summary = "", githubUrl, linkUrl } = production;
     return (
       <PortfolioCard
         key={name}
@@ -39,6 +39,8 @@ class Portfolio extends PureComponent {
         period={period}
         skills={skills}
         summary={summary}
+        githubUrl={githubUrl}
+        linkUrl={linkUrl}
         images={callValue(() => images[`${name}Images`].edges, [])}
       />
     );
