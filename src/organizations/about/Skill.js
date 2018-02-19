@@ -19,11 +19,13 @@ const ItemBox = styled.div`
 
 const SkillsBox = styled.div`
   margin-top: 5px;
-  display: grid;
-  grid-template-columns: auto auto auto auto;
+  display: flex;
+  flex-direction: row;
 `;
 
-const SkillItemBox = styled(LineText)``;
+const SkillItemBox = styled(LineText)`
+  margin-right: 10px;
+`;
 
 const BottomSeparator = styled(Separator)`
   margin: 40px 0;
