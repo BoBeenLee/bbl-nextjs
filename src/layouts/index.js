@@ -12,8 +12,6 @@ import { Footer } from "../components/Footer";
 import config from "../../config/SiteConfig";
 import "./styles";
 
-ReactModal.setAppElement("#___gatsby");
-
 const Root = styled.div`
   height: 100%;
 `;

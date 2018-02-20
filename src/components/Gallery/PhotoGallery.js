@@ -61,13 +61,13 @@ class PhotoGallery extends PureComponent {
   };
 
   _onPressImage = index => {
-    if (!isMobile) {
+    if (!isMobile()) {
       return;
     }
     const { onImagePopup, images } = this.props;
     onImagePopup(() => (
       <PopupImageBox>
-        <img style={{ height: "100%" }} src={images[index].node.sizes.src} />
+        <img style={{ width: "100%" }} src={images[index].node.sizes.src} />
       </PopupImageBox>
     ));
   };
