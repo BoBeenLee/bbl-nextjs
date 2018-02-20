@@ -95,7 +95,9 @@ class PortfolioCard extends PureComponent {
     summary: PropTypes.string,
     images: PropTypes.arrayOf(PropTypes.object),
     githubUrl: PropTypes.string,
-    linkUrl: PropTypes.string
+    linkUrl: PropTypes.string,
+    onImagePopup: PropTypes.func
+
   };
   static defaultProps = {
     name: "flass",
@@ -129,8 +131,8 @@ class PortfolioCard extends PureComponent {
       return obj;
     }),
     githubUrl: "",
-    linkUrl:
-      ""
+    linkUrl:"",
+    onImagePopup: () => {}
   };
   render() {
     const {
@@ -140,7 +142,8 @@ class PortfolioCard extends PureComponent {
       summary,
       githubUrl,
       linkUrl,
-      images
+      images,
+      onImagePopup
     } = this.props;
 
     return (
@@ -162,7 +165,7 @@ class PortfolioCard extends PureComponent {
         <SkillsBox>{_.map(skills, this._renderSkillItem)}</SkillsBox>
         <SummaryBox>{summary}</SummaryBox>
         <PhotoGalleryBox>
-          <PhotoGallery images={images} />
+          <PhotoGallery images={images} onImagePopup={onImagePopup} />
         </PhotoGalleryBox>
         <BottomSeparator />
       </Root>

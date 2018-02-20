@@ -5,6 +5,7 @@ import _ from "lodash";
 import Img from "gatsby-image";
 import Slider from "react-slick";
 import { media } from "../../utils/StyleUtils";
+import { isMobile } from "../../utils/NavigatorUtils";
 
 var settings = {
   dots: true,
@@ -24,9 +25,19 @@ const ImageBox = styled.div`
   padding: 10px 10px 30px 10px;
 `;
 
+const PopupImageBox = styled.div`
+  height: 100%;
+  .gatsby-image-outer-wrapper {
+    top: 0;
+    left: 0;
+    height: 100%;
+  }
+`;
+
 class PhotoGallery extends PureComponent {
   static propTypes = {
-    images: PropTypes.arrayOf(PropTypes.object)
+    images: PropTypes.arrayOf(PropTypes.object),
+    onImagePopup: PropTypes.func
   };
   static defaultProps = {
     images: _.times(5, () => {
@@ -45,7 +56,20 @@ class PhotoGallery extends PureComponent {
         }
       };
       return obj;
-    })
+    }),
+    onImagePopup: () => {}
+  };
+
+  _onPressImage = index => {
+    if (!isMobile) {
+      return;
+    }
+    const { onImagePopup, images } = this.props;
+    onImagePopup(() => (
+      <PopupImageBox>
+        <img style={{ height: "100%" }} src={images[index].node.sizes.src} />
+      </PopupImageBox>
+    ));
   };
 
   render() {
@@ -57,7 +81,7 @@ class PhotoGallery extends PureComponent {
     return (
       <SliderBox {...settings}>
         {_.map(images, (image, index) => (
-          <ImageBox key={index}>
+          <ImageBox onClick={_.partial(this._onPressImage, index)} key={index}>
             <Img sizes={image.node.sizes} />
           </ImageBox>
         ))}

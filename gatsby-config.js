@@ -45,6 +45,17 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `BoBeen Lee`,
+        short_name: `BoBeen Lee`,
+        start_url: `/`,
+        background_color: config.backgroundColor,
+        theme_color: config.themeColor,
+        display: `minimal-ui`
+      }
+    },
+    {
       resolve: `gatsby-plugin-nprogress`,
       options: {
         color: config.themeColor

@@ -6,6 +6,7 @@ import { SubTitle } from "../../components/Title";
 import { productions } from "./data";
 import { PortfolioCard } from "../../components/Card";
 import { callValue } from "../../utils/ObjectUtils";
+import { ImagePopup } from "../../components/Popup";
 
 const Root = styled.div``;
 
@@ -17,21 +18,54 @@ const ContentBox = styled.div`
   padding-top: 20px;
 `;
 
-class Portfolio extends PureComponent {
+class Portfolio extends Component {
+  state = {
+    showModal: false,
+    renderImage: () => {}
+  };
+
   static propTypes = {};
   static defaultProps = {};
   render() {
+    const { showModal, renderImage } = this.state;
+
     return (
       <Root>
         <SubTitleBox title="Portfolio" />
         <ContentBox>{_.map(productions, this._renderPortfolioCard)}</ContentBox>
+        <ImagePopup
+          showModal={showModal}
+          renderImage={renderImage}
+          onClose={this._onClose}
+        />
       </Root>
     );
   }
 
+  _onClose = () => {
+    this.setState({
+      showModal: false
+    });
+  };
+
+  onImagePopup = renderImage => {
+    this.setState({
+      renderImage,
+      showModal: true
+    });
+  };
+
   _renderPortfolioCard = production => {
     const { images } = this.props;
-    const { name, period, skills, summary = "", githubUrl, linkUrl } = production;
+    const {
+      name,
+      period,
+      skills,
+      summary = "",
+      githubUrl,
+      linkUrl
+    } = production;
+
     return (
       <PortfolioCard
         key={name}
@@ -42,6 +76,7 @@ class Portfolio extends PureComponent {
         githubUrl={githubUrl}
         linkUrl={linkUrl}
         images={callValue(() => images[`${name}Images`].edges, [])}
+        onImagePopup={this.onImagePopup}
       />
     );
   };

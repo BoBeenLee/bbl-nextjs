@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import styled from "styled-components";
 import _ from "lodash";
+import ReactModal from "react-modal";
 import { media } from "../utils/StyleUtils";
 import Header from "../components/Header";
 import { BottomPopup } from "../components/Popup";
@@ -10,6 +11,8 @@ import { withThemes } from "../hoc";
 import { Footer } from "../components/Footer";
 import config from "../../config/SiteConfig";
 import "./styles";
+
+ReactModal.setAppElement("#___gatsby");
 
 const Root = styled.div`
   height: 100%;
@@ -79,7 +82,8 @@ class TemplateWrapper extends Component {
       <Root id="outer-container">
         <StatePopupBox isShowStatePopup={isShowStatePopup}>
           <span>
-            Your computer seems to be offline. We'll keep trying, but there may be a problem with your connection.
+            Your computer seems to be offline. We'll keep trying, but there may
+            be a problem with your connection.
           </span>
         </StatePopupBox>
         {this._renderHelmet()}
