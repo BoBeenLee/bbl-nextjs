@@ -12,10 +12,4 @@ exports.onRenderBody = (
   { setHeadComponents, setHtmlAttributes, setBodyAttributes },
   pluginOptions
 ) => {
-  setHeadComponents(
-    <script
-      key="feednami"
-      src="https://static.sekandocdn.net/static/feednami/feednami-client-v1.1.js"
-    />
-  );
 };

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from "styled-components";
+import feednami from './feednami';
 import PropTypes from 'prop-types';
 
 function withTistory(TargetComponent) {
