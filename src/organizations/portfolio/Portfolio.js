@@ -58,6 +58,7 @@ class Portfolio extends Component {
   _renderPortfolioCard = production => {
     const { images } = this.props;
     const {
+      id,
       name,
       period,
       skills,
@@ -68,14 +69,14 @@ class Portfolio extends Component {
 
     return (
       <PortfolioCard
-        key={name}
+        key={id}
         name={name}
         period={period}
         skills={skills}
         summary={summary}
         githubUrl={githubUrl}
         linkUrl={linkUrl}
-        images={callValue(() => images[`${name}Images`].edges, [])}
+        images={callValue(() => images[`${id}Images`].edges, [])}
         onImagePopup={this.onImagePopup}
       />
     );

@@ -1,6 +1,7 @@
 export const productions = [
   {
-    name: "buxi",
+    id: "buxi",
+    name: "Buxi",
     period: "",
     githubRepoName: [],
     skills: [
@@ -11,12 +12,13 @@ export const productions = [
       "Redux-Saga",
       "Webpack",
     ],
-    summary: "",
+    summary: "같은 목적지를 오가는 분들이 원하는 시간대에 함께 쓰는 새로운 카셰어링",
     githubUrl: "",
     linkUrl: "https://www.buxikorea.com/"
   },
   {
-    name: "flass",
+    id: "flass",
+    name: "Flass",
     period: "",
     githubRepoName: ["flass"],
     skills: [
@@ -29,12 +31,13 @@ export const productions = [
       "Sass",
       "Rails"
     ],
-    summary: "",
+    summary: "Site For Flipped Learning",
     githubUrl: "https://github.com/Nexters/flass",
     linkUrl: "http://flass.me"
   },
   {
-    name: "onepage",
+    id: "onepage",
+    name: "Onepage",
     period: "",
     githubRepoName: [],
     skills: [
@@ -47,13 +50,14 @@ export const productions = [
       "Mockito",
       "MySQL"
     ],
-    summary: "",
+    summary: "위치기반 익명 SNS",
     githubUrl: "https://github.com/OnePageAndroid",
     linkUrl:
       "https://play.google.com/store/apps/details?id=kr.nexters.onepage&hl=ko"
   },
   {
-    name: "intersection",
+    id: "intersection",
+    name: "Intersection",
     period: "",
     githubRepoName: [],
     skills: [
@@ -64,22 +68,24 @@ export const productions = [
       "Hibernate",
       "PostgreSQL"
     ],
-    summary: "",
+    summary: "너와 나의 중간지점",
     githubUrl: "https://github.com/BoBinLee/map",
     linkUrl:
       "https://play.google.com/store/apps/details?id=com.nexters.intersection.intersectionapp"
   },
   {
-    name: "team42",
+    id: "team42",
+    name: "Team42",
     period: "",
     githubRepoName: [],
     skills: ["Bootstrap", "jQuery", "velocity", "lessJS"],
-    summary: "",
+    summary: "Team42 Site",
     githubUrl: "",
     linkUrl: "http://team42.net/"
   },
   {
-    name: "skhualarm",
+    id: "skhualarm",
+    name: "Skhualarm",
     period: "",
     githubRepoName: [],
     skills: [
@@ -93,13 +99,14 @@ export const productions = [
       "Quartz",
       "MariaDB"
     ],
-    summary: "",
+    summary: "Sungkonghoe University Alarm App",
     githubUrl: "https://github.com/BoBinLee/SkhuApp",
     linkUrl:
       "https://play.google.com/store/apps/details?id=com.skhu.bobinlee.skhuapp&hl=ko"
   },
   {
-    name: "competition",
+    id: "competition",
+    name: "Competition",
     period: "",
     githubRepoName: [],
     skills: [
@@ -112,16 +119,17 @@ export const productions = [
       "MyBatis",
       "MariaDB"
     ],
-    summary: "",
+    summary: "Sungkonghoe University Competition Site",
     githubUrl: "https://github.com/BoBinLee/SkhuCompetition.Server",
     linkUrl: ""
   },
   {
-    name: "softhome",
+    id: "softhome",
+    name: "Softhome",
     period: "",
     githubRepoName: [],
     skills: ["jQuery", "PrototypeJs", "JPageJs", "JSP", "MyBatis", "RDB"],
-    summary: "",
+    summary: "Sungkonghoe University Software Engineering Department Site",
     githubUrl: "https://github.com/BoBinLee/swhome",
     linkUrl: ""
   }

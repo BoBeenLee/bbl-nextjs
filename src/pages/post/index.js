@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Link from "gatsby-link";
 import _ from "lodash";
 import { PostCard } from "../../components/Card";
+import { withTistory } from "../../hoc";
 
 const Root = styled.div`
   padding-top: 20px;
@@ -11,13 +12,43 @@ const Root = styled.div`
 
 class PostPage extends PureComponent {
   render() {
+    const posts = [...this._mapTistoryToPosts(), ...this._mapRemarkToPosts()];
+    // console.log(posts);
+    const postsByDESC = _.orderBy(posts, ["date"], ["desc"]);
+
+    return (
+      <Root>
+        {_.map(postsByDESC, item => {
+          return <PostCard key={item.id} {...item} />;
+        })}
+      </Root>
+    );
+  }
+
+  _mapRemarkToPosts = () => {
     const { allMarkdownRemark } = this.props.data;
     const posts = allMarkdownRemark.edges;
-    return <Root>{_.map(posts, this._renderPostItem)}</Root>;
-  }
-  _renderPostItem = ({ node }) => {
-    const { id, frontmatter: { title, path } } = node;
-    return <PostCard key={id} url={path} title={title} />;
+    return _.map(posts, ({ node }) => {
+      const { id, frontmatter: { title, path, date } } = node;
+      return {
+        id,
+        title,
+        url: path,
+        date: new Date(date)
+      };
+    });
+  };
+
+  _mapTistoryToPosts = () => {
+    const { tistory = [] } = this.props;
+    return _.map(tistory, item => {
+      return {
+        id: item.guid,
+        title: item.title,
+        linkUrl: item.link,
+        date: item.date
+      };
+    });
   };
 }
 
@@ -33,6 +64,7 @@ export const query = graphql`
           frontmatter {
             title
             path
+            date
           }
         }
       }
@@ -40,4 +72,4 @@ export const query = graphql`
   }
 `;
 
-export default PostPage;
+export default withTistory(PostPage);

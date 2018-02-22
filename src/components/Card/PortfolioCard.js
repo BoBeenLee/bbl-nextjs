@@ -64,6 +64,9 @@ const SkillItem = styled.div`
 const SummaryBox = styled.div`
   grid-column: 1/4;
   grid-row: 3;
+  padding-left: 10px;
+  font-size: 12px;
+  color: ${props => props.theme.third};
 `;
 
 const PhotoGalleryBox = styled.div`
@@ -97,7 +100,6 @@ class PortfolioCard extends PureComponent {
     githubUrl: PropTypes.string,
     linkUrl: PropTypes.string,
     onImagePopup: PropTypes.func
-
   };
   static defaultProps = {
     name: "flass",
@@ -131,7 +133,7 @@ class PortfolioCard extends PureComponent {
       return obj;
     }),
     githubUrl: "",
-    linkUrl:"",
+    linkUrl: "",
     onImagePopup: () => {}
   };
   render() {

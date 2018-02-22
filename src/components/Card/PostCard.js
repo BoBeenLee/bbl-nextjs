@@ -32,7 +32,7 @@ const TitleBox = styled(SubTitle)`
   font-size: 36px;
 `;
 
-const LinkBox = styled(Link)`
+const UrlBox = styled(Link)`
   grid-area: link;
   padding-top: 20px;
   padding-left: 3px;
@@ -70,6 +70,19 @@ const DateBox = styled.div`
     `};
 `;
 
+const LinkUrlBox = styled.a`
+  grid-area: link;
+  padding-top: 20px;
+  padding-left: 3px;
+  font-size: 13px;
+  color: ${props => props.theme.secondary};
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.6;
+  }
+`;
+
 const BottomSeparator = styled(Separator)`
   grid-area: separator;
   margin: 40px 0px;
@@ -79,27 +92,36 @@ class PostCard extends PureComponent {
   static propTypes = {
     title: PropTypes.string,
     date: PropTypes.string,
-    url: PropTypes.string
+    url: PropTypes.string,
+    linkUrl: PropTypes.string
   };
 
   static defaultProps = {
     title: "Hello World",
-    date: "2018-02-05T13:42:31Z",
-    url: "/about"
+    date: new Date(),
+    url: "",
+    linkUrl: ""
   };
 
   render() {
-    const { title, date, url } = this.props;
+    const { title, date, url, linkUrl } = this.props;
     return (
       <Root>
         <TitleBox title={title} />
         <DateBox>
           <NameBox>Date:</NameBox>
-          {format(new Date(date), "MMMM D, YYYY")}
+          {format(date, "MMMM D, YYYY")}
         </DateBox>
-        <LinkBox to={url}>
-          View Article<BookIcon size={25} />
-        </LinkBox>
+        {url && (
+          <UrlBox to={url}>
+            View Article<BookIcon size={25} />
+          </UrlBox>
+        )}
+        {linkUrl && (
+          <LinkUrlBox href={linkUrl} target="_blank">
+            View Article<BookIcon size={25} />
+          </LinkUrlBox>
+        )}
         <BottomSeparator />
       </Root>
     );
