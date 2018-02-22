@@ -30,11 +30,12 @@ const Root = styled.div`
 const TitleBox = styled(SubTitle)`
   grid-area: title;
   font-size: 36px;
+  line-height: 40px;
 `;
 
 const UrlBox = styled(Link)`
   grid-area: link;
-  padding-top: 20px;
+  padding-top: 10px;
   padding-left: 3px;
   font-size: 13px;
   color: ${props => props.theme.secondary};
@@ -72,7 +73,7 @@ const DateBox = styled.div`
 
 const LinkUrlBox = styled.a`
   grid-area: link;
-  padding-top: 20px;
+  padding-top: 10px;
   padding-left: 3px;
   font-size: 13px;
   color: ${props => props.theme.secondary};
