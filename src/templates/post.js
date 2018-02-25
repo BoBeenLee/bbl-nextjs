@@ -4,17 +4,18 @@ import styled from "styled-components";
 import { SubTitle } from "../components/Title";
 
 const Root = styled.div`
-  padding-top: 20px;
+  padding: 60px 50px 70px 50px;
 `;
 
 const SubTitleBox = styled(SubTitle)`
   font-size: 36px;
   margin-bottom: 20px;
+  color: ${props => props.theme.primary};
+  font-weight: bold;
 `;
 
 export default function Template({ data }) {
   const { markdownRemark: post } = data;
-
   return (
     <Root>
       <SubTitleBox title={post.frontmatter.title} />

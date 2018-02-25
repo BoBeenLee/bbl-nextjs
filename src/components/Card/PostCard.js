@@ -92,7 +92,7 @@ const BottomSeparator = styled(Separator)`
 class PostCard extends PureComponent {
   static propTypes = {
     title: PropTypes.string,
-    date: PropTypes.string,
+    date: PropTypes.objectOf(Date),
     url: PropTypes.string,
     linkUrl: PropTypes.string
   };
