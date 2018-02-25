@@ -30,7 +30,12 @@ module.exports = {
         name: "images"
       }
     },
-    "gatsby-transformer-remark",
+    {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        plugins: [`gatsby-remark-emoji`]
+      }
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-offline`,
