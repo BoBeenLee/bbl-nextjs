@@ -10,8 +10,8 @@ date: '2018-02-25'
 간략하게 말하자면 dotenv 설정 시 crna 를 이용할 경우, </br>.env 파일에 NODE*ENV 환경 설정 가능하고 </br>다른 환경 변수를 설정 시엔 REACT_APP*\* 변수로 지정하면 React 코드 환경에서 환경변수를 불러 올 수 있다. </br>
 :warning: crna 이용하면 [dotenv](https://github.com/motdotla/dotenv)는 따로 인스톨하지 않아도 된다. </br>
 ex) `.env NODE_ENV=production REACT_APP_TOKEN=token` </br>
-유의점은 환경변수는 필드타임에 값을 설정한다.
-런타임으로 환경변수 불러올 시엔 서버가 필요하다.
+- 환경변수는 빌드타임에 값을 세팅한다.
+- 런타임으로 환경변수 불러오려면 서버가 필요하다.
 </br>
 
 ## More Features
