@@ -1,5 +1,22 @@
 export const productions = [
   {
+    id: "inhousekitchen",
+    name: "Inhousekitchen",
+    period: "",
+    githubRepoName: [],
+    skills: [
+      "ReactNative",
+      "Nativebase",
+      "Expo",
+      "Redux-Offline",
+      "Redux",
+      "Redux-Saga",
+      "Storybook",
+    ],
+    summary: "셰프와 게스트 연결해주는 서비스",
+    githubUrl: "https://github.com/Nexters/inhousekitchen",
+    linkUrl: ""
+  },{
     id: "buxi",
     name: "Buxi",
     period: "",
@@ -11,6 +28,7 @@ export const productions = [
       "Redux",
       "Redux-Saga",
       "Webpack",
+      "Storybook"
     ],
     summary: "같은 목적지를 오가는 분들이 원하는 시간대에 함께 쓰는 새로운 카셰어링",
     githubUrl: "",
