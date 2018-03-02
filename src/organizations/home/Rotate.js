@@ -6,7 +6,8 @@ import _ from "lodash";
 import FacebookIcon from "./images/facebook.svg";
 import InstagramIcon from "./images/instagram.svg";
 import LinkedInIcon from "./images/linkedin.svg";
-import { withRotate } from "../../hoc";
+import { Rotate as WindowRotate } from '../../facc';
+
 
 const Root = styled.div`
     display: grid;
@@ -40,30 +41,35 @@ class Rotate extends Component {
   static propTypes = {};
   static defaultProps = {};
 
-  componentDidMount() {}
+  componentDidMount() { }
 
   render() {
-    const { motion: { xDeg, yDeg, zDeg } } = this.props;
-    // console.log(motion);
     return (
       <Root>
-        <IconBox zDeg={zDeg}>
-          <LinkBox href="https://www.facebook.com/bobin.lee.9" target="_blank">
-            <Icon src={FacebookIcon} />
-          </LinkBox>
-          <LinkBox href="https://www.instagram.com/bobeenlee_" target="_blank">
-            <Icon src={InstagramIcon} />
-          </LinkBox>
-          <LinkBox
-            href="https://www.linkedin.com/in/%EB%B3%B4%EB%B9%88-%EC%9D%B4-035613a5/"
-            target="_blank"
-          >
-            <Icon src={LinkedInIcon} />
-          </LinkBox>
-        </IconBox>
+        <WindowRotate>
+          {({zDeg}) => this._renderIcons({zDeg})}
+        </WindowRotate>
       </Root>
     );
   }
+
+  _renderIcons = ({ zDeg }) => {
+    return (<IconBox zDeg={zDeg}>
+      <LinkBox href="https://www.facebook.com/bobin.lee.9" target="_blank">
+        <Icon src={FacebookIcon} />
+      </LinkBox>
+      <LinkBox href="https://www.instagram.com/bobeenlee_" target="_blank">
+        <Icon src={InstagramIcon} />
+      </LinkBox>
+      <LinkBox
+        href="https://www.linkedin.com/in/%EB%B3%B4%EB%B9%88-%EC%9D%B4-035613a5/"
+        target="_blank"
+      >
+        <Icon src={LinkedInIcon} />
+      </LinkBox>
+    </IconBox>);
+  }
+
 }
 
-export default withRotate(Rotate);
+export default Rotate;
