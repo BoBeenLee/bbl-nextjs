@@ -8,7 +8,7 @@ const Root = styled.div`
   padding: 10px 0;
 `;
 
-const MenuLink = styled(Link)`
+const MenuLink = styled(Link) `
   color: ${props => props.theme.primary};
   text-decoration: none;
   &:hover {
@@ -16,7 +16,7 @@ const MenuLink = styled(Link)`
   }
 `;
 
-class MenuItem extends PureComponent {
+class MenuItem extends Component {
   static propTypes = {
     name: PropTypes.string,
     url: PropTypes.string,

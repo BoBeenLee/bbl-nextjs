@@ -3,9 +3,11 @@ import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import styled from "styled-components";
 import _ from "lodash";
+import { TransitionMotion, Motion, spring } from 'react-motion';
 
 import { media } from "../utils/StyleUtils";
 import Header from "../components/Header";
+import { RouteTransition } from '../facc';
 import { BottomPopup } from "../components/Popup";
 import { withThemes } from "../hoc";
 import { Footer } from "../components/Footer";
@@ -46,7 +48,7 @@ const FooterBox = styled.footer`
   grid-area: footer;
 `;
 
-const StatePopupBox = styled(BottomPopup)`
+const StatePopupBox = styled(BottomPopup) `
   display: ${({ isShowStatePopup }) => (isShowStatePopup ? "flex" : "none")};
   color: ${props => props.theme.warning};
 `;
@@ -72,11 +74,10 @@ class Layout extends Component {
     window.addEventListener("offline", this.handleOffline);
     window.addEventListener("online", this.handleOnline);
   }
-
   render() {
     const { children } = this.props;
     const { isShowStatePopup } = this.state;
-
+    console.log('render', this.props.location.pathname);
     return (
       <Root id="outer-container">
         <StatePopupBox isShowStatePopup={isShowStatePopup}>
@@ -90,7 +91,12 @@ class Layout extends Component {
           <HeaderBox>
             <Header />
           </HeaderBox>
-          <ContentBox id="page-box">{children()}</ContentBox>
+          <RouteTransition
+            pathname={this.props.location.pathname}
+          >
+            {({ key, style }) =>
+              <ContentBox key={key} style={style} id="page-box">{children()}</ContentBox>}
+          </RouteTransition>
           <FooterBox>
             <Footer />
           </FooterBox>
