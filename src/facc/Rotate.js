@@ -14,14 +14,15 @@ class Rotate extends Component {
     orientation: 0
   };
 
-  _hasDeviceOrientation = () => !window || !!window.DeviceOrientationEvent;
+  _hasDeviceOrientation = () => window && !!window.DeviceOrientationEvent;
 
   componentDidMount() {
     if (!this._hasDeviceOrientation()) {
       return;
     }
+    const orientation = window ? window.orientation : 0;
 
-    window.addEventListener(
+    window && window.addEventListener(
       "deviceorientation",
       ev => {
         const { alpha, beta, gamma } = ev;
@@ -30,15 +31,14 @@ class Rotate extends Component {
       false
     );
 
-    window.addEventListener(
+    window && window.addEventListener(
       "orientationchange",
       ev => {
-        this.setState({ orientation: window.orientation });
+        this.setState({ orientation });
       },
       false
     );
-
-    this.setState({ orientation: window.orientation });
+    this.setState({ orientation });
   }
 
   getX() {
