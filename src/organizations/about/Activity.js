@@ -6,6 +6,7 @@ import { SubTitle, ContentTitle } from "../../components/Title";
 import { Separator } from "../../components/Separator";
 import { LineText } from "../../components/Text";
 import { media } from "../../utils/StyleUtils";
+import { isBrowser } from '../../utils/NavigatorUtils';
 
 const Root = styled.div``;
 
@@ -70,7 +71,7 @@ class Activity extends PureComponent {
     return (
       <ItemBox key={item.name}>
         <TitleBox
-          onClick={() => window && window.open(item.url, "_blank")}
+          onClick={() => isBrowser && window.open(item.url, "_blank")}
           title={item.name}
         />
         <ContentBox>{item.description}</ContentBox>

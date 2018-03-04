@@ -2,6 +2,7 @@ import React, { Component, PureComponent } from "react";
 import distanceInWordsToNow from "date-fns/distance_in_words_to_now";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { isBrowser } from '../../utils/NavigatorUtils';
 
 const Root = styled.div`
   display: grid;
@@ -58,7 +59,7 @@ class GithubCard extends PureComponent {
 
   _onPress = () => {
     const { url } = this.props;
-    window && window.open(url, "_blank");
+    isBrowser && window.open(url, "_blank");
   };
 }
 

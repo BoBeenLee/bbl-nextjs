@@ -1,6 +1,11 @@
 import MobileDetect from "mobile-detect";
 
+export const isBrowser = typeof window !== 'undefined';
+
 export const isMobile = () => {
-  var md = new MobileDetect(window && window.navigator.userAgent);
+  if(isBrowser) {
+    return 'NONE';
+  }
+  var md = new MobileDetect(window.navigator.userAgent);
   return !!md.mobile();
 };

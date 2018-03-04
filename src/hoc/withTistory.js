@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import styled from "styled-components";
-import feednami from './feednami';
 import PropTypes from 'prop-types';
+import { isBrowser } from '../utils/NavigatorUtils';
+import feednami from './feednami';
 
 function withTistory(TargetComponent) {
   return class WithTistory extends Component {
@@ -10,29 +11,30 @@ function withTistory(TargetComponent) {
     static defaultProps = {};
 
     state = {
-        tistory: []
+      tistory: []
     };
 
     componentDidMount() {
-        const rssUrl = "http://cultist-tp.tistory.com/rss";
-        feednami.load(rssUrl, res => {
-          const tistory = _.map(res.feed.entries, article => {
-            return {
-              guid: article.guid,
-              title: article.title,
-              link: article.link,
-              date: new Date(article.date),
-              description: article.description,
-              showDetails: false
-            };
-          });
-          this.setState({ tistory });
+      const rssUrl = "http://cultist-tp.tistory.com/rss";
+
+      isBrowser && feednami.load(rssUrl, res => {
+        const tistory = _.map(res.feed.entries, article => {
+          return {
+            guid: article.guid,
+            title: article.title,
+            link: article.link,
+            date: new Date(article.date),
+            description: article.description,
+            showDetails: false
+          };
         });
-      }
+        this.setState({ tistory });
+      });
+    }
 
     render() {
       return (
-          <TargetComponent tistory={this.state.tistory} { ...this.props } />
+        <TargetComponent tistory={this.state.tistory} {...this.props} />
       );
     }
   };

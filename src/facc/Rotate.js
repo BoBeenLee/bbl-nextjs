@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styled, { ThemeProvider } from "styled-components";
 import PropTypes from "prop-types";
 
+import { isBrowser } from '../utils/NavigatorUtils';
 class Rotate extends Component {
   static propTypes = {};
 
@@ -14,15 +15,15 @@ class Rotate extends Component {
     orientation: 0
   };
 
-  _hasDeviceOrientation = () => window && !!window.DeviceOrientationEvent;
+  _hasDeviceOrientation = () => isBrowser && !!window.DeviceOrientationEvent;
 
   componentDidMount() {
     if (!this._hasDeviceOrientation()) {
       return;
     }
-    const orientation = window ? window.orientation : 0;
+    const orientation = isBrowser ? window.orientation : 0;
 
-    window && window.addEventListener(
+    isBrowser && window.addEventListener(
       "deviceorientation",
       ev => {
         const { alpha, beta, gamma } = ev;
@@ -31,7 +32,7 @@ class Rotate extends Component {
       false
     );
 
-    window && window.addEventListener(
+    isBrowser && window.addEventListener(
       "orientationchange",
       ev => {
         this.setState({ orientation });

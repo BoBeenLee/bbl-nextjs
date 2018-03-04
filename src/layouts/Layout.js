@@ -12,6 +12,7 @@ import { BottomPopup } from "../components/Popup";
 import { withThemes } from "../hoc";
 import { Footer } from "../components/Footer";
 import config from "../../config/SiteConfig";
+import { isBrowser } from '../utils/NavigatorUtils';
 import "./styles";
 
 const Root = styled.div`
@@ -71,8 +72,8 @@ class Layout extends Component {
   };
 
   componentDidMount() {
-    window && window.addEventListener("offline", this.handleOffline);
-    window && window.addEventListener("online", this.handleOnline);
+    isBrowser && window.addEventListener("offline", this.handleOffline);
+    isBrowser && window.addEventListener("online", this.handleOnline);
   }
   render() {
     const { children } = this.props;
