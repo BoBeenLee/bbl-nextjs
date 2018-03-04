@@ -58,7 +58,7 @@ class GithubCard extends PureComponent {
 
   _onPress = () => {
     const { url } = this.props;
-    window.open(url, "_blank");
+    window && window.open(url, "_blank");
   };
 }
 

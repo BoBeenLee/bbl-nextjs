@@ -71,8 +71,8 @@ class Layout extends Component {
   };
 
   componentDidMount() {
-    typeof window !== 'undefined' && window.addEventListener("offline", this.handleOffline);
-    typeof window !== 'undefined' && window.addEventListener("online", this.handleOnline);
+    window && window.addEventListener("offline", this.handleOffline);
+    window && window.addEventListener("online", this.handleOnline);
   }
   render() {
     const { children } = this.props;

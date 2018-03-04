@@ -9,7 +9,7 @@ import { media } from "../../utils/StyleUtils";
 
 const Root = styled.div``;
 
-const SubTitleBox = styled(SubTitle)`
+const SubTitleBox = styled(SubTitle) `
   padding-bottom: 30px;
 `;
 
@@ -24,20 +24,20 @@ const ItemBox = styled.div`
   `};
 `;
 
-const TitleBox = styled(ContentTitle)`
+const TitleBox = styled(ContentTitle) `
   display: flex;
   flex-direction: column;
   justify-content: center;
   cursor: pointer;
 `;
 
-const ContentBox = styled(LineText)`
+const ContentBox = styled(LineText) `
   display: flex;
   flex-direction: column;
   justify-content: center;
 `;
 
-const BottomSeparator = styled(Separator)`
+const BottomSeparator = styled(Separator) `
   margin: 40px 0;
 `;
 
@@ -70,7 +70,7 @@ class Activity extends PureComponent {
     return (
       <ItemBox key={item.name}>
         <TitleBox
-          onClick={() => window.open(item.url, "_blank")}
+          onClick={() => window && window.open(item.url, "_blank")}
           title={item.name}
         />
         <ContentBox>{item.description}</ContentBox>
