@@ -71,13 +71,12 @@ class Layout extends Component {
   };
 
   componentDidMount() {
-    window.addEventListener("offline", this.handleOffline);
-    window.addEventListener("online", this.handleOnline);
+    typeof window !== 'undefined' && window.addEventListener("offline", this.handleOffline);
+    typeof window !== 'undefined' && window.addEventListener("online", this.handleOnline);
   }
   render() {
     const { children } = this.props;
     const { isShowStatePopup } = this.state;
-    console.log('render', this.props.location.pathname);
     return (
       <Root id="outer-container">
         <StatePopupBox isShowStatePopup={isShowStatePopup}>
