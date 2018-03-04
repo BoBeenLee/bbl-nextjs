@@ -1,7 +1,6 @@
 import React, { Component, PureComponent } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import { Fade } from "react-reveal";
 import OctofaceIcon from "react-icons/lib/go/octoface";
 import GoBookIcon from "react-icons/lib/go/book";
 import ContactMailIcon from "react-icons/lib/md/contact-mail";
