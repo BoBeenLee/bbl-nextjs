@@ -95,7 +95,10 @@ class Layout extends Component {
             pathname={this.props.location.pathname}
           >
             {({ key, style }) =>
-              <ContentBox key={key} style={style} id="page-box">{children()}</ContentBox>}
+              <ContentBox key={key} style={{
+                opacity: style.opacity,
+                transform: `translate3d(0, ${style.translateY}px, 0)`
+              }} id="page-box">{children()}</ContentBox>}
           </RouteTransition>
           <FooterBox>
             <Footer />
