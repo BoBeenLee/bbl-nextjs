@@ -13,12 +13,12 @@ var settings = {
   speed: 500,
   slidesToShow: 1,
   slidesToScroll: 1,
-  centerMode: true
+  adaptiveHeight: true
 };
 
-const SliderBox = styled(Slider)`
-  width: 100%;
-  /* width: 600px; */
+const SliderBox = styled(Slider) `
+  width: 1px;
+  min-width: 100%;
 `;
 
 const ImageBox = styled.div`
@@ -57,7 +57,7 @@ class PhotoGallery extends PureComponent {
       };
       return obj;
     }),
-    onImagePopup: () => {}
+    onImagePopup: () => { }
   };
 
   _onPressImage = index => {

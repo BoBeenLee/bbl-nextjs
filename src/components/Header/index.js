@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import Link from "gatsby-link";
 import { IndexLink } from "react-router-dom";
 import Headroom from "react-headroom";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { media } from "../../utils/StyleUtils";
+import { isIE } from '../../utils/NavigatorUtils';
 import { Menu } from "../Menu";
 import { Avatar } from "../Avatar";
 import { theme, menu as titles, isHome } from "../../constants";
@@ -49,6 +50,10 @@ const HeaderTitle = styled.div`
   ${media.desktop`
     width: ${props => props.theme.desktopSize}px;
   `};
+  ${isIE() && css`
+    display: flex;
+    padding: 20px;
+  ` }
 `;
 
 const Logo = styled.div`
