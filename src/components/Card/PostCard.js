@@ -1,7 +1,7 @@
 import React, { Component, PureComponent } from "react";
 import { format } from "date-fns";
 import PropTypes from "prop-types";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import Link from "gatsby-link";
 import GoBookIcon from "react-icons/lib/go/book";
 import { media } from "../../utils/StyleUtils";
@@ -15,7 +15,8 @@ const Root = styled.div`
     "title date"
     "link link"
     "separator separator";
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 200px;
+  grid-column-gap: 20px;
 
   ${media.mobile`
     grid-template-areas:
@@ -27,26 +28,14 @@ const Root = styled.div`
     `};
 `;
 
-const TitleBox = styled(SubTitle)`
+const TitleBox = styled(SubTitle) `
   grid-area: title;
   font-size: 36px;
   line-height: 40px;
+  text-align: left;
 `;
 
-const UrlBox = styled(Link)`
-  grid-area: link;
-  padding-top: 10px;
-  padding-left: 3px;
-  font-size: 13px;
-  color: ${props => props.theme.secondary};
-  text-decoration: none;
-
-  &:hover {
-    opacity: 0.6;
-  }
-`;
-
-const BookIcon = styled(GoBookIcon)`
+const BookIcon = styled(GoBookIcon) `
   padding-left: 5px;
   padding-bottom: 3px;
 `;
@@ -71,10 +60,7 @@ const DateBox = styled.div`
     `};
 `;
 
-const LinkUrlBox = styled.a`
-  grid-area: link;
-  padding-top: 10px;
-  padding-left: 3px;
+const LinkCSS = css`
   font-size: 13px;
   color: ${props => props.theme.secondary};
   text-decoration: none;
@@ -84,7 +70,16 @@ const LinkUrlBox = styled.a`
   }
 `;
 
-const BottomSeparator = styled(Separator)`
+const UrlBox = styled.div`
+  grid-area: link;
+  padding-top: 10px;
+  padding-left: 3px;
+  a {
+    ${ LinkCSS}
+  }
+`;
+
+const BottomSeparator = styled(Separator) `
   grid-area: separator;
   margin: 40px 0px;
 `;
@@ -114,14 +109,16 @@ class PostCard extends PureComponent {
           {format(date, "MMMM D, YYYY")}
         </DateBox>
         {url && (
-          <UrlBox to={url}>
-            View Article<BookIcon size={25} />
+          <UrlBox>
+            <Link to={url}>View Article<BookIcon size={25} /></Link>
           </UrlBox>
         )}
         {linkUrl && (
-          <LinkUrlBox href={linkUrl} target="_blank">
-            View Article<BookIcon size={25} />
-          </LinkUrlBox>
+          <UrlBox>
+            <a href={linkUrl} target="_blank">
+              View Article<BookIcon size={25} />
+            </a>
+          </UrlBox>
         )}
         <BottomSeparator />
       </Root>
