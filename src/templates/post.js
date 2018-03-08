@@ -6,12 +6,13 @@ import { media } from "../utils/StyleUtils";
 
 const Root = styled.div`
   padding: 60px 50px 70px 50px;
+  line-height: 40px;
   ${media.mobile`
     padding: 30px 10px 40px 10px;
-  `} line-height: 30px;
+  `} 
 `;
 
-const SubTitleBox = styled(SubTitle)`
+const SubTitleBox = styled(SubTitle) `
   font-size: 36px;
   margin-bottom: 20px;
   color: ${props => props.theme.primary};

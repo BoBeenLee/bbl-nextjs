@@ -59,12 +59,12 @@ const Logo = styled.div`
   justify-content: center;
 `;
 
-const LogoLink = styled(Link)`
+const LogoLink = styled(Link) `
   width: 45px;
   height: 45px;
 `;
 
-const IconBox = styled(Avatar)`
+const IconBox = styled(Avatar) `
   width: 45px;
   height: 45px;
 `;
@@ -76,7 +76,7 @@ const TitleBox = styled.div`
   align-items: center;
 `;
 
-const Title = styled(Link)`
+const Title = styled(Link) `
   font-size: 11px;
   padding: 0.5em;
   color: ${({ active, theme }) => (active ? theme.secondary : theme.primary)};
@@ -112,11 +112,11 @@ const SeperatorBottomBox = styled.div`
   align-items: center;
 `;
 
-const SeperatorBottom = styled(Separator)`
+const SeperatorBottom = styled(Separator) `
   width: 100%;
   overflow: hidden;
   ${media.desktop`
-    width: ${props => props.theme.desktopSize + 40}px;
+    width: ${props => props.theme.desktopSize + 80}px;
   `};
 `;
 

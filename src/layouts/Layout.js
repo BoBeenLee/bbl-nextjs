@@ -38,7 +38,11 @@ const ContentBox = styled.main`
   grid-area: content;
   margin: 0 auto;
   padding: 20px 20px;
-  width: 100%;
+  
+  ${media.mobile`
+    width: 1px;
+    min-width: 100%;
+  `}
   /* height: 2000px; */
   ${media.desktop`
     max-width: ${props => props.theme.desktopSize}px;
