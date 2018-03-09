@@ -129,7 +129,8 @@ renderTouch는 한번만 호출되어 랜더링 될 것이다. <br />
         }
     }
     ```
-*직접적으로 얘기는 안했지만 Render Prop와 FaCC는 동일한 개념이고 child이냐 render props이냐 차이일뿐 동일하다.*
+
+그리고 직접적으로 말은 안했지만 Render Prop와 FaCC는 동일한 개념이고 child이냐 render props이냐 차이일뿐 동일하다.
 
 ### Problem
 [Render Props Caveats](https://reactjs.org/docs/render-props.html#caveats) 예시와 동일하게 Mouse에 PureComponent로 했을 경우, <br />
@@ -139,7 +140,8 @@ MouseTracker가 counter를 증가하는 랜더링을 하면 자식 Cat컴포넌�
 
 [![Edit ll2xq45x3q](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/ll2xq45x3q)
 
-*결국 Render Props나 FaCC를 사용함으로 shouldComponentUpdate로 optimize하기 어려워지는 이슈가 있다. (render or child로 함수를 넘겨주고 shouldComponentUpdate로 비교하기에)*
+<b>결국 Render Props나 FaCC를 사용함으로 shouldComponentUpdate로 optimize하기 어려워지는 이슈가 있다.<br/>
+(render or child로 함수를 넘겨주고 shouldComponentUpdate로 비교하기에)</b>
 
 ## Conclusion
 HOC가 만능이 아닌 것처럼 FaCC, HOC를 사용할때 위와 같은 이슈들을 유념하면서 사용하자.<br />
