@@ -13,6 +13,8 @@ const Root = styled.div`
 const Child = styled.div`
   grid-column: 2;
   grid-row: 2;
+  padding-top: 100px;
+  padding-bottom: 100px;
 `;
 
 storiesOf("Seperator", module)

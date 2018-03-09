@@ -1,6 +1,5 @@
 import React from "react";
-import { storiesOf, action } from "@storybook/react";
-import { withKnobs, text, boolean, number } from '@storybook/addon-knobs/react';
+import { storiesOf, action } from "@kadira/storybook";
 
 import styled from "styled-components";
 import { BottomPopup, ImagePopup } from "./";
@@ -23,7 +22,8 @@ storiesOf("Popup", module)
   .add("with ImagePopup", () => (
     <Child>
       <ImagePopup
-        renderImage={() => <img width="100%" height="100" src={Board} alt="" />}
+        showModal
+        renderImage={() => <img width="100%" height="500" src={Board} alt="" />}
       />
     </Child>
   ));

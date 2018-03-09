@@ -129,7 +129,7 @@ renderTouch는 한번만 호출되어 랜더링 될 것이다. <br />
         }
     }
     ```
-* 직접적으로 얘기는 안했지만 Render Prop와 FaCC는 동일한 개념이고 child이냐 render props이냐 차이일뿐 동일하다. *
+*직접적으로 얘기는 안했지만 Render Prop와 FaCC는 동일한 개념이고 child이냐 render props이냐 차이일뿐 동일하다.*
 
 ### Problem
 [Render Props Caveats](https://reactjs.org/docs/render-props.html#caveats) 예시와 동일하게 Mouse에 PureComponent로 했을 경우, <br />
