@@ -129,22 +129,23 @@ renderTouch는 한번만 호출되어 랜더링 될 것이다. <br />
         }
     }
     ```
+* 직접적으로 얘기는 안했지만 Render Prop와 FaCC는 동일한 개념이고 child이냐 render props이냐 차이일뿐 동일하다. *
 
 ### Problem
-[Render Props](https://reactjs.org/docs/render-props.html) -  Caveats 아래 예시처럼 동일하게 Mouse에 PureComponent로 했을 경우, <br />
+[Render Props Caveats](https://reactjs.org/docs/render-props.html#caveats) 예시와 동일하게 Mouse에 PureComponent로 했을 경우, <br />
 MouseTracker가 counter를 증가하는 랜더링을 하면 자식 Cat컴포넌트는 다시 랜더링하지 않는다. <br />
 그 이유는 Mouse컴포넌트가 render props으로 bind된 항상 같은 함수를 받아 Mouse 컴포넌트는 랜더링되지 않는다. <br />
 그래서 counter숫자가 증가되지 않는다.
 
 [![Edit ll2xq45x3q](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/ll2xq45x3q)
 
-*FaCC를 사용함으로 shoudComponentUpdate로 optimize하기 어려워진다. (함수를 비교하기에)*
+*결국 Render Props나 FaCC를 사용함으로 shouldComponentUpdate로 optimize하기 어려워지는 이슈가 있다. (render or child로 함수를 넘겨주고 shouldComponentUpdate로 비교하기에)*
 
 ## Conclusion
 HOC가 만능이 아닌 것처럼 FaCC, HOC를 사용할때 위와 같은 이슈들을 유념하면서 사용하자.<br />
-그리고 기존에 존재하는 라이브러리를 한번 참조해보고 사용해보는 좋을거같다.<br />
+그리고 기존에 존재하는 라이브러리를 한번 참조해보고 사용해보는 것이 좋을거같다.<br />
 HOC - [React Redux(connect)](https://github.com/reactjs/react-redux), [React Router(withRouter)](https://github.com/ReactTraining/react-router), [Apollo(graphql)](https://github.com/apollographql/react-apollo) <br />
-FaCC - [React Motion](https://github.com/chenglou/react-motion), [React Apollo(Query tag)](https://github.com/apollographql/react-apollo), [urql(Query tag)](https://github.com/FormidableLabs/urql), [React Router(render props)](https://github.com/ReactTraining/react-router)
+FaCC, Render Props - [React Motion](https://github.com/chenglou/react-motion), [React Apollo(Query tag)](https://github.com/apollographql/react-apollo), [urql(Query tag)](https://github.com/FormidableLabs/urql), [React Router(render props)](https://github.com/ReactTraining/react-router)
 
 ## Reference
 [Render Props](https://reactjs.org/docs/render-props.html) <br />
