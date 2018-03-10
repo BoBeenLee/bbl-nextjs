@@ -47,8 +47,7 @@ const Root = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
+  justify-content: space-around;
   align-items: center;
   margin: 15px 0;
 `;
@@ -64,20 +63,14 @@ class SocialLinks extends Component {
     url: "http://bbl.netlify.com",
     title: "hello world",
     description: "hello",
-    iconSize: 20
+    iconSize: 35
   };
   render() {
-    const { url, title, description, iconSize } = this.props;
+    const { url, title, description, iconSize, ...rest } = this.props;
     const filter = count => (count > 0 ? count : "");
 
     return (
-      <Root>
-        <RedditShareButton url={url} title={title}>
-          <RedditIcon round size={iconSize} />
-          <RedditShareCount url={url}>
-            {count => <div className="share-count">{filter(count)}</div>}
-          </RedditShareCount>
-        </RedditShareButton>
+      <Root {...rest} >
         <TwitterShareButton url={url} title={title}>
           <TwitterIcon round size={iconSize} />
         </TwitterShareButton>
@@ -93,15 +86,6 @@ class SocialLinks extends Component {
             {count => <div className="share-count">{filter(count)}</div>}
           </FacebookShareCount>
         </FacebookShareButton>
-        <LinkedinShareButton url={url} title={title} description={description}>
-          <LinkedinIcon round size={iconSize} />
-          <LinkedinShareCount url={url}>
-            {count => <div className="share-count">{filter(count)}</div>}
-          </LinkedinShareCount>
-        </LinkedinShareButton>
-        <TelegramShareButton url={url}>
-          <TelegramIcon round size={iconSize} />
-        </TelegramShareButton>
       </Root>
     );
   }

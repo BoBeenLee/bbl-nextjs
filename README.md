@@ -19,7 +19,7 @@
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
 
-[![Deploy to Storybook]](https://github.com/storybooks/storybook-deployer)
+[Deploy to Storybook](https://github.com/storybooks/storybook-deployer)
 
 ## Pitfalls
 + when you want to do offline test, maybe it doesn't work in development mode. change production mode.

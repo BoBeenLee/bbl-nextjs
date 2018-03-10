@@ -3,6 +3,7 @@ import Helmet from "react-helmet";
 import styled from "styled-components";
 import { SubTitle } from "../components/Title";
 import { media } from "../utils/StyleUtils";
+import { Caption } from "../organizations/post";
 
 const Root = styled.div`
   padding: 60px 50px 70px 50px;
@@ -28,6 +29,10 @@ export default function Template({ data }) {
     <Root>
       <SubTitleBox title={post.frontmatter.title} />
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      <Caption
+        title={post.frontmatter.title}
+        description={post.frontmatter.title}
+        url={post.frontmatter.path} />
     </Root>
   );
 }
