@@ -13,6 +13,11 @@ body,
   height: 100%;
 }
 
+::selection {
+  background: #5191FD;
+  color: #fff;
+}
+
 html {
   font-family: "Roboto", sans-serif;
   -ms-text-size-adjust: 100%;

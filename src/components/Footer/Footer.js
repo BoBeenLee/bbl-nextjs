@@ -4,7 +4,13 @@ import PropTypes from "prop-types";
 import OctofaceIcon from "react-icons/lib/go/octoface";
 import GoBookIcon from "react-icons/lib/go/book";
 import ContactMailIcon from "react-icons/lib/md/contact-mail";
+
+import { Query } from 'react-apollo';
+
+
 import { media } from "../../utils/StyleUtils";
+
+
 
 const Root = styled.div`
   display: grid;
