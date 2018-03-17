@@ -76,15 +76,15 @@ class SocialLinks extends Component {
         </TwitterShareButton>
         <GooglePlusShareButton url={url}>
           <GooglePlusIcon round size={iconSize} />
-          <GooglePlusShareCount url={url}>
+          {/* <GooglePlusShareCount url={url}>
             {count => <div className="share-count">{filter(count)}</div>}
-          </GooglePlusShareCount>
+          </GooglePlusShareCount> */}
         </GooglePlusShareButton>
         <FacebookShareButton url={url} title={title} description={description}>
           <FacebookIcon round size={iconSize} />
-          <FacebookShareCount url={url}>
+          {/* <FacebookShareCount url={url}>
             {count => <div className="share-count">{filter(count)}</div>}
-          </FacebookShareCount>
+          </FacebookShareCount> */}
         </FacebookShareButton>
       </Root>
     );
