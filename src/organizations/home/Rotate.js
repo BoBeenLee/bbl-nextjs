@@ -47,7 +47,7 @@ class Rotate extends Component {
     return (
       <Root>
         <WindowRotate>
-          {({zDeg}) => this._renderIcons({zDeg})}
+          {({ zDeg }) => this._renderIcons({ zDeg })}
         </WindowRotate>
       </Root>
     );
@@ -56,16 +56,16 @@ class Rotate extends Component {
   _renderIcons = ({ zDeg }) => {
     return (<IconBox zDeg={zDeg}>
       <LinkBox href="https://www.facebook.com/bobin.lee.9" target="_blank">
-        <Icon src={FacebookIcon} />
+        <Icon alt="facebook" src={FacebookIcon} />
       </LinkBox>
       <LinkBox href="https://www.instagram.com/bobeenlee_" target="_blank">
-        <Icon src={InstagramIcon} />
+        <Icon alt="instagram" src={InstagramIcon} />
       </LinkBox>
       <LinkBox
         href="https://www.linkedin.com/in/%EB%B3%B4%EB%B9%88-%EC%9D%B4-035613a5/"
         target="_blank"
       >
-        <Icon src={LinkedInIcon} />
+        <Icon alt="linkedin" src={LinkedInIcon} />
       </LinkBox>
     </IconBox>);
   }

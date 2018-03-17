@@ -67,7 +67,7 @@ class PhotoGallery extends PureComponent {
     const { onImagePopup, images } = this.props;
     onImagePopup(() => (
       <PopupImageBox>
-        <img style={{ width: "100%" }} src={images[index].node.sizes.src} />
+        <img alt="" style={{ width: "100%" }} src={images[index].node.sizes.src} />
       </PopupImageBox>
     ));
   };
@@ -82,7 +82,7 @@ class PhotoGallery extends PureComponent {
       <SliderBox {...settings}>
         {_.map(images, (image, index) => (
           <ImageBox onClick={_.partial(this._onPressImage, index)} key={index}>
-            <Img sizes={image.node.sizes} />
+            <Img alt="" sizes={image.node.sizes} />
           </ImageBox>
         ))}
       </SliderBox>
