@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Link from "gatsby-link";
 import _ from "lodash";
 import { PostCard } from "../../components/Card";
-import { withTistory } from "../../hoc";
+import { withTistory, withOtherPosts } from "../../hoc";
 
 const Root = styled.div`
   padding-top: 20px;
@@ -12,8 +12,7 @@ const Root = styled.div`
 
 class PostPage extends PureComponent {
   render() {
-    const posts = [...this._mapTistoryToPosts(), ...this._mapRemarkToPosts()];
-    // console.log(posts);
+    const posts = [...this._mapOtherToPosts(), ...this._mapTistoryToPosts(), ...this._mapRemarkToPosts()];
     const postsByDESC = _.orderBy(posts, ["date"], ["desc"]);
 
     return (
@@ -23,6 +22,18 @@ class PostPage extends PureComponent {
         })}
       </Root>
     );
+  }
+
+  _mapOtherToPosts = () => {
+    const { otherPosts } = this.props;
+    return _.map(otherPosts, item => {
+      return {
+        id: item.id,
+        title: item.title,
+        linkUrl: item.url,
+        date: new Date(item.date)
+      };
+    });
   }
 
   _mapRemarkToPosts = () => {
@@ -72,4 +83,4 @@ export const query = graphql`
   }
 `;
 
-export default withTistory(PostPage);
+export default withOtherPosts(withTistory(PostPage));

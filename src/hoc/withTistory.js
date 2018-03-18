@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from "styled-components";
 import PropTypes from 'prop-types';
 import { isBrowser } from '../utils/NavigatorUtils';
-import feednami from './feednami';
+import feednami from '../apis/feednami';
 
 function withTistory(TargetComponent) {
   return class WithTistory extends Component {
