@@ -40,11 +40,11 @@ class PostPage extends PureComponent {
     const { allMarkdownRemark } = this.props.data;
     const posts = allMarkdownRemark.edges;
     return _.map(posts, ({ node }) => {
-      const { id, frontmatter: { title, path, date } } = node;
+      const { id, fields: { slug }, frontmatter: { title, date } } = node;
       return {
         id,
         title,
-        url: path,
+        url: slug,
         date: new Date(date)
       };
     });
@@ -72,9 +72,11 @@ export const query = graphql`
       edges {
         node {
           id
+          fields {
+            slug
+          }
           frontmatter {
             title
-            path
             date
           }
         }

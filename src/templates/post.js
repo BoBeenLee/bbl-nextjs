@@ -32,17 +32,19 @@ export default function Template({ data }) {
       <Caption
         title={post.frontmatter.title}
         description={post.frontmatter.title}
-        url={post.frontmatter.path} />
+        url={post.fields.slug} />
     </Root>
   );
 }
 
 export const postQuery = graphql`
   query BlogPostByPath($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+    markdownRemark(fields: { slug: { eq: $path } }) {
       html
+      fields {
+        slug
+      }
       frontmatter {
-        path
         title
       }
     }
