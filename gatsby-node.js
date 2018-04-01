@@ -32,7 +32,7 @@ const injectPostTemplate = (createPage, graphql) => {
       }
       res.data.allMarkdownRemark.edges.forEach(({ node }) => {
         createPage({
-          path: `/posts/${node.fields.slug}`,
+          path: `${node.fields.slug}`,
           component: postTemplate
         });
       });
@@ -52,7 +52,7 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
     createNodeField({
       name: `slug`,
       node,
-      value,
+      value: `/posts/${value}`,
     })
   }
 }
