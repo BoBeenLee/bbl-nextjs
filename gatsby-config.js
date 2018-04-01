@@ -36,6 +36,9 @@ module.exports = {
         plugins: [`gatsby-remark-emoji`]
       }
     },
+    {
+      resolve: 'gatsby-plugin-netlify-cms'
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-offline`,
