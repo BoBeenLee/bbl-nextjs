@@ -1,5 +1,6 @@
-import CMS from 'netlify-cms'
+import CMS from 'netlify-cms';
+// import PostPreview from './previews/PostPreview';
 
 // CMS.registerPreviewStyle('/styles.css')
-// CMS.registerPreviewTemplate('blog', AboutPagePreview)
+// CMS.registerPreviewTemplate('Post', PostPreview);
 // CMS.registerPreviewTemplate('blog', BlogPostPreview)
