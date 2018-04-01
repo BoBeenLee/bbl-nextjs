@@ -52,7 +52,7 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
     createNodeField({
       name: `slug`,
       node,
-      value: `/posts/${value}`,
+      value: `/posts${value}`,
     })
   }
 }
