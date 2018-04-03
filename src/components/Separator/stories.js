@@ -1,7 +1,7 @@
-import React from "react";
-import { storiesOf, action } from "@kadira/storybook";
-import styled from "styled-components";
-import { Separator } from "./";
+import React from 'react';
+import { storiesOf, action } from '@kadira/storybook';
+import styled from 'styled-components';
+import { Separator } from './';
 
 const Root = styled.div`
   display: grid;
@@ -17,9 +17,9 @@ const Child = styled.div`
   padding-bottom: 100px;
 `;
 
-storiesOf("Seperator", module)
+storiesOf('Seperator', module)
   .addDecorator(getStory => <Root>{getStory()}</Root>)
-  .add("with Seperator", () => (
+  .add('with Seperator', () => (
     <Child>
       <Separator />
     </Child>

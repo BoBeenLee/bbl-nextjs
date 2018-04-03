@@ -1,15 +1,16 @@
-import React, { Component } from "react";
-import Link from "gatsby-link";
-import { IndexLink } from "react-router-dom";
-import Headroom from "react-headroom";
-import styled, { css } from "styled-components";
-import { media } from "../../utils/StyleUtils";
+import React, { Component } from 'react';
+import Link from 'gatsby-link';
+import { IndexLink } from 'react-router-dom';
+import Headroom from 'react-headroom';
+import _ from 'lodash';
+import styled, { css } from 'styled-components';
+import { media } from '../../utils/StyleUtils';
 import { isIE } from '../../utils/NavigatorUtils';
-import { Menu } from "../Menu";
-import { Avatar } from "../Avatar";
-import { theme, menu as titles, isHome } from "../../constants";
-import { Separator } from "../Separator";
-import QuokkaIcon from "./images/quokka.png";
+import { Menu } from '../Menu';
+import { Avatar } from '../Avatar';
+import { theme, menu as titles, isHome } from '../../constants';
+import { Separator } from '../Separator';
+import QuokkaIcon from './images/quokka.png';
 
 const RootWrapper = styled.div`
   .headroom-transform-none .headroom {
@@ -30,10 +31,10 @@ const Root = styled.div`
 `;
 
 const HeaderBox = ({ children, isOpenHeader, ...props }) => {
-  const styles = Object.assign({}, { backgroundColor: "#fff" });
+  const styles = Object.assign({}, { backgroundColor: '#fff' });
   return (
     <Headroom
-      className={isOpenHeader ? "headroom-transform-none" : ""}
+      className={isOpenHeader ? 'headroom-transform-none' : ''}
       style={styles}
       {...props}
     >
@@ -53,7 +54,7 @@ const HeaderTitle = styled.div`
   ${isIE() && css`
     display: flex;
     padding: 20px;
-  ` }
+  `}
 `;
 
 const Logo = styled.div`
@@ -64,12 +65,12 @@ const Logo = styled.div`
   justify-content: center;
 `;
 
-const LogoLink = styled(Link) `
+const LogoLink = styled(Link)`
   width: 45px;
   height: 45px;
 `;
 
-const IconBox = styled(Avatar) `
+const IconBox = styled(Avatar)`
   width: 45px;
   height: 45px;
 `;
@@ -81,10 +82,10 @@ const TitleBox = styled.div`
   align-items: center;
 `;
 
-const Title = styled(Link) `
+const Title = styled(Link)`
   font-size: 11px;
   padding: 0.5em;
-  color: ${({ active, theme }) => (active ? theme.secondary : theme.primary)};
+  color: ${props => props.theme.primary};
   text-decoration: none;
   &:hover {
     color: ${props => props.theme.secondary};
@@ -117,7 +118,7 @@ const SeperatorBottomBox = styled.div`
   align-items: center;
 `;
 
-const SeperatorBottom = styled(Separator) `
+const SeperatorBottom = styled(Separator)`
   width: 100%;
   overflow: hidden;
   ${media.desktop`
@@ -128,24 +129,40 @@ const SeperatorBottom = styled(Separator) `
 class Header extends Component {
   state = {
     isOpenHeader: true,
-    isOpenMenu: false
+    isOpenMenu: false,
   };
 
-  toggleHeader = value => {
+  toggleHeader = (value) => {
     const { isOpenMenu } = this.state;
     if (isOpenMenu) {
       return;
     }
     this.setState({
-      isOpenHeader: value
+      isOpenHeader: value,
     });
   };
 
-  toggleMenu = value => {
+  toggleMenu = (value) => {
     this.setState({
       isOpenHeader: true,
-      isOpenMenu: value.isOpen
+      isOpenMenu: value.isOpen,
     });
+  };
+
+  _renderTitleItem = (title, index) => {
+    const { url, name } = title;
+    return (
+      <TitleBox key={index}>
+        <Title
+          exact={isHome(url)}
+          strict
+          activeStyle={{ color: theme.secondary }}
+          to={url}
+        >
+          {name}
+        </Title>
+      </TitleBox>
+    );
   };
 
   render() {
@@ -177,22 +194,6 @@ class Header extends Component {
       </RootWrapper>
     );
   }
-
-  _renderTitleItem = (title, index) => {
-    const { url, name } = title;
-    return (
-      <TitleBox key={index}>
-        <Title
-          exact={isHome(url)}
-          strict
-          activeStyle={{ color: theme.secondary }}
-          to={url}
-        >
-          {name}
-        </Title>
-      </TitleBox>
-    );
-  };
 }
 
 export default Header;

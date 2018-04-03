@@ -1,4 +1,4 @@
-export function callValue(supplier, defaultValue) {
+function callValue(supplier, defaultValue) {
   try {
     const value = supplier();
     return value || defaultValue;
@@ -7,3 +7,7 @@ export function callValue(supplier, defaultValue) {
     return defaultValue;
   }
 }
+
+export default {
+  callValue,
+};

@@ -1,7 +1,7 @@
-import React from "react";
-import { storiesOf, action } from "@kadira/storybook";
-import styled from "styled-components";
-import { GithubCard, PortfolioCard, PostCard } from "./";
+import React from 'react';
+import { storiesOf, action } from '@kadira/storybook';
+import styled from 'styled-components';
+import { GithubCard, PortfolioCard, PostCard } from './';
 
 const Root = styled.div`
   display: grid;
@@ -16,24 +16,24 @@ const Child = styled.div`
   grid-row: 1;
 `;
 
-storiesOf("Card", module)
+storiesOf('Card', module)
   .addDecorator(getStory => <Root>{getStory()}</Root>)
-  .add("with GithubCard", () => (
+  .add('with GithubCard', () => (
     <Child>
-      <GithubCard onPress={action("clicked")} />
+      <GithubCard onPress={action('clicked')} />
     </Child>
   ))
-  .add("with PortfolioCard", () => (
+  .add('with PortfolioCard', () => (
     <Child>
       <PortfolioCard
         githubUrl="https://github.com/BoBinLee/map"
         linkUrl="https://play.google.com/store/apps/details?id=com.nexters.intersection.intersectionapp"
-        onPress={action("clicked")}
+        onPress={action('clicked')}
       />
     </Child>
   ))
-  .add("with PostCard", () => (
+  .add('with PostCard', () => (
     <Child>
-      <PostCard onPress={action("clicked")} />
+      <PostCard onPress={action('clicked')} />
     </Child>
   ));

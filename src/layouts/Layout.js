@@ -1,19 +1,19 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import Helmet from "react-helmet";
-import styled from "styled-components";
-import _ from "lodash";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
+import styled from 'styled-components';
+import _ from 'lodash';
 import { TransitionMotion, Motion, spring } from 'react-motion';
 
-import { media } from "../utils/StyleUtils";
-import Header from "../components/Header";
+import { media } from '../utils/StyleUtils';
+import Header from '../components/Header';
 import { RouteTransition } from '../facc';
-import { BottomPopup } from "../components/Popup";
-import { withThemes } from "../hoc";
-import { Footer } from "../components/Footer";
-import config from "../../config/SiteConfig";
+import { BottomPopup } from '../components/Popup';
+import { withThemes } from '../hoc';
+import { Footer } from '../components/Footer';
+import config from '../../config/SiteConfig';
 import { isBrowser } from '../utils/NavigatorUtils';
-import "./styles";
+import './styles';
 
 const Root = styled.div`
   height: 100%;
@@ -53,19 +53,28 @@ const FooterBox = styled.footer`
   grid-area: footer;
 `;
 
-const StatePopupBox = styled(BottomPopup) `
-  display: ${({ isShowStatePopup }) => (isShowStatePopup ? "flex" : "none")};
+const StatePopupBox = styled(BottomPopup)`
+  display: ${({ isShowStatePopup }) => (isShowStatePopup ? 'flex' : 'none')};
   color: ${props => props.theme.warning};
 `;
 
 class Layout extends Component {
   static propTypes = {
-    children: PropTypes.func
+    children: PropTypes.func,
   };
 
+  static defaultProps = {
+    children: () => { },
+  }
+
   state = {
-    isShowStatePopup: false
+    isShowStatePopup: false,
   };
+
+  componentDidMount() {
+    isBrowser && window.addEventListener('offline', this.handleOffline);
+    isBrowser && window.addEventListener('online', this.handleOnline);
+  }
 
   handleOffline = () => {
     this.setState({ isShowStatePopup: true });
@@ -75,10 +84,17 @@ class Layout extends Component {
     this.setState({ isShowStatePopup: false });
   };
 
-  componentDidMount() {
-    isBrowser && window.addEventListener("offline", this.handleOffline);
-    isBrowser && window.addEventListener("online", this.handleOnline);
-  }
+  _renderHelmet = () => {
+    const metas = _.map(
+      _.pick(config, ['description', 'keywords']),
+      (value, key) => ({
+        name: key,
+        content: value,
+      }),
+    );
+    return <Helmet title="BoBeen Lee" meta={metas} />;
+  };
+
   render() {
     const { children } = this.props;
     const { isShowStatePopup } = this.state;
@@ -86,7 +102,7 @@ class Layout extends Component {
       <Root id="outer-container">
         <StatePopupBox isShowStatePopup={isShowStatePopup}>
           <span>
-            Your computer seems to be offline. We'll keep trying, but there may
+            Your computer seems to be offline. We&apos;ll keep trying, but there may
             be a problem with your connection.
           </span>
         </StatePopupBox>
@@ -98,11 +114,21 @@ class Layout extends Component {
           <RouteTransition
             pathname={this.props.location.pathname}
           >
-            {({ key, style }) =>
-              <ContentBox key={key} style={{
-                opacity: style.opacity,
-                transform: `translate3d(0, ${style.translateY}px, 0)`
-              }} id="page-box">{children()}</ContentBox>}
+            {
+              ({ key, style }) =>
+                (
+                  <ContentBox
+                    key={key}
+                    style={{
+                      opacity: style.opacity,
+                      transform: `translate3d(0, ${style.translateY}px, 0)`,
+                    }}
+                    id="page-box"
+                  >
+                    {children()}
+                  </ContentBox>
+                )
+            }
           </RouteTransition>
           <FooterBox>
             <Footer />
@@ -111,19 +137,6 @@ class Layout extends Component {
       </Root>
     );
   }
-
-  _renderHelmet = () => {
-    const metas = _.map(
-      _.pick(config, ["description", "keywords"]),
-      (value, key) => {
-        return {
-          name: key,
-          content: value
-        };
-      }
-    );
-    return <Helmet title="BoBeen Lee" meta={metas} />;
-  };
 }
 
 export default withThemes(Layout);

@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, { PureComponent } from 'react';
 
 // http://resume.github.io/?bobinlee
 
-class GithubPage extends Component {
+class GithubPage extends PureComponent {
   render() {
     const { data } = this.props;
     console.log(data);
@@ -10,6 +10,7 @@ class GithubPage extends Component {
   }
 }
 
+// eslint-disable-next-line no-undef
 export const query = graphql`
   query getGithubQuery {
     githubData {

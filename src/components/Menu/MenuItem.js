@@ -1,14 +1,14 @@
-import React, { Component, PureComponent } from "react";
-import Link from "gatsby-link";
-import styled from "styled-components";
-import PropTypes from "prop-types";
-import { theme, isHome } from "../../constants";
+import React, { Component, PureComponent } from 'react';
+import Link from 'gatsby-link';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import { theme, isHome } from '../../constants';
 
 const Root = styled.div`
   padding: 10px 0;
 `;
 
-const MenuLink = styled(Link) `
+const MenuLink = styled(Link)`
   color: ${props => props.theme.primary};
   text-decoration: none;
   &:hover {
@@ -20,12 +20,13 @@ class MenuItem extends Component {
   static propTypes = {
     name: PropTypes.string,
     url: PropTypes.string,
-    onPress: PropTypes.func
+    onPress: PropTypes.func,
   };
 
   static defaultProps = {
-    name: "Home",
-    url: "/"
+    name: 'Home',
+    url: '/',
+    onPress: () => { },
   };
   render() {
     const { name, url, onPress } = this.props;

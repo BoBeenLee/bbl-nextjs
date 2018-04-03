@@ -1,9 +1,10 @@
-import { css } from "styled-components";
+import { css } from 'styled-components';
 
 const sizes = {
   desktop: 1220,
-  mobile: 767
+  mobile: 767,
 };
+
 
 export const media = {
   desktop: (...args) => css`
@@ -15,7 +16,7 @@ export const media = {
     @media (max-width: 767px) {
       ${css(...args)};
     }
-  `
+  `,
 };
 
 /*

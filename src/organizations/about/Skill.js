@@ -1,10 +1,10 @@
-import React, { Component, PureComponent } from "react";
-import styled from "styled-components";
-import PropTypes from "prop-types";
-import _ from "lodash";
-import { ContentTitle, SubTitle } from "../../components/Title";
-import { Separator } from "../../components/Separator";
-import { LineText } from "../../components/Text";
+import React, { Component, PureComponent } from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import _ from 'lodash';
+import { ContentTitle, SubTitle } from '../../components/Title';
+import { Separator } from '../../components/Separator';
+import { LineText } from '../../components/Text';
 
 const Root = styled.div``;
 
@@ -33,36 +33,48 @@ const BottomSeparator = styled(Separator)`
 
 const items = {
   frontend: {
-    name: "Front End",
-    skills: ["ReactJS", "JavaScript", "jQuery", "SASS"]
+    name: 'Front End',
+    skills: ['ReactJS', 'JavaScript', 'jQuery', 'SASS'],
   },
   backend: {
-    name: "Back End",
-    skills: ["NodeJS", "GraphQL", "Spring Framework", "Spring Boot"]
+    name: 'Back End',
+    skills: ['NodeJS', 'GraphQL', 'Spring Framework', 'Spring Boot'],
   },
-  mobile: { name: "Mobile", skills: ["React Native", "Android"] },
-  db: { name: "DB", skills: ["RDB", "MongoDB", "Firebase"] },
+  mobile: { name: 'Mobile', skills: ['React Native', 'Android'] },
+  db: { name: 'DB', skills: ['RDB', 'MongoDB', 'Firebase'] },
   collaboration: {
-    name: "Collaboration",
-    skills: ["Slack", "JIRA", "WIKI", "Github", "Trello", "TeamViewer"]
+    name: 'Collaboration',
+    skills: ['Slack', 'JIRA', 'WIKI', 'Github', 'Trello', 'TeamViewer'],
   },
-  usage: { name: "Usage", skills: ["AWS EC2", "AWS S3", "Docker"] },
+  usage: { name: 'Usage', skills: ['AWS EC2', 'AWS S3', 'Docker'] },
   tool: {
-    name: "Tools",
+    name: 'Tools',
     skills: [
-      "Intellj IDEA",
-      "Webstorm",
-      "VSCode",
-      "Android Studio",
-      "SourceTree",
-      "Zeplin"
-    ]
-  }
+      'Intellj IDEA',
+      'Webstorm',
+      'VSCode',
+      'Android Studio',
+      'SourceTree',
+      'Zeplin',
+    ],
+  },
 };
 
 class Skill extends PureComponent {
   static propTypes = {};
   static defaultProps = {};
+
+  _renderItem = item => (
+    <ItemBox key={item.name}>
+      <ContentTitle title={item.name} />
+      <SkillsBox>
+        {_.map(item.skills, (skill, index) => (
+          <SkillItemBox key={index}>{skill}</SkillItemBox>
+        ))}
+      </SkillsBox>
+    </ItemBox>
+  );
+
   render() {
     return (
       <Root>
@@ -72,19 +84,6 @@ class Skill extends PureComponent {
       </Root>
     );
   }
-
-  _renderItem = item => {
-    return (
-      <ItemBox key={item.name}>
-        <ContentTitle title={item.name} />
-        <SkillsBox>
-          {_.map(item.skills, (skill, index) => (
-            <SkillItemBox key={index}>{skill}</SkillItemBox>
-          ))}
-        </SkillsBox>
-      </ItemBox>
-    );
-  };
 }
 
 export default Skill;

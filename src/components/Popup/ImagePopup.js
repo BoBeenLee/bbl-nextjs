@@ -1,14 +1,14 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import PropTypes from "prop-types";
-import ReactModal from "react-modal";
-import CloseIcon from "./images/x-circle.svg";
-import theme from "../../constants/theme";
+import React, { PureComponent } from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import ReactModal from 'react-modal';
+import CloseIcon from './images/x-circle.svg';
+import theme from '../../constants/theme';
 
 const customStyle = {
   overlay: {
-    zIndex: 999
-  }
+    zIndex: 999,
+  },
 };
 
 const Root = styled(ReactModal)``;
@@ -40,16 +40,16 @@ const CloseBox = styled.img`
   cursor: pointer;
 `;
 
-class ImagePopup extends Component {
+class ImagePopup extends PureComponent {
   static propTypes = {
     showModal: PropTypes.bool,
     renderImage: PropTypes.func,
-    onClose: PropTypes.func
+    onClose: PropTypes.func,
   };
   static defaultProps = {
     showModal: false,
-    renderImage: () => {},
-    onClose: () => {}
+    renderImage: () => { },
+    onClose: () => { },
   };
 
   render() {

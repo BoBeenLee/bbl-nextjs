@@ -1,5 +1,5 @@
 import Caption from './Caption';
 
-export {
-    Caption
+export default {
+  Caption,
 };

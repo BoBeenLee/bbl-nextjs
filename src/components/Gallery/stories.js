@@ -1,8 +1,8 @@
-import React from "react";
-import { storiesOf, action } from "@kadira/storybook";
-import styled from "styled-components";
-import { PhotoGallery } from "./";
-import { media } from "../../utils/StyleUtils";
+import React from 'react';
+import { storiesOf, action } from '@kadira/storybook';
+import styled from 'styled-components';
+import { PhotoGallery } from './';
+import { media } from '../../utils/StyleUtils';
 
 const Root = styled.div`
   display: grid;
@@ -24,9 +24,9 @@ const Child = styled.div`
   `};
 `;
 
-storiesOf("PhotoGallery", module)
+storiesOf('PhotoGallery', module)
   .addDecorator(getStory => <Root>{getStory()}</Root>)
-  .add("with PhotoGallery", () => (
+  .add('with PhotoGallery', () => (
     <Child>
       <PhotoGallery />
     </Child>

@@ -15,13 +15,11 @@ const query = `{
 }`;
 
 const mapToPosts = (data) => {
-    const posts = _.get(data, ['data', 'viewer', 'allPosts', 'edges']);
-    return _.map(posts, (post) => {
-        return _.get(post, 'node');
-    });
+  const posts = _.get(data, ['data', 'viewer', 'allPosts', 'edges']);
+  return _.map(posts, post => _.get(post, 'node'));
 };
 
 export default {
-    mapToPosts,
-    query
+  mapToPosts,
+  query,
 };

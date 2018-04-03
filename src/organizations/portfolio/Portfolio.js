@@ -1,12 +1,12 @@
-import React, { Component, PureComponent } from "react";
-import styled from "styled-components";
-import PropTypes from "prop-types";
-import _ from "lodash";
-import { SubTitle } from "../../components/Title";
-import { productions } from "./data";
-import { PortfolioCard } from "../../components/Card";
-import { callValue } from "../../utils/ObjectUtils";
-import { ImagePopup } from "../../components/Popup";
+import React, { Component, PureComponent } from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import _ from 'lodash';
+import { SubTitle } from '../../components/Title';
+import { productions } from './data';
+import { PortfolioCard } from '../../components/Card';
+import { callValue } from '../../utils/ObjectUtils';
+import { ImagePopup } from '../../components/Popup';
 
 const Root = styled.div``;
 
@@ -19,52 +19,37 @@ const ContentBox = styled.div`
 `;
 
 class Portfolio extends Component {
-  state = {
-    showModal: false,
-    renderImage: () => {}
-  };
-
   static propTypes = {};
   static defaultProps = {};
-  render() {
-    const { showModal, renderImage } = this.state;
 
-    return (
-      <Root>
-        <SubTitleBox title="Portfolio" />
-        <ContentBox>{_.map(productions, this._renderPortfolioCard)}</ContentBox>
-        <ImagePopup
-          showModal={showModal}
-          renderImage={renderImage}
-          onClose={this._onClose}
-        />
-      </Root>
-    );
-  }
+  state = {
+    showModal: false,
+    renderImage: () => { },
+  };
+
+  onImagePopup = (renderImage) => {
+    this.setState({
+      renderImage,
+      showModal: true,
+    });
+  };
 
   _onClose = () => {
     this.setState({
-      showModal: false
+      showModal: false,
     });
   };
 
-  onImagePopup = renderImage => {
-    this.setState({
-      renderImage,
-      showModal: true
-    });
-  };
-
-  _renderPortfolioCard = production => {
+  _renderPortfolioCard = (production) => {
     const { images } = this.props;
     const {
       id,
       name,
       period,
       skills,
-      summary = "",
+      summary = '',
       githubUrl,
-      linkUrl
+      linkUrl,
     } = production;
 
     return (
@@ -81,6 +66,22 @@ class Portfolio extends Component {
       />
     );
   };
+
+  render() {
+    const { showModal, renderImage } = this.state;
+
+    return (
+      <Root>
+        <SubTitleBox title="Portfolio" />
+        <ContentBox>{_.map(productions, this._renderPortfolioCard)}</ContentBox>
+        <ImagePopup
+          showModal={showModal}
+          renderImage={renderImage}
+          onClose={this._onClose}
+        />
+      </Root>
+    );
+  }
 }
 
 export default Portfolio;

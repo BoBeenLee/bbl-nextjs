@@ -1,7 +1,7 @@
-import React from "react";
-import { storiesOf, action } from "@kadira/storybook";
-import styled from "styled-components";
-import { Caption } from "./";
+import React from 'react';
+import { storiesOf, action } from '@kadira/storybook';
+import styled from 'styled-components';
+import { Caption } from './';
 
 const Root = styled.div`
   display: grid;
@@ -15,10 +15,10 @@ const Child = styled.div`
   grid-row: 2;
 `;
 
-storiesOf("Organization Post", module)
-    .addDecorator(getStory => <Root>{getStory()}</Root>)
-    .add("with Caption", () => (
-        <Child>
-            <Caption />
-        </Child>
-    ));
+storiesOf('Organization Post', module)
+  .addDecorator(getStory => <Root>{getStory()}</Root>)
+  .add('with Caption', () => (
+    <Child>
+      <Caption />
+    </Child>
+  ));

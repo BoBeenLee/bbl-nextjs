@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-undef
 const query = graphql`
   query PortfolioImageQuery {
     onepageImages: allImageSharp(filter: { id: { regex: "/onepage/" } }) {

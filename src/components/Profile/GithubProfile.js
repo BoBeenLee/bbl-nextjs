@@ -1,8 +1,8 @@
-import React, { Component, PureComponent } from "react";
-import styled from "styled-components";
-import PropTypes from "prop-types";
-import _ from "lodash";
-import { Avatar } from "../Avatar";
+import React, { Component, PureComponent } from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import _ from 'lodash';
+import { Avatar } from '../Avatar';
 
 const Root = styled.div`
   display: grid;
@@ -47,29 +47,29 @@ class GithubProfile extends PureComponent {
     location: PropTypes.string,
     followerCount: PropTypes.number,
     followingCount: PropTypes.number,
-    organizations: PropTypes.arrayOf(
-      PropTypes.shape({
-        avatarUrl: PropTypes.string,
-        name: PropTypes.string,
-        memberCount: PropTypes.number
-      })
-    )
+    organizations: PropTypes.arrayOf(PropTypes.shape({
+      avatarUrl: PropTypes.string,
+      name: PropTypes.string,
+      memberCount: PropTypes.number,
+    })),
   };
 
   static defaultProps = {
-    avatarUrl: "https://avatars0.githubusercontent.com/u/1489321?v=4",
-    email: "globaldev@naver.com",
-    location: "Seoul",
+    avatarUrl: 'https://avatars0.githubusercontent.com/u/1489321?v=4',
+    email: 'globaldev@naver.com',
+    location: 'Seoul',
     followerCount: 100,
     followingCount: 100,
     organizations: [
       {
-        avatarUrl: "https://avatars2.githubusercontent.com/u/4995702?v=4",
-        name: "Nexters",
-        memberCount: 109
-      }
-    ]
+        avatarUrl: 'https://avatars2.githubusercontent.com/u/4995702?v=4',
+        name: 'Nexters',
+        memberCount: 109,
+      },
+    ],
   };
+
+  _renderOranization = item => <OrganizationItemBox>{item.name}</OrganizationItemBox>;
 
   render() {
     const {
@@ -78,7 +78,7 @@ class GithubProfile extends PureComponent {
       location,
       followerCount,
       followingCount,
-      organizations
+      organizations,
     } = this.props;
     return (
       <Root>
@@ -98,10 +98,6 @@ class GithubProfile extends PureComponent {
       </Root>
     );
   }
-
-  _renderOranization = item => {
-    return <OrganizationItemBox>{item.name}</OrganizationItemBox>;
-  };
 }
 
 export default GithubProfile;

@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import PropTypes from "prop-types";
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import {
   FacebookShareButton,
   GooglePlusShareButton,
@@ -15,8 +15,6 @@ import {
   TumblrShareButton,
   LivejournalShareButton,
   EmailShareButton,
-} from 'react-share';
-import {
   FacebookIcon,
   TwitterIcon,
   TelegramIcon,
@@ -31,8 +29,6 @@ import {
   LivejournalIcon,
   MailruIcon,
   EmailIcon,
-} from 'react-share';
-import {
   FacebookShareCount,
   GooglePlusShareCount,
   LinkedinShareCount,
@@ -57,17 +53,19 @@ class SocialLinks extends Component {
     url: PropTypes.string,
     title: PropTypes.string,
     description: PropTypes.string,
-    iconSize: PropTypes.number
+    iconSize: PropTypes.number,
   };
   static defaultProps = {
-    url: "http://bbl.netlify.com",
-    title: "hello world",
-    description: "hello",
-    iconSize: 35
+    url: 'http://bbl.netlify.com',
+    title: 'hello world',
+    description: 'hello',
+    iconSize: 35,
   };
   render() {
-    const { url, title, description, iconSize, ...rest } = this.props;
-    const filter = count => (count > 0 ? count : "");
+    const {
+      url, title, description, iconSize, ...rest
+    } = this.props;
+    const filter = count => (count > 0 ? count : '');
 
     return (
       <Root {...rest} >

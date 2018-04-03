@@ -1,11 +1,11 @@
-import React, { Component, PureComponent } from "react";
-import styled from "styled-components";
-import PropTypes from "prop-types";
-import _ from "lodash";
-import { SubTitle, ContentTitle } from "../../components/Title";
-import { Separator } from "../../components/Separator";
-import { LineText } from "../../components/Text";
-import { media } from "../../utils/StyleUtils";
+import React, { Component, PureComponent } from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import _ from 'lodash';
+import { SubTitle, ContentTitle } from '../../components/Title';
+import { Separator } from '../../components/Separator';
+import { LineText } from '../../components/Text';
+import { media } from '../../utils/StyleUtils';
 
 const Root = styled.div``;
 
@@ -43,41 +43,39 @@ const BottomSeparator = styled(Separator)`
 class Experience extends PureComponent {
   static propTypes = {};
   static defaultProps = {};
+
+  _renderItem = item => (
+    <ItemBox key={item.title}>
+      <TitleBox title={item.role} />
+      <ContentBox>{`${item.title} / ${item.period}`}</ContentBox>
+    </ItemBox>
+  );
   render() {
     const items = [
       {
-        title: "Buxi",
-        period: "2017.8 - 2017.11",
-        role: "React Developer"
+        title: 'Buxi',
+        period: '2017.8 - 2017.11',
+        role: 'React Developer',
       },
       {
-        title: "Coupang",
-        period: "2015.6 - 2017.7",
-        role: "Fullstack Developer"
+        title: 'Coupang',
+        period: '2015.6 - 2017.7',
+        role: 'Fullstack Developer',
       },
       {
-        title: "DailyHotel",
-        period: "2014.11 - 2015.1",
-        role: "Developer Intern"
-      }
+        title: 'DailyHotel',
+        period: '2014.11 - 2015.1',
+        role: 'Developer Intern',
+      },
     ];
     return (
       <Root>
-        <SubTitleBox title={"Experience"} />
+        <SubTitleBox title="Experience" />
         {_.map(items, item => this._renderItem(item))}
         <BottomSeparator />
       </Root>
     );
   }
-
-  _renderItem = item => {
-    return (
-      <ItemBox key={item.title}>
-        <TitleBox title={item.role} />
-        <ContentBox>{`${item.title} / ${item.period}`}</ContentBox>
-      </ItemBox>
-    );
-  };
 }
 
 export default Experience;

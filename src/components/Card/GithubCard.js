@@ -1,7 +1,7 @@
-import React, { Component, PureComponent } from "react";
-import distanceInWordsToNow from "date-fns/distance_in_words_to_now";
-import PropTypes from "prop-types";
-import styled from "styled-components";
+import React, { Component, PureComponent } from 'react';
+import distanceInWordsToNow from 'date-fns/distance_in_words_to_now';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import { isBrowser } from '../../utils/NavigatorUtils';
 
 const Root = styled.div`
@@ -36,16 +36,20 @@ class GithubCard extends PureComponent {
     name: PropTypes.string,
     description: PropTypes.string,
     date: PropTypes.string,
-    url: PropTypes.string
+    url: PropTypes.string,
   };
 
   static defaultProps = {
-    name: "bbl",
-    description: "blog & homepage project based on gatsby",
-    date: "2018-02-05T13:42:31Z",
-    url: "https://github.com/BoBinLee/bbl"
+    name: 'bbl',
+    description: 'blog & homepage project based on gatsby',
+    date: '2018-02-05T13:42:31Z',
+    url: 'https://github.com/BoBinLee/bbl',
   };
 
+  _onPress = () => {
+    const { url } = this.props;
+    isBrowser && window.open(url, '_blank');
+  };
   render() {
     const { name, description, date } = this.props;
     return (
@@ -56,11 +60,6 @@ class GithubCard extends PureComponent {
       </Root>
     );
   }
-
-  _onPress = () => {
-    const { url } = this.props;
-    isBrowser && window.open(url, "_blank");
-  };
 }
 
 export default GithubCard;

@@ -1,7 +1,7 @@
-import React from "react";
-import { storiesOf, action } from "@kadira/storybook";
-import styled from "styled-components";
-import { About, Education, Experience, Activity, Skill } from "./";
+import React from 'react';
+import { storiesOf, action } from '@kadira/storybook';
+import styled from 'styled-components';
+import { About, Education, Experience, Activity, Skill } from './';
 
 const Root = styled.div`
   display: grid;
@@ -15,26 +15,29 @@ const Child = styled.div`
   grid-row: 2;
 `;
 
-storiesOf("Organization About", module)
+storiesOf('Organization About', module)
   .addDecorator(getStory => <Root>{getStory()}</Root>)
-  .add("with About", () => (
+  .add('with About', () => (
     <Child>
-      <About onPress={action("clicked")} />
+      <About onPress={action('clicked')} />
     </Child>
-  )).add("with Education", () => (
+  )).add('with Education', () => (
     <Child>
-      <Education onPress={action("clicked")} />
+      <Education onPress={action('clicked')} />
     </Child>
-  )).add("with Experience", () => (
+  ))
+  .add('with Experience', () => (
     <Child>
-      <Experience onPress={action("clicked")} />
+      <Experience onPress={action('clicked')} />
     </Child>
-  )).add("with Activity", () => (
+  ))
+  .add('with Activity', () => (
     <Child>
-      <Activity onPress={action("clicked")} />
+      <Activity onPress={action('clicked')} />
     </Child>
-  )).add("with Skill", () => (
+  ))
+  .add('with Skill', () => (
     <Child>
-      <Skill onPress={action("clicked")} />
+      <Skill onPress={action('clicked')} />
     </Child>
   ));

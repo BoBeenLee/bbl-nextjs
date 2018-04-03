@@ -1,7 +1,7 @@
-import React from "react";
-import { storiesOf, action } from "@kadira/storybook";
-import styled from "styled-components";
-import { Tag } from "./";
+import React from 'react';
+import { storiesOf, action } from '@kadira/storybook';
+import styled from 'styled-components';
+import { Tag } from './';
 
 const Root = styled.div`
   display: grid;
@@ -15,10 +15,10 @@ const Child = styled.div`
   grid-row: 2;
 `;
 
-storiesOf("Tag", module)
+storiesOf('Tag', module)
   .addDecorator(getStory => <Root>{getStory()}</Root>)
-  .add("with Tag", () => (
+  .add('with Tag', () => (
     <Child>
-      <Tag onPress={action("clicked")} />
+      <Tag onPress={action('clicked')} />
     </Child>
   ));

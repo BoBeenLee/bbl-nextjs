@@ -1,8 +1,9 @@
-import React, { Component } from "react";
-import styled, { ThemeProvider } from "styled-components";
-import PropTypes from "prop-types";
+import React, { Component } from 'react';
+import styled, { ThemeProvider } from 'styled-components';
+import PropTypes from 'prop-types';
 
 import { isBrowser } from '../utils/NavigatorUtils';
+
 class Rotate extends Component {
   static propTypes = {};
 
@@ -12,10 +13,8 @@ class Rotate extends Component {
     alpha: 0,
     beta: 0,
     gamma: 0,
-    orientation: 0
+    orientation: 0,
   };
-
-  _hasDeviceOrientation = () => isBrowser && !!window.DeviceOrientationEvent;
 
   componentDidMount() {
     if (!this._hasDeviceOrientation()) {
@@ -24,22 +23,21 @@ class Rotate extends Component {
     const orientation = isBrowser ? window.orientation : 0;
 
     isBrowser && window.addEventListener(
-      "deviceorientation",
-      ev => {
+      'deviceorientation',
+      (ev) => {
         const { alpha, beta, gamma } = ev;
         this.setState({ alpha, beta, gamma });
       },
-      false
+      false,
     );
 
     isBrowser && window.addEventListener(
-      "orientationchange",
-      ev => {
+      'orientationchange',
+      (ev) => {
         this.setState({ orientation });
       },
-      false
+      false,
     );
-    this.setState({ orientation });
   }
 
   getX() {
@@ -61,16 +59,14 @@ class Rotate extends Component {
     switch (this.state.orientation) {
       case 90:
         return -this.getX();
-        break;
       case 0:
         return this.getY();
-        break;
       case -90:
         return this.getX();
-        break;
       case 180:
         return this.getY();
-        break;
+      default:
+        throw new Error('Not expected XDeg');
     }
   }
 
@@ -81,16 +77,14 @@ class Rotate extends Component {
     switch (this.state.orientation) {
       case 90:
         return -this.getY();
-        break;
       case 0:
         return -this.getX();
-        break;
       case -90:
         return this.getY();
-        break;
       case 180:
         return this.getX();
-        break;
+      default:
+        throw new Error('Not expected YDeg');
     }
   }
 
@@ -101,6 +95,9 @@ class Rotate extends Component {
     return this.getOrientZ();
   }
 
+  _hasDeviceOrientation = () => isBrowser && !!window.DeviceOrientationEvent;
+
+
   render() {
     const xDeg = this.getXDeg();
     const yDeg = this.getYDeg();
@@ -108,6 +105,6 @@ class Rotate extends Component {
     //   console.log("x,y,z", xDeg, yDeg, zDeg);
     return this.props.children({ xDeg, yDeg, zDeg });
   }
-};
+}
 
 export default Rotate;

@@ -1,7 +1,7 @@
-import React from "react";
-import { storiesOf, action } from "@kadira/storybook";
-import styled from "styled-components";
-import { SubTitle, ContentTitle } from "./";
+import React from 'react';
+import { storiesOf, action } from '@kadira/storybook';
+import styled from 'styled-components';
+import { SubTitle, ContentTitle } from './';
 
 const Root = styled.div`
   display: grid;
@@ -15,15 +15,15 @@ const Child = styled.div`
   grid-row: 2;
 `;
 
-storiesOf("Title", module)
+storiesOf('Title', module)
   .addDecorator(getStory => <Root>{getStory()}</Root>)
-  .add("with SubTitle", () => (
+  .add('with SubTitle', () => (
     <Child>
-      <SubTitle onPress={action("clicked")} />
+      <SubTitle onPress={action('clicked')} />
     </Child>
   ))
-  .add("with ContentTitle", () => (
+  .add('with ContentTitle', () => (
     <Child>
-      <ContentTitle onPress={action("clicked")} />
+      <ContentTitle onPress={action('clicked')} />
     </Child>
   ));

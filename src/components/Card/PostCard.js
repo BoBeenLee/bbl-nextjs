@@ -1,13 +1,13 @@
-import React, { Component, PureComponent } from "react";
-import { format } from "date-fns";
-import PropTypes from "prop-types";
-import styled, { css } from "styled-components";
-import Link from "gatsby-link";
-import GoBookIcon from "react-icons/lib/go/book";
-import { media } from "../../utils/StyleUtils";
+import React, { Component, PureComponent } from 'react';
+import { format } from 'date-fns';
+import PropTypes from 'prop-types';
+import styled, { css } from 'styled-components';
+import Link from 'gatsby-link';
+import GoBookIcon from 'react-icons/lib/go/book';
+import { media } from '../../utils/StyleUtils';
 
-import { SubTitle } from "../Title";
-import { Separator } from "../Separator";
+import { SubTitle } from '../Title';
+import { Separator } from '../Separator';
 
 const Root = styled.div`
   display: grid;
@@ -28,14 +28,14 @@ const Root = styled.div`
     `};
 `;
 
-const TitleBox = styled(SubTitle) `
+const TitleBox = styled(SubTitle)`
   grid-area: title;
   font-size: 36px;
   line-height: 40px;
   text-align: left;
 `;
 
-const BookIcon = styled(GoBookIcon) `
+const BookIcon = styled(GoBookIcon)`
   padding-left: 5px;
   padding-bottom: 3px;
 `;
@@ -75,11 +75,11 @@ const UrlBox = styled.div`
   padding-top: 10px;
   padding-left: 3px;
   a {
-    ${ LinkCSS}
+    ${LinkCSS}
   }
 `;
 
-const BottomSeparator = styled(Separator) `
+const BottomSeparator = styled(Separator)`
   grid-area: separator;
   margin: 40px 0px;
 `;
@@ -89,24 +89,26 @@ class PostCard extends PureComponent {
     title: PropTypes.string,
     date: PropTypes.objectOf(Date),
     url: PropTypes.string,
-    linkUrl: PropTypes.string
+    linkUrl: PropTypes.string,
   };
 
   static defaultProps = {
-    title: "Hello World",
+    title: 'Hello World',
     date: new Date(),
-    url: "",
-    linkUrl: ""
+    url: '',
+    linkUrl: '',
   };
 
   render() {
-    const { title, date, url, linkUrl } = this.props;
+    const {
+      title, date, url, linkUrl,
+    } = this.props;
     return (
       <Root>
         <TitleBox title={title} />
         <DateBox>
           <NameBox>Date:</NameBox>
-          {format(date, "MMMM D, YYYY")}
+          {format(date, 'MMMM D, YYYY')}
         </DateBox>
         {url && (
           <UrlBox>

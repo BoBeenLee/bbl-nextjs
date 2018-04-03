@@ -1,25 +1,24 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import PropTypes from "prop-types";
-import { SubTitle, ContentTitle } from "../../components/Title";
-import { Separator } from "../../components/Separator";
+import React, { Component } from 'react';
+import styled from 'styled-components';
 import { Motion, spring } from 'react-motion';
-
+import PropTypes from 'prop-types';
+import { SubTitle, ContentTitle } from '../../components/Title';
+import { Separator } from '../../components/Separator';
 
 
 const Root = styled.div`
 `;
 
 class About extends Component {
-  state = {
-    count: 0
-  };
-
   static propTypes = {};
   static defaultProps = {};
 
+  state = {
+    count: 0,
+  };
+
   increase = () => {
-    this.setState((state) => ({ count: state.count + 1 }));
+    this.setState(state => ({ count: state.count + 1 }));
   };
 
   render() {
@@ -29,8 +28,7 @@ class About extends Component {
         <Motion defaultStyle={{ opacity: 0 }} style={{ opacity: spring(1) }}>
           {value => <div style={{ opacity: value }}>Hello{this.state.count}</div>}
         </Motion>
-        <SubTitle title={"About"} />
-
+        <SubTitle title="About" />
         <Separator />
       </Root>
     );

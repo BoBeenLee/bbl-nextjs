@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import Link from "gatsby-link";
-import PropTypes from "prop-types";
-import _ from "lodash";
-import FacebookIcon from "./images/facebook.svg";
-import InstagramIcon from "./images/instagram.svg";
-import LinkedInIcon from "./images/linkedin.svg";
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import Link from 'gatsby-link';
+import PropTypes from 'prop-types';
+import _ from 'lodash';
+import FacebookIcon from './images/facebook.svg';
+import InstagramIcon from './images/instagram.svg';
+import LinkedInIcon from './images/linkedin.svg';
 import { Rotate as WindowRotate } from '../../facc';
 
 
@@ -43,18 +43,8 @@ class Rotate extends Component {
 
   componentDidMount() { }
 
-  render() {
-    return (
-      <Root>
-        <WindowRotate>
-          {({ zDeg }) => this._renderIcons({ zDeg })}
-        </WindowRotate>
-      </Root>
-    );
-  }
-
-  _renderIcons = ({ zDeg }) => {
-    return (<IconBox zDeg={zDeg}>
+  _renderIcons = ({ zDeg }) => (
+    <IconBox zDeg={zDeg}>
       <LinkBox href="https://www.facebook.com/bobin.lee.9" target="_blank">
         <Icon alt="facebook" src={FacebookIcon} />
       </LinkBox>
@@ -67,9 +57,17 @@ class Rotate extends Component {
       >
         <Icon alt="linkedin" src={LinkedInIcon} />
       </LinkBox>
-    </IconBox>);
-  }
+    </IconBox>)
 
+  render() {
+    return (
+      <Root>
+        <WindowRotate>
+          {({ zDeg }) => this._renderIcons({ zDeg })}
+        </WindowRotate>
+      </Root>
+    );
+  }
 }
 
 export default Rotate;

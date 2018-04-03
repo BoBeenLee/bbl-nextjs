@@ -1,6 +1,6 @@
-import React, { Component, PureComponent } from "react";
-import styled from "styled-components";
-import PropTypes from "prop-types";
+import React, { Component, PureComponent } from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const Root = styled.div`
   font-size: 18px;
@@ -10,10 +10,10 @@ const Root = styled.div`
 
 class ContentTitle extends PureComponent {
   static propTypes = {
-    title: PropTypes.string
+    title: PropTypes.string,
   };
   static defaultProps = {
-    title: "Hello World"
+    title: 'Hello World',
   };
   render() {
     const { title, ...rest } = this.props;

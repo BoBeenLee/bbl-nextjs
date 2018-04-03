@@ -1,7 +1,7 @@
-import React from "react";
-import { storiesOf, action } from "@kadira/storybook";
-import styled from "styled-components";
-import { Portfolio } from "./";
+import React from 'react';
+import { storiesOf, action } from '@kadira/storybook';
+import styled from 'styled-components';
+import { Portfolio } from './';
 
 const Root = styled.div`
   display: grid;
@@ -15,10 +15,10 @@ const Child = styled.div`
   grid-row: 1;
 `;
 
-storiesOf("Organization Portfolio", module)
+storiesOf('Organization Portfolio', module)
   .addDecorator(getStory => <Root>{getStory()}</Root>)
-  .add("with Portfolio", () => (
+  .add('with Portfolio', () => (
     <Child>
-      <Portfolio onPress={action("clicked")} />
+      <Portfolio onPress={action('clicked')} />
     </Child>
   ));

@@ -58,6 +58,7 @@
     "prod": "cross-env NODE_ENV=production gatsby serve -p 9003",
     "build": "cross-env NODE_ENV=production gatsby build",
     "ngrok": "ngrok http 8000",
+    "eslint": "eslint src/ --fix",
     "dev": "cross-env NODE_ENV=development gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
     "storybook": "start-storybook -p 9001 -c .storybook",
@@ -68,12 +69,21 @@
   "devDependencies": {
     "@kadira/storybook": "^2.35.3",
     "@storybook/storybook-deployer": "^2.3.0",
+    "babel-eslint": "^8.2.2",
     "babel-plugin-syntax-class-properties": "^6.13.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "bundlesize": "^0.16.0",
     "cross-env": "^5.1.3",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-jest": "^21.15.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "husky": "^0.15.0-rc.13",
     "jsdom-quokka-plugin": "^1.0.11",
+    "lint-staged": "^7.0.2",
     "prettier": "^1.11.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -84,10 +94,21 @@
     "gitEmail": "globaldev@naver.com",
     "commitMessage": "Deploy Storybook to GitHub Pages"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "quokka": {
     "babel": true,
     "plugins": [
       "jsdom-quokka-plugin"
+    ]
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run eslint -- --fix",
+      "git add"
     ]
   }
 }

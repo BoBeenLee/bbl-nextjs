@@ -1,8 +1,6 @@
-import React, { Component, PureComponent } from "react";
-import styled from "styled-components";
-import PropTypes from "prop-types";
-import Img from "gatsby-image";
-import { Portfolio } from "../../organizations/portfolio";
+import React, { PureComponent } from 'react';
+import styled from 'styled-components';
+import { Portfolio } from '../../organizations/portfolio';
 
 const Root = styled.div`
   padding-top: 20px;
@@ -20,6 +18,7 @@ class PorfolioPage extends PureComponent {
   }
 }
 
+// eslint-disable-next-line no-undef
 export const query = graphql`
   query PortfolioImageQuery {
     flassImages: allImageSharp(filter: { id: { regex: "/flass/" } }) {
