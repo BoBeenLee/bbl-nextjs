@@ -153,6 +153,4 @@ const productions = [
   },
 ];
 
-export default {
-  productions,
-};
+export { productions };

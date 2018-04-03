@@ -19,7 +19,7 @@ const mapToPosts = (data) => {
   return _.map(posts, post => _.get(post, 'node'));
 };
 
-export default {
+export {
   mapToPosts,
   query,
 };

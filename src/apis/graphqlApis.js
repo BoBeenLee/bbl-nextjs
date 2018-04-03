@@ -14,6 +14,4 @@ const requests = {
     axios.post(`${API_ROOT}`, { query: body }, config).then(responseBody),
 };
 
-export default {
-  requests,
-};
+export { requests };

@@ -8,6 +8,4 @@ function callValue(supplier, defaultValue) {
   }
 }
 
-export default {
-  callValue,
-};
+export { callValue };
