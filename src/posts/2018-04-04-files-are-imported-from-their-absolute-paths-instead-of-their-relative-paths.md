@@ -1,6 +1,6 @@
 ---
 published: false
-title: 리액트 require/import 상대경로 대신 절대경로 설정하기
+title: React 상대경로 -> 절대경로 변경
 date: '2018-04-04T16:51:44+09:00'
 tags:
   - javascript
