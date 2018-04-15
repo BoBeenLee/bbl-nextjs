@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 title: React 상대경로 -> 절대경로 변경
 date: '2018-04-04T16:51:44+09:00'
 tags:
