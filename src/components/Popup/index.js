@@ -1,4 +1,2 @@
-import BottomPopup from './BottomPopup';
-import ImagePopup from './ImagePopup';
-
-export { BottomPopup, ImagePopup };
+export { default as BottomPopup } from './BottomPopup';
+export { default as ImagePopup } from './ImagePopup';

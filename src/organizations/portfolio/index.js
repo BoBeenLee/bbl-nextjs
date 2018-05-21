@@ -1,3 +1,1 @@
-import Portfolio from './Portfolio';
-
-export { Portfolio };
+export { default as Portfolio } from './Portfolio';

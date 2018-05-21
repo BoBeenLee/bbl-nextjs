@@ -1,4 +1,2 @@
-import MenuItem from './MenuItem';
-import Menu from './Menu';
-
-export { Menu, MenuItem };
+export { default as MenuItem } from './MenuItem';
+export { default as Menu } from './Menu';

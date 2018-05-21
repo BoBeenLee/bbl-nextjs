@@ -1,9 +1,3 @@
-import GithubCard from './GithubCard';
-import PortfolioCard from './PortfolioCard';
-import PostCard from './PostCard';
-
-export {
-  GithubCard,
-  PortfolioCard,
-  PostCard,
-};
+export { default as GithubCard } from './GithubCard';
+export { default as PortfolioCard } from './PortfolioCard';
+export { default as PostCard } from './PostCard';

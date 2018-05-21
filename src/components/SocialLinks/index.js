@@ -1,3 +1,1 @@
-import SocialLinks from './SocialLinks';
-
-export { SocialLinks };
+export { default as SocialLinks } from './SocialLinks';

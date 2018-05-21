@@ -1,3 +1,1 @@
-import GithubProfile from './GithubProfile';
-
-export { GithubProfile };
+export { default as GithubProfile } from './GithubProfile';
