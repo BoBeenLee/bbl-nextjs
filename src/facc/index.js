@@ -1,7 +1,2 @@
-import Rotate from './Rotate';
-import RouteTransition from './RouteTransition';
-
-export {
-  Rotate,
-  RouteTransition,
-};
+export { default as Rotate } from './Rotate';
+export { default as RouteTransition } from './RouteTransition';

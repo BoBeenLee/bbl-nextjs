@@ -1,3 +1,1 @@
-import LineText from './LineText';
-
-export { LineText };
+export { default as LineText } from './LineText';

@@ -1,3 +1,1 @@
-import Caption from './Caption';
-
-export { Caption };
+export { default as Caption } from './Caption';

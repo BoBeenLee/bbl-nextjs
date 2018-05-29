@@ -1,4 +1,3 @@
-import SubTitle from './SubTitle';
-import ContentTitle from './ContentTitle';
+export { default as SubTitle } from './SubTitle';
+export { default as ContentTitle } from './ContentTitle';
 
-export { SubTitle, ContentTitle };

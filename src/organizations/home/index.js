@@ -1,3 +1,1 @@
-import Rotate from './Rotate';
-
-export { Rotate };
+export { default as Rotate } from './Rotate';
