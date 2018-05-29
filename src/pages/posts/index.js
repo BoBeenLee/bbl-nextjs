@@ -14,7 +14,7 @@ class PostPage extends PureComponent {
   _mapOtherToPosts = () => {
     const { otherPosts } = this.props;
     return _.map(otherPosts, item => ({
-      id: item.id,
+      id: item.url,
       title: item.title,
       linkUrl: item.url,
       date: new Date(item.date),

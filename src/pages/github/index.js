@@ -5,7 +5,6 @@ import React, { PureComponent } from 'react';
 class GithubPage extends PureComponent {
   render() {
     const { data } = this.props;
-    console.log(data);
     return <div />;
   }
 }

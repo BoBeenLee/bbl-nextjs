@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import styled from 'styled-components';
 import _ from 'lodash';
-import { TransitionMotion, Motion, spring } from 'react-motion';
+import 'babel-polyfill';
 
 import { media } from '../utils/StyleUtils';
 import Header from '../components/Header';

@@ -14,6 +14,5 @@ const PostPreview = ({ entry, widgetFor }) => {
       },
     },
   };
-  console.log(data);
   return <PostTemplate data={data} />;
 };

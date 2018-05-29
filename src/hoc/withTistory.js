@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { isBrowser } from '../utils/NavigatorUtils';
 import feednami from '../apis/feednami';
 
-function withTistory(TargetComponent) {
+const withTistory = (TargetComponent) => {
   return class WithTistory extends Component {
     static propTypes = {};
 

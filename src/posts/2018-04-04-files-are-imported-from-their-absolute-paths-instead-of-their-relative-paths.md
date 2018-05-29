@@ -16,7 +16,7 @@ import utils from 'utils/my-utils';
 와 같이 간단하게 임포트할 수 없을까?
 
 ## 지정된 절대경로로 임포트하기
-#### 상대경로를 지정된 절대경로로 바꾸는 방법은 두개정도 있는듯하다.
+#### 상대경로를 지정된 절대경로로 바꾸는 방법은 세가지 정도 있는듯하다.
 * Babel
 * Webpack, Fusebox, ... ( module bundlers )
 * create-react-app, create-react-app-ts
