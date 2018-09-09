@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
-import { Portfolio, TeamPortfolio } from '../../organizations/portfolio';
+import { Portfolio } from '../../organizations/portfolio';
+import { productions, teamProductions } from "../../constants/production";
 
 const Root = styled.div`
   padding-top: 20px;
@@ -12,8 +13,8 @@ class PorfolioPage extends PureComponent {
     // console.log(data);
     return (
       <Root>
-        <Portfolio images={data} />
-        <TeamPortfolio images={data} />
+        <Portfolio key={"company"} title="Company" productions={productions} images={data} />
+        <Portfolio key={"activity"} title={`Activity`} productions={teamProductions} images={data} />
       </Root>
     );
   }

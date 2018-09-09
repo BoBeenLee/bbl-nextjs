@@ -34,28 +34,31 @@ const BottomSeparator = styled(Separator)`
 const items = {
   frontend: {
     name: 'Front End',
-    skills: ['ReactJS', 'JavaScript', 'jQuery', 'SASS'],
+    skills: ['react', 'javascript', "typescript", 'jQuery', 'sass'],
   },
   backend: {
     name: 'Back End',
-    skills: ['NodeJS', 'GraphQL', 'Spring Framework', 'Spring Boot'],
+    skills: ['nodejs', 'graphql', 'spring framework', 'spring boot'],
   },
-  mobile: { name: 'Mobile', skills: ['React Native', 'Android'] },
-  db: { name: 'DB', skills: ['RDB', 'MongoDB', 'Firebase'] },
+  mobile: { name: 'Mobile', skills: ['react native', 'android'] },
+  db: { name: 'DB', skills: ['rdb', 'mongodb', 'firebase'] },
   collaboration: {
     name: 'Collaboration',
-    skills: ['Slack', 'JIRA', 'WIKI', 'Github', 'Trello', 'TeamViewer'],
+    skills: ['slack', 'jira', 'wiki', 'github', 'trello', 'teamviewer'],
   },
-  usage: { name: 'Usage', skills: ['AWS EC2', 'AWS S3', 'Docker'] },
+  usage: { name: 'Usage', skills: ['aws ec2, s3', 'docker'] },
   tool: {
     name: 'Tools',
     skills: [
-      'Intellj IDEA',
-      'Webstorm',
-      'VSCode',
-      'Android Studio',
-      'SourceTree',
-      'Zeplin',
+      'vscode',
+      'gitkraken',
+      "reactotron",
+      "insomnia",
+      'intellj idea',
+      'webstorm',
+      'android studio',
+      'source tree',
+      'zeplin',
     ],
   },
 };

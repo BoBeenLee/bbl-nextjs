@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 import { SubTitle } from '../../components/Title';
-import { productions } from './data';
 import { PortfolioCard } from '../../components/Card';
 import { callValue } from '../../utils/ObjectUtils';
 import { ImagePopup } from '../../components/Popup';
@@ -11,7 +10,8 @@ import { ImagePopup } from '../../components/Popup';
 const Root = styled.div``;
 
 const SubTitleBox = styled(SubTitle)`
-  padding-bottom: 10px;
+  font-weight: bold;
+  padding-bottom: 20px;
 `;
 
 const ContentBox = styled.div`
@@ -19,8 +19,13 @@ const ContentBox = styled.div`
 `;
 
 class Portfolio extends Component {
-  static propTypes = {};
-  static defaultProps = {};
+  static propTypes = {
+    title: PropTypes.string,
+    productions: PropTypes.object
+  };
+  static defaultProps = {
+    title: "Company Project"
+  };
 
   state = {
     showModal: false,
@@ -68,11 +73,12 @@ class Portfolio extends Component {
   };
 
   render() {
+    const { title, productions } = this.props;
     const { showModal, renderImage } = this.state;
 
     return (
       <Root>
-        <SubTitleBox title="Company Project" />
+        <SubTitleBox title={title} />
         <ContentBox>{_.map(productions, this._renderPortfolioCard)}</ContentBox>
         <ImagePopup
           showModal={showModal}

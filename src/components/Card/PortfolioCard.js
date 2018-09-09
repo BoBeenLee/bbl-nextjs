@@ -9,6 +9,7 @@ import LinkIcon from 'react-icons/lib/go/link';
 import { media } from '../../utils/StyleUtils';
 import { Separator } from '../Separator';
 import { PhotoGallery } from '../Gallery';
+import { skillMap } from '../../constants/skill';
 
 const Root = styled.div`
   display: grid;
@@ -59,6 +60,15 @@ const SkillsBox = styled.div`
 const SkillItem = styled.div`
   display: inline-block;
   margin-right: 10px;
+`;
+
+const SkillLinkItem = styled.a`
+  display: inline-block;
+  margin-right: 10px;
+  text-decoration: none;
+  &:hover {
+    opacity: 0.7;
+  }
 `;
 
 const SummaryBox = styled.div`
@@ -137,7 +147,13 @@ class PortfolioCard extends PureComponent {
     onImagePopup: () => { },
   };
 
-  _renderSkillItem = (skill, index) => <SkillItem key={index}>{skill}</SkillItem>;
+  _renderSkillItem = (skill, index) => {
+    const uri = _.defaultTo(skillMap[_.replace(skill, / /g, "_").toUpperCase()], {}).uri;
+    if (!_.isEmpty(uri)) {
+      return <SkillLinkItem key={index} href={uri} target="_blank">{skill}</SkillLinkItem>
+    }
+    return <SkillItem key={index}>{skill}</SkillItem>;
+  };
   render() {
     const {
       name,

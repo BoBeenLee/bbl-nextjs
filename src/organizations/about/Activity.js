@@ -49,8 +49,8 @@ class Activity extends PureComponent {
   _renderItem = item => (
     <ItemBox key={item.name}>
       <TitleBox
-        onClick={() => isBrowser && window.open(item.url, '_blank')}
         title={item.name}
+        uri={item.url}
       />
       <ContentBox>{item.description}</ContentBox>
     </ItemBox>
