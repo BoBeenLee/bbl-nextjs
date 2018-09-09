@@ -115,7 +115,7 @@ module.exports = {
                }
                totalCount
             }
-            contributedRepositories(first: $count, orderBy: { field: UPDATED_AT, direction: DESC }) {
+            repositoriesContributedTo(first: $count, orderBy: { field: UPDATED_AT, direction: DESC }) {
               nodes {
                 id
                 name

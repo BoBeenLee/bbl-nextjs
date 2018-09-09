@@ -45,7 +45,7 @@ export const query = graphql`
             }
             totalCount
           }
-          contributedRepositories {
+          repositoriesContributedTo {
             nodes {
               id
               name
