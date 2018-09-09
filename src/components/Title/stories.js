@@ -26,4 +26,8 @@ storiesOf('Title', module)
     <Child>
       <ContentTitle onPress={action('clicked')} />
     </Child>
+  )).add('with ContentTitle uri', () => (
+    <Child>
+      <ContentTitle uri="https://www.rocketpunch.com/companies/dailyhotel" onPress={action('clicked')} />
+    </Child>
   ));

@@ -46,24 +46,33 @@ class Experience extends PureComponent {
 
   _renderItem = item => (
     <ItemBox key={item.title}>
-      <TitleBox title={item.role} />
+      <TitleBox title={item.role} uri={item.titleUri} />
       <ContentBox>{`${item.title} / ${item.period}`}</ContentBox>
     </ItemBox>
   );
   render() {
     const items = [
       {
+        title: 'Trillionaire',
+        titleUri: "https://www.rocketpunch.com/companies/trillionaire",
+        period: '2017.4 - ',
+        role: 'React Native, React Developer',
+      },
+      {
         title: 'Buxi',
+        titleUri: "https://www.rocketpunch.com/companies/buxi",
         period: '2017.8 - 2017.11',
         role: 'React Developer',
       },
       {
         title: 'Coupang',
+        titleUri: "https://www.rocketpunch.com/companies/coupang",
         period: '2015.6 - 2017.7',
         role: 'Fullstack Developer',
       },
       {
         title: 'DailyHotel',
+        titleUri: "https://www.rocketpunch.com/companies/dailyhotel",
         period: '2014.11 - 2015.1',
         role: 'Developer Intern',
       },
