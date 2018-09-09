@@ -30,7 +30,7 @@ class ContentTitle extends PureComponent {
   render() {
     const { title, uri, ...rest } = this.props;
     if (!_.isEmpty(uri)) {
-      return <RootLink href={uri} {...rest}>{title}</RootLink>;
+      return <RootLink href={uri} target="_blank" {...rest}>{title}</RootLink>;
     }
     return <Root {...rest}>{title}</Root>;
   }
