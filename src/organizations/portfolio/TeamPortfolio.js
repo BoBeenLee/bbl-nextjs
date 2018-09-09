@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 import { SubTitle } from '../../components/Title';
-import { productions } from './data';
+import { teamProductions } from './data';
 import { PortfolioCard } from '../../components/Card';
 import { callValue } from '../../utils/ObjectUtils';
 import { ImagePopup } from '../../components/Popup';
@@ -18,7 +18,7 @@ const ContentBox = styled.div`
   padding-top: 20px;
 `;
 
-class Portfolio extends Component {
+class TeamPortfolio extends Component {
   static propTypes = {};
   static defaultProps = {};
 
@@ -72,8 +72,8 @@ class Portfolio extends Component {
 
     return (
       <Root>
-        <SubTitleBox title="Company Project" />
-        <ContentBox>{_.map(productions, this._renderPortfolioCard)}</ContentBox>
+        <SubTitleBox title={`Team Project`} />
+        <ContentBox>{_.map(teamProductions, this._renderPortfolioCard)}</ContentBox>
         <ImagePopup
           showModal={showModal}
           renderImage={renderImage}
@@ -84,4 +84,4 @@ class Portfolio extends Component {
   }
 }
 
-export default Portfolio;
+export default TeamPortfolio;
