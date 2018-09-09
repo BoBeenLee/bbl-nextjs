@@ -15,6 +15,7 @@
     "date-fns": "^1.29.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "file-loader": "^2.0.0",
     "gatsby": "^1.9.261",
     "gatsby-image": "^1.0.51",
     "gatsby-link": "^1.6.44",
