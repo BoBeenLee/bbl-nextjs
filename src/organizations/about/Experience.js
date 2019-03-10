@@ -53,10 +53,10 @@ class Experience extends PureComponent {
   render() {
     const items = [
       {
-        title: 'Trillionaire',
+        title: 'Blended',
         titleUri: "https://www.rocketpunch.com/companies/trillionaire",
         period: '2017.4 - ',
-        role: 'React Native, React Developer',
+        role: 'React, React Native Developer',
       },
       {
         title: 'Buxi',
