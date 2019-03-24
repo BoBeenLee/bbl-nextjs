@@ -5,14 +5,14 @@ import styled from 'styled-components';
 import _ from 'lodash';
 import 'babel-polyfill';
 
-import { media } from '../utils/StyleUtils';
-import Header from '../components/Header';
-import { RouteTransition } from '../facc';
-import { BottomPopup } from '../components/Popup';
-import { withThemes } from '../hoc';
-import { Footer } from '../components/Footer';
-import config from '../../config/SiteConfig';
-import { isBrowser } from '../utils/NavigatorUtils';
+import { media } from '../../utils/StyleUtils';
+import Header from '../Header';
+import { RouteTransition } from '../../facc';
+import { BottomPopup } from '../Popup';
+import { withThemes } from '../../hoc';
+import { Footer } from '../Footer';
+import config from '../../../config/SiteConfig';
+import { isBrowser } from '../../utils/NavigatorUtils';
 import './styles';
 
 const Root = styled.div`
@@ -60,11 +60,11 @@ const StatePopupBox = styled(BottomPopup)`
 
 class Layout extends Component {
   static propTypes = {
-    children: PropTypes.func,
+    children: PropTypes.any,
   };
 
   static defaultProps = {
-    children: () => { },
+    children: "",
   }
 
   state = {
@@ -96,7 +96,7 @@ class Layout extends Component {
   };
 
   render() {
-    const { children } = this.props;
+    const { children, pathname } = this.props;
     const { isShowStatePopup } = this.state;
     return (
       <Root id="outer-container">
@@ -112,7 +112,7 @@ class Layout extends Component {
             <Header />
           </HeaderBox>
           <RouteTransition
-            pathname={this.props.location.pathname}
+            pathname={pathname}
           >
             {
               ({ key, style }) =>
@@ -125,7 +125,7 @@ class Layout extends Component {
                     }}
                     id="page-box"
                   >
-                    {children()}
+                    {children}
                   </ContentBox>
                 )
             }

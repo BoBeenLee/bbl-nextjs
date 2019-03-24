@@ -1,10 +1,12 @@
 import React, { Component, PureComponent } from 'react';
+import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Link from 'gatsby-link';
 import _ from 'lodash';
 import { PostCard } from '../../components/Card';
 import { withTistory, withOtherPosts } from '../../hoc';
+import Layout from "../../components/Layout";
 
 const Root = styled.div`
   padding-top: 20px;
@@ -47,14 +49,16 @@ class PostPage extends PureComponent {
 
   render() {
     const posts = [...this._mapOtherToPosts(),
-      ...this._mapTistoryToPosts(),
-      ...this._mapRemarkToPosts()];
+    ...this._mapTistoryToPosts(),
+    ...this._mapRemarkToPosts()];
     const postsByDESC = _.orderBy(posts, ['date'], ['desc']);
 
     return (
-      <Root>
-        {_.map(postsByDESC, item => <PostCard key={item.id} {...item} />)}
-      </Root>
+      <Layout pathname={this.props.location.pathname}>
+        <Root>
+          {_.map(postsByDESC, item => <PostCard key={item.id} {...item} />)}
+        </Root>
+      </Layout>
     );
   }
 }

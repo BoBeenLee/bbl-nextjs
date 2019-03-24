@@ -9,19 +9,22 @@ import {
   Activity,
   Skill,
 } from '../../organizations/about';
+import Layout from "../../components/Layout";
 
 const Root = styled.div`
   padding-top: 20px;
 `;
 
-function AboutPage() {
+function AboutPage(props) {
   return (
-    <Root>
-      <Education />
-      <Experience />
-      <Activity />
-      <Skill />
-    </Root>
+    <Layout pathname={props.location.pathname}>
+      <Root>
+        <Education />
+        <Experience />
+        <Activity />
+        <Skill />
+      </Root>
+    </Layout>
   );
 }
 

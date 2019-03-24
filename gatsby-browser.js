@@ -3,7 +3,8 @@
  *
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
-import ReactModal from "react-modal";
+
+const ReactModal = require("react-modal");
 
 exports.onClientEntry = () => {
   ReactModal.setAppElement("#___gatsby");

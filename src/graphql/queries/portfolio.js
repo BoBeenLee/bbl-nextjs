@@ -1,71 +1,57 @@
 // eslint-disable-next-line no-undef
 const query = graphql`
   query PortfolioImageQuery {
-    onepageImages: allImageSharp(filter: { id: { regex: "/onepage/" } }) {
+    onepageImages: allFile(filter: {relativePath: {regex: "/onepage/"}}) {
       edges {
         node {
-          sizes(
-            maxWidth: 430
-            quality: 80
-            traceSVG: { background: "#f2f8f3", color: "#d6ebd9" }
-          ) {
-            ...GatsbyImageSharpSizes_tracedSVG
+          childImageSharp {
+            fluid(maxWidth: 430, quality: 80, traceSVG: {background: "#f2f8f3", color: "#d6ebd9"}) {
+              ...GatsbyImageSharpFluid_tracedSVG
+            }
           }
         }
       }
     }
-    intersectionImages: allImageSharp(
-      filter: { id: { regex: "/intersection/" } }
-    ) {
+    intersectionImages: allFile(filter: {relativePath: {regex: "/intersection/"}}) {
       edges {
         node {
-          sizes(
-            maxWidth: 430
-            quality: 80
-            traceSVG: { background: "#f2f8f3", color: "#d6ebd9" }
-          ) {
-            ...GatsbyImageSharpSizes_tracedSVG
+          childImageSharp {
+            fluid(maxWidth: 430, quality: 80, traceSVG: {background: "#f2f8f3", color: "#d6ebd9"}) {
+              ...GatsbyImageSharpFluid_tracedSVG
+            }
           }
         }
       }
     }
-    skhualarmImages: allImageSharp(filter: { id: { regex: "/skhualarm/" } }) {
+    skhualarmImages: allFile(filter: {relativePath: {regex: "/skhualarm/"}}) {
       edges {
         node {
-          sizes(
-            maxWidth: 430
-            quality: 80
-            traceSVG: { background: "#f2f8f3", color: "#d6ebd9" }
-          ) {
-            ...GatsbyImageSharpSizes_tracedSVG
+          childImageSharp {
+            fluid(maxWidth: 430, quality: 80, traceSVG: {background: "#f2f8f3", color: "#d6ebd9"}) {
+              ...GatsbyImageSharpFluid_tracedSVG
+            }
           }
         }
       }
     }
-    competitionImages: allImageSharp(
-      filter: { id: { regex: "/competition/" } }
-    ) {
+    competitionImages: allFile(filter: {relativePath: {regex: "/competition/"}}) {
       edges {
         node {
-          sizes(
-            maxWidth: 430
-            quality: 80
-            traceSVG: { background: "#f2f8f3", color: "#d6ebd9" }
-          ) {
-            ...GatsbyImageSharpSizes_tracedSVG
+          childImageSharp {
+            fluid(maxWidth: 430, quality: 80, traceSVG: {background: "#f2f8f3", color: "#d6ebd9"}) {
+              ...GatsbyImageSharpFluid_tracedSVG
+            }
           }
         }
       }
     }
-    softhomeImages: allImageSharp(filter: { id: { regex: "/softhome/" } }) {
+    softhomeImages: allFile(filter: {relativePath: {regex: "/softhome/"}}) {
       edges {
         node {
-          sizes(
-            maxWidth: 430
-            quality: 80
-            traceSVG: { background: "#f2f8f3", color: "#d6ebd9" }
-          ) {
-            ...GatsbyImageSharpSizes_tracedSVG
+          childImageSharp {
+            fluid(maxWidth: 430, quality: 80, traceSVG: {background: "#f2f8f3", color: "#d6ebd9"}) {
+              ...GatsbyImageSharpFluid_tracedSVG
+            }
           }
         }
       }

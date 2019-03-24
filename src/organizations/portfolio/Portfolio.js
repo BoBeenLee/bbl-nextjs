@@ -21,7 +21,7 @@ const ContentBox = styled.div`
 class Portfolio extends Component {
   static propTypes = {
     title: PropTypes.string,
-    productions: PropTypes.object
+    productions: PropTypes.array
   };
   static defaultProps = {
     title: "Company Project"

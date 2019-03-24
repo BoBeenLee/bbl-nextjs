@@ -1,6 +1,5 @@
 import React, { Component, PureComponent } from 'react';
 import styled from 'styled-components';
-import Img from 'gatsby-image';
 import Slider from 'react-slick';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
@@ -165,7 +164,6 @@ class PortfolioCard extends PureComponent {
       images,
       onImagePopup,
     } = this.props;
-
     return (
       <Root>
         <NameBox>{name}</NameBox>

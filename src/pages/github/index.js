@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import { graphql } from 'gatsby';
 
 // http://resume.github.io/?bobinlee
 
