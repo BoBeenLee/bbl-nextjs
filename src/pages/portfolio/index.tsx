@@ -9,7 +9,7 @@ const Root = styled.div`
   padding-top: 20px;
 `;
 
-class PorfolioPage extends PureComponent {
+class PorfolioPage extends PureComponent<any> {
   render() {
     const { data } = this.props;
     // console.log(data);

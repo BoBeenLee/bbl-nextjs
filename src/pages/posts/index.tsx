@@ -1,8 +1,6 @@
 import React, { Component, PureComponent } from 'react';
 import { graphql } from 'gatsby';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Link from 'gatsby-link';
 import _ from 'lodash';
 import { PostCard } from '../../components/Card';
 import { withTistory, withOtherPosts } from '../../hoc';
@@ -12,7 +10,7 @@ const Root = styled.div`
   padding-top: 20px;
 `;
 
-class PostPage extends PureComponent {
+class PostPage extends PureComponent<any> {
   _mapOtherToPosts = () => {
     const { otherPosts } = this.props;
     return _.map(otherPosts, item => ({

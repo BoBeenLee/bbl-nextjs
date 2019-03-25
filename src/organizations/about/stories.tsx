@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import styled from 'styled-components';
-import { About, Education, Experience, Activity, Skill } from './';
+import { About, Education, Experience, Activity, Skill } from '.';
 
 const Root = styled.div`
   display: grid;
@@ -23,21 +23,21 @@ storiesOf('Organization About', module)
     </Child>
   )).add('with Education', () => (
     <Child>
-      <Education onPress={action('clicked')} />
+      <Education />
     </Child>
   ))
   .add('with Experience', () => (
     <Child>
-      <Experience onPress={action('clicked')} />
+      <Experience />
     </Child>
   ))
   .add('with Activity', () => (
     <Child>
-      <Activity onPress={action('clicked')} />
+      <Activity />
     </Child>
   ))
   .add('with Skill', () => (
     <Child>
-      <Skill onPress={action('clicked')} />
+      <Skill />
     </Child>
   ));

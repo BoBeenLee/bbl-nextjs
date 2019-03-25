@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf, action } from '@kadira/storybook';
 import styled from 'styled-components';
-import { Caption } from './';
+import { Caption } from '.';
 
 const Root = styled.div`
   display: grid;

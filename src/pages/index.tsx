@@ -1,5 +1,4 @@
-import React, { Fragment } from 'react';
-import Link from 'gatsby-link';
+import React from 'react';
 import styled from 'styled-components';
 import { Rotate } from '../organizations/home';
 import Layout from "../components/Layout";

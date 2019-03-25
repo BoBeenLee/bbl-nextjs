@@ -5,8 +5,7 @@ import { graphql } from 'gatsby';
 
 class GithubPage extends PureComponent {
   render() {
-    const { data } = this.props;
-    return <div />;
+    return <div>Hello World</div>;
   }
 }
 

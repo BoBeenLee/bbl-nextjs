@@ -18,7 +18,7 @@ const ContentBox = styled.div`
   padding-top: 20px;
 `;
 
-class Portfolio extends Component {
+class Portfolio extends Component<any> {
   static propTypes = {
     title: PropTypes.string,
     productions: PropTypes.array

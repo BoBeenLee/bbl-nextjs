@@ -9,7 +9,7 @@ import { Separator } from '../../components/Separator';
 const Root = styled.div`
 `;
 
-class About extends Component {
+class About extends Component<any, any> {
   static propTypes = {};
   static defaultProps = {};
 
