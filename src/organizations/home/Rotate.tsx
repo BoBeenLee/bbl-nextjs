@@ -1,23 +1,22 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
-import Link from 'gatsby-link';
-import PropTypes from 'prop-types';
-import _ from 'lodash';
-import FacebookIcon from './images/facebook.svg';
-import InstagramIcon from './images/instagram.svg';
-import LinkedInIcon from './images/linkedin.svg';
-import { Rotate as WindowRotate } from '../../facc';
-
+import React, { Component } from "react";
+import styled from "styled-components";
+import Link from "gatsby-link";
+import PropTypes from "prop-types";
+import _ from "lodash";
+import FacebookIcon from "./images/facebook.svg";
+import InstagramIcon from "./images/instagram.svg";
+import LinkedInIcon from "./images/linkedin.svg";
+import { Rotate as WindowRotate } from "../../facc";
 
 const Root = styled.div`
-    display: grid;
-    grid-template-areas: ". . ." ". icon ." ". . .";
-    position: relative;
-    height: 450px;
-    grid-template-rows: 20% 50% 30%;
+  display: grid;
+  grid-template-areas: ". . ." ". icon ." ". . .";
+  position: relative;
+  height: 450px;
+  grid-template-rows: 20% 50% 30%;
 `;
 
-const IconBox = styled.div`
+const IconBox = styled.div<{ zDeg: number }>`
   grid-area: icon;
   display: flex;
   flex-direction: row;
@@ -41,7 +40,7 @@ class Rotate extends Component {
   static propTypes = {};
   static defaultProps = {};
 
-  componentDidMount() { }
+  componentDidMount() {}
 
   _renderIcons = ({ zDeg }) => (
     <IconBox zDeg={zDeg}>
@@ -57,14 +56,13 @@ class Rotate extends Component {
       >
         <Icon alt="linkedin" src={LinkedInIcon} />
       </LinkBox>
-    </IconBox>)
+    </IconBox>
+  );
 
   render() {
     return (
       <Root>
-        <WindowRotate>
-          {({ zDeg }) => this._renderIcons({ zDeg })}
-        </WindowRotate>
+        <WindowRotate>{({ zDeg }) => this._renderIcons({ zDeg })}</WindowRotate>
       </Root>
     );
   }

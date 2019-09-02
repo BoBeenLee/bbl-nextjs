@@ -1,6 +1,5 @@
-import React, { Component, PureComponent } from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
+import React, { Component, PureComponent } from "react";
+import styled from "styled-components";
 
 const Root = styled.div`
   font-size: 13px;
@@ -9,9 +8,7 @@ const Root = styled.div`
 `;
 
 class LineText extends PureComponent {
-  static propTypes = {};
-  static defaultProps = {};
-  render() {
+  public render() {
     const { children, ...rest } = this.props;
     return <Root {...rest}>{children}</Root>;
   }

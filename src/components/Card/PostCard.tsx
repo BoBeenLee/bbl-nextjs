@@ -1,13 +1,19 @@
-import React, { Component, PureComponent } from 'react';
-import { format } from 'date-fns';
-import PropTypes from 'prop-types';
-import styled, { css } from 'styled-components';
-import Link from 'gatsby-link';
-import GoBookIcon from 'react-icons/lib/go/book';
-import { media } from '../../utils/StyleUtils';
+import React, { Component, PureComponent } from "react";
+import { format } from "date-fns";
+import styled, { css } from "styled-components";
+import Link from "gatsby-link";
+import GoBookIcon from "react-icons/lib/go/book";
+import { media } from "../../utils/StyleUtils";
 
-import { SubTitle } from '../Title';
-import { Separator } from '../Separator';
+import { SubTitle } from "../Title";
+import { Separator } from "../Separator";
+
+interface IProps {
+  title: string;
+  date: Date;
+  url: string;
+  linkUrl: string;
+}
 
 const Root = styled.div`
   display: grid;
@@ -84,41 +90,36 @@ const BottomSeparator = styled(Separator)`
   margin: 40px 0px;
 `;
 
-class PostCard extends PureComponent {
-  static propTypes = {
-    title: PropTypes.string,
-    date: PropTypes.objectOf(Date),
-    url: PropTypes.string,
-    linkUrl: PropTypes.string,
-  };
-
-  static defaultProps = {
-    title: 'Hello World',
+class PostCard extends PureComponent<IProps> {
+  public static defaultProps = {
+    title: "Hello World",
     date: new Date(),
-    url: '',
-    linkUrl: '',
+    url: "",
+    linkUrl: ""
   };
 
-  render() {
-    const {
-      title, date, url, linkUrl,
-    } = this.props;
+  public render() {
+    const { title, date, url, linkUrl } = this.props;
     return (
       <Root>
         <TitleBox title={title} />
         <DateBox>
           <NameBox>Date:</NameBox>
-          {format(date, 'MMMM D, YYYY')}
+          {format(date, "MMMM D, YYYY")}
         </DateBox>
         {url && (
           <UrlBox>
-            <Link to={url}>View Article<BookIcon size={25} /></Link>
+            <Link to={url}>
+              View Article
+              <BookIcon size={25} />
+            </Link>
           </UrlBox>
         )}
         {linkUrl && (
           <UrlBox>
             <a href={linkUrl} target="_blank">
-              View Article<BookIcon size={25} />
+              View Article
+              <BookIcon size={25} />
             </a>
           </UrlBox>
         )}

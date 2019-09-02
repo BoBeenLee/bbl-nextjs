@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
+import React, { Component } from "react";
+import styled from "styled-components";
 import {
   FacebookShareButton,
   GooglePlusShareButton,
@@ -36,8 +35,15 @@ import {
   VKShareCount,
   OKShareCount,
   RedditShareCount,
-  TumblrShareCount,
-} from 'react-share';
+  TumblrShareCount
+} from "react-share";
+
+interface IProps {
+  url: string;
+  title: string;
+  description: string;
+  iconSize: number;
+}
 
 const Root = styled.div`
   display: flex;
@@ -48,27 +54,19 @@ const Root = styled.div`
   margin: 15px 0;
 `;
 
-class SocialLinks extends Component {
-  static propTypes = {
-    url: PropTypes.string,
-    title: PropTypes.string,
-    description: PropTypes.string,
-    iconSize: PropTypes.number,
+class SocialLinks extends Component<IProps> {
+  public static defaultProps = {
+    url: "http://bbl.netlify.com",
+    title: "hello world",
+    description: "hello",
+    iconSize: 35
   };
-  static defaultProps = {
-    url: 'http://bbl.netlify.com',
-    title: 'hello world',
-    description: 'hello',
-    iconSize: 35,
-  };
-  render() {
-    const {
-      url, title, description, iconSize, ...rest
-    } = this.props;
-    const filter = count => (count > 0 ? count : '');
+  public render() {
+    const { url, title, description, iconSize, ...rest } = this.props;
+    const filter = count => (count > 0 ? count : "");
 
     return (
-      <Root {...rest} >
+      <Root {...rest}>
         <TwitterShareButton url={url} title={title}>
           <TwitterIcon round size={iconSize} />
         </TwitterShareButton>

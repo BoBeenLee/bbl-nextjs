@@ -1,14 +1,20 @@
-import React, { PureComponent } from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
-import ReactModal from 'react-modal';
-import CloseIcon from './images/x-circle.svg';
-import theme from '../../constants/theme';
+import React, { PureComponent } from "react";
+import styled from "styled-components";
+import PropTypes from "prop-types";
+import ReactModal from "react-modal";
+import CloseIcon from "./images/x-circle.svg";
+import theme from "../../constants/theme";
+
+interface IProps {
+  showModal: boolean;
+  renderImage: () => React.ReactNode;
+  onClose: () => void;
+}
 
 const customStyle = {
   overlay: {
-    zIndex: 999,
-  },
+    zIndex: 999
+  }
 };
 
 const Root = styled(ReactModal)``;
@@ -31,7 +37,7 @@ const ImageBox = styled.div`
   height: 100%;
 `;
 
-const CloseBox = styled.img`
+const CloseBox = styled.img<{ size: number }>`
   position: absolute;
   top: -${({ size = 20 }) => size / 2}px;
   right: -${({ size = 20 }) => size / 2}px;
@@ -40,19 +46,14 @@ const CloseBox = styled.img`
   cursor: pointer;
 `;
 
-class ImagePopup extends PureComponent {
-  static propTypes = {
-    showModal: PropTypes.bool,
-    renderImage: PropTypes.func,
-    onClose: PropTypes.func,
-  };
-  static defaultProps = {
+class ImagePopup extends PureComponent<IProps> {
+  public static defaultProps = {
     showModal: false,
-    renderImage: () => { },
-    onClose: () => { },
+    renderImage: () => {},
+    onClose: () => {}
   };
 
-  render() {
+  public render() {
     const { showModal, renderImage, onClose } = this.props;
     return (
       <Root style={customStyle} isOpen={showModal}>

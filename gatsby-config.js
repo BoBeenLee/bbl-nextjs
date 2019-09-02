@@ -7,70 +7,70 @@ query {
 }
 `; */
 
-const config = require('./config/SiteConfig');
+const config = require("./config/SiteConfig");
 
 module.exports = {
   siteMetadata: {
-    title: 'BoBeen Lee',
+    title: "BoBeen Lee"
   },
   plugins: [
     `gatsby-plugin-typescript`,
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-styled-components',
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-styled-components",
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/src/posts`,
-        name: 'posts',
-      },
+        name: "posts"
+      }
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/src/pages/images`,
-        name: 'images',
-      },
+        name: "images"
+      }
     },
     {
-      resolve: 'gatsby-plugin-netlify-cms',
+      resolve: "gatsby-plugin-netlify-cms"
     },
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
-    'gatsby-plugin-offline',
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
+    "gatsby-plugin-offline",
     {
-      resolve: 'gatsby-plugin-google-analytics',
+      resolve: "gatsby-plugin-google-analytics",
       options: {
-        trackingId: 'UA-114339461-1',
+        trackingId: "UA-114339461-1",
         // Puts tracking script in the head instead of the body
         head: false,
         // Setting this parameter is optional
-        anonymize: true,
-      },
+        anonymize: true
+      }
     },
     {
-      resolve: 'gatsby-plugin-manifest',
+      resolve: "gatsby-plugin-manifest",
       options: {
-        name: 'BoBeen Lee',
-        short_name: 'BoBeen Lee',
-        start_url: '/',
+        name: "BoBeen Lee",
+        short_name: "BoBeen Lee",
+        start_url: "/",
         background_color: config.backgroundColor,
         theme_color: config.themeColor,
-        display: 'minimal-ui',
-      },
+        display: "minimal-ui"
+      }
     },
     {
-      resolve: 'gatsby-plugin-nprogress',
+      resolve: "gatsby-plugin-nprogress",
       options: {
-        color: config.themeColor,
-      },
+        color: config.themeColor
+      }
     },
     {
-      resolve: 'gatsby-source-github-api',
+      resolve: "gatsby-source-github-api",
       options: {
         token: process.env.GITHUB_TOKEN,
         variables: {
-          user: 'BoBinLee',
-          count: 100,
+          user: "BoBinLee",
+          count: 100
         },
         graphQLQuery: `query($user: String = "", $count: Int = 1) {
           user(login: $user) {
@@ -87,7 +87,7 @@ module.exports = {
               nodes {
                 avatarUrl
                 name
-                members {
+                memberStatuses {
                   totalCount
                 }
               }
@@ -127,8 +127,8 @@ module.exports = {
              totalCount
            }
           }
-        }`,
-      },
+        }`
+      }
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -137,8 +137,8 @@ module.exports = {
         footnotes: true,
         pedantic: true,
         gfm: true,
-        plugins: [],
-      },
+        plugins: []
+      }
     }
-  ],
+  ]
 };

@@ -4,7 +4,7 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 const path = require("path");
-const { createFilePath } = require('gatsby-source-filesystem');
+const { createFilePath } = require("gatsby-source-filesystem");
 
 const injectPostTemplate = (createPage, graphql) => {
   const postTemplate = path.resolve("src/templates/post.js");
@@ -27,16 +27,16 @@ const injectPostTemplate = (createPage, graphql) => {
       }
     }
   `).then(res => {
-      if (res.errors) {
-        return Promise.reject(res.errors);
-      }
-      res.data.allMarkdownRemark.edges.forEach(({ node }) => {
-        createPage({
-          path: `${node.fields.slug}`,
-          component: postTemplate
-        });
+    if (res.errors) {
+      return Promise.reject(res.errors);
+    }
+    res.data.allMarkdownRemark.edges.forEach(({ node }) => {
+      createPage({
+        path: `${node.fields.slug}`,
+        component: postTemplate
       });
     });
+  });
 };
 
 exports.createPages = ({ actions, graphql }) => {
@@ -48,11 +48,11 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
 
   if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
+    const value = createFilePath({ node, getNode });
     createNodeField({
       name: `slug`,
       node,
-      value: `/posts${value}`,
-    })
+      value: `/posts${value}`
+    });
   }
-}
+};

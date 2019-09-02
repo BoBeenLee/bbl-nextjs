@@ -1,6 +1,5 @@
-import React, { Component, PureComponent } from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
+import React, { Component, PureComponent } from "react";
+import styled from "styled-components";
 
 const Root = styled.div`
   width: 100%;

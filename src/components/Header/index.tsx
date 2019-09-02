@@ -1,16 +1,20 @@
-import React, { Component } from 'react';
-import Link from 'gatsby-link';
-import { IndexLink } from 'react-router-dom';
-import Headroom from 'react-headroom';
-import _ from 'lodash';
-import styled, { css } from 'styled-components';
-import { media } from '../../utils/StyleUtils';
-import { isIE } from '../../utils/NavigatorUtils';
-import { Menu } from '../Menu';
-import { Avatar } from '../Avatar';
-import { theme, menu as titles, isHome } from '../../constants';
-import { Separator } from '../Separator';
-import QuokkaIcon from './images/quokka.png';
+import React, { Component } from "react";
+import Link from "gatsby-link";
+import Headroom from "react-headroom";
+import _ from "lodash";
+import styled, { css } from "styled-components";
+import { media } from "../../utils/StyleUtils";
+import { isIE } from "../../utils/NavigatorUtils";
+import { Menu } from "../Menu";
+import { Avatar } from "../Avatar";
+import { theme, menu as titles, isHome } from "../../constants";
+import { Separator } from "../Separator";
+import QuokkaIcon from "./images/quokka.png";
+
+interface IStates {
+  isOpenHeader: boolean;
+  isOpenMenu: boolean;
+}
 
 const RootWrapper = styled.div`
   .headroom-transform-none .headroom {
@@ -30,19 +34,6 @@ const Root = styled.div`
   `};
 `;
 
-const HeaderBox = ({ children, isOpenHeader, ...props }) => {
-  const styles = Object.assign({}, { backgroundColor: '#fff' });
-  return (
-    <Headroom
-      className={isOpenHeader ? 'headroom-transform-none' : ''}
-      style={styles}
-      {...props}
-    >
-      {children}
-    </Headroom>
-  );
-};
-
 const HeaderTitle = styled.div`
   grid-column: 2;
   display: grid;
@@ -51,10 +42,11 @@ const HeaderTitle = styled.div`
   ${media.desktop`
     width: ${props => props.theme.desktopSize}px;
   `};
-  ${isIE() && css`
-    display: flex;
-    padding: 20px;
-  `}
+  ${isIE() &&
+    css`
+      display: flex;
+      padding: 20px;
+    `}
 `;
 
 const Logo = styled.div`
@@ -126,46 +118,26 @@ const SeperatorBottom = styled(Separator)`
   `};
 `;
 
-class Header extends Component {
-  state = {
+const HeaderBox = ({ children, isOpenHeader, ...props }) => {
+  const styles = Object.assign({}, { backgroundColor: "#fff" });
+  return (
+    <Headroom
+      className={isOpenHeader ? "headroom-transform-none" : ""}
+      style={styles}
+      {...props}
+    >
+      {children}
+    </Headroom>
+  );
+};
+
+class Header extends Component<any, IStates> {
+  public state = {
     isOpenHeader: true,
-    isOpenMenu: false,
+    isOpenMenu: false
   };
 
-  toggleHeader = (value) => {
-    const { isOpenMenu } = this.state;
-    if (isOpenMenu) {
-      return;
-    }
-    this.setState({
-      isOpenHeader: value,
-    });
-  };
-
-  toggleMenu = (value) => {
-    this.setState({
-      isOpenHeader: true,
-      isOpenMenu: value.isOpen,
-    });
-  };
-
-  _renderTitleItem = (title, index) => {
-    const { url, name } = title;
-    return (
-      <TitleBox key={index}>
-        <Title
-          exact={isHome(url)}
-          strict
-          activeStyle={{ color: theme.secondary }}
-          to={url}
-        >
-          {name}
-        </Title>
-      </TitleBox>
-    );
-  };
-
-  render() {
+  public render() {
     const { isOpenHeader, isOpenMenu } = this.state;
     return (
       <RootWrapper>
@@ -194,6 +166,39 @@ class Header extends Component {
       </RootWrapper>
     );
   }
+
+  private toggleHeader = value => {
+    const { isOpenMenu } = this.state;
+    if (isOpenMenu) {
+      return;
+    }
+    this.setState({
+      isOpenHeader: value
+    });
+  };
+
+  private toggleMenu = value => {
+    this.setState({
+      isOpenHeader: true,
+      isOpenMenu: value.isOpen
+    });
+  };
+
+  private _renderTitleItem = (title, index) => {
+    const { url, name } = title;
+    return (
+      <TitleBox key={index}>
+        <Title
+          // strict={true}
+          // exact={isHome(url)}
+          activeStyle={{ color: theme.secondary }}
+          to={url}
+        >
+          {name}
+        </Title>
+      </TitleBox>
+    );
+  };
 }
 
 export default Header;

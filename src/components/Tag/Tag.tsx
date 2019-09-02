@@ -1,0 +1,21 @@
+import React, { Component, PureComponent } from "react";
+import styled from "styled-components";
+import PropTypes from "prop-types";
+
+interface IProps {
+  name: string;
+}
+
+const Root = styled.div``;
+
+class Tag extends PureComponent<IProps> {
+  public static defaultProps = {
+    name: "Nexters"
+  };
+  render() {
+    const { name, ...rest } = this.props;
+    return <Root {...rest}>{name}</Root>;
+  }
+}
+
+export default Tag;

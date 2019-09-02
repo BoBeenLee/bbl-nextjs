@@ -1,12 +1,9 @@
-import React, { Component, PureComponent } from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
-import OctofaceIcon from 'react-icons/lib/go/octoface';
-import GoBookIcon from 'react-icons/lib/go/book';
-import ContactMailIcon from 'react-icons/lib/md/contact-mail';
+import React, { Component, PureComponent } from "react";
+import styled from "styled-components";
+import OctofaceIcon from "react-icons/lib/go/octoface";
+import ContactMailIcon from "react-icons/lib/md/contact-mail";
 
-import { media } from '../../utils/StyleUtils';
-
+import { media } from "../../utils/StyleUtils";
 
 const Root = styled.div`
   display: grid;
@@ -49,9 +46,8 @@ const ContactItemBox = styled.a`
 `;
 
 class Footer extends PureComponent {
-  static propTypes = {};
   static defaultProps = {};
-  render() {
+  public render() {
     return (
       <Root>
         <CopyrightBox>@ 2018</CopyrightBox>

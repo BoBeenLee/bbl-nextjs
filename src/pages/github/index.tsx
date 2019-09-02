@@ -1,5 +1,5 @@
-import React, { PureComponent } from 'react';
-import { graphql } from 'gatsby';
+import React, { PureComponent } from "react";
+import { graphql } from "gatsby";
 
 // http://resume.github.io/?bobinlee
 
@@ -28,7 +28,7 @@ export const query = graphql`
             nodes {
               avatarUrl
               name
-              members {
+              memberStatuses {
                 totalCount
               }
             }

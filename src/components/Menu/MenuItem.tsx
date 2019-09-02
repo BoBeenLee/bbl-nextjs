@@ -1,8 +1,14 @@
-import React, { Component, PureComponent } from 'react';
-import Link from 'gatsby-link';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
-import { theme, isHome } from '../../constants';
+import React, { Component, PureComponent } from "react";
+import Link from "gatsby-link";
+import styled from "styled-components";
+import PropTypes from "prop-types";
+import { theme, isHome } from "../../constants";
+
+interface IProps {
+  name: string;
+  url: string;
+  onPress: () => void;
+}
 
 const Root = styled.div`
   padding: 10px 0;
@@ -16,25 +22,19 @@ const MenuLink = styled(Link)`
   }
 `;
 
-class MenuItem extends Component {
-  static propTypes = {
-    name: PropTypes.string,
-    url: PropTypes.string,
-    onPress: PropTypes.func,
-  };
-
-  static defaultProps = {
-    name: 'Home',
-    url: '/',
-    onPress: () => { },
+class MenuItem extends Component<IProps> {
+  public static defaultProps = {
+    name: "Home",
+    url: "/",
+    onPress: () => {}
   };
   render() {
     const { name, url, onPress } = this.props;
     return (
       <Root>
         <MenuLink
-          exact={isHome(url)}
-          strict
+          // exact={isHome(url)}
+          // strict={true}
           activeStyle={{ color: theme.secondary }}
           to={url}
           onClick={onPress}

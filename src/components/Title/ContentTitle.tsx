@@ -1,7 +1,11 @@
 import _ from "lodash";
-import React, { Component, PureComponent } from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
+import React, { Component, PureComponent } from "react";
+import styled from "styled-components";
+
+interface IProps {
+  title: string;
+  uri: string;
+}
 
 const Root = styled.div`
   font-size: 18px;
@@ -19,18 +23,18 @@ const RootLink = styled.a`
   }
 `;
 
-class ContentTitle extends PureComponent {
-  static propTypes = {
-    title: PropTypes.string,
-    uri: PropTypes.string,
+class ContentTitle extends PureComponent<IProps> {
+  public static defaultProps = {
+    title: "Hello World"
   };
-  static defaultProps = {
-    title: 'Hello World',
-  };
-  render() {
+  public render() {
     const { title, uri, ...rest } = this.props;
     if (!_.isEmpty(uri)) {
-      return <RootLink href={uri} target="_blank" {...rest}>{title}</RootLink>;
+      return (
+        <RootLink href={uri} target="_blank" {...rest}>
+          {title}
+        </RootLink>
+      );
     }
     return <Root {...rest}>{title}</Root>;
   }

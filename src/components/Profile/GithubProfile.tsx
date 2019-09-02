@@ -1,8 +1,21 @@
-import React, { Component, PureComponent } from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
-import _ from 'lodash';
-import { Avatar } from '../Avatar';
+import React, { Component, PureComponent } from "react";
+import styled from "styled-components";
+import PropTypes from "prop-types";
+import _ from "lodash";
+import { Avatar } from "../Avatar";
+
+interface IProps {
+  avatarUrl: string;
+  email: string;
+  location: string;
+  followerCount: number;
+  followingCount: number;
+  organizations: {
+    avatarUrl: string;
+    name: string;
+    memberCount: number;
+  };
+}
 
 const Root = styled.div`
   display: grid;
@@ -40,45 +53,30 @@ const OrganizationBox = styled.div`
 
 const OrganizationItemBox = styled.div``;
 
-class GithubProfile extends PureComponent {
-  static propTypes = {
-    avatarUrl: PropTypes.string,
-    email: PropTypes.string,
-    location: PropTypes.string,
-    followerCount: PropTypes.number,
-    followingCount: PropTypes.number,
-    organizations: PropTypes.arrayOf(PropTypes.shape({
-      avatarUrl: PropTypes.string,
-      name: PropTypes.string,
-      memberCount: PropTypes.number,
-    })),
-  };
-
-  static defaultProps = {
-    avatarUrl: 'https://avatars0.githubusercontent.com/u/1489321?v=4',
-    email: 'globaldev@naver.com',
-    location: 'Seoul',
+class GithubProfile extends PureComponent<IProps> {
+  public static defaultProps = {
+    avatarUrl: "https://avatars0.githubusercontent.com/u/1489321?v=4",
+    email: "globaldev@naver.com",
+    location: "Seoul",
     followerCount: 100,
     followingCount: 100,
     organizations: [
       {
-        avatarUrl: 'https://avatars2.githubusercontent.com/u/4995702?v=4',
-        name: 'Nexters',
-        memberCount: 109,
-      },
-    ],
+        avatarUrl: "https://avatars2.githubusercontent.com/u/4995702?v=4",
+        name: "Nexters",
+        memberCount: 109
+      }
+    ]
   };
 
-  _renderOranization = item => <OrganizationItemBox>{item.name}</OrganizationItemBox>;
-
-  render() {
+  public render() {
     const {
       avatarUrl,
       email,
       location,
       followerCount,
       followingCount,
-      organizations,
+      organizations
     } = this.props;
     return (
       <Root>
@@ -98,6 +96,10 @@ class GithubProfile extends PureComponent {
       </Root>
     );
   }
+
+  private _renderOranization = item => (
+    <OrganizationItemBox>{item.name}</OrganizationItemBox>
+  );
 }
 
 export default GithubProfile;
