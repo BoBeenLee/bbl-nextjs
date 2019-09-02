@@ -3,7 +3,7 @@ import { format } from "date-fns";
 import styled, { css } from "styled-components";
 import Link from "gatsby-link";
 import GoBookIcon from "react-icons/lib/go/book";
-import { media } from "../../utils/StyleUtils";
+import { media } from "../../utils/media";
 
 import { SubTitle } from "../Title";
 import { Separator } from "../Separator";

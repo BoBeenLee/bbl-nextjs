@@ -1,12 +1,12 @@
-import React, { Component, PureComponent } from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
-import _ from 'lodash';
-import { SubTitle, ContentTitle } from '../../components/Title';
-import { Separator } from '../../components/Separator';
-import { LineText } from '../../components/Text';
-import { media } from '../../utils/StyleUtils';
-import { isBrowser } from '../../utils/NavigatorUtils';
+import React, { Component, PureComponent } from "react";
+import styled from "styled-components";
+import PropTypes from "prop-types";
+import _ from "lodash";
+import { SubTitle, ContentTitle } from "../../components/Title";
+import { Separator } from "../../components/Separator";
+import { LineText } from "../../components/Text";
+import { media } from "../../utils/media";
+import { isBrowser } from "../../utils/navigator";
 
 const Root = styled.div``;
 
@@ -48,25 +48,22 @@ class Activity extends PureComponent {
 
   _renderItem = item => (
     <ItemBox key={item.name}>
-      <TitleBox
-        title={item.name}
-        uri={item.url}
-      />
+      <TitleBox title={item.name} uri={item.url} />
       <ContentBox>{item.description}</ContentBox>
     </ItemBox>
   );
   render() {
     const items = [
       {
-        name: 'Nexters',
-        url: 'http://teamnexters.com/',
-        description: 'Developer',
+        name: "Nexters",
+        url: "http://teamnexters.com/",
+        description: "Developer"
       },
       {
-        name: 'SOPT',
-        url: 'http://sopt.org/wp/',
-        description: 'Developer',
-      },
+        name: "SOPT",
+        url: "http://sopt.org/wp/",
+        description: "Developer"
+      }
     ];
     return (
       <Root>

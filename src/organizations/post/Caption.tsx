@@ -33,6 +33,7 @@ class Caption extends Component<any> {
           url={`http://bbl.netlify.com${url}`}
           title={title}
           description={description}
+          iconSize={35}
         />
       </Root>);
   }

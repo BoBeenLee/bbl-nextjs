@@ -3,7 +3,7 @@ import styled from "styled-components";
 import _ from "lodash";
 import GithubIcon from "react-icons/lib/go/mark-github";
 import LinkIcon from "react-icons/lib/go/link";
-import { media } from "../../utils/StyleUtils";
+import { media } from "../../utils/media";
 import { Separator } from "../Separator";
 import { PhotoGallery } from "../Gallery";
 import { skillMap } from "../../constants/skill";
@@ -16,7 +16,7 @@ interface IProps {
   images: any[];
   githubUrl: string;
   linkUrl: string;
-  onImagePopup: () => void;
+  onImagePopup: (render: any) => void;
 }
 
 const Root = styled.div`

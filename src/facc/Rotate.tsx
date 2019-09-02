@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import styled, { ThemeProvider } from "styled-components";
 import PropTypes from "prop-types";
 
-import { isBrowser } from "../utils/NavigatorUtils";
+import { isBrowser } from "../utils/navigator";
 
 class Rotate extends Component<any> {
   public static defaultProps = {};

@@ -7,7 +7,7 @@ import theme from "../../constants/theme";
 
 interface IProps {
   showModal: boolean;
-  renderImage: () => React.ReactNode;
+  renderImage: () => any;
   onClose: () => void;
 }
 

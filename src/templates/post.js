@@ -1,17 +1,17 @@
-import React from 'react';
-import { graphql } from 'gatsby';
-import Helmet from 'react-helmet';
-import styled from 'styled-components';
-import { SubTitle } from '../components/Title';
-import { media } from '../utils/StyleUtils';
-import { Caption } from '../organizations/post';
+import React from "react";
+import { graphql } from "gatsby";
+import Helmet from "react-helmet";
+import styled from "styled-components";
+import { SubTitle } from "../components/Title";
+import { media } from "../utils/media";
+import { Caption } from "../organizations/post";
 
 const Root = styled.div`
   padding: 60px 50px 70px 50px;
   line-height: 40px;
   ${media.mobile`
     padding: 30px 10px 40px 10px;
-  `} 
+  `}
 `;
 
 const SubTitleBox = styled(SubTitle)`

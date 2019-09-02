@@ -1,11 +1,11 @@
-import React, { Component, PureComponent } from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
-import _ from 'lodash';
-import { SubTitle } from '../../components/Title';
-import { PortfolioCard } from '../../components/Card';
-import { callValue } from '../../utils/ObjectUtils';
-import { ImagePopup } from '../../components/Popup';
+import React, { Component, PureComponent } from "react";
+import styled from "styled-components";
+import PropTypes from "prop-types";
+import _ from "lodash";
+import { SubTitle } from "../../components/Title";
+import { PortfolioCard } from "../../components/Card";
+import { callValue } from "../../utils/object";
+import { ImagePopup } from "../../components/Popup";
 
 const Root = styled.div``;
 
@@ -29,32 +29,32 @@ class Portfolio extends Component<any> {
 
   state = {
     showModal: false,
-    renderImage: () => { },
+    renderImage: () => {}
   };
 
-  onImagePopup = (renderImage) => {
+  onImagePopup = renderImage => {
     this.setState({
       renderImage,
-      showModal: true,
+      showModal: true
     });
   };
 
   _onClose = () => {
     this.setState({
-      showModal: false,
+      showModal: false
     });
   };
 
-  _renderPortfolioCard = (production) => {
+  _renderPortfolioCard = production => {
     const { images } = this.props;
     const {
       id,
       name,
       period,
       skills,
-      summary = '',
+      summary = "",
       githubUrl,
-      linkUrl,
+      linkUrl
     } = production;
 
     return (

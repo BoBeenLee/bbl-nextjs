@@ -9,7 +9,7 @@ import { Separator } from "../Separator";
 
 interface IProps {
   isOpen: boolean;
-  toggleMenu: () => void;
+  toggleMenu: (value: { isOpen: boolean }) => void;
 }
 
 const Root = styled.div`

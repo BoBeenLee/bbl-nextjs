@@ -1,11 +1,11 @@
-import React, { Component, PureComponent } from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
-import _ from 'lodash';
-import { SubTitle, ContentTitle } from '../../components/Title';
-import { Separator } from '../../components/Separator';
-import { LineText } from '../../components/Text';
-import { media } from '../../utils/StyleUtils';
+import React, { Component, PureComponent } from "react";
+import styled from "styled-components";
+import PropTypes from "prop-types";
+import _ from "lodash";
+import { SubTitle, ContentTitle } from "../../components/Title";
+import { Separator } from "../../components/Separator";
+import { LineText } from "../../components/Text";
+import { media } from "../../utils/media";
 
 const Root = styled.div``;
 
@@ -53,29 +53,29 @@ class Experience extends PureComponent {
   render() {
     const items = [
       {
-        title: 'Blended',
+        title: "Blended",
         titleUri: "https://www.rocketpunch.com/companies/trillionaire",
-        period: '2017.4 - ',
-        role: 'React, React Native Developer',
+        period: "2017.4 - ",
+        role: "React, React Native Developer"
       },
       {
-        title: 'Buxi',
+        title: "Buxi",
         titleUri: "https://www.rocketpunch.com/companies/buxi",
-        period: '2017.8 - 2017.11',
-        role: 'React Developer',
+        period: "2017.8 - 2017.11",
+        role: "React Developer"
       },
       {
-        title: 'Coupang',
+        title: "Coupang",
         titleUri: "https://www.rocketpunch.com/companies/coupang",
-        period: '2015.6 - 2017.7',
-        role: 'Fullstack Developer',
+        period: "2015.6 - 2017.7",
+        role: "Fullstack Developer"
       },
       {
-        title: 'DailyHotel',
+        title: "DailyHotel",
         titleUri: "https://www.rocketpunch.com/companies/dailyhotel",
-        period: '2014.11 - 2015.1',
-        role: 'Developer Intern',
-      },
+        period: "2014.11 - 2015.1",
+        role: "Developer Intern"
+      }
     ];
     return (
       <Root>

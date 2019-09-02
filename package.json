@@ -70,7 +70,8 @@
     "storybook": "start-storybook -p 9001 -c .storybook",
     "build-storybook": "build-storybook -o ./public-storybook -c .storybook",
     "deploy-storybook": "storybook-to-ghpages -o ./public-storybook -c .storybook",
-    "test": "jest && bundlesize"
+    "test": "jest && bundlesize",
+    "type-check": "tsc --noEmit"
   },
   "devDependencies": {
     "@kadira/storybook": "^2.35.3",

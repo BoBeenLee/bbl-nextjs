@@ -3,7 +3,7 @@ import styled from "styled-components";
 import OctofaceIcon from "react-icons/lib/go/octoface";
 import ContactMailIcon from "react-icons/lib/md/contact-mail";
 
-import { media } from "../../utils/StyleUtils";
+import { media } from "../../utils/media";
 
 const Root = styled.div`
   display: grid;

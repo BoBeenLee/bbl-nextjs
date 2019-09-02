@@ -1,9 +1,9 @@
-import React, { Component, PureComponent } from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
-import { SubTitle, ContentTitle } from '../../components/Title';
-import { Separator } from '../../components/Separator';
-import { LineText } from '../../components/Text';
+import React, { Component, PureComponent } from "react";
+import styled from "styled-components";
+import PropTypes from "prop-types";
+import { SubTitle, ContentTitle } from "../../components/Title";
+import { Separator } from "../../components/Separator";
+import { LineText } from "../../components/Text";
 
 const Root = styled.div``;
 
@@ -25,7 +25,10 @@ function Education() {
     <Root>
       <SubTitle title="Education" />
       <ItemBox>
-        <TitleBox title="Sungkonghoe University" />
+        <TitleBox
+          title="Sungkonghoe University"
+          uri="http://www.skhu.ac.kr/main.aspx"
+        />
         <LineText>Software Engineering / 2010.3 - 2015.8</LineText>
       </ItemBox>
       <BottomSeparator />

@@ -1,22 +1,21 @@
-import { css } from 'styled-components';
+import { css } from "styled-components";
 
 const sizes = {
   desktop: 1220,
-  mobile: 767,
+  mobile: 767
 };
 
-
 export const media = {
-  desktop: (...args) => css`
+  desktop: (first: any, ...args: any[]) => css`
     @media (min-width: 1220px) {
-      ${css(...args)};
+      ${css(first, ...args)};
     }
   `,
-  mobile: (...args) => css`
+  mobile: (first: any, ...args: any[]) => css`
     @media (max-width: 767px) {
-      ${css(...args)};
+      ${css(first, ...args)};
     }
-  `,
+  `
 };
 
 /*

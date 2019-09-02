@@ -1,7 +1,7 @@
 import React, { Component, PureComponent } from "react";
 import distanceInWordsToNow from "date-fns/distance_in_words_to_now";
 import styled from "styled-components";
-import { isBrowser } from "../../utils/NavigatorUtils";
+import { isBrowser } from "../../utils/navigator";
 
 interface IProps {
   name: string;

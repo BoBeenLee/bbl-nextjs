@@ -5,14 +5,14 @@ import styled from "styled-components";
 import _ from "lodash";
 import "babel-polyfill";
 
-import { media } from "../../utils/StyleUtils";
+import { media } from "../../utils/media";
 import Header from "../Header";
 import { RouteTransition } from "../../facc";
 import { BottomPopup } from "../Popup";
 import { withThemes } from "../../hoc";
 import { Footer } from "../Footer";
 import config from "../../../config/SiteConfig";
-import { isBrowser } from "../../utils/NavigatorUtils";
+import { isBrowser } from "../../utils/navigator";
 import "./styles";
 
 interface IProps {
@@ -61,7 +61,7 @@ const FooterBox = styled.footer`
   grid-area: footer;
 `;
 
-const StatePopupBox = styled(BottomPopup)`
+const StatePopupBox = styled(BottomPopup)<{ isShowStatePopup: boolean }>`
   display: ${({ isShowStatePopup }) => (isShowStatePopup ? "flex" : "none")};
   color: ${props => props.theme.warning};
 `;
