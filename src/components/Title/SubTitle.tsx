@@ -7,7 +7,7 @@ interface IProps {
 
 const Root = styled.div`
   font-size: 30px;
-  font-weight: 100;
+  font-weight: 400;
   color: ${props => props.theme.third};
 `;
 

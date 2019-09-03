@@ -18,20 +18,33 @@ body,
   color: #fff;
 }
 
-html {
-  font-family: "Roboto", sans-serif;
-  text-size-adjust: 100%;
-  box-sizing: border-box;
-  overflow-y: scroll;
-}
+*,
+html,
 body {
-  margin: 0;
-  color: hsla(0, 0%, 0%, 0.8);
   font-family: "Roboto", sans-serif;
-  font-weight: normal;
-  word-wrap: break-word;
-  font-kerning: normal;
-  font-feature-settings: "kern", "liga", "clig", "calt";
+  outline: none;
+  box-sizing: border-box;
+}
+html,
+body,
+div.tl-edges,
+div.tl-wrapper {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100vw;
+}
+body,
+#___gatsby,
+div[role="group"] {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+#___gatsby > div[role="group"] > .tl-edges > .tl-wrapper {
+  height: 100%;
+  overflow-y: auto;
 }
 
 article,

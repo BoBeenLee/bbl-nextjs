@@ -20,6 +20,7 @@ const SkillsBox = styled.div`
   margin-top: 5px;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 `;
 
 const SkillItemBox = styled(LineText)`

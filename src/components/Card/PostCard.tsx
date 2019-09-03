@@ -1,5 +1,5 @@
 import { format } from "date-fns";
-import { Link } from "gatsby";
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 import React, { Component, PureComponent } from "react";
 import GoBookIcon from "react-icons/lib/go/book";
 import styled, { css } from "styled-components";
@@ -95,7 +95,7 @@ class PostCard extends PureComponent<IProps> {
     date: new Date(),
     linkUrl: "",
     title: "Hello World",
-    url: "",
+    url: ""
   };
 
   public render() {
@@ -109,10 +109,10 @@ class PostCard extends PureComponent<IProps> {
         </DateBox>
         {url && (
           <UrlBox>
-            <Link to={url}>
+            <AniLink fade={true} to={url}>
               View Article
               <BookIcon size={25} />
-            </Link>
+            </AniLink>
           </UrlBox>
         )}
         {linkUrl && (

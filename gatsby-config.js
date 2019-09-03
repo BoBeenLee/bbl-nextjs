@@ -14,6 +14,7 @@ module.exports = {
     title: "BoBeen Lee"
   },
   plugins: [
+    `gatsby-plugin-transition-link`,
     `gatsby-plugin-typescript`,
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-styled-components",
@@ -56,12 +57,6 @@ module.exports = {
         background_color: config.backgroundColor,
         theme_color: config.themeColor,
         display: "minimal-ui"
-      }
-    },
-    {
-      resolve: "gatsby-plugin-nprogress",
-      options: {
-        color: config.themeColor
       }
     },
     {

@@ -1,6 +1,5 @@
 import { graphql } from "gatsby";
 import React from "react";
-import Helmet from "react-helmet";
 import styled from "styled-components";
 import Layout from "../components/Layout";
 import { SubTitle } from "../components/Title";
@@ -22,7 +21,7 @@ const SubTitleBox = styled(SubTitle)`
   font-weight: bold;
 `;
 
-export default function Template({ data, location = {} }) {
+export default function Template({ data, location = {} }: any) {
   if (!data) {
     return <div />;
   }

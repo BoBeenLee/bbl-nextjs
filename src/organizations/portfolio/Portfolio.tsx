@@ -15,7 +15,6 @@ interface IProps {
 const Root = styled.div``;
 
 const SubTitleBox = styled(SubTitle)`
-  font-weight: bold;
   padding-bottom: 20px;
 `;
 

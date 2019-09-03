@@ -2,7 +2,7 @@ import { action } from "@storybook/addon-actions";
 import { storiesOf } from "@storybook/react";
 import React from "react";
 import styled from "styled-components";
-import { About, Activity, Education, Experience, Skill } from ".";
+import { Activity, Education, Experience, Skill } from ".";
 
 const Root = styled.div`
   display: grid;
@@ -18,11 +18,6 @@ const Child = styled.div`
 
 storiesOf("Organization About", module)
   .addDecorator(getStory => <Root>{getStory()}</Root>)
-  .add("with About", () => (
-    <Child>
-      <About onPress={action("clicked")} />
-    </Child>
-  ))
   .add("with Education", () => (
     <Child>
       <Education />

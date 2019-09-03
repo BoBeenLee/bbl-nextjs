@@ -1,4 +1,4 @@
-import { Link } from "gatsby";
+import AniLink from "gatsby-plugin-transition-link/AniLink";
 import _ from "lodash";
 import React, { Component } from "react";
 import Headroom from "react-headroom";
@@ -57,7 +57,7 @@ const Logo = styled.div`
   justify-content: center;
 `;
 
-const LogoLink = styled(Link)`
+const LogoLink = styled(AniLink)`
   width: 45px;
   height: 45px;
 `;
@@ -74,7 +74,7 @@ const TitleBox = styled.div`
   align-items: center;
 `;
 
-const Title = styled(Link)`
+const Title = styled(AniLink)`
   font-size: 11px;
   padding: 0.5em;
   color: ${props => props.theme.primary};
@@ -149,7 +149,7 @@ class Header extends Component<any, IStates> {
           <Root>
             <HeaderTitle>
               <Logo>
-                <LogoLink to="/">
+                <LogoLink to="/" fade={true}>
                   <IconBox src={QuokkaIcon} alt="bobeenlee" />
                 </LogoLink>
               </Logo>
@@ -193,6 +193,7 @@ class Header extends Component<any, IStates> {
           // exact={isHome(url)}
           activeStyle={{ color: theme.secondary }}
           to={url}
+          fade={true}
         >
           {name}
         </Title>

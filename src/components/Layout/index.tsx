@@ -4,7 +4,6 @@ import Helmet from "react-helmet";
 import styled from "styled-components";
 
 import config from "../../../config/SiteConfig";
-import { RouteTransition } from "../../facc";
 import { withThemes } from "../../hoc";
 import { media } from "../../utils/media";
 import { isBrowser } from "../../utils/navigator";
@@ -44,7 +43,8 @@ const ContentBox = styled.main`
   grid-area: content;
   margin: 0 auto;
   padding: 20px 20px;
-  
+  width: 100%;
+
   ${media.mobile`
     width: 1px;
     min-width: 100%;
@@ -97,20 +97,7 @@ class Layout extends Component<IProps, IStates> {
           <HeaderBox>
             <Header />
           </HeaderBox>
-          <RouteTransition pathname={pathname}>
-            {({ key, style }) => (
-              <ContentBox
-                key={key}
-                style={{
-                  opacity: style.opacity,
-                  transform: `translate3d(0, ${style.translateY}px, 0)`
-                }}
-                id="page-box"
-              >
-                {children}
-              </ContentBox>
-            )}
-          </RouteTransition>
+          <ContentBox id="page-box">{children}</ContentBox>
           <FooterBox>
             <Footer />
           </FooterBox>
