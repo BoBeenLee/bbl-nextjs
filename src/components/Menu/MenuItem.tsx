@@ -1,13 +1,12 @@
 import React, { Component, PureComponent } from "react";
-import Link from "gatsby-link";
 import styled from "styled-components";
-import PropTypes from "prop-types";
 import { theme, isHome } from "../../constants";
+import { Link } from "gatsby";
 
 interface IProps {
   name: string;
   url: string;
-  onPress: () => void;
+  onPress: (value: { isOpen: boolean }) => void;
 }
 
 const Root = styled.div`
@@ -37,7 +36,7 @@ class MenuItem extends Component<IProps> {
           // strict={true}
           activeStyle={{ color: theme.secondary }}
           to={url}
-          onClick={onPress}
+          onClick={onPress as any}
         >
           {name}
         </MenuLink>

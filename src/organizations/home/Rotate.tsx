@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import Link from "gatsby-link";
-import PropTypes from "prop-types";
 import _ from "lodash";
 import FacebookIcon from "./images/facebook.svg";
 import InstagramIcon from "./images/instagram.svg";

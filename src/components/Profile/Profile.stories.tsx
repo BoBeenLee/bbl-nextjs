@@ -1,7 +1,8 @@
-import React from 'react';
-import { storiesOf, action } from '@kadira/storybook';
-import styled from 'styled-components';
-import { Tag } from './';
+import { action } from "@storybook/addon-actions";
+import React from "react";
+import { storiesOf } from "@storybook/react";
+import styled from "styled-components";
+import { GithubProfile } from ".";
 
 const Root = styled.div`
   display: grid;
@@ -15,10 +16,10 @@ const Child = styled.div`
   grid-row: 2;
 `;
 
-storiesOf('Tag', module)
+storiesOf("Profile", module)
   .addDecorator(getStory => <Root>{getStory()}</Root>)
-  .add('with Tag', () => (
+  .add("with GithubProfile", () => (
     <Child>
-      <Tag onPress={action('clicked')} />
+      <GithubProfile />
     </Child>
   ));

@@ -6,6 +6,7 @@ interface IProps {
   width?: string;
   src?: any;
   avatarUrl?: string;
+  onPress?: () => void;
 }
 
 const Root = styled.img`

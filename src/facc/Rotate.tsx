@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import styled, { ThemeProvider } from "styled-components";
-import PropTypes from "prop-types";
 
 import { isBrowser } from "../utils/navigator";
 

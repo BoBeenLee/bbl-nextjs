@@ -1,11 +1,16 @@
 import React, { Component, PureComponent } from "react";
 import styled from "styled-components";
-import PropTypes from "prop-types";
 import _ from "lodash";
 import { SubTitle } from "../../components/Title";
 import { PortfolioCard } from "../../components/Card";
 import { callValue } from "../../utils/object";
 import { ImagePopup } from "../../components/Popup";
+
+interface IProps {
+  title: string;
+  productions: any[];
+  images: any[];
+}
 
 const Root = styled.div``;
 
@@ -18,19 +23,32 @@ const ContentBox = styled.div`
   padding-top: 20px;
 `;
 
-class Portfolio extends Component<any> {
-  static propTypes = {
-    title: PropTypes.string,
-    productions: PropTypes.array
-  };
-  static defaultProps = {
-    title: "Company Project"
-  };
+class Portfolio extends Component<IProps, any> {
+  constructor(props: IProps) {
+    super(props);
 
-  state = {
-    showModal: false,
-    renderImage: () => {}
-  };
+    this.state = {
+      showModal: false,
+      renderImage: () => {}
+    };
+  }
+
+  public render() {
+    const { title, productions } = this.props;
+    const { showModal, renderImage } = this.state;
+
+    return (
+      <Root>
+        <SubTitleBox title={title} />
+        <ContentBox>{_.map(productions, this._renderPortfolioCard)}</ContentBox>
+        <ImagePopup
+          showModal={showModal}
+          renderImage={renderImage}
+          onClose={this._onClose}
+        />
+      </Root>
+    );
+  }
 
   onImagePopup = renderImage => {
     this.setState({
@@ -39,13 +57,13 @@ class Portfolio extends Component<any> {
     });
   };
 
-  _onClose = () => {
+  private _onClose = () => {
     this.setState({
       showModal: false
     });
   };
 
-  _renderPortfolioCard = production => {
+  private _renderPortfolioCard = production => {
     const { images } = this.props;
     const {
       id,
@@ -71,23 +89,6 @@ class Portfolio extends Component<any> {
       />
     );
   };
-
-  render() {
-    const { title, productions } = this.props;
-    const { showModal, renderImage } = this.state;
-
-    return (
-      <Root>
-        <SubTitleBox title={title} />
-        <ContentBox>{_.map(productions, this._renderPortfolioCard)}</ContentBox>
-        <ImagePopup
-          showModal={showModal}
-          renderImage={renderImage}
-          onClose={this._onClose}
-        />
-      </Root>
-    );
-  }
 }
 
 export default Portfolio;

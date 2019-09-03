@@ -10,7 +10,6 @@
     "typeRoots": ["typings", "node_modules/@types"],
     "skipLibCheck": true,
     "baseUrl": ".",
-    "outDir": "./dist/",
     "lib": ["es2017", "dom"],
     "jsx": "react",
     "noImplicitAny": false,

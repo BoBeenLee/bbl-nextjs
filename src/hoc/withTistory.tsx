@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import _ from "lodash";
 import styled from "styled-components";
-import PropTypes from "prop-types";
 import { isBrowser } from "../utils/navigator";
 import feednami from "../apis/feednami";
 

@@ -1,7 +1,8 @@
-import React from 'react';
-import { storiesOf, action } from '@kadira/storybook';
-import styled from 'styled-components';
-import { Avatar } from './';
+import { action } from "@storybook/addon-actions";
+import React from "react";
+import { storiesOf } from "@storybook/react";
+import styled from "styled-components";
+import { Avatar } from ".";
 
 const Root = styled.div`
   display: grid;
@@ -15,10 +16,10 @@ const Child = styled.div`
   grid-row: 1;
 `;
 
-storiesOf('Avatar', module)
+storiesOf("Avatar", module)
   .addDecorator(getStory => <Root>{getStory()}</Root>)
-  .add('with Avatar', () => (
+  .add("with Avatar", () => (
     <Child>
-      <Avatar onPress={action('clicked')} />
+      <Avatar onPress={action("clicked")} />
     </Child>
   ));

@@ -1,7 +1,8 @@
-import React from 'react';
-import { storiesOf, action } from '@kadira/storybook';
-import styled from 'styled-components';
-import { SocialLinks } from './';
+import { action } from "@storybook/addon-actions";
+import React from "react";
+import { storiesOf } from "@storybook/react";
+import styled from "styled-components";
+import { SocialLinks } from ".";
 
 const Root = styled.div`
   display: grid;
@@ -15,9 +16,9 @@ const Child = styled.div`
   grid-row: 1;
 `;
 
-storiesOf('SocialLinks', module)
+storiesOf("SocialLinks", module)
   .addDecorator(getStory => <Root>{getStory()}</Root>)
-  .add('with SocialLinks', () => (
+  .add("with SocialLinks", () => (
     <Child>
       <SocialLinks />
     </Child>

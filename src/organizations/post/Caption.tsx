@@ -1,30 +1,25 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
-import { Separator } from '../../components/Separator';
-import { SocialLinks } from '../../components/SocialLinks';
+import React, { Component } from "react";
+import styled from "styled-components";
+import { Separator } from "../../components/Separator";
+import { SocialLinks } from "../../components/SocialLinks";
+
+interface IProps {
+  url: string;
+  title: string;
+  description: string;
+}
 
 const Root = styled.div`
-    margin-top: 50px;
+  margin-top: 50px;
 `;
 
 const SocialLinkBox = styled(SocialLinks)`
-    width: 150px;
-    float: right;
+  width: 150px;
+  float: right;
 `;
 
-class Caption extends Component<any> {
-  static propTypes = {
-    url: PropTypes.string,
-    title: PropTypes.string,
-    description: PropTypes.string,
-  };
-  static defaultProps = {
-    url: 'http://bbl.netlify.com',
-    title: 'hello world',
-    description: 'hello',
-  };
-  render() {
+class Caption extends Component<IProps> {
+  public render() {
     const { url, title, description } = this.props;
     return (
       <Root>
@@ -35,7 +30,8 @@ class Caption extends Component<any> {
           description={description}
           iconSize={35}
         />
-      </Root>);
+      </Root>
+    );
   }
 }
 

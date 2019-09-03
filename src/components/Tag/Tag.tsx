@@ -1,6 +1,5 @@
 import React, { Component, PureComponent } from "react";
 import styled from "styled-components";
-import PropTypes from "prop-types";
 
 interface IProps {
   name: string;

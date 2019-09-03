@@ -7,7 +7,7 @@ const path = require("path");
 const { createFilePath } = require("gatsby-source-filesystem");
 
 const injectPostTemplate = (createPage, graphql) => {
-  const postTemplate = path.resolve("src/templates/post.js");
+  const postTemplate = path.resolve("src/templates/post.tsx");
   return graphql(`
     {
       allMarkdownRemark {

@@ -1,6 +1,5 @@
 import { graphql } from "gatsby";
 
-// eslint-disable-next-line no-undef
 const query = graphql`
   query PortfolioImageQuery {
     onepageImages: allFile(filter: { relativePath: { regex: "/onepage/" } }) {

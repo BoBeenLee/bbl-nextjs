@@ -1,5 +1,4 @@
 import React, { Component, PureComponent } from "react";
-import PropTypes from "prop-types";
 import _ from "lodash";
 import { slide as BurgerMenu } from "react-burger-menu";
 import styled from "styled-components";
@@ -18,7 +17,7 @@ const Root = styled.div`
   }
 `;
 
-const styles = {
+const styles: any = {
   bmBurgerButton: {
     position: "relative",
     width: "20px",

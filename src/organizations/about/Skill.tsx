@@ -1,6 +1,5 @@
 import React, { Component, PureComponent } from "react";
 import styled from "styled-components";
-import PropTypes from "prop-types";
 import _ from "lodash";
 import { ContentTitle, SubTitle } from "../../components/Title";
 import { Separator } from "../../components/Separator";

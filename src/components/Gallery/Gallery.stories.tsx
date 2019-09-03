@@ -1,7 +1,8 @@
+import { action } from "@storybook/addon-actions";
 import React from "react";
-import { storiesOf, action } from "@kadira/storybook";
+import { storiesOf } from "@storybook/react";
 import styled from "styled-components";
-import { PhotoGallery } from "./";
+import { PhotoGallery } from ".";
 import { media } from "../../utils/media";
 
 const Root = styled.div`

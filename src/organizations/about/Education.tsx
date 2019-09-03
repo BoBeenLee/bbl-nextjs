@@ -1,6 +1,5 @@
 import React, { Component, PureComponent } from "react";
 import styled from "styled-components";
-import PropTypes from "prop-types";
 import { SubTitle, ContentTitle } from "../../components/Title";
 import { Separator } from "../../components/Separator";
 import { LineText } from "../../components/Text";

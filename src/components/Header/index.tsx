@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Link from "gatsby-link";
 import Headroom from "react-headroom";
 import _ from "lodash";
 import styled, { css } from "styled-components";
@@ -10,6 +9,7 @@ import { Avatar } from "../Avatar";
 import { theme, menu as titles, isHome } from "../../constants";
 import { Separator } from "../Separator";
 import QuokkaIcon from "./images/quokka.png";
+import { Link } from "gatsby";
 
 interface IStates {
   isOpenHeader: boolean;

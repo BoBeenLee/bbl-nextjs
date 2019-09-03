@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import styled from "styled-components";
 import _ from "lodash";
-import "babel-polyfill";
 
 import { media } from "../../utils/media";
 import Header from "../Header";
@@ -13,7 +11,7 @@ import { withThemes } from "../../hoc";
 import { Footer } from "../Footer";
 import config from "../../../config/SiteConfig";
 import { isBrowser } from "../../utils/navigator";
-import "./styles";
+import { GlobalStyle } from "./styles";
 
 interface IProps {
   pathname: string;
@@ -85,6 +83,7 @@ class Layout extends Component<IProps, IStates> {
     const { isShowStatePopup } = this.state;
     return (
       <Root id="outer-container">
+        <GlobalStyle />
         <StatePopupBox isShowStatePopup={isShowStatePopup}>
           <span>
             Your computer seems to be offline. We&apos;ll keep trying, but there

@@ -61,7 +61,6 @@ class PostPage extends PureComponent<any> {
   }
 }
 
-// eslint-disable-next-line no-undef
 export const query = graphql`
   query AllMarkdownQuery {
     allMarkdownRemark(

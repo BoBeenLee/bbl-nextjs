@@ -1,8 +1,8 @@
 import React, { Component, PureComponent } from "react";
 import { format } from "date-fns";
 import styled, { css } from "styled-components";
-import Link from "gatsby-link";
 import GoBookIcon from "react-icons/lib/go/book";
+import { Link } from "gatsby";
 import { media } from "../../utils/media";
 
 import { SubTitle } from "../Title";

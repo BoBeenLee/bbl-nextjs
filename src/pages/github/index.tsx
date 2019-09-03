@@ -9,7 +9,6 @@ class GithubPage extends PureComponent {
   }
 }
 
-// eslint-disable-next-line no-undef
 export const query = graphql`
   query getGithubQuery {
     githubData {

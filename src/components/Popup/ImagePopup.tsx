@@ -1,6 +1,5 @@
 import React, { PureComponent } from "react";
 import styled from "styled-components";
-import PropTypes from "prop-types";
 import ReactModal from "react-modal";
 import CloseIcon from "./images/x-circle.svg";
 import theme from "../../constants/theme";

@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { SubTitle } from "../components/Title";
 import { media } from "../utils/media";
 import { Caption } from "../organizations/post";
+import Layout from "../components/Layout";
 
 const Root = styled.div`
   padding: 60px 50px 70px 50px;
@@ -21,25 +22,26 @@ const SubTitleBox = styled(SubTitle)`
   font-weight: bold;
 `;
 
-export default function Template({ data }) {
+export default function Template({ data, location }) {
   if (!data) {
     return <div />;
   }
   const { markdownRemark: post } = data;
   return (
-    <Root>
-      <SubTitleBox title={post.frontmatter.title} />
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
-      <Caption
-        title={post.frontmatter.title}
-        description={post.frontmatter.title}
-        url={post.fields.slug}
-      />
-    </Root>
+    <Layout pathname={location.pathname}>
+      <Root>
+        <SubTitleBox title={post.frontmatter.title} />
+        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <Caption
+          title={post.frontmatter.title}
+          description={post.frontmatter.title}
+          url={post.fields.slug}
+        />
+      </Root>
+    </Layout>
   );
 }
 
-// eslint-disable-next-line no-undef
 export const postQuery = graphql`
   query BlogPostByPath($path: String!) {
     markdownRemark(fields: { slug: { eq: $path } }) {

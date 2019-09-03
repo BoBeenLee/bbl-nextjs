@@ -24,7 +24,6 @@ class PorfolioPage extends PureComponent<any> {
   }
 }
 
-// eslint-disable-next-line no-undef
 export const query = graphql`
   query PortfolioImageQuery {
     flassImages: allFile(filter: {relativePath: {regex: "/flass/"}}) {
