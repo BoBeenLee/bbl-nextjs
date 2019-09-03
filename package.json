@@ -69,9 +69,10 @@
     "deploy-storybook": "storybook-to-ghpages -o ./public-storybook -c .storybook",
     "test": "jest && bundlesize",
     "type-check": "tsc --noEmit",
+    "lint:css": "stylelint './src/**/*.tsx'",
     "tslint": "tslint './src/**/*.{ts,tsx}'",
     "tslint:fix": "npm run tslint -- --fix",
-    "prepush": "npm run tslint"
+    "prepush": "npm run lint:css && npm run tslint"
   },
   "devDependencies": {
     "@babel/core": "^7.4.0",
