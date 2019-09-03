@@ -12,10 +12,6 @@ import Header from "../Header";
 import { BottomPopup } from "../Popup";
 import { GlobalStyle } from "./styles";
 
-interface IProps {
-  pathname: string;
-}
-
 interface IStates {
   isShowStatePopup: boolean;
 }
@@ -64,8 +60,8 @@ const StatePopupBox = styled(BottomPopup)<{ isShowStatePopup: boolean }>`
   color: ${props => props.theme.warning};
 `;
 
-class Layout extends Component<IProps, IStates> {
-  constructor(props: IProps) {
+class Layout extends Component<any, IStates> {
+  constructor(props: any) {
     super(props);
 
     this.state = {
@@ -81,7 +77,7 @@ class Layout extends Component<IProps, IStates> {
   }
 
   public render() {
-    const { children, pathname } = this.props;
+    const { children } = this.props;
     const { isShowStatePopup } = this.state;
     return (
       <Root id="outer-container">
