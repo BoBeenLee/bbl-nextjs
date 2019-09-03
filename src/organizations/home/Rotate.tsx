@@ -1,10 +1,10 @@
+import _ from "lodash";
 import React, { Component } from "react";
 import styled from "styled-components";
-import _ from "lodash";
+import { Rotate as WindowRotate } from "../../facc";
 import FacebookIcon from "./images/facebook.svg";
 import InstagramIcon from "./images/instagram.svg";
 import LinkedInIcon from "./images/linkedin.svg";
-import { Rotate as WindowRotate } from "../../facc";
 
 const Root = styled.div`
   display: grid;
@@ -23,11 +23,6 @@ const IconBox = styled.div<{ zDeg: number }>`
   transform: ${({ zDeg = 0 }) => `rotateZ(${zDeg}deg)`};
 `;
 
-const RotateBox = styled.div`
-  /* display: inline-block; */
-  /* transform: rotateX(20deg); */
-`;
-
 const LinkBox = styled.a``;
 
 const Icon = styled.img`
@@ -35,12 +30,15 @@ const Icon = styled.img`
   height: 40px;
 `;
 class Rotate extends Component {
-  static propTypes = {};
-  static defaultProps = {};
+  public render() {
+    return (
+      <Root>
+        <WindowRotate>{({ zDeg }) => this.renderIcons({ zDeg })}</WindowRotate>
+      </Root>
+    );
+  }
 
-  componentDidMount() {}
-
-  _renderIcons = ({ zDeg }) => (
+  private renderIcons = ({ zDeg }) => (
     <IconBox zDeg={zDeg}>
       <LinkBox href="https://www.facebook.com/bobin.lee.9" target="_blank">
         <Icon alt="facebook" src={FacebookIcon} />
@@ -56,14 +54,6 @@ class Rotate extends Component {
       </LinkBox>
     </IconBox>
   );
-
-  render() {
-    return (
-      <Root>
-        <WindowRotate>{({ zDeg }) => this._renderIcons({ zDeg })}</WindowRotate>
-      </Root>
-    );
-  }
 }
 
 export default Rotate;

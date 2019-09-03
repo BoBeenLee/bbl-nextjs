@@ -1,7 +1,7 @@
 import React, { Component, PureComponent } from "react";
-import styled from "styled-components";
 import OctofaceIcon from "react-icons/lib/go/octoface";
 import ContactMailIcon from "react-icons/lib/md/contact-mail";
+import styled from "styled-components";
 
 import { media } from "../../utils/media";
 
@@ -46,7 +46,7 @@ const ContactItemBox = styled.a`
 `;
 
 class Footer extends PureComponent {
-  static defaultProps = {};
+  public static defaultProps = {};
   public render() {
     return (
       <Root>

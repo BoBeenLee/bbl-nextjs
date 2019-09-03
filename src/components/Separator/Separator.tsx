@@ -7,9 +7,9 @@ const Root = styled.div`
 `;
 
 class Separator extends PureComponent {
-  static propTypes = {};
-  static defaultProps = {};
-  render() {
+  public static propTypes = {};
+  public static defaultProps = {};
+  public render() {
     return <Root {...this.props} />;
   }
 }

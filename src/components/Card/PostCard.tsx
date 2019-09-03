@@ -1,12 +1,12 @@
-import React, { Component, PureComponent } from "react";
 import { format } from "date-fns";
-import styled, { css } from "styled-components";
-import GoBookIcon from "react-icons/lib/go/book";
 import { Link } from "gatsby";
+import React, { Component, PureComponent } from "react";
+import GoBookIcon from "react-icons/lib/go/book";
+import styled, { css } from "styled-components";
 import { media } from "../../utils/media";
 
-import { SubTitle } from "../Title";
 import { Separator } from "../Separator";
+import { SubTitle } from "../Title";
 
 interface IProps {
   title: string;
@@ -92,10 +92,10 @@ const BottomSeparator = styled(Separator)`
 
 class PostCard extends PureComponent<IProps> {
   public static defaultProps = {
-    title: "Hello World",
     date: new Date(),
+    linkUrl: "",
+    title: "Hello World",
     url: "",
-    linkUrl: ""
   };
 
   public render() {

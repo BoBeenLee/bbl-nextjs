@@ -1,8 +1,8 @@
 import { action } from "@storybook/addon-actions";
-import React from "react";
 import { storiesOf } from "@storybook/react";
+import React from "react";
 import styled from "styled-components";
-import { SubTitle, ContentTitle } from ".";
+import { ContentTitle, SubTitle } from ".";
 
 const Root = styled.div`
   display: grid;

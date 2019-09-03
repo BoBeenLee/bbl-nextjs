@@ -1,16 +1,16 @@
-import React, { PureComponent } from 'react';
 import { graphql } from 'gatsby';
+import React, { PureComponent } from 'react';
 import styled from 'styled-components';
-import { Portfolio } from '../../organizations/portfolio';
-import { productions, teamProductions } from "../../constants/production";
 import Layout from "../../components/Layout";
+import { productions, teamProductions } from "../../constants/production";
+import { Portfolio } from '../../organizations/portfolio';
 
 const Root = styled.div`
   padding-top: 20px;
 `;
 
 class PorfolioPage extends PureComponent<any> {
-  render() {
+  public render() {
     const { data } = this.props;
     // console.log(data);
     return (

@@ -1,24 +1,25 @@
-import React, { Component } from "react";
 import _ from "lodash";
+import React, { Component } from "react";
 import styled from "styled-components";
-import { isBrowser } from "../utils/navigator";
 import feednami from "../apis/feednami";
+import { isBrowser } from "../utils/navigator";
 
+// tslint:disable:object-literal-sort-keys
 const withTistory = TargetComponent => {
   return class WithTistory extends Component {
-    static propTypes = {};
+    public static propTypes = {};
 
-    static defaultProps = {};
+    public static defaultProps = {};
 
-    state = {
+    public state = {
       tistory: []
     };
 
-    componentDidMount() {
+    public componentDidMount() {
       const rssUrl = "http://cultist-tp.tistory.com/rss";
 
-      isBrowser &&
-        feednami.load(rssUrl, res => {
+      if (isBrowser) {
+        (feednami as any).load(rssUrl, res => {
           const tistory = _.map(res.feed.entries, article => ({
             guid: article.guid,
             title: article.title,
@@ -29,9 +30,10 @@ const withTistory = TargetComponent => {
           }));
           this.setState({ tistory });
         });
+      }
     }
 
-    render() {
+    public render() {
       return <TargetComponent tistory={this.state.tistory} {...this.props} />;
     }
   };

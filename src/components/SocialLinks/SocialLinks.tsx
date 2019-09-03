@@ -1,42 +1,42 @@
 import React, { Component } from "react";
-import styled from "styled-components";
 import {
-  FacebookShareButton,
-  GooglePlusShareButton,
-  LinkedinShareButton,
-  TwitterShareButton,
-  TelegramShareButton,
-  WhatsappShareButton,
-  PinterestShareButton,
-  VKShareButton,
-  OKShareButton,
-  RedditShareButton,
-  TumblrShareButton,
-  LivejournalShareButton,
+  EmailIcon,
   EmailShareButton,
   FacebookIcon,
-  TwitterIcon,
-  TelegramIcon,
-  WhatsappIcon,
-  GooglePlusIcon,
-  LinkedinIcon,
-  PinterestIcon,
-  VKIcon,
-  OKIcon,
-  RedditIcon,
-  TumblrIcon,
-  LivejournalIcon,
-  MailruIcon,
-  EmailIcon,
+  FacebookShareButton,
   FacebookShareCount,
+  GooglePlusIcon,
+  GooglePlusShareButton,
   GooglePlusShareCount,
+  LinkedinIcon,
+  LinkedinShareButton,
   LinkedinShareCount,
-  PinterestShareCount,
-  VKShareCount,
+  LivejournalIcon,
+  LivejournalShareButton,
+  MailruIcon,
+  OKIcon,
+  OKShareButton,
   OKShareCount,
+  PinterestIcon,
+  PinterestShareButton,
+  PinterestShareCount,
+  RedditIcon,
+  RedditShareButton,
   RedditShareCount,
-  TumblrShareCount
+  TelegramIcon,
+  TelegramShareButton,
+  TumblrIcon,
+  TumblrShareButton,
+  TumblrShareCount,
+  TwitterIcon,
+  TwitterShareButton,
+  VKIcon,
+  VKShareButton,
+  VKShareCount,
+  WhatsappIcon,
+  WhatsappShareButton
 } from "react-share";
+import styled from "styled-components";
 
 interface IProps {
   url: string;
@@ -56,10 +56,10 @@ const Root = styled.div`
 
 class SocialLinks extends Component<IProps> {
   public static defaultProps = {
-    url: "http://bbl.netlify.com",
-    title: "hello world",
     description: "hello",
-    iconSize: 35
+    iconSize: 35,
+    title: "hello world",
+    url: "http://bbl.netlify.com"
   };
   public render() {
     const { url, title, description, iconSize, ...rest } = this.props;
@@ -68,16 +68,16 @@ class SocialLinks extends Component<IProps> {
     return (
       <Root {...rest}>
         <TwitterShareButton url={url} title={title}>
-          <TwitterIcon round size={iconSize} />
+          <TwitterIcon round={true} size={iconSize} />
         </TwitterShareButton>
         <GooglePlusShareButton url={url}>
-          <GooglePlusIcon round size={iconSize} />
+          <GooglePlusIcon round={true} size={iconSize} />
           {/* <GooglePlusShareCount url={url}>
             {count => <div className="share-count">{filter(count)}</div>}
           </GooglePlusShareCount> */}
         </GooglePlusShareButton>
         <FacebookShareButton url={url} title={title} description={description}>
-          <FacebookIcon round size={iconSize} />
+          <FacebookIcon round={true} size={iconSize} />
           {/* <FacebookShareCount url={url}>
             {count => <div className="share-count">{filter(count)}</div>}
           </FacebookShareCount> */}

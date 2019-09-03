@@ -1,15 +1,15 @@
+import { Link } from "gatsby";
+import _ from "lodash";
 import React, { Component } from "react";
 import Headroom from "react-headroom";
-import _ from "lodash";
 import styled, { css } from "styled-components";
+import { isHome, menu as titles, theme } from "../../constants";
 import { media } from "../../utils/media";
 import { isIE } from "../../utils/navigator";
-import { Menu } from "../Menu";
 import { Avatar } from "../Avatar";
-import { theme, menu as titles, isHome } from "../../constants";
+import { Menu } from "../Menu";
 import { Separator } from "../Separator";
 import QuokkaIcon from "./images/quokka.png";
-import { Link } from "gatsby";
 
 interface IStates {
   isOpenHeader: boolean;
@@ -143,8 +143,8 @@ class Header extends Component<any, IStates> {
       <RootWrapper>
         <HeaderBox
           isOpenHeader={isOpenHeader}
-          onUnpin={() => this.toggleHeader(false)}
-          onPin={() => this.toggleHeader(true)}
+          onUnpin={_.partial(this.toggleHeader, false)}
+          onPin={_.partial(this.toggleHeader, true)}
         >
           <Root>
             <HeaderTitle>
@@ -153,7 +153,7 @@ class Header extends Component<any, IStates> {
                   <IconBox src={QuokkaIcon} alt="bobeenlee" />
                 </LogoLink>
               </Logo>
-              {_.map(titles, this._renderTitleItem)}
+              {_.map(titles, this.renderTitleItem)}
             </HeaderTitle>
             <MenuBox>
               <Menu isOpen={isOpenMenu} toggleMenu={this.toggleMenu} />
@@ -184,7 +184,7 @@ class Header extends Component<any, IStates> {
     });
   };
 
-  private _renderTitleItem = (title, index) => {
+  private renderTitleItem = (title, index) => {
     const { url, name } = title;
     return (
       <TitleBox key={index}>

@@ -1,9 +1,9 @@
+import _ from "lodash";
 import React, { Component, PureComponent } from "react";
 import styled from "styled-components";
-import _ from "lodash";
-import { SubTitle, ContentTitle } from "../../components/Title";
 import { Separator } from "../../components/Separator";
 import { LineText } from "../../components/Text";
+import { ContentTitle, SubTitle } from "../../components/Title";
 import { media } from "../../utils/media";
 import { isBrowser } from "../../utils/navigator";
 
@@ -41,37 +41,37 @@ const BottomSeparator = styled(Separator)`
   margin: 40px 0;
 `;
 
-class Activity extends PureComponent {
-  static propTypes = {};
-  static defaultProps = {};
+// tslint:disable:object-literal-sort-keys
+const items = [
+  {
+    name: "Nexters",
+    url: "http://teamnexters.com/",
+    description: "Developer"
+  },
+  {
+    name: "SOPT",
+    url: "http://sopt.org/wp/",
+    description: "Developer"
+  }
+];
 
-  _renderItem = item => (
+class Activity extends PureComponent {
+  public render() {
+    return (
+      <Root>
+        <SubTitleBox title="Activity" />
+        {_.map(items, item => this.renderItem(item))}
+        <BottomSeparator />
+      </Root>
+    );
+  }
+
+  private renderItem = item => (
     <ItemBox key={item.name}>
       <TitleBox title={item.name} uri={item.url} />
       <ContentBox>{item.description}</ContentBox>
     </ItemBox>
   );
-  render() {
-    const items = [
-      {
-        name: "Nexters",
-        url: "http://teamnexters.com/",
-        description: "Developer"
-      },
-      {
-        name: "SOPT",
-        url: "http://sopt.org/wp/",
-        description: "Developer"
-      }
-    ];
-    return (
-      <Root>
-        <SubTitleBox title="Activity" />
-        {_.map(items, item => this._renderItem(item))}
-        <BottomSeparator />
-      </Root>
-    );
-  }
 }
 
 export default Activity;

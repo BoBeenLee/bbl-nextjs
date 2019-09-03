@@ -1,9 +1,9 @@
+import _ from "lodash";
 import React, { Component, PureComponent } from "react";
 import styled from "styled-components";
-import _ from "lodash";
-import { ContentTitle, SubTitle } from "../../components/Title";
 import { Separator } from "../../components/Separator";
 import { LineText } from "../../components/Text";
+import { ContentTitle, SubTitle } from "../../components/Title";
 
 const Root = styled.div``;
 
@@ -30,6 +30,7 @@ const BottomSeparator = styled(Separator)`
   margin: 40px 0;
 `;
 
+// tslint:disable:object-literal-sort-keys
 const items = {
   frontend: {
     name: "Front End",
@@ -63,7 +64,17 @@ const items = {
 };
 
 class Skill extends PureComponent {
-  _renderItem = item => (
+  public render() {
+    return (
+      <Root>
+        <SubTitleBox title="Skills" />
+        {_.map(items, this.renderItem)}
+        <BottomSeparator />
+      </Root>
+    );
+  }
+
+  private renderItem = item => (
     <ItemBox key={item.name}>
       <ContentTitle title={item.name} uri={item.uri} />
       <SkillsBox>
@@ -73,16 +84,6 @@ class Skill extends PureComponent {
       </SkillsBox>
     </ItemBox>
   );
-
-  render() {
-    return (
-      <Root>
-        <SubTitleBox title="Skills" />
-        {_.map(items, this._renderItem)}
-        <BottomSeparator />
-      </Root>
-    );
-  }
 }
 
 export default Skill;

@@ -1,10 +1,10 @@
-import React, { PureComponent } from "react";
 import { graphql } from "gatsby";
+import React, { PureComponent } from "react";
 
 // http://resume.github.io/?bobinlee
 
 class GithubPage extends PureComponent {
-  render() {
+  public render() {
     return <div>Hello World</div>;
   }
 }

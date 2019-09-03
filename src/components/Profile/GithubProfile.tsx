@@ -1,6 +1,6 @@
+import _ from "lodash";
 import React, { Component, PureComponent } from "react";
 import styled from "styled-components";
-import _ from "lodash";
 import { Avatar } from "../Avatar";
 
 interface IProps {
@@ -52,6 +52,7 @@ const OrganizationBox = styled.div`
 
 const OrganizationItemBox = styled.div``;
 
+// tslint:disable:object-literal-sort-keys
 class GithubProfile extends PureComponent<IProps> {
   public static defaultProps = {
     avatarUrl: "https://avatars0.githubusercontent.com/u/1489321?v=4",
@@ -90,13 +91,13 @@ class GithubProfile extends PureComponent<IProps> {
           </ProfileItemBox>
         </ProfileBox>
         <OrganizationBox>
-          {_.map(organizations, item => this._renderOranization(item))}
+          {_.map(organizations, item => this.renderOranization(item))}
         </OrganizationBox>
       </Root>
     );
   }
 
-  private _renderOranization = item => (
+  private renderOranization = item => (
     <OrganizationItemBox>{item.name}</OrganizationItemBox>
   );
 }

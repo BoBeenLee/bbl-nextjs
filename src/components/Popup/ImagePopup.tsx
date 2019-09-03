@@ -1,8 +1,9 @@
+import _ from "lodash";
 import React, { PureComponent } from "react";
-import styled from "styled-components";
 import ReactModal from "react-modal";
-import CloseIcon from "./images/x-circle.svg";
+import styled from "styled-components";
 import theme from "../../constants/theme";
+import CloseIcon from "./images/x-circle.svg";
 
 interface IProps {
   showModal: boolean;
@@ -47,9 +48,9 @@ const CloseBox = styled.img<{ size: number }>`
 
 class ImagePopup extends PureComponent<IProps> {
   public static defaultProps = {
-    showModal: false,
-    renderImage: () => {},
-    onClose: () => {}
+    onClose: _.identity,
+    renderImage: _.identity,
+    showModal: false
   };
 
   public render() {

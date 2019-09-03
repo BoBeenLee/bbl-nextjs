@@ -14,12 +14,12 @@ class Rotate extends Component<any> {
   };
 
   public componentDidMount() {
-    if (!this._hasDeviceOrientation()) {
+    if (!this.hasDeviceOrientation()) {
       return;
     }
     const orientation = isBrowser ? window.orientation : 0;
 
-    isBrowser &&
+    if (isBrowser) {
       window.addEventListener(
         "deviceorientation",
         ev => {
@@ -28,8 +28,6 @@ class Rotate extends Component<any> {
         },
         false
       );
-
-    isBrowser &&
       window.addEventListener(
         "orientationchange",
         ev => {
@@ -37,24 +35,36 @@ class Rotate extends Component<any> {
         },
         false
       );
+    }
   }
 
-  public getX() {
+  public render() {
+    const xDeg = this.getXDeg();
+    const yDeg = this.getYDeg();
+    const zDeg = this.getZDeg();
+    //   console.log("x,y,z", xDeg, yDeg, zDeg);
+    return (this.props.children as any)({ xDeg, yDeg, zDeg });
+  }
+
+  private hasDeviceOrientation = () =>
+    isBrowser && !!(window as any).DeviceOrientationEvent;
+
+  private getX() {
     return this.state.gamma || 0;
   }
 
-  public getY() {
+  private getY() {
     return this.state.beta || 0;
   }
 
-  public getOrientZ() {
+  private getOrientZ() {
     return this.state.alpha || 0;
   }
 
   /**
    * @returns {Number} Value of X in degrees, corrected for device orientation.
    */
-  public getXDeg() {
+  private getXDeg() {
     switch (this.state.orientation) {
       case 90:
         return -this.getX();
@@ -72,7 +82,7 @@ class Rotate extends Component<any> {
   /**
    * @returns {Number} Value of Y in degrees, corrected for device orientation.
    */
-  public getYDeg() {
+  private getYDeg() {
     switch (this.state.orientation) {
       case 90:
         return -this.getY();
@@ -90,19 +100,8 @@ class Rotate extends Component<any> {
   /**
    * @returns {Number} Value of Z in degrees, corrected for device orientation.
    */
-  public getZDeg() {
+  private getZDeg() {
     return this.getOrientZ();
-  }
-
-  public _hasDeviceOrientation = () =>
-    isBrowser && !!(window as any).DeviceOrientationEvent;
-
-  public render() {
-    const xDeg = this.getXDeg();
-    const yDeg = this.getYDeg();
-    const zDeg = this.getZDeg();
-    //   console.log("x,y,z", xDeg, yDeg, zDeg);
-    return (this.props.children as any)({ xDeg, yDeg, zDeg });
   }
 }
 

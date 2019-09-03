@@ -1,7 +1,8 @@
+import { Link } from "gatsby";
+import _ from "lodash";
 import React, { Component, PureComponent } from "react";
 import styled from "styled-components";
-import { theme, isHome } from "../../constants";
-import { Link } from "gatsby";
+import { isHome, theme } from "../../constants";
 
 interface IProps {
   name: string;
@@ -24,10 +25,10 @@ const MenuLink = styled(Link)`
 class MenuItem extends Component<IProps> {
   public static defaultProps = {
     name: "Home",
-    url: "/",
-    onPress: () => {}
+    onPress: _.identity,
+    url: "/"
   };
-  render() {
+  public render() {
     const { name, url, onPress } = this.props;
     return (
       <Root>

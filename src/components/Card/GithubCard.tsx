@@ -1,5 +1,5 @@
-import React, { Component, PureComponent } from "react";
 import distanceInWordsToNow from "date-fns/distance_in_words_to_now";
+import React, { Component, PureComponent } from "react";
 import styled from "styled-components";
 import { isBrowser } from "../../utils/navigator";
 
@@ -39,9 +39,9 @@ const DescriptionBox = styled.div`
 
 class GithubCard extends PureComponent<IProps> {
   public static defaultProps = {
-    name: "bbl",
-    description: "blog & homepage project based on gatsby",
     date: "2018-02-05T13:42:31Z",
+    description: "blog & homepage project based on gatsby",
+    name: "bbl",
     url: "https://github.com/BoBinLee/bbl"
   };
 
@@ -58,7 +58,9 @@ class GithubCard extends PureComponent<IProps> {
 
   private onGithubClick = () => {
     const { url } = this.props;
-    isBrowser && window.open(url, "_blank");
+    if (isBrowser) {
+      window.open(url, "_blank");
+    }
   };
 }
 

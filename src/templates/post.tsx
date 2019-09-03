@@ -1,11 +1,11 @@
-import React from "react";
 import { graphql } from "gatsby";
+import React from "react";
 import Helmet from "react-helmet";
 import styled from "styled-components";
-import { SubTitle } from "../components/Title";
-import { media } from "../utils/media";
-import { Caption } from "../organizations/post";
 import Layout from "../components/Layout";
+import { SubTitle } from "../components/Title";
+import { Caption } from "../organizations/post";
+import { media } from "../utils/media";
 
 const Root = styled.div`
   padding: 60px 50px 70px 50px;
@@ -22,7 +22,7 @@ const SubTitleBox = styled(SubTitle)`
   font-weight: bold;
 `;
 
-export default function Template({ data, location }) {
+export default function Template({ data, location = {} }) {
   if (!data) {
     return <div />;
   }

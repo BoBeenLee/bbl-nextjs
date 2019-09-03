@@ -11,7 +11,7 @@ class Tag extends PureComponent<IProps> {
   public static defaultProps = {
     name: "Nexters"
   };
-  render() {
+  public render() {
     const { name, ...rest } = this.props;
     return <Root {...rest}>{name}</Root>;
   }

@@ -1,64 +1,72 @@
-import React, { Component, PureComponent } from 'react';
-import { graphql } from 'gatsby';
-import styled from 'styled-components';
-import _ from 'lodash';
-import { PostCard } from '../../components/Card';
-import { withTistory, withOtherPosts } from '../../hoc';
+import { graphql } from "gatsby";
+import _ from "lodash";
+import React, { Component, PureComponent } from "react";
+import styled from "styled-components";
+import { PostCard } from "../../components/Card";
 import Layout from "../../components/Layout";
+import { withOtherPosts, withTistory } from "../../hoc";
 
 const Root = styled.div`
   padding-top: 20px;
 `;
 
 class PostPage extends PureComponent<any> {
-  _mapOtherToPosts = () => {
-    const { otherPosts } = this.props;
-    return _.map(otherPosts, item => ({
-      id: item.url,
-      title: item.title,
-      linkUrl: item.url,
-      date: new Date(item.date),
-    }));
-  }
-
-  _mapRemarkToPosts = () => {
-    const { allMarkdownRemark } = this.props.data;
-    const posts = allMarkdownRemark.edges;
-    return _.map(posts, ({ node }) => {
-      const { id, fields: { slug }, frontmatter: { title, date } } = node;
-      return {
-        id,
-        title,
-        url: slug,
-        date: new Date(date),
-      };
-    });
-  };
-
-  _mapTistoryToPosts = () => {
-    const { tistory = [] } = this.props;
-    return _.map(tistory, item => ({
-      id: item.guid,
-      title: item.title,
-      linkUrl: item.link,
-      date: item.date,
-    }));
-  };
-
-  render() {
-    const posts = [...this._mapOtherToPosts(),
-    ...this._mapTistoryToPosts(),
-    ...this._mapRemarkToPosts()];
-    const postsByDESC = _.orderBy(posts, ['date'], ['desc']);
+  public render() {
+    const posts = [
+      ...this.mapOtherToPosts(),
+      ...this.mapTistoryToPosts(),
+      ...this.mapRemarkToPosts()
+    ];
+    const postsByDESC = _.orderBy(posts, ["date"], ["desc"]);
 
     return (
       <Layout pathname={this.props.location.pathname}>
         <Root>
-          {_.map(postsByDESC, item => <PostCard key={item.id} {...item} />)}
+          {_.map(postsByDESC, item => (
+            <PostCard key={item.id} {...item} />
+          ))}
         </Root>
       </Layout>
     );
   }
+
+  private mapRemarkToPosts = () => {
+    const { allMarkdownRemark } = this.props.data;
+    const posts = allMarkdownRemark.edges;
+    return _.map(posts, ({ node }) => {
+      const {
+        id,
+        fields: { slug },
+        frontmatter: { title, date }
+      } = node;
+      return {
+        date: new Date(date),
+        id,
+        title,
+        url: slug
+      };
+    });
+  };
+
+  private mapTistoryToPosts = () => {
+    const { tistory = [] } = this.props;
+    return _.map(tistory, item => ({
+      date: item.date,
+      id: item.guid,
+      linkUrl: item.link,
+      title: item.title
+    }));
+  };
+
+  private mapOtherToPosts = () => {
+    const { otherPosts } = this.props;
+    return _.map(otherPosts, item => ({
+      date: new Date(item.date),
+      id: item.url,
+      linkUrl: item.url,
+      title: item.title
+    }));
+  };
 }
 
 export const query = graphql`

@@ -1,8 +1,8 @@
 import { action } from "@storybook/addon-actions";
-import React from "react";
 import { storiesOf } from "@storybook/react";
+import React from "react";
 import styled from "styled-components";
-import { About, Education, Experience, Activity, Skill } from ".";
+import { About, Activity, Education, Experience, Skill } from ".";
 
 const Root = styled.div`
   display: grid;

@@ -1,27 +1,27 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
-import { Motion, spring } from 'react-motion';
 import PropTypes from 'prop-types';
-import { SubTitle, ContentTitle } from '../../components/Title';
+import React, { Component } from 'react';
+import { Motion, spring } from 'react-motion';
+import styled from 'styled-components';
 import { Separator } from '../../components/Separator';
+import { ContentTitle, SubTitle } from '../../components/Title';
 
 
 const Root = styled.div`
 `;
 
 class About extends Component<any, any> {
-  static propTypes = {};
-  static defaultProps = {};
+  public static propTypes = {};
+  public static defaultProps = {};
 
-  state = {
+  public state = {
     count: 0,
   };
 
-  increase = () => {
+  public increase = () => {
     this.setState(state => ({ count: state.count + 1 }));
   };
 
-  render() {
+  public render() {
     return (
       <Root>
         <button onClick={this.increase}>Increase</button>

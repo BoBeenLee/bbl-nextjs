@@ -1,10 +1,10 @@
+import _ from "lodash";
 import React, { Component, PureComponent } from "react";
 import styled from "styled-components";
-import _ from "lodash";
-import { SubTitle } from "../../components/Title";
 import { PortfolioCard } from "../../components/Card";
-import { callValue } from "../../utils/object";
 import { ImagePopup } from "../../components/Popup";
+import { SubTitle } from "../../components/Title";
+import { callValue } from "../../utils/object";
 
 interface IProps {
   title: string;
@@ -28,8 +28,8 @@ class Portfolio extends Component<IProps, any> {
     super(props);
 
     this.state = {
-      showModal: false,
-      renderImage: () => {}
+      renderImage: _.identity,
+      showModal: false
     };
   }
 
@@ -40,30 +40,30 @@ class Portfolio extends Component<IProps, any> {
     return (
       <Root>
         <SubTitleBox title={title} />
-        <ContentBox>{_.map(productions, this._renderPortfolioCard)}</ContentBox>
+        <ContentBox>{_.map(productions, this.renderPortfolioCard)}</ContentBox>
         <ImagePopup
           showModal={showModal}
           renderImage={renderImage}
-          onClose={this._onClose}
+          onClose={this.onClose}
         />
       </Root>
     );
   }
 
-  onImagePopup = renderImage => {
+  private onImagePopup = renderImage => {
     this.setState({
       renderImage,
       showModal: true
     });
   };
 
-  private _onClose = () => {
+  private onClose = () => {
     this.setState({
       showModal: false
     });
   };
 
-  private _renderPortfolioCard = production => {
+  private renderPortfolioCard = production => {
     const { images } = this.props;
     const {
       id,

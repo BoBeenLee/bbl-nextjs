@@ -1,6 +1,6 @@
 import { action } from "@storybook/addon-actions";
-import React from "react";
 import { storiesOf } from "@storybook/react";
+import React from "react";
 
 import styled from "styled-components";
 import { BottomPopup, ImagePopup } from ".";
@@ -13,6 +13,8 @@ const Child = styled.div``;
 
 const ImageBox = styled.div``;
 
+const renderImage = () => <img width="100%" height="500" src={Board} alt="" />;
+
 storiesOf("Popup", module)
   .addDecorator(getStory => <Root>{getStory()}</Root>)
   .add("with BottomPopup", () => (
@@ -22,9 +24,6 @@ storiesOf("Popup", module)
   ))
   .add("with ImagePopup", () => (
     <Child>
-      <ImagePopup
-        showModal
-        renderImage={() => <img width="100%" height="500" src={Board} alt="" />}
-      />
+      <ImagePopup showModal={true} renderImage={renderImage} />
     </Child>
   ));

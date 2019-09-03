@@ -1,9 +1,9 @@
-import React, { Component, PureComponent } from "react";
 import _ from "lodash";
+import React, { Component, PureComponent } from "react";
 import { slide as BurgerMenu } from "react-burger-menu";
 import styled from "styled-components";
-import { theme, menu as menus } from "../../constants";
 import { MenuItem } from ".";
+import { menu as menus, theme } from "../../constants";
 import { Separator } from "../Separator";
 
 interface IProps {
@@ -17,6 +17,7 @@ const Root = styled.div`
   }
 `;
 
+// tslint:disable:object-literal-sort-keys
 const styles: any = {
   bmBurgerButton: {
     position: "relative",
@@ -71,7 +72,7 @@ const BottomSeparator = styled(Separator)`
 class Menu extends PureComponent<IProps> {
   public static defaultProps = {
     isOpen: false,
-    toggleMenu: () => {}
+    toggleMenu: _.identity
   };
 
   public render() {
@@ -80,7 +81,7 @@ class Menu extends PureComponent<IProps> {
       <Root>
         <BurgerMenu
           id="menu"
-          right
+          right={true}
           styles={styles}
           isOpen={isOpen}
           onStateChange={toggleMenu}

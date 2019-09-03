@@ -1,12 +1,12 @@
-import React, { Component, PureComponent } from "react";
-import styled from "styled-components";
 import _ from "lodash";
-import GithubIcon from "react-icons/lib/go/mark-github";
+import React, { Component, PureComponent } from "react";
 import LinkIcon from "react-icons/lib/go/link";
-import { media } from "../../utils/media";
-import { Separator } from "../Separator";
-import { PhotoGallery } from "../Gallery";
+import GithubIcon from "react-icons/lib/go/mark-github";
+import styled from "styled-components";
 import { skillMap } from "../../constants/skill";
+import { media } from "../../utils/media";
+import { PhotoGallery } from "../Gallery";
+import { Separator } from "../Separator";
 
 interface IProps {
   name: string;
@@ -109,6 +109,7 @@ const BottomSeparator = styled(Separator)`
 `;
 
 class PortfolioCard extends PureComponent<IProps> {
+  // tslint:disable:object-literal-sort-keys
   public static defaultProps = {
     name: "flass",
     period: "2016-01 ~ 2017-01",
@@ -142,7 +143,7 @@ class PortfolioCard extends PureComponent<IProps> {
     }),
     githubUrl: "",
     linkUrl: "",
-    onImagePopup: () => {}
+    onImagePopup: _.identity
   };
 
   public render() {
@@ -163,7 +164,7 @@ class PortfolioCard extends PureComponent<IProps> {
         <LinkBox>
           {githubUrl && (
             <IconBox href={githubUrl} target="_blank">
-              <GithubIcon disabled size={20} />
+              <GithubIcon disabled={true} size={20} />
             </IconBox>
           )}
           {linkUrl && (

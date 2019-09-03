@@ -1,19 +1,20 @@
-import React from "react";
 import { shallow } from "enzyme";
-import GithubIcon from "react-icons/lib/go/mark-github";
+import _ from "lodash";
+import React from "react";
 import LinkIcon from "react-icons/lib/go/link";
+import GithubIcon from "react-icons/lib/go/mark-github";
 import { PortfolioCard } from ".";
 
 describe("Component: PortfolioCard", () => {
   const minProps = {
+    githubUrl: "",
+    images: [],
+    linkUrl: "",
     name: "",
+    onImagePopup: _.identity,
     period: "",
     skills: [],
-    summary: "",
-    images: [],
-    githubUrl: "",
-    linkUrl: "",
-    onImagePopup: () => {}
+    summary: ""
   };
 
   it("renders PortfolioCard without exploding", () => {

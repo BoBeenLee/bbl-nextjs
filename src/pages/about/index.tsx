@@ -1,14 +1,14 @@
+import PropTypes from 'prop-types';
 import React, { Component, PureComponent } from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 
+import Layout from "../../components/Layout";
 import {
+  Activity,
   Education,
   Experience,
-  Activity,
   Skill,
 } from '../../organizations/about';
-import Layout from "../../components/Layout";
 
 const Root = styled.div`
   padding-top: 20px;

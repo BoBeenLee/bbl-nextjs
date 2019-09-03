@@ -1,16 +1,16 @@
+import _ from "lodash";
 import React, { Component } from "react";
 import Helmet from "react-helmet";
 import styled from "styled-components";
-import _ from "lodash";
 
-import { media } from "../../utils/media";
-import Header from "../Header";
-import { RouteTransition } from "../../facc";
-import { BottomPopup } from "../Popup";
-import { withThemes } from "../../hoc";
-import { Footer } from "../Footer";
 import config from "../../../config/SiteConfig";
+import { RouteTransition } from "../../facc";
+import { withThemes } from "../../hoc";
+import { media } from "../../utils/media";
 import { isBrowser } from "../../utils/navigator";
+import { Footer } from "../Footer";
+import Header from "../Header";
+import { BottomPopup } from "../Popup";
 import { GlobalStyle } from "./styles";
 
 interface IProps {
@@ -74,8 +74,10 @@ class Layout extends Component<IProps, IStates> {
   }
 
   public componentDidMount() {
-    isBrowser && window.addEventListener("offline", this.handleOffline);
-    isBrowser && window.addEventListener("online", this.handleOnline);
+    if (isBrowser) {
+      window.addEventListener("offline", this.handleOffline);
+      window.addEventListener("online", this.handleOnline);
+    }
   }
 
   public render() {
@@ -90,7 +92,7 @@ class Layout extends Component<IProps, IStates> {
             may be a problem with your connection.
           </span>
         </StatePopupBox>
-        {this._renderHelmet()}
+        {this.renderHelmet()}
         <ContainerBox>
           <HeaderBox>
             <Header />
@@ -125,12 +127,12 @@ class Layout extends Component<IProps, IStates> {
     this.setState({ isShowStatePopup: false });
   };
 
-  private _renderHelmet = () => {
+  private renderHelmet = () => {
     const metas = _.map(
       _.pick(config, ["description", "keywords"]),
       (value, key) => ({
-        name: key,
-        content: value
+        content: value,
+        name: key
       })
     );
     return <Helmet title="BoBeen Lee" meta={metas} />;

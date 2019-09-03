@@ -1,8 +1,8 @@
-import React, { Component, PureComponent } from "react";
-import styled from "styled-components";
-import _ from "lodash";
 import Img from "gatsby-image";
+import _ from "lodash";
+import React, { Component, PureComponent } from "react";
 import Slider from "react-slick";
+import styled from "styled-components";
 import { isMobile } from "../../utils/navigator";
 
 interface IProps {
@@ -11,12 +11,12 @@ interface IProps {
 }
 
 const settings = {
+  adaptiveHeight: true,
   dots: true,
   infinite: true,
-  speed: 500,
-  slidesToShow: 1,
   slidesToScroll: 1,
-  adaptiveHeight: true
+  slidesToShow: 1,
+  speed: 500
 };
 
 const SliderBox = styled(Slider)`
@@ -37,6 +37,7 @@ const PopupImageBox = styled.div`
   }
 `;
 
+// tslint:disable:object-literal-sort-keys
 class PhotoGallery extends PureComponent<IProps> {
   public static defaultProps = {
     images: _.times(5, () => {
@@ -58,7 +59,7 @@ class PhotoGallery extends PureComponent<IProps> {
       };
       return obj;
     }),
-    onImagePopup: () => {}
+    onImagePopup: _.identity
   };
 
   public render() {
