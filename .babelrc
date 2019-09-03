@@ -6,7 +6,6 @@
       {
         "legacy": true
       }
-    ],
-    "@babel/plugin-transform-regenerator"
+    ]
   ]
 }

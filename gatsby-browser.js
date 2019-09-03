@@ -4,6 +4,7 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
+require("@babel/polyfill");
 const ReactModal = require("react-modal");
 
 exports.onClientEntry = () => {
