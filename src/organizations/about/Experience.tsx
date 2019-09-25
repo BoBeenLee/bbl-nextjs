@@ -44,7 +44,7 @@ const items = [
   {
     title: "Blended",
     titleUri: "https://www.rocketpunch.com/companies/trillionaire",
-    period: "2017.4 - ",
+    period: "2018.4 - ",
     role: "React, React Native Developer"
   },
   {
