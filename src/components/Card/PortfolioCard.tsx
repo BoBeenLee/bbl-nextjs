@@ -1,5 +1,6 @@
 import _ from "lodash";
 import React, { Component, PureComponent } from "react";
+import { DiAndroid, DiApple } from "react-icons/di"
 import { GoLink as LinkIcon, GoMarkGithub as GithubIcon } from "react-icons/go";
 
 import styled from "styled-components";
@@ -166,17 +167,22 @@ class PortfolioCard extends PureComponent<IProps> {
         <NameBox>{name}</NameBox>
         <PeriodBox>{period}</PeriodBox>
         <LinkBox>
+          {googleStoreUrl && (
+            <IconBox href={googleStoreUrl} target="_blank">
+              <DiAndroid size={20} />
+            </IconBox>
+          )}
+          {appStoreUrl && (
+            <IconBox href={googleStoreUrl} target="_blank">
+              <DiApple size={20} />
+            </IconBox>
+          )}
           {githubUrl && (
             <IconBox href={githubUrl} target="_blank">
               <GithubIcon size={20} />
             </IconBox>
           )}
           {linkUrl && (
-            <IconBox href={linkUrl} target="_blank">
-              <LinkIcon size={20} />
-            </IconBox>
-          )}
-          {googleStoreUrl && (
             <IconBox href={linkUrl} target="_blank">
               <LinkIcon size={20} />
             </IconBox>

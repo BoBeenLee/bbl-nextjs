@@ -1,5 +1,5 @@
 import _ from "lodash";
-import React, { Component, PureComponent } from "react";
+import React, { Component } from "react";
 import styled from "styled-components";
 import { PortfolioCard } from "../../components/Card";
 import { ImagePopup } from "../../components/Popup";
@@ -71,8 +71,12 @@ class Portfolio extends Component<IProps, any> {
       skills,
       summary = "",
       githubUrl,
-      linkUrl
+      linkUrl,
+      googleStoreUrl,
+      appStoreUrl
     } = production;
+
+    console.log(googleStoreUrl, appStoreUrl);
 
     return (
       <PortfolioCard
@@ -83,6 +87,8 @@ class Portfolio extends Component<IProps, any> {
         summary={summary}
         githubUrl={githubUrl}
         linkUrl={linkUrl}
+        googleStoreUrl={googleStoreUrl}
+        appStoreUrl={appStoreUrl}
         images={callValue(() => images[`${id}Images`].edges, [])}
         onImagePopup={this.onImagePopup}
       />

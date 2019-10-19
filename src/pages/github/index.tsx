@@ -49,7 +49,6 @@ export const query = graphql`
               id
               name
               url
-              description
               updatedAt
             }
             totalCount
