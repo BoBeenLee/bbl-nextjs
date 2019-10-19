@@ -153,7 +153,9 @@ const productions = [
     ],
     summary: "보상을 통한 뷰티 커뮤니티",
     githubUrl: "",
-    linkUrl: "https://fitsme.kr/"
+    linkUrl: "https://fitsme.kr/",
+    googleStoreUrl: "",
+    appStoreUrl: ""
   },
   {
     id: "COSMEE",

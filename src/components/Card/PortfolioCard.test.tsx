@@ -1,8 +1,7 @@
 import { shallow } from "enzyme";
 import _ from "lodash";
 import React from "react";
-import LinkIcon from "react-icons/lib/go/link";
-import GithubIcon from "react-icons/lib/go/mark-github";
+import { GoLink as LinkIcon, GoMarkGithub as GithubIcon } from "react-icons/go";
 import { PortfolioCard } from ".";
 
 describe("Component: PortfolioCard", () => {

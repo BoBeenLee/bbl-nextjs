@@ -1,7 +1,7 @@
 import _ from "lodash";
 import React, { Component, PureComponent } from "react";
-import LinkIcon from "react-icons/lib/go/link";
-import GithubIcon from "react-icons/lib/go/mark-github";
+import { GoLink as LinkIcon, GoMarkGithub as GithubIcon } from "react-icons/go";
+
 import styled from "styled-components";
 import { skillMap } from "../../constants/skill";
 import { media } from "../../utils/media";
@@ -16,6 +16,8 @@ interface IProps {
   images: any[];
   githubUrl: string;
   linkUrl: string;
+  googleStoreUrl?: string;
+  appStoreUrl?: string;
   onImagePopup: (render: any) => void;
 }
 
@@ -154,6 +156,8 @@ class PortfolioCard extends PureComponent<IProps> {
       summary,
       githubUrl,
       linkUrl,
+      googleStoreUrl,
+      appStoreUrl,
       images,
       onImagePopup
     } = this.props;
@@ -164,10 +168,15 @@ class PortfolioCard extends PureComponent<IProps> {
         <LinkBox>
           {githubUrl && (
             <IconBox href={githubUrl} target="_blank">
-              <GithubIcon disabled={true} size={20} />
+              <GithubIcon size={20} />
             </IconBox>
           )}
           {linkUrl && (
+            <IconBox href={linkUrl} target="_blank">
+              <LinkIcon size={20} />
+            </IconBox>
+          )}
+          {googleStoreUrl && (
             <IconBox href={linkUrl} target="_blank">
               <LinkIcon size={20} />
             </IconBox>

@@ -1,7 +1,7 @@
 import { format } from "date-fns";
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 import React, { Component, PureComponent } from "react";
-import GoBookIcon from "react-icons/lib/go/book";
+import { GoBook as GoBookIcon } from "react-icons/go";
 import styled, { css } from "styled-components";
 import { media } from "../../utils/media";
 

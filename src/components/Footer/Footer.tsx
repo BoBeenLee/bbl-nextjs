@@ -1,6 +1,6 @@
 import React, { Component, PureComponent } from "react";
-import OctofaceIcon from "react-icons/lib/go/octoface";
-import ContactMailIcon from "react-icons/lib/md/contact-mail";
+import { GoOctoface as OctofaceIcon } from "react-icons/go";
+import { MdContactMail as ContactMailIcon } from "react-icons/md";
 import styled from "styled-components";
 
 import { media } from "../../utils/media";
