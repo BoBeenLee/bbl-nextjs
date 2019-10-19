@@ -65,7 +65,7 @@
   "main": "n/a",
   "scripts": {
     "prod": "cross-env NODE_ENV=production gatsby serve -p 9003",
-    "build": "cross-env NODE_ENV=production gatsby build",
+    "build": "cross-env NODE_ENV=production NODE_OPTIONS=--max_old_space_size=4096 gatsby build",
     "ngrok": "ngrok http 8000",
     "develop": "cross-env NODE_ENV=development gatsby develop",
     "storybook": "start-storybook -p 6006",
