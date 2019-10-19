@@ -151,7 +151,7 @@ const productions = [
       "storybook",
       "graphql"
     ],
-    summary: "보상을 통한 뷰티 커뮤니티",
+    summary: "나에게 맞는, 더 나은 뷰티라이프",
     githubUrl: "",
     linkUrl: "https://fitsme.kr/",
     googleStoreUrl: "https://play.google.com/store/apps/details?id=kr.fitsme.app",
