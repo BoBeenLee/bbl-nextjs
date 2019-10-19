@@ -23,7 +23,6 @@ const Root = styled.div`
     "separator separator";
   grid-template-columns: 1fr 200px;
   grid-column-gap: 20px;
-
   ${media.mobile`
     grid-template-areas:
     "date"
@@ -46,12 +45,6 @@ const BookIcon = styled(GoBookIcon)`
   padding-bottom: 3px;
 `;
 
-const NameBox = styled.span`
-  color: ${props => props.theme.third};
-  margin-right: 3px;
-  font-size: 13px;
-`;
-
 const DateBox = styled.div`
   grid-area: date;
   display: flex;
@@ -60,6 +53,7 @@ const DateBox = styled.div`
   line-height: 16px;
   font-size: 13px;
   color: ${props => props.theme.primary};
+  justify-content: flex-end;
   ${media.mobile`
   line-height: 20px;
   margin-bottom: 15px;
@@ -85,6 +79,20 @@ const UrlBox = styled.div`
   }
 `;
 
+const ArticleLink = styled.a`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  line-height: 26px;
+`;
+
+const AniLinkBox = styled(AniLink)`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  line-height: 26px;
+`;
+
 const BottomSeparator = styled(Separator)`
   grid-area: separator;
   margin: 40px 0px;
@@ -104,23 +112,22 @@ class PostCard extends PureComponent<IProps> {
       <Root>
         <TitleBox title={title} />
         <DateBox>
-          <NameBox>Date:</NameBox>
           {format(date, "MMMM D, YYYY")}
         </DateBox>
         {url && (
           <UrlBox>
-            <AniLink fade={true} to={url}>
+            <AniLinkBox as={AniLink} fade={true} to={url}>
               View Article
               <BookIcon size={25} />
-            </AniLink>
+            </AniLinkBox>
           </UrlBox>
         )}
         {linkUrl && (
           <UrlBox>
-            <a href={linkUrl} target="_blank">
+            <ArticleLink href={linkUrl} target="_blank">
               View Article
               <BookIcon size={25} />
-            </a>
+            </ArticleLink>
           </UrlBox>
         )}
         <BottomSeparator />
