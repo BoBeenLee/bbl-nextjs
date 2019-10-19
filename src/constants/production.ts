@@ -5,7 +5,7 @@ const teamProductions = [
     name: "bbl",
     period: "current",
     githubRepoName: [],
-    skills: ["react", "gatsby", "styled components", "offline", "storybook"],
+    skills: ["react", "gatsby", "styled components", "offline", "typescript", "storybook"],
     summary: "personal site",
     githubUrl: "https://github.com/BoBinLee/bbl",
     linkUrl: ""
@@ -137,9 +137,28 @@ const teamProductions = [
 
 const productions = [
   {
+    id: "FITSME",
+    name: "FITSME",
+    period: "2019.4 - ",
+    githubRepoName: [],
+    skills: [
+      "react native",
+      "mobx state tree",
+      "mobx",
+      "react native navigation v2",
+      "styled components",
+      "typescript",
+      "storybook",
+      "graphql"
+    ],
+    summary: "보상을 통한 뷰티 커뮤니티",
+    githubUrl: "",
+    linkUrl: "https://fitsme.kr/"
+  },
+  {
     id: "COSMEE",
     name: "COSMEE",
-    period: "2017.4 - ",
+    period: "2017.4 - 2019.3",
     githubRepoName: [],
     skills: [
       "react native",
@@ -154,7 +173,7 @@ const productions = [
     ],
     summary: "보상을 통한 뷰티 커뮤니티",
     githubUrl: "",
-    linkUrl: "https://cosmee.co/"
+    linkUrl: "https://medium.com/@Cosmochain/cosmee-app-now-available-on-google-play-store-f80149a2fa4c"
   },
   {
     id: "buxi",
