@@ -149,7 +149,8 @@ const productions = [
       "styled components",
       "typescript",
       "storybook",
-      "graphql"
+      "graphql",
+      "firebase"
     ],
     summary: "나에게 맞는, 더 나은 뷰티라이프",
     githubUrl: "",
