@@ -76,8 +76,6 @@ class Portfolio extends Component<IProps, any> {
       appStoreUrl
     } = production;
 
-    console.log(googleStoreUrl, appStoreUrl);
-
     return (
       <PortfolioCard
         key={id}
