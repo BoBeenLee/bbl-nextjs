@@ -1,5 +1,4 @@
-import CMS from 'netlify-cms';
-import 'netlify-cms/dist/cms.css';
+import CMS from "netlify-cms-app";
 import React from 'react';
 
 // import PostPreview from './previews/PostPreview';

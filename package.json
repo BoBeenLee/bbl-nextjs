@@ -25,7 +25,7 @@
     "gatsby-link": "^2.2.11",
     "gatsby-plugin-google-analytics": "^2.0.17",
     "gatsby-plugin-manifest": "^2.0.24",
-    "gatsby-plugin-netlify-cms": "3.0.16",
+    "gatsby-plugin-netlify-cms": "^4.1.33",
     "gatsby-plugin-offline": "^2.0.25",
     "gatsby-plugin-react-helmet": "^3.0.10",
     "gatsby-plugin-sharp": "^2.2.19",
@@ -40,7 +40,8 @@
     "lodash": "^4.17.10",
     "mobile-detect": "^1.4.1",
     "moment": "^2.22.1",
-    "netlify-cms": "2.8.0",
+    "netlify-cms": "2.10.2",
+    "netlify-cms-app": "^2.10.1",
     "qs": "^6.6.0",
     "react": "^16.8.4",
     "react-burger-menu": "^2.4.4",
@@ -114,7 +115,7 @@
     "tslint-config-prettier": "^1.18.0",
     "tslint-plugin-prettier": "^2.0.1",
     "tslint-react": "^3.6.0",
-    "typescript": "^3.3.3333"
+    "typescript": "^3.7.4"
   },
   "storybook-deployer": {
     "gitUsername": "GH Pages Bot",
