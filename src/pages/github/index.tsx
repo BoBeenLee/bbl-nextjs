@@ -9,54 +9,54 @@ class GithubPage extends PureComponent {
   }
 }
 
-export const query = graphql`
-  query getGithubQuery {
-    githubData {
-      data {
-        user {
-          avatarUrl
-          email
-          location
-          followers {
-            totalCount
-          }
-          following {
-            totalCount
-          }
-          organizations {
-            nodes {
-              avatarUrl
-              name
-              memberStatuses {
-                totalCount
-              }
-            }
-          }
-          repositories {
-            edges {
-              node {
-                id
-                name
-                url
-                description
-                updatedAt
-              }
-            }
-            totalCount
-          }
-          repositoriesContributedTo {
-            nodes {
-              id
-              name
-              url
-              updatedAt
-            }
-            totalCount
-          }
-        }
-      }
-    }
-  }
-`;
+// export const query = graphql`
+//   query getGithubQuery {
+//     githubData {
+//       data {
+//         user {
+//           avatarUrl
+//           email
+//           location
+//           followers {
+//             totalCount
+//           }
+//           following {
+//             totalCount
+//           }
+//           organizations {
+//             nodes {
+//               avatarUrl
+//               name
+//               memberStatuses {
+//                 totalCount
+//               }
+//             }
+//           }
+//           repositories {
+//             edges {
+//               node {
+//                 id
+//                 name
+//                 url
+//                 description
+//                 updatedAt
+//               }
+//             }
+//             totalCount
+//           }
+//           repositoriesContributedTo {
+//             nodes {
+//               id
+//               name
+//               url
+//               updatedAt
+//             }
+//             totalCount
+//           }
+//         }
+//       }
+//     }
+//   }
+// `;
 
 export default GithubPage;
