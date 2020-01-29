@@ -25,7 +25,7 @@ const SubTitleBox = styled(SubTitle)`
   font-weight: bold;
 `;
 
-export default function Template({ data, location = {} }: IProps) {
+export default function Template({ data, location }: IProps) {
   if (!data) {
     return <div />;
   }

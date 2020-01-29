@@ -1,17 +1,17 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
     "esModuleInterop": true,
     "experimentalDecorators": true,
-    "strict": true,
-    "moduleResolution": "node",
-    "sourceMap": true,
-    "target": "es2015",
-    "typeRoots": ["typings", "node_modules/@types"],
-    "skipLibCheck": true,
-    "baseUrl": ".",
-    "lib": ["es2017", "dom"],
     "jsx": "react",
-    "noImplicitAny": false
+    "lib": ["es2017", "dom"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "esnext",
+    "typeRoots": ["typings", "node_modules/@types"]
   }
 }
