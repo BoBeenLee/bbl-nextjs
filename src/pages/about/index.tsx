@@ -1,20 +1,20 @@
-import PropTypes from 'prop-types';
-import React, { Component, PureComponent } from 'react';
-import styled from 'styled-components';
+import { PageRendererProps } from "gatsby";
+import React, { Component, PureComponent } from "react";
+import styled from "styled-components";
 
 import Layout from "../../components/Layout";
 import {
   Activity,
   Education,
   Experience,
-  Skill,
-} from '../../organizations/about';
+  Skill
+} from "../../organizations/about";
 
 const Root = styled.div`
   padding-top: 20px;
 `;
 
-function AboutPage(props) {
+function AboutPage(props: PageRendererProps) {
   return (
     <Layout pathname={props.location.pathname}>
       <Root>

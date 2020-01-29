@@ -1,1 +1,1 @@
-export { default as LineText } from './LineText';
+export { default as LineText } from "./LineText";

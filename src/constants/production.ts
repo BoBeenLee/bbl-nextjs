@@ -5,7 +5,14 @@ const teamProductions = [
     name: "bbl",
     period: "current",
     githubRepoName: [],
-    skills: ["react", "gatsby", "styled components", "offline", "typescript", "storybook"],
+    skills: [
+      "react",
+      "gatsby",
+      "styled components",
+      "offline",
+      "typescript",
+      "storybook"
+    ],
     summary: "personal site",
     githubUrl: "https://github.com/BoBinLee/bbl",
     linkUrl: ""
@@ -155,7 +162,8 @@ const productions = [
     summary: "나에게 맞는, 더 나은 뷰티라이프",
     githubUrl: "",
     linkUrl: "https://fitsme.kr/",
-    googleStoreUrl: "https://play.google.com/store/apps/details?id=kr.fitsme.app",
+    googleStoreUrl:
+      "https://play.google.com/store/apps/details?id=kr.fitsme.app",
     appStoreUrl: "https://apps.apple.com/kr/app/id1466041001"
   },
   {
@@ -176,7 +184,8 @@ const productions = [
     ],
     summary: "보상을 통한 뷰티 커뮤니티",
     githubUrl: "",
-    linkUrl: "https://medium.com/@Cosmochain/cosmee-app-now-available-on-google-play-store-f80149a2fa4c"
+    linkUrl:
+      "https://medium.com/@Cosmochain/cosmee-app-now-available-on-google-play-store-f80149a2fa4c"
   },
   {
     id: "buxi",

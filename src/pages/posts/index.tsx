@@ -1,16 +1,22 @@
-import { graphql } from "gatsby";
+import { graphql, PageRendererProps } from "gatsby";
 import _ from "lodash";
-import React, { Component, PureComponent } from "react";
+import React, { PureComponent } from "react";
 import styled from "styled-components";
 import { PostCard } from "../../components/Card";
 import Layout from "../../components/Layout";
 import { withOtherPosts, withTistory } from "../../hoc";
 
+interface IProps extends PageRendererProps {
+  data: any;
+  tistory: any;
+  otherPosts: any;
+}
+
 const Root = styled.div`
   padding-top: 20px;
 `;
 
-class PostPage extends PureComponent<any> {
+class PostPage extends PureComponent<IProps> {
   public render() {
     const posts = [
       ...this.mapOtherToPosts(),

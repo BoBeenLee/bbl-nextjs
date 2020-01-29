@@ -3,7 +3,7 @@ import PostTemplate from "../../templates/post";
 // import '../../layouts/styles';
 
 // tslint:disable:object-literal-sort-keys
-const PostPreview = ({ entry, widgetFor }) => {
+const PostPreview = ({ entry, widgetFor }: any) => {
   const data = {
     markdownRemark: {
       html: widgetFor("body"),

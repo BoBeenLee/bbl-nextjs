@@ -1,10 +1,6 @@
+/* eslint-disable prefer-const */
 const feednami: any = {};
 
-// tslint:disable:only-arrow-functions
-// tslint:disable:one-variable-per-declaration
-// tslint:disable:no-unused-expression
-// tslint:disable:prefer-const
-// tslint:disable:no-shadowed-variable
 (feednami.load = function(e, n) {
   let o = "https://api.feednami.com/api/v1",
     a = e;

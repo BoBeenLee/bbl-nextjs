@@ -1,6 +1,10 @@
 import React, { Component, PureComponent } from "react";
 import styled from "styled-components";
 
+interface IProps {
+  children: React.ReactNode;
+}
+
 const Root = styled.div`
   display: flex;
   flex-direction: column;
@@ -15,7 +19,7 @@ const Root = styled.div`
   bottom: 0;
 `;
 
-class BottomPopup extends PureComponent {
+class BottomPopup extends PureComponent<IProps> {
   public static defaultProps = {};
   public render() {
     const { children, ...rest } = this.props;

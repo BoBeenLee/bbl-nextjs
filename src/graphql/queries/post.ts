@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import _ from "lodash";
 
 const query = `{
     viewer {
@@ -14,12 +14,9 @@ const query = `{
     }
 }`;
 
-const mapToPosts = (data) => {
-  const posts = _.get(data, ['data', 'viewer', 'allPosts', 'edges']);
-  return _.map(posts, post => _.get(post, 'node'));
+const mapToPosts = data => {
+  const posts = _.get(data, ["data", "viewer", "allPosts", "edges"]);
+  return _.map(posts, post => _.get(post, "node"));
 };
 
-export {
-  mapToPosts,
-  query,
-};
+export { mapToPosts, query };

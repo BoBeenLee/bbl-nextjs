@@ -11,6 +11,11 @@ import { Menu } from "../Menu";
 import { Separator } from "../Separator";
 import QuokkaIcon from "./images/quokka.png";
 
+interface IProps {
+  isOpenHeader: boolean;
+  children: React.ReactNode;
+}
+
 interface IStates {
   isOpenHeader: boolean;
   isOpenMenu: boolean;
@@ -118,7 +123,7 @@ const SeperatorBottom = styled(Separator)`
   `};
 `;
 
-const HeaderBox = ({ children, isOpenHeader, ...props }) => {
+const HeaderBox = ({ children, isOpenHeader, ...props }: IProps) => {
   const styles = Object.assign({}, { backgroundColor: "#fff" });
   return (
     <Headroom

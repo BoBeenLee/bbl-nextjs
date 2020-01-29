@@ -1,6 +1,6 @@
 import _ from "lodash";
 import React, { Component, PureComponent } from "react";
-import { DiAndroid, DiApple } from "react-icons/di"
+import { DiAndroid, DiApple } from "react-icons/di";
 import { GoLink as LinkIcon, GoMarkGithub as GithubIcon } from "react-icons/go";
 
 import styled from "styled-components";

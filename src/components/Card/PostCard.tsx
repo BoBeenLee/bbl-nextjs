@@ -111,9 +111,7 @@ class PostCard extends PureComponent<IProps> {
     return (
       <Root>
         <TitleBox title={title} />
-        <DateBox>
-          {format(date, "MMMM D, YYYY")}
-        </DateBox>
+        <DateBox>{format(date, "MMMM D, YYYY")}</DateBox>
         {url && (
           <UrlBox>
             <AniLinkBox as={AniLink} fade={true} to={url}>
