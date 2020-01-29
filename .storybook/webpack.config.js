@@ -29,7 +29,7 @@ module.exports = ({ config }) => {
   });
   config.resolve.modules = [
     ...(config.resolve.modules || []),
-    path.resolve("./"),
+    path.resolve("."),
   ];
   config.resolve.extensions.push(".ts", ".tsx");
 
