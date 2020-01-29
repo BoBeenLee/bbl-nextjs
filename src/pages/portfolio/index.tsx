@@ -1,20 +1,24 @@
-import { graphql } from "gatsby";
+import { graphql, PageRendererProps } from "gatsby";
 import React, { PureComponent } from "react";
 import styled from "styled-components";
 import Layout from "../../components/Layout";
 import { productions, teamProductions } from "../../constants/production";
 import { Portfolio } from "../../organizations/portfolio";
 
+interface IProps extends PageRendererProps {
+  data: any;
+}
+
 const Root = styled.div`
   padding-top: 20px;
 `;
 
-class PorfolioPage extends PureComponent<any> {
+class PorfolioPage extends PureComponent<IProps> {
   public render() {
     const { data } = this.props;
-    // console.log(data);
+    const { location } = this.props;
     return (
-      <Layout pathname={this.props.location.pathname}>
+      <Layout pathname={location.pathname}>
         <Root>
           <Portfolio
             key={"company"}

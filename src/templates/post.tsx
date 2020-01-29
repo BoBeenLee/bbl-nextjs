@@ -1,10 +1,14 @@
-import { graphql } from "gatsby";
+import { graphql, PageRendererProps } from "gatsby";
 import React from "react";
 import styled from "styled-components";
 import Layout from "../components/Layout";
 import { SubTitle } from "../components/Title";
 import { Caption } from "../organizations/post";
 import { media } from "../utils/media";
+
+interface IProps extends PageRendererProps {
+  data: any;
+}
 
 const Root = styled.div`
   padding: 60px 50px 70px 50px;
@@ -21,7 +25,7 @@ const SubTitleBox = styled(SubTitle)`
   font-weight: bold;
 `;
 
-export default function Template({ data, location = {} }: any) {
+export default function Template({ data, location = {} }: IProps) {
   if (!data) {
     return <div />;
   }

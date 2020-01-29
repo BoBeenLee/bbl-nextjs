@@ -1,5 +1,5 @@
 import { PageRendererProps } from "gatsby";
-import React, { Component, PureComponent } from "react";
+import React, { Component } from "react";
 import styled from "styled-components";
 
 import Layout from "../../components/Layout";
@@ -14,17 +14,20 @@ const Root = styled.div`
   padding-top: 20px;
 `;
 
-function AboutPage(props: PageRendererProps) {
-  return (
-    <Layout pathname={props.location.pathname}>
-      <Root>
-        <Education />
-        <Experience />
-        <Activity />
-        <Skill />
-      </Root>
-    </Layout>
-  );
+class AboutPage extends Component<PageRendererProps> {
+  public render() {
+    const { location } = this.props;
+    return (
+      <Layout pathname={location.pathname}>
+        <Root>
+          <Education />
+          <Experience />
+          <Activity />
+          <Skill />
+        </Root>
+      </Layout>
+    );
+  }
 }
 
 export default AboutPage;
