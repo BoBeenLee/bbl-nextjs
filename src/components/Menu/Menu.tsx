@@ -1,5 +1,5 @@
 import _ from "lodash";
-import React, { Component, PureComponent } from "react";
+import React, { PureComponent } from "react";
 import { slide as BurgerMenu } from "react-burger-menu";
 import styled from "styled-components";
 import { MenuItem } from "src/components/Menu";

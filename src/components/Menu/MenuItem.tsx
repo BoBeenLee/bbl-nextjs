@@ -1,6 +1,6 @@
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 import _ from "lodash";
-import React, { Component, PureComponent } from "react";
+import React, { Component } from "react";
 import styled from "styled-components";
 import { theme } from "src/constants";
 

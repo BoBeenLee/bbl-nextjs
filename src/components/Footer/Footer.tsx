@@ -1,4 +1,4 @@
-import React, { Component, PureComponent } from "react";
+import React, { PureComponent } from "react";
 import { GoOctoface as OctofaceIcon } from "react-icons/go";
 import { MdContactMail as ContactMailIcon } from "react-icons/md";
 import styled from "styled-components";

@@ -3,7 +3,7 @@ import _ from "lodash";
 import React, { Component } from "react";
 import Headroom, { ReactHeadroomProps } from "react-headroom";
 import styled, { css } from "styled-components";
-import { isHome, menu as titles, theme } from "src/constants";
+import { menu as titles, theme } from "src/constants";
 import { media } from "src/utils/media";
 import { isIE } from "src/utils/navigator";
 import { Avatar } from "src/components/Avatar";

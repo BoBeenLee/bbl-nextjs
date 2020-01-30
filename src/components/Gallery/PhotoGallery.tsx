@@ -1,6 +1,6 @@
 import Img from "gatsby-image";
 import _ from "lodash";
-import React, { Component, PureComponent } from "react";
+import React, { PureComponent } from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
 import { isMobile } from "src/utils/navigator";

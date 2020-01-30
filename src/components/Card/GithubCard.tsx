@@ -1,5 +1,5 @@
 import distanceInWordsToNow from "date-fns/distance_in_words_to_now";
-import React, { Component, PureComponent } from "react";
+import React, { PureComponent } from "react";
 import styled from "styled-components";
 import { isBrowser } from "src/utils/navigator";
 
