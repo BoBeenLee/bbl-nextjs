@@ -1,7 +1,7 @@
 import _ from "lodash";
 import React, { Component } from "react";
 import styled from "styled-components";
-import { Rotate as WindowRotate } from "src/facc";
+import { Rotate as WindowRotate } from "src/faccs";
 import FacebookIcon from "./images/facebook.svg";
 import InstagramIcon from "./images/instagram.svg";
 import LinkedInIcon from "./images/linkedin.svg";

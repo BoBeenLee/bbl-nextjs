@@ -1,18 +1,9 @@
-/*
-const test = `
-query {
-  repository(owner:"torvalds",name:"linux"){
-    description
-  }
-}
-`; */
-
-const config = require("./src/config/SiteConfig");
+/* eslint-disable @typescript-eslint/camelcase */
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const siteMetadata = require("./metadata");
 
 module.exports = {
-  siteMetadata: {
-    title: "BoBeen Lee"
-  },
+  siteMetadata,
   plugins: [
     {
       resolve: `gatsby-plugin-typescript`,
@@ -58,11 +49,13 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
+        name: siteMetadata.title,
+        short_name: siteMetadata.title,
+        start_url: `/`,
+        background_color: siteMetadata.backgroundColor,
+        theme_color: siteMetadata.themeColor,
+        icon: siteMetadata.logo,
         name: "BoBeen Lee",
-        short_name: "BoBeen Lee",
-        start_url: "/",
-        background_color: config.backgroundColor,
-        theme_color: config.themeColor,
         display: "minimal-ui"
       }
     },

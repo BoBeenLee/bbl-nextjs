@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 import { PostCard } from "src/components/Card";
 import Layout from "src/components/Layout";
-import { withOtherPosts, withTistory } from "src/hoc";
+import { withOtherPosts, withTistory } from "src/hocs";
 
 interface IProps extends PageRendererProps {
   data: any;

@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import Helmet from "react-helmet";
 import styled from "styled-components";
 
-import config from "src/config/SiteConfig";
+import config from "metadata";
 import { media } from "src/utils/media";
 import { isBrowser } from "src/utils/navigator";
 import { Footer } from "src/components/Footer";
@@ -11,6 +11,7 @@ import Header from "src/components/Header";
 import { BottomPopup } from "src/components/Popup";
 import { GlobalStyle } from "src/components/Layout/styles";
 import theme from "src/constants/theme";
+import SEO from "src/components/Layout/SEO";
 
 interface IProps {
   pathname: string;
@@ -85,6 +86,7 @@ class Layout extends Component<IProps, IStates> {
     const { isShowStatePopup } = this.state;
     return (
       <Root id="outer-container">
+        <SEO />
         <GlobalStyle />
         <StatePopupBox isShowStatePopup={isShowStatePopup}>
           <span>

@@ -1,8 +1,10 @@
 import _ from "lodash";
 import React, { Component } from "react";
-import styled from "styled-components";
-import feednami from "src/apis/feednami";
+
 import { isBrowser } from "src/utils/navigator";
+// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+// @ts-ignore
+import feednami from "src/apis/feednami";
 
 export interface ITistory {
   feed: {
