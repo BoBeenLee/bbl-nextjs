@@ -7,12 +7,10 @@ const Root = styled.div`
   border: 1px solid ${theme.lineColor};
 `;
 
-class Separator extends PureComponent {
-  public static propTypes = {};
-  public static defaultProps = {};
+class Seperator extends PureComponent {
   public render() {
     return <Root {...this.props} />;
   }
 }
 
-export default Separator;
+export default Seperator;

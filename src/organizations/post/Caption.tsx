@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { Separator } from "src/components/Separator";
+import { Seperator } from "src/components/Seperator";
 import { SocialLinks } from "src/components/SocialLinks";
 
 interface IProps {
@@ -23,7 +23,7 @@ class Caption extends Component<IProps> {
     const { url, title, description } = this.props;
     return (
       <Root>
-        <Separator />
+        <Seperator />
         <SocialLinkBox
           url={`http://bbl.netlify.com${url}`}
           title={title}

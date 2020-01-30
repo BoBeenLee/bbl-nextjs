@@ -5,7 +5,7 @@ import { GoBook as GoBookIcon } from "react-icons/go";
 import styled, { css } from "styled-components";
 import { media } from "src/utils/media";
 
-import { Separator } from "src/components/Separator";
+import { Seperator } from "src/components/Seperator";
 import { SubTitle } from "src/components/Title";
 import theme from "src/constants/theme";
 
@@ -94,7 +94,7 @@ const AniLinkBox = styled(AniLink)`
   line-height: 26px;
 `;
 
-const BottomSeparator = styled(Separator)`
+const BottomSeparator = styled(Seperator)`
   grid-area: separator;
   margin: 40px 0px;
 `;

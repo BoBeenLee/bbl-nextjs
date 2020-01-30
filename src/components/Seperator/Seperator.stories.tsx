@@ -2,7 +2,7 @@ import { action } from "@storybook/addon-actions";
 import { storiesOf } from "@storybook/react";
 import React from "react";
 import styled from "styled-components";
-import { Separator } from "src/components/Separator";
+import { Seperator } from "src/components/Seperator";
 
 const Root = styled.div`
   display: grid;
@@ -22,6 +22,6 @@ storiesOf("Seperator", module)
   .addDecorator(getStory => <Root>{getStory()}</Root>)
   .add("with Seperator", () => (
     <Child>
-      <Separator />
+      <Seperator />
     </Child>
   ));

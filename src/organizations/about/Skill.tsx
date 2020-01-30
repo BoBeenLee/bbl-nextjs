@@ -1,7 +1,7 @@
 import _ from "lodash";
 import React, { PureComponent } from "react";
 import styled from "styled-components";
-import { Separator } from "src/components/Separator";
+import { Seperator } from "src/components/Seperator";
 import { LineText } from "src/components/Text";
 import { ContentTitle, SubTitle } from "src/components/Title";
 import { skills, ISkill } from "src/constants/skill";
@@ -28,7 +28,7 @@ const SkillItemBox = styled(LineText)`
   margin-right: 10px;
 `;
 
-const BottomSeparator = styled(Separator)`
+const BottomSeparator = styled(Seperator)`
   margin: 40px 0;
 `;
 

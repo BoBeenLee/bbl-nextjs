@@ -4,7 +4,7 @@ import { slide as BurgerMenu } from "react-burger-menu";
 import styled from "styled-components";
 import { MenuItem } from "src/components/Menu";
 import { menu as menus, theme } from "src/constants";
-import { Separator } from "src/components/Separator";
+import { Seperator } from "src/components/Seperator";
 
 interface IProps {
   isOpen: boolean;
@@ -65,7 +65,7 @@ const ContentBox = styled.div`
   padding-top: 20px;
 `;
 
-const BottomSeparator = styled(Separator)`
+const BottomSeparator = styled(Seperator)`
   border-width: 2px;
 `;
 

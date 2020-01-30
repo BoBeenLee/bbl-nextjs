@@ -7,7 +7,7 @@ import styled from "styled-components";
 import { skillMap } from "src/constants/skill";
 import { media } from "src/utils/media";
 import PhotoGallery from "src/components/Gallery/PhotoGallery";
-import Separator from "src/components/Separator/Separator";
+import Seperator from "src/components/Seperator/Seperator";
 import theme from "src/constants/theme";
 
 interface IProps {
@@ -106,7 +106,7 @@ const PhotoGalleryBox = styled.div`
   `};
 `;
 
-const BottomSeparator = styled(Separator)`
+const BottomSeparator = styled(Seperator)`
   grid-column: 1/5;
   grid-row: 5;
   margin: 40px 0;

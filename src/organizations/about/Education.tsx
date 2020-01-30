@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Separator } from "src/components/Separator";
+import { Seperator } from "src/components/Seperator";
 import { LineText } from "src/components/Text";
 import { ContentTitle, SubTitle } from "src/components/Title";
 
@@ -15,7 +15,7 @@ const TitleBox = styled(ContentTitle)`
   margin-bottom: 5px;
 `;
 
-const BottomSeparator = styled(Separator)`
+const BottomSeparator = styled(Seperator)`
   margin: 40px 0;
 `;
 

@@ -8,7 +8,7 @@ import { media } from "src/utils/media";
 import { isIE } from "src/utils/navigator";
 import { Avatar } from "src/components/Avatar";
 import { Menu } from "src/components/Menu";
-import { Separator } from "src/components/Separator";
+import { Seperator } from "src/components/Seperator";
 import QuokkaIcon from "./images/quokka.png";
 
 interface IProps extends ReactHeadroomProps {
@@ -113,7 +113,7 @@ const SeperatorBottomBox = styled.div`
   align-items: center;
 `;
 
-const SeperatorBottom = styled(Separator)`
+const SeperatorBottom = styled(Seperator)`
   width: 100%;
   overflow: hidden;
   ${media.desktop`
