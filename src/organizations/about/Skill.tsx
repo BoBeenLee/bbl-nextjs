@@ -1,9 +1,9 @@
 import _ from "lodash";
 import React, { Component, PureComponent } from "react";
 import styled from "styled-components";
-import { Separator } from "../../components/Separator";
-import { LineText } from "../../components/Text";
-import { ContentTitle, SubTitle } from "../../components/Title";
+import { Separator } from "src/components/Separator";
+import { LineText } from "src/components/Text";
+import { ContentTitle, SubTitle } from "src/components/Title";
 import { skills, ISkill } from "src/constants/skill";
 
 const Root = styled.div``;

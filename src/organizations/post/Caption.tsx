@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { Separator } from "../../components/Separator";
-import { SocialLinks } from "../../components/SocialLinks";
+import { Separator } from "src/components/Separator";
+import { SocialLinks } from "src/components/SocialLinks";
 
 interface IProps {
   url: string;

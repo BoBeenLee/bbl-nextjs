@@ -1,1 +1,1 @@
-export { default as Rotate } from "./Rotate";
+export { default as Rotate } from "src/facc/Rotate";

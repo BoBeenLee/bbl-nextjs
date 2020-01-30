@@ -1,7 +1,6 @@
-import PropTypes from "prop-types";
 import React, { Component } from "react";
 import styled, { ThemeProvider } from "styled-components";
-import theme from "../constants/theme";
+import theme from "src/constants/theme";
 
 function withThemes<P>(TargetComponent: any) {
   return function WithThemes(props: P) {

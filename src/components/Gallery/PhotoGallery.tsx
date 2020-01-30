@@ -3,7 +3,7 @@ import _ from "lodash";
 import React, { Component, PureComponent } from "react";
 import Slider from "react-slick";
 import styled from "styled-components";
-import { isMobile } from "../../utils/navigator";
+import { isMobile } from "src/utils/navigator";
 
 interface IProps {
   images: any[];

@@ -3,10 +3,10 @@ import AniLink from "gatsby-plugin-transition-link/AniLink";
 import React, { Component, PureComponent } from "react";
 import { GoBook as GoBookIcon } from "react-icons/go";
 import styled, { css } from "styled-components";
-import { media } from "../../utils/media";
+import { media } from "src/utils/media";
 
-import { Separator } from "../Separator";
-import { SubTitle } from "../Title";
+import { Separator } from "src/components/Separator";
+import { SubTitle } from "src/components/Title";
 import theme from "src/constants/theme";
 
 interface IProps {

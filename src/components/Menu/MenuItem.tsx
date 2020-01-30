@@ -2,7 +2,7 @@ import AniLink from "gatsby-plugin-transition-link/AniLink";
 import _ from "lodash";
 import React, { Component, PureComponent } from "react";
 import styled from "styled-components";
-import { isHome, theme } from "../../constants";
+import { theme } from "src/constants";
 
 interface IProps {
   name: string;

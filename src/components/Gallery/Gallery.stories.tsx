@@ -2,8 +2,8 @@ import { action } from "@storybook/addon-actions";
 import { storiesOf } from "@storybook/react";
 import React from "react";
 import styled from "styled-components";
-import { PhotoGallery } from ".";
-import { media } from "../../utils/media";
+import { PhotoGallery } from "src/components/Gallery";
+import { media } from "src/utils/media";
 import theme from "src/constants/theme";
 
 const Root = styled.div`

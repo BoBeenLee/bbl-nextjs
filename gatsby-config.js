@@ -7,7 +7,7 @@ query {
 }
 `; */
 
-const config = require("./config/SiteConfig");
+const config = require("./src/config/SiteConfig");
 
 module.exports = {
   siteMetadata: {

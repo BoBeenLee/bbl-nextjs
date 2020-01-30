@@ -2,7 +2,7 @@ import { shallow } from "enzyme";
 import _ from "lodash";
 import React from "react";
 import { GoLink as LinkIcon, GoMarkGithub as GithubIcon } from "react-icons/go";
-import { PortfolioCard } from ".";
+import { PortfolioCard } from "src/components/Card";
 
 describe("Component: PortfolioCard", () => {
   const minProps = {

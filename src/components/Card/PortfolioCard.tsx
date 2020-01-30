@@ -4,10 +4,10 @@ import { DiAndroid, DiApple } from "react-icons/di";
 import { GoLink as LinkIcon, GoMarkGithub as GithubIcon } from "react-icons/go";
 
 import styled from "styled-components";
-import { skillMap } from "../../constants/skill";
-import { media } from "../../utils/media";
-import { PhotoGallery } from "../Gallery";
-import { Separator } from "../Separator";
+import { skillMap } from "src/constants/skill";
+import { media } from "src/utils/media";
+import PhotoGallery from "src/components/Gallery/PhotoGallery";
+import Separator from "src/components/Separator/Separator";
 import theme from "src/constants/theme";
 
 interface IProps {

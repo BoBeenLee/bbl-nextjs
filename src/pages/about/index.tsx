@@ -2,13 +2,13 @@ import { PageRendererProps } from "gatsby";
 import React, { Component } from "react";
 import styled from "styled-components";
 
-import Layout from "../../components/Layout";
+import Layout from "src/components/Layout";
 import {
   Activity,
   Education,
   Experience,
   Skill
-} from "../../organizations/about";
+} from "src/organizations/about";
 
 const Root = styled.div`
   padding-top: 20px;

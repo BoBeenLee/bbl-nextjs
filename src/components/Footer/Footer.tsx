@@ -3,7 +3,7 @@ import { GoOctoface as OctofaceIcon } from "react-icons/go";
 import { MdContactMail as ContactMailIcon } from "react-icons/md";
 import styled from "styled-components";
 
-import { media } from "../../utils/media";
+import { media } from "src/utils/media";
 import theme from "src/constants/theme";
 
 const Root = styled.div`

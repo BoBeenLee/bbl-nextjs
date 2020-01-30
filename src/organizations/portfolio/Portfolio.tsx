@@ -1,10 +1,10 @@
 import _ from "lodash";
 import React, { Component } from "react";
 import styled from "styled-components";
-import { PortfolioCard } from "../../components/Card";
-import { ImagePopup } from "../../components/Popup";
-import { SubTitle } from "../../components/Title";
-import { callValue } from "../../utils/object";
+import { PortfolioCard } from "src/components/Card";
+import { ImagePopup } from "src/components/Popup";
+import { SubTitle } from "src/components/Title";
+import { callValue } from "src/utils/object";
 import { IProjectProduction } from "src/constants/production";
 
 interface IProps {

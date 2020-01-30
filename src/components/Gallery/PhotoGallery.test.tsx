@@ -2,7 +2,7 @@ import { shallow } from "enzyme";
 import Img from "gatsby-image";
 import _ from "lodash";
 import React from "react";
-import { PhotoGallery } from ".";
+import { PhotoGallery } from "src/components/Gallery";
 
 describe("Component: PhotoGallery", () => {
   const minProps = {

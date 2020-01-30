@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import styled, { ThemeProvider } from "styled-components";
-
-import { isBrowser } from "../utils/navigator";
+import { isBrowser } from "src/utils/navigator";
 
 interface IProps {
   children: ({

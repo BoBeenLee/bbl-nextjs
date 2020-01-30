@@ -1,6 +1,6 @@
-import withOtherPosts from "./withOtherPosts";
-import withRotate from "./withRotate";
-import withThemes from "./withThemes";
-import withTistory from "./withTistory";
+import withOtherPosts from "src/hoc/withOtherPosts";
+import withRotate from "src/hoc/withRotate";
+import withThemes from "src/hoc/withThemes";
+import withTistory from "src/hoc/withTistory";
 
 export { withThemes, withRotate, withTistory, withOtherPosts };

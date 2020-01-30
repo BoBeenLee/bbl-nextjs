@@ -2,7 +2,7 @@ import _ from "lodash";
 import React, { PureComponent } from "react";
 import ReactModal from "react-modal";
 import styled from "styled-components";
-import theme from "../../constants/theme";
+import theme from "src/constants/theme";
 import CloseIcon from "./images/x-circle.svg";
 
 interface IProps {

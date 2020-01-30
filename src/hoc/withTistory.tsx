@@ -1,8 +1,8 @@
 import _ from "lodash";
 import React, { Component } from "react";
 import styled from "styled-components";
-import feednami from "../apis/feednami";
-import { isBrowser } from "../utils/navigator";
+import feednami from "src/apis/feednami";
+import { isBrowser } from "src/utils/navigator";
 
 export interface ITistory {
   feed: {

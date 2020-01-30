@@ -2,7 +2,8 @@ import { action } from "@storybook/addon-actions";
 import { storiesOf } from "@storybook/react";
 import React from "react";
 import styled from "styled-components";
-import { Caption } from ".";
+
+import { Caption } from "src/organizations/post";
 
 const Root = styled.div`
   display: grid;

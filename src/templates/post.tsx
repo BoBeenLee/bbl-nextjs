@@ -1,10 +1,10 @@
 import { graphql, PageRendererProps } from "gatsby";
 import React from "react";
 import styled from "styled-components";
-import Layout from "../components/Layout";
-import { SubTitle } from "../components/Title";
-import { Caption } from "../organizations/post";
-import { media } from "../utils/media";
+import Layout from "src/components/Layout";
+import { SubTitle } from "src/components/Title";
+import { Caption } from "src/organizations/post";
+import { media } from "src/utils/media";
 import theme from "src/constants/theme";
 
 interface IProps extends PageRendererProps {

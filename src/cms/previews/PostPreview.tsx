@@ -1,8 +1,6 @@
 import React from "react";
-import PostTemplate from "../../templates/post";
-// import '../../layouts/styles';
+import PostTemplate from "src/templates/post";
 
-// tslint:disable:object-literal-sort-keys
 const PostPreview = ({ entry, widgetFor }: any) => {
   const data = {
     markdownRemark: {

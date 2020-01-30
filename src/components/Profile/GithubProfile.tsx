@@ -1,7 +1,7 @@
 import _ from "lodash";
 import React, { Component, PureComponent } from "react";
 import styled from "styled-components";
-import { Avatar } from "../Avatar";
+import { Avatar } from "src/components/Avatar";
 
 interface IProps {
   avatarUrl: string;

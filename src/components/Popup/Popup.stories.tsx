@@ -3,7 +3,7 @@ import { storiesOf } from "@storybook/react";
 import React from "react";
 
 import styled from "styled-components";
-import { BottomPopup, ImagePopup } from ".";
+import { BottomPopup, ImagePopup } from "src/components/Popup";
 import Board from "./images/board.png";
 // knobs
 

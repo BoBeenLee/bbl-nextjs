@@ -3,12 +3,12 @@ import _ from "lodash";
 import React, { Component } from "react";
 import Headroom, { ReactHeadroomProps } from "react-headroom";
 import styled, { css } from "styled-components";
-import { isHome, menu as titles, theme } from "../../constants";
-import { media } from "../../utils/media";
-import { isIE } from "../../utils/navigator";
-import { Avatar } from "../Avatar";
-import { Menu } from "../Menu";
-import { Separator } from "../Separator";
+import { isHome, menu as titles, theme } from "src/constants";
+import { media } from "src/utils/media";
+import { isIE } from "src/utils/navigator";
+import { Avatar } from "src/components/Avatar";
+import { Menu } from "src/components/Menu";
+import { Separator } from "src/components/Separator";
 import QuokkaIcon from "./images/quokka.png";
 
 interface IProps extends ReactHeadroomProps {

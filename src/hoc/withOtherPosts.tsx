@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { requests } from "../apis/graphqlApis";
-import { mapToPosts, query } from "../graphql/queries/post";
+import { requests } from "src/apis/graphqlApis";
+import { mapToPosts, query } from "src/graphql/queries/post";
 
 const withOtherPosts = (TargetComponent: any) => {
   return class WithOtherPosts extends Component {

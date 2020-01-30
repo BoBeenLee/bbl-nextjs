@@ -2,9 +2,10 @@ import { graphql, PageRendererProps } from "gatsby";
 import _ from "lodash";
 import React, { PureComponent } from "react";
 import styled from "styled-components";
-import { PostCard } from "../../components/Card";
-import Layout from "../../components/Layout";
-import { withOtherPosts, withTistory } from "../../hoc";
+
+import { PostCard } from "src/components/Card";
+import Layout from "src/components/Layout";
+import { withOtherPosts, withTistory } from "src/hoc";
 
 interface IProps extends PageRendererProps {
   data: any;

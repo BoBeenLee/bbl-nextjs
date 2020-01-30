@@ -1,5 +1,5 @@
 import React from "react";
-import { Rotate } from "../facc";
+import { Rotate } from "src/facc";
 
 function withRotate<P>(TargetComponent: any) {
   return function WithRotate(props: P) {
