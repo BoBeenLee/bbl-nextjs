@@ -1,9 +1,7 @@
 import _ from "lodash";
 import React, { Component } from "react";
-import Helmet from "react-helmet";
 import styled from "styled-components";
 
-import config from "metadata";
 import { media } from "src/utils/media";
 import { isBrowser } from "src/utils/navigator";
 import { Footer } from "src/components/Footer";
@@ -94,7 +92,6 @@ class Layout extends Component<IProps, IStates> {
             may be a problem with your connection.
           </span>
         </StatePopupBox>
-        {this.renderHelmet()}
         <ContainerBox>
           <HeaderBox>
             <Header />
@@ -114,17 +111,6 @@ class Layout extends Component<IProps, IStates> {
 
   private handleOnline = () => {
     this.setState({ isShowStatePopup: false });
-  };
-
-  private renderHelmet = () => {
-    const metas = _.map(
-      _.pick(config, ["description", "keywords"]),
-      (value, key) => ({
-        content: value,
-        name: key
-      })
-    );
-    return <Helmet title="BoBeen Lee" meta={metas} />;
   };
 }
 
