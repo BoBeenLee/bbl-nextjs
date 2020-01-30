@@ -1,4 +1,4 @@
-import React, { Component, PureComponent } from "react";
+import React, { PureComponent } from "react";
 import styled from "styled-components";
 import theme from "src/constants/theme";
 
