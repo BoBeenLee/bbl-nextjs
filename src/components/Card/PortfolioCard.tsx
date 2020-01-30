@@ -8,6 +8,7 @@ import { skillMap } from "../../constants/skill";
 import { media } from "../../utils/media";
 import { PhotoGallery } from "../Gallery";
 import { Separator } from "../Separator";
+import theme from "src/constants/theme";
 
 interface IProps {
   name: string;
@@ -25,7 +26,7 @@ interface IProps {
 const Root = styled.div`
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
-  color: ${props => props.theme.primary};
+  color: ${theme.primary};
 `;
 
 const NameBox = styled.div`
@@ -39,7 +40,7 @@ const PeriodBox = styled.div`
   grid-column: 2;
   grid-row: 1;
   font-size: 13px;
-  color: ${props => props.theme.third};
+  color: ${theme.third};
 `;
 
 const LinkBox = styled.div`
@@ -53,10 +54,10 @@ const LinkBox = styled.div`
 
 const IconBox = styled.a`
   margin-left: 10px;
-  color: ${props => props.theme.primary};
+  color: ${theme.primary};
   text-decoration: none;
   &:hover {
-    color: ${props => props.theme.secondary};
+    color: ${theme.secondary};
   }
 `;
 
@@ -64,7 +65,7 @@ const SkillsBox = styled.div`
   grid-column: 1/4;
   grid-row: 2;
   font-size: 13px;
-  color: ${props => props.theme.secondary};
+  color: ${theme.secondary};
   padding: 15px 0px 10px 10px;
 `;
 
@@ -87,7 +88,7 @@ const SummaryBox = styled.div`
   grid-row: 3;
   padding-left: 10px;
   font-size: 12px;
-  color: ${props => props.theme.third};
+  color: ${theme.third};
 `;
 
 const PhotoGalleryBox = styled.div`
@@ -200,19 +201,16 @@ class PortfolioCard extends PureComponent<IProps> {
     );
   }
 
-  private renderSkillItem = (skill, index) => {
-    const uri = _.defaultTo(
-      skillMap[_.replace(skill, / /g, "_").toUpperCase()],
-      {}
-    ).uri;
+  private renderSkillItem = (skillName: string, index: number) => {
+    const uri = skillMap[_.replace(skillName, / /g, "_").toUpperCase()]?.uri;
     if (!_.isEmpty(uri)) {
       return (
         <SkillLinkItem key={index} href={uri} target="_blank">
-          {skill}
+          {skillName}
         </SkillLinkItem>
       );
     }
-    return <SkillItem key={index}>{skill}</SkillItem>;
+    return <SkillItem key={index}>{skillName}</SkillItem>;
   };
 }
 

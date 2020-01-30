@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { requests } from "../apis/graphqlApis";
 import { mapToPosts, query } from "../graphql/queries/post";
 
-const withOtherPosts = TargetComponent => {
+const withOtherPosts = (TargetComponent: any) => {
   return class WithOtherPosts extends Component {
     public static defaultProps = {};
     public state = {

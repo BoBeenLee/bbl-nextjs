@@ -33,12 +33,14 @@ class Rotate extends Component {
   public render() {
     return (
       <Root>
-        <WindowRotate>{({ zDeg }) => this.renderIcons({ zDeg })}</WindowRotate>
+        <WindowRotate>
+          {({ zDeg }: { zDeg: number }) => this.renderIcons({ zDeg })}
+        </WindowRotate>
       </Root>
     );
   }
 
-  private renderIcons = ({ zDeg }) => (
+  private renderIcons = ({ zDeg }: { zDeg: number }) => (
     <IconBox zDeg={zDeg}>
       <LinkBox href="https://www.facebook.com/bobin.lee.9" target="_blank">
         <Icon alt="facebook" src={FacebookIcon} />

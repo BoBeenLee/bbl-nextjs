@@ -5,11 +5,17 @@ import { PortfolioCard } from "../../components/Card";
 import { ImagePopup } from "../../components/Popup";
 import { SubTitle } from "../../components/Title";
 import { callValue } from "../../utils/object";
+import { IProjectProduction } from "src/constants/production";
 
 interface IProps {
   title: string;
   productions: any[];
   images: any[];
+}
+
+interface IStates {
+  renderImage: () => React.ReactNode;
+  showModal: boolean;
 }
 
 const Root = styled.div``;
@@ -22,7 +28,7 @@ const ContentBox = styled.div`
   padding-top: 20px;
 `;
 
-class Portfolio extends Component<IProps, any> {
+class Portfolio extends Component<IProps, IStates> {
   constructor(props: IProps) {
     super(props);
 
@@ -49,7 +55,7 @@ class Portfolio extends Component<IProps, any> {
     );
   }
 
-  private onImagePopup = renderImage => {
+  private onImagePopup = (renderImage: () => React.ReactNode) => {
     this.setState({
       renderImage,
       showModal: true
@@ -62,7 +68,7 @@ class Portfolio extends Component<IProps, any> {
     });
   };
 
-  private renderPortfolioCard = production => {
+  private renderPortfolioCard = (production: IProjectProduction) => {
     const { images } = this.props;
     const {
       id,
@@ -87,7 +93,7 @@ class Portfolio extends Component<IProps, any> {
         linkUrl={linkUrl}
         googleStoreUrl={googleStoreUrl}
         appStoreUrl={appStoreUrl}
-        images={callValue(() => images[`${id}Images`].edges, [])}
+        images={callValue(() => images[`${id}Images` as any].edges, [])}
         onImagePopup={this.onImagePopup}
       />
     );

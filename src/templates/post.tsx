@@ -5,6 +5,7 @@ import Layout from "../components/Layout";
 import { SubTitle } from "../components/Title";
 import { Caption } from "../organizations/post";
 import { media } from "../utils/media";
+import theme from "src/constants/theme";
 
 interface IProps extends PageRendererProps {
   data: any;
@@ -21,7 +22,7 @@ const Root = styled.div`
 const SubTitleBox = styled(SubTitle)`
   font-size: 36px;
   margin-bottom: 20px;
-  color: ${props => props.theme.primary};
+  color: ${theme.primary};
   font-weight: bold;
 `;
 

@@ -1,8 +1,8 @@
 import React from "react";
 import { Rotate } from "../facc";
 
-function withRotate(TargetComponent) {
-  return function WithRotate(props) {
+function withRotate<P>(TargetComponent: any) {
+  return function WithRotate(props: P) {
     //   console.log("x,y,z", xDeg, yDeg, zDeg);
     return (
       <Rotate>

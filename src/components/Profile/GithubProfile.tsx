@@ -9,11 +9,13 @@ interface IProps {
   location: string;
   followerCount: number;
   followingCount: number;
-  organizations: {
-    avatarUrl: string;
-    name: string;
-    memberCount: number;
-  };
+  organizations: IOrganization[];
+}
+
+export interface IOrganization {
+  avatarUrl: string;
+  name: string;
+  memberCount: number;
 }
 
 const Root = styled.div`
@@ -97,7 +99,7 @@ class GithubProfile extends PureComponent<IProps> {
     );
   }
 
-  private renderOranization = item => (
+  private renderOranization = (item: IOrganization) => (
     <OrganizationItemBox>{item.name}</OrganizationItemBox>
   );
 }

@@ -5,6 +5,7 @@ import { Separator } from "../../components/Separator";
 import { LineText } from "../../components/Text";
 import { ContentTitle, SubTitle } from "../../components/Title";
 import { media } from "../../utils/media";
+import { experiences, IExperience } from "../../constants/experience";
 
 const Root = styled.div``;
 
@@ -39,46 +40,18 @@ const BottomSeparator = styled(Separator)`
   margin: 40px 0;
 `;
 
-// tslint:disable:object-literal-sort-keys
-const items = [
-  {
-    title: "Blended",
-    titleUri: "https://www.rocketpunch.com/companies/trillionaire",
-    period: "2018.4 - ",
-    role: "React, React Native Developer"
-  },
-  {
-    title: "Buxi",
-    titleUri: "https://www.rocketpunch.com/companies/buxi",
-    period: "2017.8 - 2017.11",
-    role: "React Developer"
-  },
-  {
-    title: "Coupang",
-    titleUri: "https://www.rocketpunch.com/companies/coupang",
-    period: "2015.6 - 2017.7",
-    role: "Fullstack Developer"
-  },
-  {
-    title: "DailyHotel",
-    titleUri: "https://www.rocketpunch.com/companies/dailyhotel",
-    period: "2014.11 - 2015.1",
-    role: "Developer Intern"
-  }
-];
-
 class Experience extends PureComponent {
   public render() {
     return (
       <Root>
         <SubTitleBox title="Experience" />
-        {_.map(items, item => this.renderItem(item))}
+        {_.map(experiences, item => this.renderItem(item))}
         <BottomSeparator />
       </Root>
     );
   }
 
-  private renderItem = item => (
+  private renderItem = (item: IExperience) => (
     <ItemBox key={item.title}>
       <TitleBox title={item.role} uri={item.titleUri} />
       <ContentBox>{`${item.title} / ${item.period}`}</ContentBox>

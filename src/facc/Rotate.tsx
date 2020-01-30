@@ -3,7 +3,26 @@ import styled, { ThemeProvider } from "styled-components";
 
 import { isBrowser } from "../utils/navigator";
 
-class Rotate extends Component<any> {
+interface IProps {
+  children: ({
+    xDeg,
+    yDeg,
+    zDeg
+  }: {
+    xDeg: number;
+    yDeg: number;
+    zDeg: number;
+  }) => React.ReactNode;
+}
+
+interface IStates {
+  alpha: number;
+  beta: number;
+  gamma: number;
+  orientation: number;
+}
+
+class Rotate extends Component<IProps, IStates> {
   public static defaultProps = {};
 
   public state = {
@@ -17,21 +36,25 @@ class Rotate extends Component<any> {
     if (!this.hasDeviceOrientation()) {
       return;
     }
-    const orientation = isBrowser ? window.orientation : 0;
+    const orientation = isBrowser ? Number(window.orientation) : 0;
 
     if (isBrowser) {
       window.addEventListener(
         "deviceorientation",
         ev => {
           const { alpha, beta, gamma } = ev;
-          this.setState({ alpha, beta, gamma });
+          this.setState({
+            alpha: alpha ?? 0,
+            beta: beta ?? 0,
+            gamma: gamma ?? 0
+          });
         },
         false
       );
       window.addEventListener(
         "orientationchange",
         ev => {
-          this.setState({ orientation });
+          this.setState({ orientation: orientation ?? 0 });
         },
         false
       );
@@ -42,12 +65,11 @@ class Rotate extends Component<any> {
     const xDeg = this.getXDeg();
     const yDeg = this.getYDeg();
     const zDeg = this.getZDeg();
-    //   console.log("x,y,z", xDeg, yDeg, zDeg);
-    return (this.props.children as any)({ xDeg, yDeg, zDeg });
+    return this.props.children({ xDeg, yDeg, zDeg });
   }
 
   private hasDeviceOrientation = () =>
-    isBrowser && !!(window as any).DeviceOrientationEvent;
+    isBrowser && !!window.DeviceOrientationEvent;
 
   private getX() {
     return this.state.gamma || 0;

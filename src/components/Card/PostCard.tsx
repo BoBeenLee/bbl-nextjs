@@ -7,6 +7,7 @@ import { media } from "../../utils/media";
 
 import { Separator } from "../Separator";
 import { SubTitle } from "../Title";
+import theme from "src/constants/theme";
 
 interface IProps {
   title: string;
@@ -52,7 +53,7 @@ const DateBox = styled.div`
   align-items: flex-end;
   line-height: 16px;
   font-size: 13px;
-  color: ${props => props.theme.primary};
+  color: ${theme.primary};
   justify-content: flex-end;
   ${media.mobile`
   line-height: 20px;
@@ -62,7 +63,7 @@ const DateBox = styled.div`
 
 const LinkCSS = css`
   font-size: 13px;
-  color: ${props => props.theme.secondary};
+  color: ${theme.secondary};
   text-decoration: none;
 
   &:hover {

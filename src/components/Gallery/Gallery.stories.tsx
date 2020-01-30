@@ -4,11 +4,12 @@ import React from "react";
 import styled from "styled-components";
 import { PhotoGallery } from ".";
 import { media } from "../../utils/media";
+import theme from "src/constants/theme";
 
 const Root = styled.div`
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
-  color: ${props => props.theme.primary};
+  color: ${theme.primary};
 `;
 
 const Child = styled.div`

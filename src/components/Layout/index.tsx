@@ -4,13 +4,18 @@ import Helmet from "react-helmet";
 import styled from "styled-components";
 
 import config from "../../../config/SiteConfig";
-import { withThemes } from "../../hoc";
 import { media } from "../../utils/media";
 import { isBrowser } from "../../utils/navigator";
 import { Footer } from "../Footer";
 import Header from "../Header";
 import { BottomPopup } from "../Popup";
 import { GlobalStyle } from "./styles";
+import theme from "../../constants/theme";
+
+interface IProps {
+  pathname: string;
+  children: React.ReactNode;
+}
 
 interface IStates {
   isShowStatePopup: boolean;
@@ -45,9 +50,8 @@ const ContentBox = styled.main`
     width: 1px;
     min-width: 100%;
   `}
-  /* height: 2000px; */
   ${media.desktop`
-    max-width: ${props => props.theme.desktopSize}px;
+    max-width: ${theme.desktopSize}px;
   `}
 `;
 
@@ -57,11 +61,11 @@ const FooterBox = styled.footer`
 
 const StatePopupBox = styled(BottomPopup)<{ isShowStatePopup: boolean }>`
   display: ${({ isShowStatePopup }) => (isShowStatePopup ? "flex" : "none")};
-  color: ${props => props.theme.warning};
+  color: ${theme.warning};
 `;
 
-class Layout extends Component<any, IStates> {
-  constructor(props: any) {
+class Layout extends Component<IProps, IStates> {
+  constructor(props: IProps) {
     super(props);
 
     this.state = {
@@ -122,4 +126,4 @@ class Layout extends Component<any, IStates> {
   };
 }
 
-export default withThemes(Layout);
+export default Layout;

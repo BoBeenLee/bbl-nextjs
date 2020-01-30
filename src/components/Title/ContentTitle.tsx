@@ -1,6 +1,7 @@
 import _ from "lodash";
 import React, { Component, PureComponent } from "react";
 import styled from "styled-components";
+import theme from "src/constants/theme";
 
 interface IProps {
   className?: string;
@@ -11,14 +12,14 @@ interface IProps {
 const Root = styled.div`
   font-size: 18px;
   font-weight: 600;
-  color: ${props => props.theme.primary};
+  color: ${theme.primary};
   line-height: 2;
 `;
 
 const RootLink = styled.a`
   font-size: 18px;
   font-weight: 600;
-  color: ${props => props.theme.primary};
+  color: ${theme.primary};
   text-decoration: none;
   line-height: 2;
   &:hover {

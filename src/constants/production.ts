@@ -1,5 +1,17 @@
-// tslint:disable:object-literal-sort-keys
-const teamProductions = [
+export interface IProjectProduction {
+  id: string;
+  name: string;
+  period: string;
+  githubRepoName: string[];
+  skills: string[];
+  summary: string;
+  githubUrl: string;
+  linkUrl: string;
+  googleStoreUrl?: string;
+  appStoreUrl?: string;
+}
+
+const teamProductions: IProjectProduction[] = [
   {
     id: "bbl",
     name: "bbl",

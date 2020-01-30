@@ -1,3 +1,8 @@
+export interface IMenu {
+  name: string;
+  url: string;
+}
+
 const menus = [
   { name: "Home", url: "/" },
   { name: "About", url: "/about" },
@@ -5,7 +10,7 @@ const menus = [
   { name: "Post", url: "/posts" }
 ];
 
-export const isHome = url => {
+export const isHome = (url: string) => {
   if (url === "/") {
     return true;
   }

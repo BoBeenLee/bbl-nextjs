@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { Separator } from "../../components/Separator";
 import { LineText } from "../../components/Text";
 import { ContentTitle, SubTitle } from "../../components/Title";
+import { skills, ISkill } from "src/constants/skill";
 
 const Root = styled.div``;
 
@@ -31,53 +32,20 @@ const BottomSeparator = styled(Separator)`
   margin: 40px 0;
 `;
 
-// tslint:disable:object-literal-sort-keys
-const items = {
-  frontend: {
-    name: "Front End",
-    skills: ["react", "javascript", "typescript", "jQuery", "sass"]
-  },
-  backend: {
-    name: "Back End",
-    skills: ["nodejs", "graphql", "spring framework", "spring boot"]
-  },
-  mobile: { name: "Mobile", skills: ["react native", "android"] },
-  db: { name: "DB", skills: ["rdb", "mongodb", "firebase"] },
-  collaboration: {
-    name: "Collaboration",
-    skills: ["slack", "jira", "wiki", "github", "trello", "teamviewer"]
-  },
-  usage: { name: "Usage", skills: ["aws ec2, s3", "docker"] },
-  tool: {
-    name: "Tools",
-    skills: [
-      "vscode",
-      "gitkraken",
-      "reactotron",
-      "insomnia",
-      "intellj idea",
-      "webstorm",
-      "android studio",
-      "source tree",
-      "zeplin"
-    ]
-  }
-};
-
 class Skill extends PureComponent {
   public render() {
     return (
       <Root>
         <SubTitleBox title="Skills" />
-        {_.map(items, this.renderItem)}
+        {_.map(skills, this.renderItem)}
         <BottomSeparator />
       </Root>
     );
   }
 
-  private renderItem = item => (
+  private renderItem = (item: ISkill) => (
     <ItemBox key={item.name}>
-      <ContentTitle title={item.name} uri={item.uri} />
+      <ContentTitle title={item.name} uri={item?.uri ?? ""} />
       <SkillsBox>
         {_.map(item.skills, (skill, index) => (
           <SkillItemBox key={index}>{skill}</SkillItemBox>

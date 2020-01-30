@@ -1,5 +1,6 @@
 import React, { Component, PureComponent } from "react";
 import styled from "styled-components";
+import theme from "src/constants/theme";
 
 interface IProps {
   children: React.ReactNode;
@@ -12,8 +13,8 @@ const Root = styled.div`
   justify-content: center;
   width: 100%;
   height: 50px;
-  background-color: ${props => props.theme.bgColor};
-  border-top: 1px solid ${props => props.theme.lineColor};
+  background-color: ${theme.bgColor};
+  border-top: 1px solid ${theme.lineColor};
   z-index: 10;
   position: fixed;
   bottom: 0;

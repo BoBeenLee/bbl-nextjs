@@ -1,5 +1,6 @@
 import React, { Component, PureComponent } from "react";
 import styled from "styled-components";
+import theme from "src/constants/theme";
 
 interface IProps {
   children: React.ReactNode;
@@ -8,7 +9,7 @@ interface IProps {
 const Root = styled.div`
   font-size: 13px;
   font-weight: 400;
-  color: ${props => props.theme.third};
+  color: ${theme.third};
 `;
 
 class LineText extends PureComponent<IProps> {

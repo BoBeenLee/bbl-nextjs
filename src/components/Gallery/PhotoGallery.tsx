@@ -79,7 +79,7 @@ class PhotoGallery extends PureComponent<IProps> {
     );
   }
 
-  private onPhotoClick = index => {
+  private onPhotoClick = (index: number) => {
     if (!isMobile()) {
       return;
     }

@@ -4,12 +4,13 @@ import { MdContactMail as ContactMailIcon } from "react-icons/md";
 import styled from "styled-components";
 
 import { media } from "../../utils/media";
+import theme from "src/constants/theme";
 
 const Root = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  background-color: ${props => props.theme.lineColor};
+  background-color: ${theme.lineColor};
   height: 300px;
   ${media.mobile`
         height: 200px;
@@ -38,10 +39,10 @@ const ContactBox = styled.div`
 `;
 
 const ContactItemBox = styled.a`
-  color: ${props => props.theme.primary};
+  color: ${theme.primary};
   padding: 0 0;
   &:hover {
-    color: ${props => props.theme.secondary};
+    color: ${theme.secondary};
   }
 `;
 

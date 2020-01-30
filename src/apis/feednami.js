@@ -1,5 +1,5 @@
 /* eslint-disable prefer-const */
-const feednami: any = {};
+const feednami = {};
 
 (feednami.load = function(e, n) {
   let o = "https://api.feednami.com/api/v1",
@@ -9,7 +9,7 @@ const feednami: any = {};
   e.format && (t += "&include_xml_document&format=" + e.format),
     e.includeXml && (t += "&include_xml_document");
   let d = o + "/feeds/load?" + t;
-  if ((window as any).XDomainRequest) {
+  if (window.XDomainRequest) {
     const l = document.createElement("script"),
       i =
         "jsonp_callback_" +

@@ -15,5 +15,5 @@ const PostPreview = ({ entry, widgetFor }: any) => {
       }
     }
   };
-  return <PostTemplate data={data} />;
+  return <PostTemplate data={data} location={window.location as any} />;
 };

@@ -1,5 +1,8 @@
-// tslint:disable:object-literal-sort-keys
-const skillMap = {
+export interface ISkillName {
+  uri: string;
+}
+
+export const skillMap: { [key in string]: ISkillName } = {
   REACT_NATIVE: {
     uri: "https://facebook.github.io/react-native/"
   },
@@ -65,4 +68,40 @@ const skillMap = {
   }
 };
 
-export { skillMap };
+export interface ISkill {
+  name: string;
+  skills: string[];
+  uri?: string;
+}
+
+export const skills: { [key in string]: ISkill } = {
+  frontend: {
+    name: "Front End",
+    skills: ["react", "javascript", "typescript", "jQuery", "sass"]
+  },
+  backend: {
+    name: "Back End",
+    skills: ["nodejs", "graphql", "spring framework", "spring boot"]
+  },
+  mobile: { name: "Mobile", skills: ["react native", "android"] },
+  db: { name: "DB", skills: ["rdb", "mongodb", "firebase"] },
+  collaboration: {
+    name: "Collaboration",
+    skills: ["slack", "jira", "wiki", "github", "trello", "teamviewer"]
+  },
+  usage: { name: "Usage", skills: ["aws ec2, s3", "docker"] },
+  tool: {
+    name: "Tools",
+    skills: [
+      "vscode",
+      "gitkraken",
+      "reactotron",
+      "insomnia",
+      "intellj idea",
+      "webstorm",
+      "android studio",
+      "source tree",
+      "zeplin"
+    ]
+  }
+};

@@ -6,6 +6,7 @@ import { LineText } from "../../components/Text";
 import { ContentTitle, SubTitle } from "../../components/Title";
 import { media } from "../../utils/media";
 import { isBrowser } from "../../utils/navigator";
+import { IActivity, activity } from "src/constants/activity";
 
 const Root = styled.div``;
 
@@ -41,32 +42,18 @@ const BottomSeparator = styled(Separator)`
   margin: 40px 0;
 `;
 
-// tslint:disable:object-literal-sort-keys
-const items = [
-  {
-    name: "Nexters",
-    url: "http://teamnexters.com/",
-    description: "Developer"
-  },
-  {
-    name: "SOPT",
-    url: "http://sopt.org/wp/",
-    description: "Developer"
-  }
-];
-
 class Activity extends PureComponent {
   public render() {
     return (
       <Root>
         <SubTitleBox title="Activity" />
-        {_.map(items, item => this.renderItem(item))}
+        {_.map(activity, item => this.renderItem(item))}
         <BottomSeparator />
       </Root>
     );
   }
 
-  private renderItem = item => (
+  private renderItem = (item: IActivity) => (
     <ItemBox key={item.name}>
       <TitleBox title={item.name} uri={item.url} />
       <ContentBox>{item.description}</ContentBox>

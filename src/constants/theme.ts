@@ -1,4 +1,3 @@
-// tslint:disable:object-literal-sort-keys
 const theme = {
   bgColor: "#fff",
   primary: "#333333",

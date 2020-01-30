@@ -1,4 +1,4 @@
-function callValue(supplier, defaultValue) {
+function callValue<T>(supplier: () => T, defaultValue: T) {
   try {
     const value = supplier();
     return value || defaultValue;

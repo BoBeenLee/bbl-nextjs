@@ -15,10 +15,10 @@ const Root = styled.div`
 `;
 
 const MenuLink = styled(AniLink)`
-  color: ${props => props.theme.primary};
+  color: ${theme.primary};
   text-decoration: none;
   &:hover {
-    color: ${props => props.theme.secondary};
+    color: ${theme.secondary};
   }
 `;
 

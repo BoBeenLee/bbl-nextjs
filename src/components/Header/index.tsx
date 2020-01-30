@@ -1,7 +1,7 @@
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 import _ from "lodash";
 import React, { Component } from "react";
-import Headroom from "react-headroom";
+import Headroom, { ReactHeadroomProps } from "react-headroom";
 import styled, { css } from "styled-components";
 import { isHome, menu as titles, theme } from "../../constants";
 import { media } from "../../utils/media";
@@ -11,7 +11,7 @@ import { Menu } from "../Menu";
 import { Separator } from "../Separator";
 import QuokkaIcon from "./images/quokka.png";
 
-interface IProps {
+interface IProps extends ReactHeadroomProps {
   isOpenHeader: boolean;
   children: React.ReactNode;
 }
@@ -28,11 +28,9 @@ const RootWrapper = styled.div`
 `;
 
 const Root = styled.div`
-  /* margin: 0 auto; */
-  /* max-width: 960px; */
   display: grid;
   grid-template-columns: auto 1fr auto;
-  height: ${props => props.theme.headerHeight};
+  height: ${theme.headerHeight};
   position: relative;
   ${media.desktop`
     grid-template-columns: 1fr 1fr 1fr;
@@ -45,7 +43,7 @@ const HeaderTitle = styled.div`
   grid-template-columns: 30% repeat(4, 1fr);
   grid-template-rows: auto;
   ${media.desktop`
-    width: ${props => props.theme.desktopSize}px;
+    width: ${theme.desktopSize}px;
   `};
   ${isIE() &&
     css`
@@ -82,10 +80,10 @@ const TitleBox = styled.div`
 const Title = styled(AniLink)`
   font-size: 11px;
   padding: 0.5em;
-  color: ${props => props.theme.primary};
+  color: ${theme.primary};
   text-decoration: none;
   &:hover {
-    color: ${props => props.theme.secondary};
+    color: ${theme.secondary};
   }
 
   ${media.mobile`
@@ -119,7 +117,7 @@ const SeperatorBottom = styled(Separator)`
   width: 100%;
   overflow: hidden;
   ${media.desktop`
-    width: ${props => props.theme.desktopSize + 80}px;
+    width: ${theme.desktopSize + 80}px;
   `};
 `;
 
@@ -172,7 +170,7 @@ class Header extends Component<any, IStates> {
     );
   }
 
-  private toggleHeader = value => {
+  private toggleHeader = (value: boolean) => {
     const { isOpenMenu } = this.state;
     if (isOpenMenu) {
       return;
@@ -182,24 +180,21 @@ class Header extends Component<any, IStates> {
     });
   };
 
-  private toggleMenu = value => {
+  private toggleMenu = (value: { isOpen: boolean }) => {
     this.setState({
       isOpenHeader: true,
       isOpenMenu: value.isOpen
     });
   };
 
-  private renderTitleItem = (title, index) => {
+  private renderTitleItem = (
+    title: { url: string; name: string },
+    index: number
+  ) => {
     const { url, name } = title;
     return (
       <TitleBox key={index}>
-        <Title
-          // strict={true}
-          // exact={isHome(url)}
-          activeStyle={{ color: theme.secondary }}
-          to={url}
-          fade={true}
-        >
+        <Title activeStyle={{ color: theme.secondary }} to={url} fade={true}>
           {name}
         </Title>
       </TitleBox>
