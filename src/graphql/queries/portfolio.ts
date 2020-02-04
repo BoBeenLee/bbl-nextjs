@@ -2,7 +2,13 @@ import { graphql } from "gatsby";
 
 const query = graphql`
   query PortfolioImageQuery {
-    onepageImages: allFile(filter: { relativePath: { regex: "/onepage/" } }) {
+    onepageImages: allFile(
+      filter: {
+        relativePath: {
+          regex: "/portfolio/onepage/[\\s\\S]*(jpe?g|png|gif|bmp|svg)$/"
+        }
+      }
+    ) {
       edges {
         node {
           childImageSharp {
@@ -18,7 +24,11 @@ const query = graphql`
       }
     }
     intersectionImages: allFile(
-      filter: { relativePath: { regex: "/intersection/" } }
+      filter: {
+        relativePath: {
+          regex: "/portfolio/intersection/[\\s\\S]*(jpe?g|png|gif|bmp|svg)$/"
+        }
+      }
     ) {
       edges {
         node {
@@ -35,7 +45,11 @@ const query = graphql`
       }
     }
     skhualarmImages: allFile(
-      filter: { relativePath: { regex: "/skhualarm/" } }
+      filter: {
+        relativePath: {
+          regex: "/portfolio/skhualarm/[\\s\\S]*(jpe?g|png|gif|bmp|svg)$/"
+        }
+      }
     ) {
       edges {
         node {
@@ -52,7 +66,11 @@ const query = graphql`
       }
     }
     competitionImages: allFile(
-      filter: { relativePath: { regex: "/competition/" } }
+      filter: {
+        relativePath: {
+          regex: "/portfolio/competition/[\\s\\S]*(jpe?g|png|gif|bmp|svg)$/"
+        }
+      }
     ) {
       edges {
         node {
@@ -68,7 +86,13 @@ const query = graphql`
         }
       }
     }
-    softhomeImages: allFile(filter: { relativePath: { regex: "/softhome/" } }) {
+    softhomeImages: allFile(
+      filter: {
+        relativePath: {
+          regex: "/portfolio/softhome/[\\s\\S]*(jpe?g|png|gif|bmp|svg)$/"
+        }
+      }
+    ) {
       edges {
         node {
           childImageSharp {

@@ -9,7 +9,7 @@ import { isIE } from "src/utils/navigator";
 import { Avatar } from "src/components/Avatar";
 import { Menu } from "src/components/Menu";
 import { Seperator } from "src/components/Seperator";
-import QuokkaIcon from "./images/quokka.png";
+import images from "src/images";
 
 interface IProps extends ReactHeadroomProps {
   isOpenHeader: boolean;
@@ -153,7 +153,7 @@ class Header extends Component<any, IStates> {
             <HeaderTitle>
               <Logo>
                 <LogoLink to="/" fade={true}>
-                  <IconBox src={QuokkaIcon} alt="bobeenlee" />
+                  <IconBox src={images.quokka} alt="bobeenlee" />
                 </LogoLink>
               </Logo>
               {_.map(titles, this.renderTitleItem)}

@@ -3,7 +3,7 @@ import React, { PureComponent } from "react";
 import ReactModal from "react-modal";
 import styled from "styled-components";
 import theme from "src/constants/theme";
-import CloseIcon from "./images/x-circle.svg";
+import images from "src/images";
 
 interface IProps {
   showModal: boolean;
@@ -59,7 +59,7 @@ class ImagePopup extends PureComponent<IProps> {
       <Root style={customStyle} isOpen={showModal}>
         <ImagePopupBox>
           <ImageBox>
-            <CloseBox onClick={onClose} size={30} src={CloseIcon} />
+            <CloseBox onClick={onClose} size={30} src={images.closeIcon} />
             {renderImage()}
           </ImageBox>
         </ImagePopupBox>

@@ -2,9 +2,7 @@ import _ from "lodash";
 import React, { Component } from "react";
 import styled from "styled-components";
 import { Rotate as WindowRotate } from "src/faccs";
-import FacebookIcon from "./images/facebook.svg";
-import InstagramIcon from "./images/instagram.svg";
-import LinkedInIcon from "./images/linkedin.svg";
+import images from "src/images";
 
 const Root = styled.div`
   display: grid;
@@ -43,16 +41,16 @@ class Rotate extends Component {
   private renderIcons = ({ zDeg }: { zDeg: number }) => (
     <IconBox zDeg={zDeg}>
       <LinkBox href="https://www.facebook.com/bobin.lee.9" target="_blank">
-        <Icon alt="facebook" src={FacebookIcon} />
+        <Icon alt="facebook" src={images.facebook} />
       </LinkBox>
       <LinkBox href="https://www.instagram.com/bobeenlee_" target="_blank">
-        <Icon alt="instagram" src={InstagramIcon} />
+        <Icon alt="instagram" src={images.instagram} />
       </LinkBox>
       <LinkBox
         href="https://www.linkedin.com/in/%EB%B3%B4%EB%B9%88-%EC%9D%B4-035613a5/"
         target="_blank"
       >
-        <Icon alt="linkedin" src={LinkedInIcon} />
+        <Icon alt="linkedin" src={images.linkedin} />
       </LinkBox>
     </IconBox>
   );

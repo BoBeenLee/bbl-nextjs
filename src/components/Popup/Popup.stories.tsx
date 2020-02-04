@@ -4,13 +4,15 @@ import React from "react";
 
 import styled from "styled-components";
 import { BottomPopup, ImagePopup } from "src/components/Popup";
-import Board from "./images/board.png";
+import images from "src/images";
 
 const Root = styled.div``;
 
 const Child = styled.div``;
 
-const renderImage = () => <img width="100%" height="500" src={Board} alt="" />;
+const renderImage = () => (
+  <img width="100%" height="500" src={images.mock.board} alt="" />
+);
 
 storiesOf("Popup", module)
   .addDecorator(getStory => <Root>{getStory()}</Root>)

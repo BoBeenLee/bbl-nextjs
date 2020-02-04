@@ -1,4 +1,7 @@
 const images = {
+  mock: {
+    board: require("./__mocks__/board.png")
+  },
   portfolio: {
     competition: require("./portfolio/competition"),
     house: require("./portfolio/house"),
@@ -13,7 +16,10 @@ const images = {
   intro1: require("./intro-1.jpg"),
   octocatIcon: require("./Octocat.png"),
   quokka: require("./quokka.png"),
-  xCircle: require("./x-circle.svg")
+  closeIcon: require("./x-circle.svg"),
+  facebook: require("./facebook.svg"),
+  instagram: require("./instagram.svg"),
+  linkedin: require("./linkedin.svg")
 };
 
 export default images;
