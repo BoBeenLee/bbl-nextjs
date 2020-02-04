@@ -36,7 +36,7 @@ const Root = styled.div`
 
 const TitleBox = styled(SubTitle)`
   grid-area: title;
-  font-size: 36px;
+  font-size: 30px;
   line-height: 40px;
   text-align: left;
 `;

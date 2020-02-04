@@ -21,7 +21,7 @@ const Root = styled.div`
 `;
 
 const SubTitleBox = styled(SubTitle)`
-  font-size: 36px;
+  font-size: 30px;
   margin-bottom: 20px;
   color: ${theme.primary};
   font-weight: bold;

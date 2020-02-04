@@ -8,6 +8,7 @@ import {
 import styled from "styled-components";
 
 interface IProps {
+  className?: string;
   url: string;
   title: string;
   description: string;
@@ -18,9 +19,14 @@ const Root = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   margin: 15px 0;
+`;
+
+const Seperator = styled.div`
+  width: 10px;
+  height: 100%;
 `;
 
 class SocialLinks extends Component<IProps> {
@@ -31,14 +37,14 @@ class SocialLinks extends Component<IProps> {
     url: "http://bbl.netlify.com"
   };
   public render() {
-    const { url, title, description, iconSize, ...rest } = this.props;
-    const filter = (count: number) => (count > 0 ? count : "");
+    const { className, url, title, iconSize, ...rest } = this.props;
 
     return (
-      <Root {...rest}>
+      <Root className={className}>
         <TwitterShareButton url={url} title={title}>
           <TwitterIcon round={true} size={iconSize} />
         </TwitterShareButton>
+        <Seperator />
         <FacebookShareButton url={url}>
           <FacebookIcon round={true} size={iconSize} />
           {/* <FacebookShareCount url={url}>

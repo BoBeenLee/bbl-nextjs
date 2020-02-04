@@ -78,6 +78,7 @@ const SkillLinkItem = styled.a`
   display: inline-block;
   margin-right: 10px;
   text-decoration: none;
+  color: ${theme.secondary};
   &:hover {
     opacity: 0.7;
   }

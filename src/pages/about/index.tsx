@@ -20,10 +20,10 @@ class AboutPage extends Component<PageRendererProps> {
     return (
       <Layout pathname={location.pathname}>
         <Root>
-          <Education />
           <Experience />
           <Activity />
           <Skill />
+          <Education />
         </Root>
       </Layout>
     );
