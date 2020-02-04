@@ -10,6 +10,7 @@ const Root = styled.div`
   font-size: 13px;
   font-weight: 400;
   color: ${theme.third};
+  line-height: 1.5;
 `;
 
 class LineText extends PureComponent<IProps> {

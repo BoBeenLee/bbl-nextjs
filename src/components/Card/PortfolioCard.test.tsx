@@ -18,7 +18,6 @@ describe("Component: PortfolioCard", () => {
 
   it("renders PortfolioCard without exploding", () => {
     const wrapper = shallow(<PortfolioCard {...minProps} />);
-    // console.log(wrapper.length);
     expect(wrapper).toHaveLength(1);
   });
 

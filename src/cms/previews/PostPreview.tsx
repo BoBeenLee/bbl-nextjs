@@ -4,6 +4,7 @@ import PostTemplate from "src/templates/post";
 const PostPreview = ({ entry, widgetFor }: any) => {
   const data = {
     markdownRemark: {
+      id: "1",
       html: widgetFor("body"),
       fields: {
         slug: "/"

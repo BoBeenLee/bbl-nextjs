@@ -112,9 +112,6 @@ const SeperatorBottomBox = styled.div`
 const SeperatorBottom = styled(Seperator)`
   width: 100%;
   overflow: hidden;
-  ${media.desktop`
-    width: ${dimension.desktopSize + 80}px;
-  `};
 `;
 
 class Header extends PureComponent<any, IStates> {

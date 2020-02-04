@@ -12,7 +12,6 @@ describe("Component: PhotoGallery", () => {
 
   it("renders PhotoGallery without exploding", () => {
     const wrapper = shallow(<PhotoGallery {...minProps} />);
-    // console.log(wrapper.length);
     expect(wrapper).toHaveLength(1);
   });
 

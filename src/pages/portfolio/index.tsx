@@ -5,9 +5,10 @@ import styled from "styled-components";
 import Layout from "src/components/Layout";
 import { productions, teamProductions } from "src/constants/production";
 import { Portfolio } from "src/organizations/portfolio";
+import { IEdgeSharpItem } from "src/images";
 
 interface IProps extends PageRendererProps {
-  data: any;
+  data: { [key in string]: IEdgeSharpItem };
 }
 
 const Root = styled.div`
@@ -18,7 +19,6 @@ class PorfolioPage extends PureComponent<IProps> {
   public render() {
     const { data } = this.props;
     const { location } = this.props;
-    console.log(data);
     return (
       <Layout pathname={location.pathname}>
         <Root>

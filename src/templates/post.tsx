@@ -8,13 +8,32 @@ import { Caption } from "src/organizations/post";
 import { media } from "src/utils/media";
 import theme from "src/styles/theme";
 
+interface IMarkdownRemark {
+  id: string;
+  html: string;
+  fields: IMarkdownRemarkFields;
+  frontmatter: IMarkdownRemarkFrontmatter;
+}
+
+interface IMarkdownRemarkFields {
+  slug: string;
+}
+
+interface IMarkdownRemarkFrontmatter {
+  title: string;
+}
+
 interface IProps extends PageRendererProps {
-  data: any;
+  data: { markdownRemark: IMarkdownRemark };
 }
 
 const Root = styled.div`
   padding: 60px 50px 70px 50px;
-  line-height: 40px;
+  line-height: 1.5;
+
+  a {
+    color: ${theme.secondary};
+  }
   ${media.mobile`
     padding: 30px 10px 40px 10px;
   `}
@@ -32,6 +51,8 @@ export default function Template({ data, location }: IProps) {
     return <div />;
   }
   const { markdownRemark: post } = data;
+
+  console.log(data);
   return (
     <Layout pathname={location.pathname}>
       <Root>
