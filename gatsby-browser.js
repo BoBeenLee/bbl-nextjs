@@ -2,10 +2,13 @@ import React from "react";
 import { compose } from "recompose";
 import { setAppElement } from "react-modal";
 
+import { firebaseAnalytics } from "src/configs/analytics";
 import { getRootStore } from "src/stores/Store";
 import withStore from "src/hocs/withStore";
 import { isProduction } from "src/configs/env";
 import { setupReactotron } from "ReactotronConfig";
+
+import "src/styles/global.css";
 
 const store = getRootStore();
 
@@ -14,6 +17,9 @@ if (!isProduction()) {
 }
 
 export const wrapPageElement = ({ element }) => {
+  firebaseAnalytics().setCurrentScreen(
+    window.location.pathname + window.location.search
+  );
   return element;
 };
 
