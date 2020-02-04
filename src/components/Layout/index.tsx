@@ -8,6 +8,7 @@ import { Footer } from "src/components/Footer";
 import Header from "src/components/Header";
 import { BottomPopup } from "src/components/Popup";
 import theme from "src/styles/theme";
+import { dimension } from "src/styles/dimension";
 import SEO from "src/components/Layout/SEO";
 
 interface IProps {
@@ -49,7 +50,7 @@ const ContentBox = styled.main`
     min-width: 100%;
   `}
   ${media.desktop`
-    max-width: ${theme.desktopSize}px;
+    max-width: ${dimension.desktopSize}px;
   `}
 `;
 

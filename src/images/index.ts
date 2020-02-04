@@ -1,3 +1,29 @@
+export interface IEdgeSharpItem {
+  edges: INodeSharpItem[];
+}
+
+export interface INodeSharpItem {
+  node: IImageSharpItem;
+}
+
+export interface IImageSharpItem {
+  id: string;
+  childImageSharp: ChildImageSharp;
+}
+
+export interface ChildImageSharp {
+  id: string;
+  fluid: Fluid;
+}
+
+export interface Fluid {
+  tracedSVG: string;
+  aspectRatio: number;
+  src: string;
+  srcSet: string;
+  sizes: string;
+}
+
 const images = {
   mock: {
     board: require("./__mocks__/board.png")

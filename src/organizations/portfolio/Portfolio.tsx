@@ -6,11 +6,12 @@ import { ImagePopup } from "src/components/Popup";
 import { SubTitle } from "src/components/Title";
 import { callValue } from "src/utils/object";
 import { IProjectProduction } from "src/constants/production";
+import { IEdgeSharpItem } from "src/images";
 
 interface IProps {
   title: string;
-  productions: any[];
-  images: any[];
+  productions: IProjectProduction[];
+  images: { [key in string]: IEdgeSharpItem };
 }
 
 interface IStates {
@@ -93,7 +94,7 @@ class Portfolio extends Component<IProps, IStates> {
         linkUrl={linkUrl}
         googleStoreUrl={googleStoreUrl}
         appStoreUrl={appStoreUrl}
-        images={callValue(() => images[`${id}Images` as any].edges, [])}
+        images={callValue(() => images[`${id}Images`].edges, [])}
         onImagePopup={this.onImagePopup}
       />
     );

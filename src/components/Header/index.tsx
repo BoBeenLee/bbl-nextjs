@@ -1,7 +1,7 @@
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 import _ from "lodash";
-import React, { Component } from "react";
-import Headroom, { ReactHeadroomProps } from "react-headroom";
+import React, { PureComponent } from "react";
+import Headroom from "react-headroom";
 import styled, { css } from "styled-components";
 import { menu as titles, theme } from "src/constants";
 import { media } from "src/utils/media";
@@ -10,11 +10,7 @@ import { Avatar } from "src/components/Avatar";
 import { Menu } from "src/components/Menu";
 import { Seperator } from "src/components/Seperator";
 import images from "src/images";
-
-interface IProps extends ReactHeadroomProps {
-  isOpenHeader: boolean;
-  children: React.ReactNode;
-}
+import { dimension } from "src/styles/dimension";
 
 interface IStates {
   isOpenHeader: boolean;
@@ -43,7 +39,7 @@ const HeaderTitle = styled.div`
   grid-template-columns: 30% repeat(4, 1fr);
   grid-template-rows: auto;
   ${media.desktop`
-    width: ${theme.desktopSize}px;
+    width: ${dimension.desktopSize}px;
   `};
   ${isIE() &&
     css`
@@ -117,24 +113,11 @@ const SeperatorBottom = styled(Seperator)`
   width: 100%;
   overflow: hidden;
   ${media.desktop`
-    width: ${theme.desktopSize + 80}px;
+    width: ${dimension.desktopSize + 80}px;
   `};
 `;
 
-const HeaderBox = ({ children, isOpenHeader, ...props }: IProps) => {
-  const styles = Object.assign({}, { backgroundColor: "#fff" });
-  return (
-    <Headroom
-      className={isOpenHeader ? "headroom-transform-none" : ""}
-      style={styles}
-      {...props}
-    >
-      {children}
-    </Headroom>
-  );
-};
-
-class Header extends Component<any, IStates> {
+class Header extends PureComponent<any, IStates> {
   public state = {
     isOpenHeader: true,
     isOpenMenu: false
@@ -142,10 +125,12 @@ class Header extends Component<any, IStates> {
 
   public render() {
     const { isOpenHeader, isOpenMenu } = this.state;
+    const styles = Object.assign({}, { backgroundColor: "#fff" });
     return (
       <RootWrapper>
-        <HeaderBox
-          isOpenHeader={isOpenHeader}
+        <Headroom
+          className={isOpenHeader ? "headroom-transform-none" : ""}
+          style={styles}
           onUnpin={_.partial(this.toggleHeader, false)}
           onPin={_.partial(this.toggleHeader, true)}
         >
@@ -165,7 +150,7 @@ class Header extends Component<any, IStates> {
               <SeperatorBottom />
             </SeperatorBottomBox>
           </Root>
-        </HeaderBox>
+        </Headroom>
       </RootWrapper>
     );
   }

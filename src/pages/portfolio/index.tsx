@@ -18,6 +18,7 @@ class PorfolioPage extends PureComponent<IProps> {
   public render() {
     const { data } = this.props;
     const { location } = this.props;
+    console.log(data);
     return (
       <Layout pathname={location.pathname}>
         <Root>

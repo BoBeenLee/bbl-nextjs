@@ -9,13 +9,14 @@ import { media } from "src/utils/media";
 import PhotoGallery from "src/components/Gallery/PhotoGallery";
 import Seperator from "src/components/Seperator/Seperator";
 import theme from "src/styles/theme";
+import { INodeSharpItem } from "src/images";
 
 interface IProps {
   name: string;
   period: string;
   skills: string[];
   summary: string;
-  images: any[];
+  images: INodeSharpItem[];
   githubUrl: string;
   linkUrl: string;
   googleStoreUrl?: string;
@@ -71,14 +72,16 @@ const SkillsBox = styled.div`
 
 const SkillItem = styled.div`
   display: inline-block;
+  line-height: 1.5;
   margin-right: 10px;
 `;
 
 const SkillLinkItem = styled.a`
   display: inline-block;
-  margin-right: 10px;
   text-decoration: none;
   color: ${theme.secondary};
+  line-height: 1.5;
+  margin-right: 10px;
   &:hover {
     opacity: 0.7;
   }

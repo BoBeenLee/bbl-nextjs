@@ -2,7 +2,8 @@ import _ from "lodash";
 import React, { PureComponent } from "react";
 import ReactModal from "react-modal";
 import styled from "styled-components";
-import theme from "src/styles/theme";
+
+import { dimension } from "src/styles/dimension";
 import images from "src/images";
 
 interface IProps {
@@ -27,7 +28,7 @@ const ImagePopupBox = styled.div`
   bottom: 40px;
   /* border: 1px solid rgb(204, 204, 204); */
   background: transparent;
-  max-width: ${theme.mobileSize};
+  max-width: ${dimension.mobileSize};
   text-align: center;
 `;
 
