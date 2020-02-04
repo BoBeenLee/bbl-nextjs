@@ -13,13 +13,12 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "deploy-storybook": "storybook-to-ghpages -o ./public-storybook -c .storybook",
-    "test": "jest && bundlesize",
+    "test": "jest",
     "type-check": "tsc --noEmit",
     "prettier": "prettier './src/**/*.{js,ts,tsx}' --write",
     "lint:css": "stylelint './src/**/*.tsx'",
     "eslint": "./node_modules/.bin/eslint './src/**/*.{js,ts,tsx}'",
-    "eslint:fix": "./node_modules/.bin/eslint './src/**/*.{js,ts,tsx}' --fix",
-    "prepush": "npm run lint:css && npm run eslint"
+    "eslint:fix": "./node_modules/.bin/eslint './src/**/*.{js,ts,tsx}' --fix"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.0",
@@ -80,6 +79,7 @@
     "@storybook/storybook-deployer": "^2.8.1",
     "@types/dotenv": "^6.1.0",
     "@types/enzyme": "^3.10.4",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
     "@types/jest": "^24.0.18",
     "@types/lodash": "^4.14.123",
     "@types/qs": "^6.5.2",
@@ -106,8 +106,8 @@
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-react-hooks": "^2.3.0",
     "husky": "3.1.0",
-    "jest": "^24.5.0",
-    "jest-enzyme": "^6.0.1",
+    "jest": "^25.1.0",
+    "jest-enzyme": "^7.1.2",
     "lint-staged": "^10.0.7",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.19.1",
@@ -116,7 +116,7 @@
     "stylelint-config-recommended": "3.0.0",
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-processor-styled-components": "1.9.0",
-    "ts-jest": "^24.1.0",
+    "ts-jest": "^25.2.0",
     "typescript": "^3.7.4"
   },
   "keywords": [
