@@ -2,7 +2,7 @@ import _ from "lodash";
 import React, { PureComponent } from "react";
 import ReactModal from "react-modal";
 import styled from "styled-components";
-import theme from "src/constants/theme";
+import theme from "src/styles/theme";
 import images from "src/images";
 
 interface IProps {

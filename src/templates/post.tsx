@@ -6,7 +6,7 @@ import Layout from "src/components/Layout";
 import { SubTitle } from "src/components/Title";
 import { Caption } from "src/organizations/post";
 import { media } from "src/utils/media";
-import theme from "src/constants/theme";
+import theme from "src/styles/theme";
 
 interface IProps extends PageRendererProps {
   data: any;

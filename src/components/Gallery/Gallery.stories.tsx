@@ -4,7 +4,7 @@ import React from "react";
 import styled from "styled-components";
 import { PhotoGallery } from "src/components/Gallery";
 import { media } from "src/utils/media";
-import theme from "src/constants/theme";
+import theme from "src/styles/theme";
 
 const Root = styled.div`
   display: grid;

@@ -55,7 +55,7 @@ const styles: any = {
 const HeaderBox = styled.div`
   display: flex !important;
   flex-direction: row;
-  height: ${theme.headerHeight};
+  height: 6em;
 `;
 
 const ContentBox = styled.div`

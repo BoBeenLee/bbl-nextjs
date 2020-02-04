@@ -7,8 +7,7 @@ import { isBrowser } from "src/utils/navigator";
 import { Footer } from "src/components/Footer";
 import Header from "src/components/Header";
 import { BottomPopup } from "src/components/Popup";
-import { GlobalStyle } from "src/components/Layout/styles";
-import theme from "src/constants/theme";
+import theme from "src/styles/theme";
 import SEO from "src/components/Layout/SEO";
 
 interface IProps {
@@ -85,7 +84,6 @@ class Layout extends Component<IProps, IStates> {
     return (
       <Root id="outer-container">
         <SEO />
-        <GlobalStyle />
         <StatePopupBox isShowStatePopup={isShowStatePopup}>
           <span>
             Your computer seems to be offline. We&apos;ll keep trying, but there

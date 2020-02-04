@@ -8,7 +8,7 @@ import { skillMap } from "src/constants/skill";
 import { media } from "src/utils/media";
 import PhotoGallery from "src/components/Gallery/PhotoGallery";
 import Seperator from "src/components/Seperator/Seperator";
-import theme from "src/constants/theme";
+import theme from "src/styles/theme";
 
 interface IProps {
   name: string;

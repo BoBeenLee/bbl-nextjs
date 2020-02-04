@@ -30,7 +30,7 @@ const RootWrapper = styled.div`
 const Root = styled.div`
   display: grid;
   grid-template-columns: auto 1fr auto;
-  height: ${theme.headerHeight};
+  height: 6em;
   position: relative;
   ${media.desktop`
     grid-template-columns: 1fr 1fr 1fr;

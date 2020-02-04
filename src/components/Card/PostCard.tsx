@@ -7,7 +7,7 @@ import { media } from "src/utils/media";
 
 import { Seperator } from "src/components/Seperator";
 import { SubTitle } from "src/components/Title";
-import theme from "src/constants/theme";
+import theme from "src/styles/theme";
 
 interface IProps {
   title: string;
