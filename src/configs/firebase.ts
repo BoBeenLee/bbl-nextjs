@@ -6,7 +6,7 @@ import _ from "lodash";
 import env from "src/configs/env";
 
 export const firebaseInstance = _.once(() => {
-  if (!env.FIREBASE_CONFIG) {
+  if (!Boolean(env.FIREBASE_CONFIG)) {
     throw new Error("not exists firebase configs");
   }
   const firebaseConfig = env.FIREBASE_CONFIG;
