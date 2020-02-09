@@ -7,6 +7,8 @@ interface IEnvironmentEntry {
   FIREBASE_CONFIG?: any;
 }
 
+const ENV_TYPE = process.env.GATSBY_ENV || "staging";
+
 // tslint:disable:object-literal-sort-keys
 const env: IEnvironment = {
   production: {
@@ -35,6 +37,6 @@ const env: IEnvironment = {
   }
 };
 
-export const isProduction = () => process.env.GATSBY_ENV === "production";
+export const isProduction = () => ENV_TYPE === "production";
 
-export default env[process.env.GATSBY_ENV as keyof IEnvironment] || {};
+export default env[ENV_TYPE as keyof IEnvironment] || {};
