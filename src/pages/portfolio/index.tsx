@@ -29,8 +29,8 @@ class PorfolioPage extends PureComponent<IProps> {
             images={data}
           />
           <Portfolio
-            key={"activity"}
-            title={`Activity`}
+            key={"project"}
+            title={`Project`}
             productions={teamProductions}
             images={data}
           />
