@@ -158,7 +158,7 @@ const productions = [
   {
     id: "FITSME",
     name: "FITSME",
-    period: "2019.4 - ",
+    period: "2019.4 - 2020.1",
     githubRepoName: [],
     skills: [
       "react native",

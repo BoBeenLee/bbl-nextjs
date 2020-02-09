@@ -77,17 +77,32 @@ export interface ISkill {
 export const skills: { [key in string]: ISkill } = {
   frontend: {
     name: "Front End",
-    skills: ["react", "javascript", "typescript", "jQuery", "sass"]
+    skills: [
+      "react",
+      "react native",
+      "javascript",
+      "typescript",
+      "jQuery",
+      "sass",
+      "android"
+    ]
   },
   backend: {
     name: "Back End",
     skills: ["nodejs", "graphql", "spring framework", "spring boot"]
   },
-  mobile: { name: "Mobile", skills: ["react native", "android"] },
-  db: { name: "DB", skills: ["rdb", "mongodb", "firebase"] },
+  db: { name: "DB", skills: ["RDB", "mongodb", "firebase"] },
   collaboration: {
     name: "Collaboration",
-    skills: ["slack", "jira", "wiki", "github", "trello", "teamviewer"]
+    skills: [
+      "github",
+      "gitlab",
+      "slack",
+      "notion",
+      "jira",
+      "trello",
+      "teamviewer"
+    ]
   },
   usage: { name: "Usage", skills: ["aws ec2, s3", "docker"] },
   tool: {
@@ -101,7 +116,9 @@ export const skills: { [key in string]: ISkill } = {
       "webstorm",
       "android studio",
       "source tree",
-      "zeplin"
+      "zeplin",
+      "fork",
+      "miro"
     ]
   }
 };
