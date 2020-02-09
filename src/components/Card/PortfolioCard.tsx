@@ -72,16 +72,25 @@ const SkillsBox = styled.div`
 
 const SkillItem = styled.div`
   display: inline-block;
+  color: ${theme.primary};
   line-height: 1.5;
   margin-right: 10px;
+  border: 1px solid ${theme.third};
+  padding: 4px 8px;
+  border-radius: 15px;
+  margin-bottom: 10px;
 `;
 
 const SkillLinkItem = styled.a`
   display: inline-block;
   text-decoration: none;
-  color: ${theme.secondary};
+  color: ${theme.primary};
   line-height: 1.5;
   margin-right: 10px;
+  border: 1px solid ${theme.third};
+  padding: 4px 8px;
+  border-radius: 15px;
+  margin-bottom: 10px;
   &:hover {
     opacity: 0.7;
   }
