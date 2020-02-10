@@ -26,7 +26,7 @@ const teamProductions: IProjectProduction[] = [
       "storybook"
     ],
     summary: "personal site",
-    githubUrl: "https://github.com/BoBinLee/bbl",
+    githubUrl: "https://github.com/BoBeenLee/bbl",
     linkUrl: ""
   },
   {
@@ -99,7 +99,7 @@ const teamProductions: IProjectProduction[] = [
       "postgreSQL"
     ],
     summary: "너와 나의 중간지점",
-    githubUrl: "https://github.com/BoBinLee/map",
+    githubUrl: "https://github.com/BoBeenLee/map",
     linkUrl:
       "https://play.google.com/store/apps/details?id=com.nexters.intersection.intersectionapp"
   },
@@ -119,7 +119,7 @@ const teamProductions: IProjectProduction[] = [
       "mariaDB"
     ],
     summary: "Sungkonghoe University Alarm App",
-    githubUrl: "https://github.com/BoBinLee/SkhuApp",
+    githubUrl: "https://github.com/BoBeenLee/SkhuApp",
     linkUrl:
       "https://play.google.com/store/apps/details?id=com.skhu.bobinlee.skhuapp&hl=ko"
   },
@@ -139,7 +139,7 @@ const teamProductions: IProjectProduction[] = [
       "mariaDB"
     ],
     summary: "Sungkonghoe University Competition Site",
-    githubUrl: "https://github.com/BoBinLee/SkhuCompetition.Server",
+    githubUrl: "https://github.com/BoBeenLee/SkhuCompetition.Server",
     linkUrl: ""
   },
   {
@@ -149,7 +149,7 @@ const teamProductions: IProjectProduction[] = [
     githubRepoName: [],
     skills: ["jQuery", "prototypeJs", "jPagejs", "jsp", "myBatis"],
     summary: "Sungkonghoe University Software Engineering Department Site",
-    githubUrl: "https://github.com/BoBinLee/swhome",
+    githubUrl: "https://github.com/BoBeenLee/swhome",
     linkUrl: ""
   }
 ];

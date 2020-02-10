@@ -26,7 +26,7 @@ interface IProps {
 
 const Root = styled.div`
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: auto 2fr 1fr;
   color: ${theme.primary};
 `;
 
@@ -35,9 +35,13 @@ const NameBox = styled.div`
   grid-row: 1;
   font-size: 20px;
   padding-left: 10px;
+  margin-right: 15px;
 `;
 
 const PeriodBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   grid-column: 2;
   grid-row: 1;
   font-size: 13px;

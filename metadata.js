@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/camelcase */
 /* eslint-disable @typescript-eslint/no-var-requires */
 const _ = require("lodash");
 const isProduction = process.env.GATSBY_ENV === "production";
 
 const metadata = {
   description: "BoBeen Lee",
-  keywords: "BoBeenLee, BoBinLee, ReactJS, React Native, Javascript",
+  keywords: "BoBeenLee, ReactJS, React Native, Javascript",
   og_image: "https://bbl.netlify.com/meta_img.png",
   site_url: "https://bbl.netlify.com",
   title: "BoBeen Lee",

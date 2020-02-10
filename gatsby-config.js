@@ -64,7 +64,7 @@ module.exports = {
       options: {
         token: process.env.GITHUB_TOKEN,
         variables: {
-          user: "BoBinLee",
+          user: "BoBeenLee",
           count: 100
         },
         graphQLQuery: `query($user: String = "", $count: Int = 1) {

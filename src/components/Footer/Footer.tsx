@@ -1,5 +1,8 @@
 import React, { PureComponent } from "react";
-import { GoOctoface as OctofaceIcon } from "react-icons/go";
+import {
+  GoOctoface as OctofaceIcon,
+  GoBook as GoBookIcon
+} from "react-icons/go";
 import { MdContactMail as ContactMailIcon } from "react-icons/md";
 import styled from "styled-components";
 
@@ -31,11 +34,20 @@ const CopyrightBox = styled.div`
 const ContactBox = styled.div`
   grid-column: 2;
   grid-row: 2;
+  padding: 40px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: flex-end;
   align-items: flex-end;
-  padding: 40px;
+`;
+
+const ContactColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const ContactColumnOne = styled(ContactColumn)`
+  margin-right: 10px;
 `;
 
 const ContactItemBox = styled.a`
@@ -53,18 +65,22 @@ class Footer extends PureComponent {
       <Root>
         <CopyrightBox>@ 2018</CopyrightBox>
         <ContactBox>
-          {/* <ContactItemBox
-            href="https://bobinlee.github.io/bbl/"
-            target="_blank"
-          >
-            <GoBookIcon size={20} />
-          </ContactItemBox> */}
-          <ContactItemBox href="https://github.com/BoBinLee" target="_blank">
-            <OctofaceIcon size={20} />
-          </ContactItemBox>
-          <ContactItemBox href="mailto:globaldev@naver.com" target="_blank">
-            <ContactMailIcon size={20} />
-          </ContactItemBox>
+          <ContactColumnOne>
+            <ContactItemBox
+              href="https://cultist-tp.tistory.com/"
+              target="_blank"
+            >
+              <GoBookIcon size={20} />
+            </ContactItemBox>
+          </ContactColumnOne>
+          <ContactColumn>
+            <ContactItemBox href="https://github.com/BoBeenLee" target="_blank">
+              <OctofaceIcon size={20} />
+            </ContactItemBox>
+            <ContactItemBox href="mailto:globaldev@naver.com" target="_blank">
+              <ContactMailIcon size={20} />
+            </ContactItemBox>
+          </ContactColumn>
         </ContactBox>
       </Root>
     );

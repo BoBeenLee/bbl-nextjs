@@ -14,7 +14,7 @@ exports[`Link renders correctly 1`] = `
   >
     <a
       className="sc-bxivhb ibXNOB"
-      href="https://github.com/BoBinLee"
+      href="https://github.com/BoBeenLee"
       target="_blank"
     >
       <svg
