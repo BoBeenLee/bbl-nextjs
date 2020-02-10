@@ -34,17 +34,20 @@ const Root = styled.div`
 const NameBox = styled.div`
   grid-column: 1;
   grid-row: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   font-size: 20px;
   padding-left: 10px;
   margin-right: 15px;
 `;
 
 const PeriodBox = styled.div`
+  grid-column: 2;
+  grid-row: 1;
   display: flex;
   flex-direction: row;
   align-items: center;
-  grid-column: 2;
-  grid-row: 1;
   font-size: 13px;
   color: ${theme.third};
 `;
@@ -131,7 +134,8 @@ const BottomSeparator = styled(Seperator)`
 `;
 
 const StorybookIcon = styled.img`
-  width: 20px;
+  width: 27px;
+  height: 27px;
 `;
 
 class PortfolioCard extends PureComponent<IProps> {
