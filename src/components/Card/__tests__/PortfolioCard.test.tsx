@@ -7,7 +7,7 @@ import PortfolioCard from "src/components/Card/PortfolioCard";
 describe("Component: PortfolioCard", () => {
   const minProps = {
     githubUrl: "",
-    images: [],
+    portfolioImages: [],
     linkUrl: "",
     name: "",
     onImagePopup: _.identity,

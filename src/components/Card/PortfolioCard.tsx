@@ -9,16 +9,17 @@ import { media } from "src/utils/media";
 import PhotoGallery from "src/components/Gallery/PhotoGallery";
 import Seperator from "src/components/Seperator/Seperator";
 import theme from "src/styles/theme";
-import { INodeSharpItem } from "src/images";
+import images, { INodeSharpItem } from "src/images";
 
 interface IProps {
   name: string;
   period: string;
   skills: string[];
   summary: string;
-  images: INodeSharpItem[];
-  githubUrl: string;
-  linkUrl: string;
+  portfolioImages?: INodeSharpItem[];
+  githubUrl?: string;
+  linkUrl?: string;
+  storybookUrl?: string;
   googleStoreUrl?: string;
   appStoreUrl?: string;
   onImagePopup: (render: any) => void;
@@ -129,6 +130,10 @@ const BottomSeparator = styled(Seperator)`
   margin: 40px 0;
 `;
 
+const StorybookIcon = styled.img`
+  width: 20px;
+`;
+
 class PortfolioCard extends PureComponent<IProps> {
   // tslint:disable:object-literal-sort-keys
   public static defaultProps = {
@@ -177,9 +182,10 @@ class PortfolioCard extends PureComponent<IProps> {
       summary,
       githubUrl,
       linkUrl,
+      storybookUrl,
       googleStoreUrl,
       appStoreUrl,
-      images,
+      portfolioImages,
       onImagePopup
     } = this.props;
     return (
@@ -202,6 +208,11 @@ class PortfolioCard extends PureComponent<IProps> {
               <GithubIcon size={20} />
             </IconBox>
           )}
+          {storybookUrl && (
+            <IconBox href={storybookUrl} target="_blank">
+              <StorybookIcon src={images.storybook} />
+            </IconBox>
+          )}
           {linkUrl && (
             <IconBox href={linkUrl} target="_blank">
               <LinkIcon size={20} />
@@ -211,7 +222,7 @@ class PortfolioCard extends PureComponent<IProps> {
         <SkillsBox>{_.map(skills, this.renderSkillItem)}</SkillsBox>
         <SummaryBox>{summary}</SummaryBox>
         <PhotoGalleryBox>
-          <PhotoGallery images={images} onImagePopup={onImagePopup} />
+          <PhotoGallery images={portfolioImages} onImagePopup={onImagePopup} />
         </PhotoGalleryBox>
         <BottomSeparator />
       </Root>

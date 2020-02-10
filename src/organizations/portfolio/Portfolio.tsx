@@ -5,12 +5,12 @@ import { PortfolioCard } from "src/components/Card";
 import { ImagePopup } from "src/components/Popup";
 import { SubTitle } from "src/components/Title";
 import { callValue } from "src/utils/object";
-import { IProjectProduction } from "src/constants/production";
+import { IProjectPortfolio } from "src/constants/portfolio";
 import { IEdgeSharpItem } from "src/images";
 
 interface IProps {
   title: string;
-  productions: IProjectProduction[];
+  portfolios: IProjectPortfolio[];
   images: { [key in string]: IEdgeSharpItem };
 }
 
@@ -40,13 +40,13 @@ class Portfolio extends Component<IProps, IStates> {
   }
 
   public render() {
-    const { title, productions } = this.props;
+    const { title, portfolios } = this.props;
     const { showModal, renderImage } = this.state;
 
     return (
       <Root>
         <SubTitleBox title={title} />
-        <ContentBox>{_.map(productions, this.renderPortfolioCard)}</ContentBox>
+        <ContentBox>{_.map(portfolios, this.renderPortfolioCard)}</ContentBox>
         <ImagePopup
           showModal={showModal}
           renderImage={renderImage}
@@ -69,7 +69,7 @@ class Portfolio extends Component<IProps, IStates> {
     });
   };
 
-  private renderPortfolioCard = (production: IProjectProduction) => {
+  private renderPortfolioCard = (portfolio: IProjectPortfolio) => {
     const { images } = this.props;
     const {
       id,
@@ -79,9 +79,10 @@ class Portfolio extends Component<IProps, IStates> {
       summary = "",
       githubUrl,
       linkUrl,
+      storybookUrl,
       googleStoreUrl,
       appStoreUrl
-    } = production;
+    } = portfolio;
 
     return (
       <PortfolioCard
@@ -92,9 +93,10 @@ class Portfolio extends Component<IProps, IStates> {
         summary={summary}
         githubUrl={githubUrl}
         linkUrl={linkUrl}
+        storybookUrl={storybookUrl}
         googleStoreUrl={googleStoreUrl}
         appStoreUrl={appStoreUrl}
-        images={callValue(() => images[`${id}Images`].edges, [])}
+        portfolioImages={callValue(() => images[`${id}Images`].edges, [])}
         onImagePopup={this.onImagePopup}
       />
     );

@@ -3,7 +3,7 @@ import React, { PureComponent } from "react";
 import styled from "styled-components";
 
 import Layout from "src/components/Layout";
-import { productions, teamProductions } from "src/constants/production";
+import { companyPortfolios, teamPortfolios } from "src/constants/portfolio";
 import { Portfolio } from "src/organizations/portfolio";
 import { IEdgeSharpItem } from "src/images";
 
@@ -25,13 +25,13 @@ class PorfolioPage extends PureComponent<IProps> {
           <Portfolio
             key={"company"}
             title="Company"
-            productions={productions}
+            portfolios={companyPortfolios}
             images={data}
           />
           <Portfolio
             key={"project"}
             title={`Project`}
-            productions={teamProductions}
+            portfolios={teamPortfolios}
             images={data}
           />
         </Root>

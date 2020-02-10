@@ -45,7 +45,8 @@ const images = {
   closeIcon: require("./x-circle.svg"),
   facebook: require("./facebook.svg"),
   instagram: require("./instagram.svg"),
-  linkedin: require("./linkedin.svg")
+  linkedin: require("./linkedin.svg"),
+  storybook: require("./storybook.png")
 };
 
 export default images;

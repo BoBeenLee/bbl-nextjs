@@ -26,6 +26,7 @@ storiesOf("Card", module)
   .add("with PortfolioCard", () => (
     <Child>
       <PortfolioCard
+        portfolioImages={[]}
         githubUrl="https://github.com/BoBeenLee/map"
         linkUrl="https://play.google.com/store/apps/details?id=com.nexters.intersection.intersectionapp"
       />

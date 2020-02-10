@@ -21,6 +21,6 @@ storiesOf("Organization Portfolio", module)
   .addDecorator(getStory => <Root>{getStory()}</Root>)
   .add("with Portfolio", () => (
     <Child>
-      <Portfolio title="test" productions={[]} images={{}} />
+      <Portfolio title="test" portfolios={[]} images={{}} />
     </Child>
   ));
