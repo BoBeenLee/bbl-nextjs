@@ -37,6 +37,37 @@ export const companyPortfolios = [
     appStoreUrl: "https://apps.apple.com/kr/app/id1466041001"
   },
   {
+    id: "HAECHI",
+    name: "HAECHI",
+    period: "2019.6 - 2019.6",
+    githubRepoName: [],
+    skills: [
+      "react",
+      "gatsby",
+      "styled components",
+      "typescript",
+      "storybook",
+      "18next"
+    ],
+    summary: "haechi website",
+    githubUrl: "",
+    linkUrl: "https://haechi.io/",
+    googleStoreUrl: "",
+    appStoreUrl: ""
+  },
+  {
+    id: "Henesis",
+    name: "Henesis",
+    period: "2019.6 - 2019.6",
+    githubRepoName: [],
+    skills: ["react", "gatsby", "styled components", "typescript", "storybook"],
+    summary: "An all-in-one platform for blockchain integration",
+    githubUrl: "",
+    linkUrl: "https://henesis.io/",
+    googleStoreUrl: "",
+    appStoreUrl: ""
+  },
+  {
     id: "COSMEE",
     name: "COSMEE",
     period: "2017.4 - 2019.3",
