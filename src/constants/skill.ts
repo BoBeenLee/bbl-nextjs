@@ -65,6 +65,9 @@ export const skillMap: { [key in string]: ISkillName } = {
   },
   APPCENTER: {
     uri: "https://appcenter.ms/apps"
+  },
+  GATSBY: {
+    uri: "https://www.gatsbyjs.org/"
   }
 };
 
