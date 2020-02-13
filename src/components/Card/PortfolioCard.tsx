@@ -203,7 +203,7 @@ class PortfolioCard extends PureComponent<IProps> {
             </IconBox>
           )}
           {appStoreUrl && (
-            <IconBox href={googleStoreUrl} target="_blank">
+            <IconBox href={appStoreUrl} target="_blank">
               <DiApple size={20} />
             </IconBox>
           )}
