@@ -154,7 +154,9 @@ export const teamPortfolios: IProjectPortfolio[] = [
     summary: "1초 음악 맞추기 게임",
     githubUrl: "",
     storybookUrl: "http://onesecondmusicgame.surge.sh/",
-    linkUrl: ""
+    linkUrl: "",
+    appStoreUrl:
+      "https://apps.apple.com/kr/app/%EC%95%8C%EC%8F%AD%EB%8B%AC%EC%8F%AD/id1493107650"
   },
   {
     id: "bbl",
