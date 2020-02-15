@@ -18,7 +18,7 @@ const Child = styled.div`
 
 storiesOf("Profile", module)
   .addDecorator(getStory => <Root>{getStory()}</Root>)
-  .add("with GithubProfile", () => (
+  .add("GithubProfile", () => (
     <Child>
       <GithubProfile />
     </Child>

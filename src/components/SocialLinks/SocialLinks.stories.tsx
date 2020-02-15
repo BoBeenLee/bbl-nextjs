@@ -18,7 +18,7 @@ const Child = styled.div`
 
 storiesOf("SocialLinks", module)
   .addDecorator(getStory => <Root>{getStory()}</Root>)
-  .add("with SocialLinks", () => (
+  .add("SocialLinks", () => (
     <Child>
       <SocialLinks />
     </Child>

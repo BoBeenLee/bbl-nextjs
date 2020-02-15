@@ -19,7 +19,7 @@ const Child = styled.div`
 
 storiesOf("Organization Portfolio", module)
   .addDecorator(getStory => <Root>{getStory()}</Root>)
-  .add("with Portfolio", () => (
+  .add("Portfolio", () => (
     <Child>
       <Portfolio title="test" portfolios={[]} images={{}} />
     </Child>

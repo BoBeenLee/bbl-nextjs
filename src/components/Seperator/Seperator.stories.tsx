@@ -20,7 +20,7 @@ const Child = styled.div`
 
 storiesOf("Seperator", module)
   .addDecorator(getStory => <Root>{getStory()}</Root>)
-  .add("with Seperator", () => (
+  .add("Seperator", () => (
     <Child>
       <Seperator />
     </Child>

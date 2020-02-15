@@ -16,12 +16,12 @@ const renderImage = () => (
 
 storiesOf("Popup", module)
   .addDecorator(getStory => <Root>{getStory()}</Root>)
-  .add("with BottomPopup", () => (
+  .add("BottomPopup", () => (
     <Child>
       <BottomPopup>Hello World</BottomPopup>
     </Child>
   ))
-  .add("with ImagePopup", () => (
+  .add("ImagePopup", () => (
     <Child>
       <ImagePopup showModal={true} renderImage={renderImage} />
     </Child>

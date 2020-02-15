@@ -18,12 +18,12 @@ const Child = styled.div`
 
 storiesOf("Card", module)
   .addDecorator(getStory => <Root>{getStory()}</Root>)
-  .add("with GithubCard", () => (
+  .add("GithubCard", () => (
     <Child>
       <GithubCard />
     </Child>
   ))
-  .add("with PortfolioCard", () => (
+  .add("PortfolioCard", () => (
     <Child>
       <PortfolioCard
         portfolioImages={[]}
@@ -32,7 +32,7 @@ storiesOf("Card", module)
       />
     </Child>
   ))
-  .add("with PostCard", () => (
+  .add("PostCard", () => (
     <Child>
       <PostCard />
     </Child>

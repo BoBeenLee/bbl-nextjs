@@ -19,7 +19,7 @@ const Child = styled.div`
 
 storiesOf("Organization Post", module)
   .addDecorator(getStory => <Root>{getStory()}</Root>)
-  .add("with Caption", () => (
+  .add("Caption", () => (
     <Child>
       <Caption url="" title="test" description="testtest" />
     </Child>

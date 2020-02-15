@@ -18,7 +18,7 @@ const Child = styled.div`
 
 storiesOf("Tag", module)
   .addDecorator(getStory => <Root>{getStory()}</Root>)
-  .add("with Tag", () => (
+  .add("Tag", () => (
     <Child>
       <Tag />
     </Child>

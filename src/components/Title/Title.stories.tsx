@@ -18,12 +18,12 @@ const Child = styled.div`
 
 storiesOf("Title", module)
   .addDecorator(getStory => <Root>{getStory()}</Root>)
-  .add("with SubTitle", () => (
+  .add("SubTitle", () => (
     <Child>
       <SubTitle />
     </Child>
   ))
-  .add("with ContentTitle", () => (
+  .add("ContentTitle", () => (
     <Child>
       <ContentTitle
         title="hello"
@@ -31,7 +31,7 @@ storiesOf("Title", module)
       />
     </Child>
   ))
-  .add("with ContentTitle uri", () => (
+  .add("ContentTitle uri", () => (
     <Child>
       <ContentTitle
         title="hello"

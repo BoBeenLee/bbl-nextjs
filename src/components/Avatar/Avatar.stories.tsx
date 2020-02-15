@@ -19,7 +19,7 @@ const Child = styled.div`
 
 storiesOf("Avatar", module)
   .addDecorator(getStory => <Root>{getStory()}</Root>)
-  .add("with Avatar", () => (
+  .add("Avatar", () => (
     <Child>
       <Avatar onPress={action("clicked")} />
     </Child>

@@ -23,22 +23,22 @@ const Child = styled.div`
 
 storiesOf("Organization About", module)
   .addDecorator(getStory => <Root>{getStory()}</Root>)
-  .add("with Education", () => (
+  .add("Education", () => (
     <Child>
       <Education />
     </Child>
   ))
-  .add("with Experience", () => (
+  .add("Experience", () => (
     <Child>
       <Experience />
     </Child>
   ))
-  .add("with Activity", () => (
+  .add("Activity", () => (
     <Child>
       <Activity />
     </Child>
   ))
-  .add("with Skill", () => (
+  .add("Skill", () => (
     <Child>
       <Skill />
     </Child>
