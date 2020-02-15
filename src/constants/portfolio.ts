@@ -156,7 +156,9 @@ export const teamPortfolios: IProjectPortfolio[] = [
     storybookUrl: "http://onesecondmusicgame.surge.sh/",
     linkUrl: "",
     appStoreUrl:
-      "https://apps.apple.com/kr/app/%EC%95%8C%EC%8F%AD%EB%8B%AC%EC%8F%AD/id1493107650"
+      "https://apps.apple.com/kr/app/%EC%95%8C%EC%8F%AD%EB%8B%AC%EC%8F%AD/id1493107650",
+    googleStoreUrl:
+      "https://play.google.com/store/apps/details?id=kr.nexters.onesecondmusicgame"
   },
   {
     id: "bbl",
