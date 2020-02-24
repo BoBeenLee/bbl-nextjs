@@ -31,15 +31,17 @@ const Root = styled.div`
   color: ${theme.primary};
 `;
 
-const NameBox = styled.div`
+const NameBox = styled.a`
   grid-column: 1;
   grid-row: 1;
   display: flex;
   flex-direction: row;
   align-items: center;
   font-size: 20px;
+  color: ${theme.primary};
   padding-left: 10px;
   margin-right: 15px;
+  text-decoration: none;
 `;
 
 const PeriodBox = styled.div`
@@ -194,7 +196,9 @@ class PortfolioCard extends PureComponent<IProps> {
     } = this.props;
     return (
       <Root>
-        <NameBox>{name}</NameBox>
+        <NameBox href={`#${name}`} id={name}>
+          {name}
+        </NameBox>
         <PeriodBox>{period}</PeriodBox>
         <LinkBox>
           {googleStoreUrl && (
