@@ -24,7 +24,7 @@ export default function HTML(props) {
  function gtag(){dataLayer.push(arguments);}
  gtag('js', new Date());
 
- gtag('config', 'UA-114339461-1');      
+ gtag('config', 'UA-114339461-1', { 'optimize_id': 'GTM-M8CNZBG'});      
       `
         }}
       ></script>
