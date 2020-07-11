@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { css } from "styled-components";
+import { css, CSSObject, SimpleInterpolation } from "styled-components";
 
 const sizes = {
   desktop: 1220,
@@ -7,12 +7,18 @@ const sizes = {
 };
 
 export const media = {
-  desktop: (first: any, ...args: any[]) => css`
+  desktop: (
+    first: TemplateStringsArray | CSSObject,
+    ...args: SimpleInterpolation[]
+  ) => css`
     @media (min-width: 1220px) {
       ${css(first, ...args)};
     }
   `,
-  mobile: (first: any, ...args: any[]) => css`
+  mobile: (
+    first: TemplateStringsArray | CSSObject,
+    ...args: SimpleInterpolation[]
+  ) => css`
     @media (max-width: 767px) {
       ${css(first, ...args)};
     }
