@@ -176,7 +176,12 @@ class Header extends PureComponent<any, IStates> {
     const { url, name } = title;
     return (
       <TitleBox key={index}>
-        <Title activeStyle={{ color: theme.secondary }} to={url} fade={true}>
+        <Title
+          activeStyle={{ color: theme.secondary }}
+          to={url}
+          fade={true}
+          duration={0.5}
+        >
           {name}
         </Title>
       </TitleBox>

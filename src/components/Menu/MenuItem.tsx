@@ -39,6 +39,7 @@ class MenuItem extends Component<IProps> {
           to={url}
           onClick={onPress as any}
           fade={true}
+          duration={0.5}
         >
           {name}
         </MenuLink>
