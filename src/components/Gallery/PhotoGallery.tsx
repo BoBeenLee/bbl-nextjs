@@ -72,7 +72,11 @@ class PhotoGallery extends PureComponent<IProps> {
       <SliderBox {...settings}>
         {_.map(images, (image, index) => (
           <ImageBox onClick={_.partial(this.onPhotoClick, index)} key={index}>
-            <Img alt="" sizes={image.node.childImageSharp.fluid} />
+            <Img
+              alt=""
+              fixed={image.node.childImageSharp.fluid}
+              sizes={image.node.childImageSharp.fluid}
+            />
           </ImageBox>
         ))}
       </SliderBox>
