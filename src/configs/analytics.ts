@@ -14,7 +14,7 @@ export interface IEventResult {
 }
 
 function firebaseAnalyticsFactory(
-  funcAnalytics: (eventName: string, params: object) => void,
+  funcAnalytics: (eventName: string, params: Record<string, any>) => void,
   setUserId: (userId: string) => void,
   setCurrentScreen: (screenName: string) => void
 ) {
@@ -62,7 +62,7 @@ function firebaseAnalyticsFactory(
 }
 
 export const firebaseAnalytics = _.once(() => {
-  const logEvent = (eventName: string, params: object) => {
+  const logEvent = (eventName: string, params: Record<string, any>) => {
     firebaseInstance()
       .analytics()
       .logEvent(eventName, params);

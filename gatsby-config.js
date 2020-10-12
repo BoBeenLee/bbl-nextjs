@@ -62,7 +62,7 @@ module.exports = {
     {
       resolve: "gatsby-source-github-api",
       options: {
-        token: process.env.GITHUB_TOKEN,
+        token: "edcda598e355248f82958f03139c53182d9ca62b",
         variables: {
           user: "BoBeenLee",
           count: 100

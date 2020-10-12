@@ -19,7 +19,8 @@
     "lint:css": "stylelint './src/**/*.tsx'",
     "eslint": "./node_modules/.bin/eslint './src/**/*.{js,ts,tsx}'",
     "eslint:fix": "./node_modules/.bin/eslint './src/**/*.{js,ts,tsx}' --fix",
-    "chromatic": "CHROMATIC_APP_CODE=780apbc4sv chromatic"
+    "chromatic": "CHROMATIC_APP_CODE=780apbc4sv chromatic",
+    "prepush": "concurrently \"npm run prettier\" \"npm run eslint\" \"npm run type-check\""
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.10.0",
@@ -27,23 +28,23 @@
     "cross-env": "^5.1.6",
     "date-fns": "^1.29.0",
     "firebase": "^7.8.0",
-    "framer-motion": "^1.8.3",
-    "gatsby": "^2.24.2",
-    "gatsby-image": "^2.4.13",
-    "gatsby-plugin-google-analytics": "^2.3.11",
-    "gatsby-plugin-manifest": "^2.4.18",
+    "framer-motion": "^2.9.0",
+    "gatsby": "^2.24.73",
+    "gatsby-image": "^2.4.21",
+    "gatsby-plugin-google-analytics": "^2.3.17",
+    "gatsby-plugin-manifest": "^2.4.34",
     "gatsby-plugin-netlify-cms": "^4.1.38",
-    "gatsby-plugin-offline": "^3.2.17",
-    "gatsby-plugin-react-helmet": "^3.3.10",
-    "gatsby-plugin-sharp": "^2.6.19",
-    "gatsby-plugin-styled-components": "^3.3.10",
+    "gatsby-plugin-offline": "^3.2.31",
+    "gatsby-plugin-react-helmet": "^3.3.14",
+    "gatsby-plugin-sharp": "^2.6.40",
+    "gatsby-plugin-styled-components": "^3.3.14",
     "gatsby-plugin-transition-link": "^1.20.2",
-    "gatsby-plugin-typescript": "^2.4.14",
-    "gatsby-source-filesystem": "^2.3.19",
+    "gatsby-plugin-typescript": "^2.4.21",
+    "gatsby-source-filesystem": "^2.3.34",
     "gatsby-source-github-api": "^0.0.3",
     "gatsby-transformer-remark": "2.8.25",
-    "gatsby-transformer-sharp": "^2.5.11",
-    "gsap": "^3.4.0",
+    "gatsby-transformer-sharp": "^2.5.17",
+    "gsap": "^3.5.1",
     "lodash": "^4.17.10",
     "mobile-detect": "^1.4.1",
     "mobx": "^4.9.4",
@@ -57,7 +58,7 @@
     "react-dom": "^16.13.1",
     "react-burger-menu": "^2.6.12",
     "react-headroom": "^2.2.2",
-    "react-helmet": "^5.2.0",
+    "react-helmet": "^6.1.0",
     "react-icons": "^3.7.0",
     "react-modal": "^3.4.4",
     "react-reveal": "^1.2.2",
@@ -69,15 +70,18 @@
     "reactotron-react-js": "^3.3.7"
   },
   "devDependencies": {
-    "@babel/core": "^7.7.2",
-    "@babel/plugin-proposal-decorators": "^7.7.0",
-    "@babel/runtime": "^7.5.5",
-    "@storybook/addon-actions": "^5.3.9",
-    "@storybook/addon-knobs": "^5.3.9",
-    "@storybook/addon-links": "^5.3.9",
-    "@storybook/addons": "^5.3.9",
-    "@storybook/react": "^5.3.9",
-    "@storybook/storybook-deployer": "^2.8.1",
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-proposal-decorators": "^7.8.3",
+    "@babel/runtime": "^7.11.2",
+    "@commitlint/cli": "8.0.0",
+    "@commitlint/config-conventional": "8.0.0",
+    "@storybook/addon-actions": "^6.0.5",
+    "@storybook/addon-knobs": "^6.0.5",
+    "@storybook/addon-links": "^6.0.5",
+    "@storybook/addons": "^6.0.5",
+    "@storybook/react": "^6.0.5",
+    "@storybook/storybook-deployer": "^2.8.6",
     "@types/dotenv": "^6.1.0",
     "@types/enzyme": "^3.10.4",
     "@types/enzyme-adapter-react-16": "^1.0.5",
@@ -93,23 +97,23 @@
     "@types/react-slick": "^0.23.4",
     "@types/react-test-renderer": "^16.9.2",
     "@types/styled-components": "^4.1.12",
-    "@typescript-eslint/eslint-plugin": "^2.13.0",
-    "@typescript-eslint/parser": "^2.13.0",
+    "@typescript-eslint/eslint-plugin": "^4.4.0",
+    "@typescript-eslint/parser": "^4.4.0",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
-    "babel-preset-gatsby": "^0.2.21",
-    "babel-preset-react-app": "^9.1.0",
+    "babel-preset-gatsby": "^0.5.13",
+    "babel-preset-react-app": "^9.1.2",
+    "concurrently": "^5.2.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
-    "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.8.0",
-    "eslint-plugin-prettier": "^3.1.2",
-    "eslint-plugin-react": "^7.17.0",
-    "eslint-plugin-react-hooks": "^2.3.0",
-    "husky": "3.1.0",
+    "eslint": "7.10.0",
+    "eslint-config-prettier": "6.12.0",
+    "eslint-plugin-prettier": "3.1.4",
+    "eslint-plugin-react": "7.21.3",
+    "eslint-plugin-react-hooks": "^4.1.2",
+    "husky": "4.2.5",
     "jest": "^25.1.0",
     "jest-enzyme": "^7.1.2",
-    "lint-staged": "^10.0.7",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.19.1",
     "react-test-renderer": "^16.4.0",
@@ -119,7 +123,7 @@
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-processor-styled-components": "1.9.0",
     "ts-jest": "^25.2.0",
-    "typescript": "^3.9.6"
+    "typescript": "^4.0.3"
   },
   "keywords": [
     "gatsby"
@@ -133,21 +137,9 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-push": "npm run prepush"
     }
-  },
-  "lint-staged": {
-    "*.{js,ts,tsx}": [
-      "npm run prettier",
-      "npm run eslint:fix",
-      "git add"
-    ]
-  },
-  "quokka": {
-    "babel": true,
-    "plugins": [
-      "jsdom-quokka-plugin"
-    ]
   },
   "bundlesize": [
     {

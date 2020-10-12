@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 import { Provider } from "mobx-react";
 import React, { Component } from "react";
 
