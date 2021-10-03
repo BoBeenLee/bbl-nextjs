@@ -1,4 +1,3 @@
-import { PageRendererProps } from "gatsby";
 import React, { Component } from "react";
 import styled from "styled-components";
 
@@ -14,11 +13,10 @@ const Root = styled.div`
   padding-top: 20px;
 `;
 
-class AboutPage extends Component<PageRendererProps> {
+class AboutPage extends Component {
   public render() {
-    const { location } = this.props;
     return (
-      <Layout pathname={location.pathname}>
+      <Layout>
         <Root>
           <Experience />
           <Activity />

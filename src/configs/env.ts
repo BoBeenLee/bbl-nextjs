@@ -7,7 +7,7 @@ interface IEnvironmentEntry {
   FIREBASE_CONFIG?: any;
 }
 
-const ENV_TYPE = process.env.GATSBY_ENV || "staging";
+const ENV_TYPE = process.env.REACT_ENV || "staging";
 
 // tslint:disable:object-literal-sort-keys
 const env: IEnvironment = {

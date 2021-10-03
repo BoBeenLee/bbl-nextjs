@@ -1,4 +1,3 @@
-import { graphql, PageRendererProps } from "gatsby";
 import React from "react";
 import styled from "styled-components";
 
@@ -23,7 +22,7 @@ interface IMarkdownRemarkFrontmatter {
   title: string;
 }
 
-interface IProps extends PageRendererProps {
+interface IProps {
   data: { markdownRemark: IMarkdownRemark };
 }
 
@@ -46,7 +45,7 @@ const SubTitleBox = styled(SubTitle)`
   font-weight: bold;
 `;
 
-export default function Template({ data, location }: IProps) {
+export default function Template({ data }: IProps) {
   if (!data) {
     return <div />;
   }
@@ -54,7 +53,7 @@ export default function Template({ data, location }: IProps) {
 
   console.log(data);
   return (
-    <Layout pathname={location.pathname}>
+    <Layout>
       <Root>
         <SubTitleBox title={post.frontmatter.title} />
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -67,17 +66,3 @@ export default function Template({ data, location }: IProps) {
     </Layout>
   );
 }
-
-export const postQuery = graphql`
-  query BlogPostByPath($path: String!) {
-    markdownRemark(fields: { slug: { eq: $path } }) {
-      html
-      fields {
-        slug
-      }
-      frontmatter {
-        title
-      }
-    }
-  }
-`;

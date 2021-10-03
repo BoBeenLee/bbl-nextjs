@@ -1,4 +1,4 @@
-import AniLink from "gatsby-plugin-transition-link/AniLink";
+import Link from "next/link";
 import _ from "lodash";
 import React, { Component } from "react";
 import styled from "styled-components";
@@ -14,7 +14,9 @@ const Root = styled.div`
   padding: 10px 0;
 `;
 
-const MenuLink = styled(AniLink)`
+const MenuLink = styled(Link)``;
+
+const MenuLinkText = styled.span`
   color: ${theme.primary};
   text-decoration: none;
   &:hover {
@@ -32,16 +34,8 @@ class MenuItem extends Component<IProps> {
     const { name, url, onPress } = this.props;
     return (
       <Root>
-        <MenuLink
-          // exact={isHome(url)}
-          // strict={true}
-          activeStyle={{ color: theme.secondary }}
-          to={url}
-          onClick={onPress as any}
-          fade={true}
-          duration={0.5}
-        >
-          {name}
+        <MenuLink href={url}>
+          <MenuLinkText>{name}</MenuLinkText>
         </MenuLink>
       </Root>
     );

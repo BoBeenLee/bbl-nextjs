@@ -5,7 +5,7 @@ declare module "*.json" {
   export default value;
 }
 
-declare module 'console' {
+declare module "console" {
   export = typeof import("console");
 }
 

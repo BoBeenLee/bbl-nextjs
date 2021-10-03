@@ -6,12 +6,10 @@ import { ImagePopup } from "src/components/Popup";
 import { SubTitle } from "src/components/Title";
 import { callValue } from "src/utils/object";
 import { IProjectPortfolio } from "src/constants/portfolio";
-import { IEdgeSharpItem } from "src/images";
 
 interface IProps {
   title: string;
   portfolios: IProjectPortfolio[];
-  images: { [key in string]: IEdgeSharpItem };
 }
 
 interface IStates {
@@ -70,7 +68,6 @@ class Portfolio extends Component<IProps, IStates> {
   };
 
   private renderPortfolioCard = (portfolio: IProjectPortfolio) => {
-    const { images } = this.props;
     const {
       id,
       name,
@@ -81,7 +78,8 @@ class Portfolio extends Component<IProps, IStates> {
       linkUrl,
       storybookUrl,
       googleStoreUrl,
-      appStoreUrl
+      appStoreUrl,
+      images
     } = portfolio;
 
     return (
@@ -96,7 +94,7 @@ class Portfolio extends Component<IProps, IStates> {
         storybookUrl={storybookUrl}
         googleStoreUrl={googleStoreUrl}
         appStoreUrl={appStoreUrl}
-        portfolioImages={callValue(() => images[`${id}Images`].edges, [])}
+        portfolioImages={images}
         onImagePopup={this.onImagePopup}
       />
     );

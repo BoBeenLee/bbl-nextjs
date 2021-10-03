@@ -1,4 +1,4 @@
-import AniLink from "gatsby-plugin-transition-link/AniLink";
+import Link from "next/link";
 import _ from "lodash";
 import React, { PureComponent } from "react";
 import Headroom from "react-headroom";
@@ -56,7 +56,7 @@ const Logo = styled.div`
   justify-content: center;
 `;
 
-const LogoLink = styled(AniLink)`
+const LogoLink = styled(Link)`
   width: 45px;
   height: 45px;
 `;
@@ -73,8 +73,10 @@ const TitleBox = styled.div`
   align-items: center;
 `;
 
-const Title = styled(AniLink)`
-  font-size: 11px;
+const Title = styled(Link)``;
+
+const TitleText = styled.span`
+  /* font-size: 11px; */
   padding: 0.5em;
   color: ${theme.primary};
   text-decoration: none;
@@ -85,6 +87,7 @@ const Title = styled(AniLink)`
   ${media.mobile`
     display: none;
     `};
+  cursor: pointer;
 `;
 
 const MenuBox = styled.div`
@@ -134,7 +137,7 @@ class Header extends PureComponent<any, IStates> {
           <Root>
             <HeaderTitle>
               <Logo>
-                <LogoLink to="/" fade={true}>
+                <LogoLink href="/">
                   <IconBox src={images.quokka} alt="bobeenlee" />
                 </LogoLink>
               </Logo>
@@ -176,13 +179,8 @@ class Header extends PureComponent<any, IStates> {
     const { url, name } = title;
     return (
       <TitleBox key={index}>
-        <Title
-          activeStyle={{ color: theme.secondary }}
-          to={url}
-          fade={true}
-          duration={0.5}
-        >
-          {name}
+        <Title href={url}>
+          <TitleText>{name}</TitleText>
         </Title>
       </TitleBox>
     );
