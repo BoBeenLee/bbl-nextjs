@@ -4,6 +4,9 @@ const localeSubpaths = {};
 
 module.exports = withImages({
   target: "serverless",
+  images: {
+    disableStaticImages: true
+  },
   reactStrictMode: true,
   productionBrowserSourceMaps: true,
   publicRuntimeConfig: {
