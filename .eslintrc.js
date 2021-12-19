@@ -28,7 +28,8 @@ module.exports = {
     "@typescript-eslint/explicit-member-accessibility": 0,
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
-    "react-hooks/exhaustive-deps": "warn" // Checks effect dependencies
+    "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies
+    "no-console": "error",
     // "@typescript-eslint/member-delimiter-style": {
     //     delimiter: "none",
     //     requireLast: true,

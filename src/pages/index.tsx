@@ -1,4 +1,3 @@
-import { PageRendererProps } from "gatsby";
 import React, { Component } from "react";
 import styled from "styled-components";
 import Layout from "src/components/Layout";
@@ -8,11 +7,10 @@ const Root = styled.div`
   height: 100%;
 `;
 
-class HomePage extends Component<PageRendererProps> {
+class HomePage extends Component {
   public render() {
-    const { location } = this.props;
     return (
-      <Layout pathname={location.pathname}>
+      <Layout>
         <Root>
           <Rotate />
         </Root>

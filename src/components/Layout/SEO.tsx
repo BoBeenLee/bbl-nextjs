@@ -1,6 +1,6 @@
-import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
 import Helmet from "react-helmet";
+import { metadata } from "src/constants/metadata";
 
 interface ISEOProps {
   description?: string;
@@ -10,25 +10,10 @@ interface ISEOProps {
 }
 
 function SEO({ description, lang, meta, title }: ISEOProps) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            titleTemplate
-            keywords
-            description
-            site_url
-          }
-        }
-      }
-    `
-  );
-  const metaTitle = title || site.siteMetadata.title;
-  const metaDescription = description || site.siteMetadata.description;
-  const metaUrl = site.siteMetadata.site_url;
-  const keywords = site.siteMetadata.keywords;
+  const metaTitle = metadata.title;
+  const metaDescription = metadata.description;
+  const metaUrl = metadata.site_url;
+  const keywords = metadata.keywords;
 
   return (
     <Helmet
@@ -49,7 +34,7 @@ function SEO({ description, lang, meta, title }: ISEOProps) {
       <meta property="og:url" content={metaUrl} />
       <meta property="og:site_name" content="BoBeenLee" />
       <meta property="og:description" content={metaDescription} />
-      <meta name="keywords" content={keywords.split(",")} />
+      <meta name="keywords" content={keywords} />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:title" content={metaTitle} />
       <meta name="twitter:description" content={metaDescription} />

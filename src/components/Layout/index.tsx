@@ -12,7 +12,6 @@ import { dimension } from "src/styles/dimension";
 import SEO from "src/components/Layout/SEO";
 
 interface IProps {
-  pathname: string;
   children: React.ReactNode;
 }
 

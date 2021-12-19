@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { action } from "@storybook/addon-actions";
 import { storiesOf } from "@storybook/react";
 import React from "react";
@@ -10,9 +11,7 @@ const Root = styled.div``;
 
 const Child = styled.div``;
 
-const renderImage = () => (
-  <img width="100%" height="500" src={images.mock.board} alt="" />
-);
+const renderImage = () => <img src={images.mock.board} alt="" />;
 
 storiesOf("Popup", module)
   .addDecorator(getStory => <Root>{getStory()}</Root>)

@@ -1,3 +1,10 @@
+import _ from "lodash";
+import softhomeImages from "src/images/portfolio/softhome";
+import competitionImages from "src/images/portfolio/competition";
+import skhualarmImages from "src/images/portfolio/skhualarm";
+import intersectionImages from "src/images/portfolio/intersection";
+import houseImages from "src/images/portfolio/house";
+
 export interface IProjectPortfolio {
   id: string;
   name: string;
@@ -10,9 +17,10 @@ export interface IProjectPortfolio {
   storybookUrl?: string;
   googleStoreUrl?: string;
   appStoreUrl?: string;
+  images: string[];
 }
 
-export const companyPortfolios = [
+export const companyPortfolios: IProjectPortfolio[] = [
   {
     id: "FITSME",
     name: "FITSME",
@@ -34,7 +42,8 @@ export const companyPortfolios = [
     linkUrl: "https://fitsme.kr/",
     googleStoreUrl:
       "https://play.google.com/store/apps/details?id=kr.fitsme.app",
-    appStoreUrl: "https://apps.apple.com/kr/app/id1466041001"
+    appStoreUrl: "https://apps.apple.com/kr/app/id1466041001",
+    images: []
   },
   {
     id: "HAECHI",
@@ -53,7 +62,8 @@ export const companyPortfolios = [
     githubUrl: "",
     linkUrl: "https://haechi.io/",
     googleStoreUrl: "",
-    appStoreUrl: ""
+    appStoreUrl: "",
+    images: []
   },
   {
     id: "Henesis",
@@ -65,7 +75,8 @@ export const companyPortfolios = [
     githubUrl: "",
     linkUrl: "https://henesis.io/",
     googleStoreUrl: "",
-    appStoreUrl: ""
+    appStoreUrl: "",
+    images: []
   },
   {
     id: "COSMEE",
@@ -86,7 +97,8 @@ export const companyPortfolios = [
     summary: "보상을 통한 뷰티 커뮤니티",
     githubUrl: "",
     linkUrl:
-      "https://medium.com/@Cosmochain/cosmee-app-now-available-on-google-play-store-f80149a2fa4c"
+      "https://medium.com/@Cosmochain/cosmee-app-now-available-on-google-play-store-f80149a2fa4c",
+    images: []
   },
   {
     id: "buxi",
@@ -105,7 +117,8 @@ export const companyPortfolios = [
     summary:
       "같은 목적지를 오가는 분들이 원하는 시간대에 함께 쓰는 새로운 카셰어링",
     githubUrl: "",
-    linkUrl: "https://www.buxikorea.com/"
+    linkUrl: "https://www.buxikorea.com/",
+    images: []
   },
   {
     id: "coupang",
@@ -122,7 +135,8 @@ export const companyPortfolios = [
     ],
     summary: "쿠팡 회계 시스템",
     githubUrl: "",
-    linkUrl: ""
+    linkUrl: "",
+    images: []
   },
   {
     id: "team42",
@@ -132,7 +146,8 @@ export const companyPortfolios = [
     skills: ["bootstrap", "jQuery", "velocity", "lessjs"],
     summary: "Team42 Site",
     githubUrl: "",
-    linkUrl: "http://team42.net/"
+    linkUrl: "http://team42.net/",
+    images: []
   }
 ];
 
@@ -158,7 +173,8 @@ export const teamPortfolios: IProjectPortfolio[] = [
     appStoreUrl:
       "https://apps.apple.com/kr/app/%EC%95%8C%EC%8F%AD%EB%8B%AC%EC%8F%AD/id1493107650",
     googleStoreUrl:
-      "https://play.google.com/store/apps/details?id=kr.nexters.onesecondmusicgame"
+      "https://play.google.com/store/apps/details?id=kr.nexters.onesecondmusicgame",
+    images: []
   },
   {
     id: "bbl",
@@ -176,7 +192,8 @@ export const teamPortfolios: IProjectPortfolio[] = [
     summary: "personal site",
     githubUrl: "https://github.com/BoBeenLee/bbl",
     storybookUrl: "https://bobeenlee.github.io/bbl/",
-    linkUrl: ""
+    linkUrl: "",
+    images: []
   },
   {
     id: "inhousekitchen",
@@ -194,7 +211,8 @@ export const teamPortfolios: IProjectPortfolio[] = [
     ],
     summary: "셰프와 게스트 연결해주는 서비스",
     githubUrl: "https://github.com/Nexters/inhousekitchen",
-    linkUrl: ""
+    linkUrl: "",
+    images: _.values(houseImages)
   },
   {
     id: "flass",
@@ -213,7 +231,8 @@ export const teamPortfolios: IProjectPortfolio[] = [
     ],
     summary: "Site For Flipped Learning",
     githubUrl: "https://github.com/Nexters/flass",
-    linkUrl: "http://flass.me"
+    linkUrl: "http://flass.me",
+    images: []
   },
   {
     id: "onepage",
@@ -233,7 +252,8 @@ export const teamPortfolios: IProjectPortfolio[] = [
     summary: "위치기반 익명 SNS",
     githubUrl: "https://github.com/OnePageAndroid",
     linkUrl:
-      "https://play.google.com/store/apps/details?id=kr.nexters.onepage&hl=ko"
+      "https://play.google.com/store/apps/details?id=kr.nexters.onepage&hl=ko",
+    images: []
   },
   {
     id: "intersection",
@@ -250,7 +270,8 @@ export const teamPortfolios: IProjectPortfolio[] = [
     summary: "너와 나의 중간지점",
     githubUrl: "https://github.com/BoBeenLee/map",
     linkUrl:
-      "https://play.google.com/store/apps/details?id=com.nexters.intersection.intersectionapp"
+      "https://play.google.com/store/apps/details?id=com.nexters.intersection.intersectionapp",
+    images: _.values(intersectionImages)
   },
   {
     id: "skhualarm",
@@ -270,7 +291,8 @@ export const teamPortfolios: IProjectPortfolio[] = [
     summary: "Sungkonghoe University Alarm App",
     githubUrl: "https://github.com/BoBeenLee/SkhuApp",
     linkUrl:
-      "https://play.google.com/store/apps/details?id=com.skhu.bobinlee.skhuapp&hl=ko"
+      "https://play.google.com/store/apps/details?id=com.skhu.bobinlee.skhuapp&hl=ko",
+    images: _.values(skhualarmImages)
   },
   {
     id: "competition",
@@ -289,7 +311,8 @@ export const teamPortfolios: IProjectPortfolio[] = [
     ],
     summary: "Sungkonghoe University Competition Site",
     githubUrl: "https://github.com/BoBeenLee/SkhuCompetition.Server",
-    linkUrl: ""
+    linkUrl: "",
+    images: _.values(competitionImages)
   },
   {
     id: "softhome",
@@ -299,6 +322,7 @@ export const teamPortfolios: IProjectPortfolio[] = [
     skills: ["jQuery", "prototypeJs", "jPagejs", "jsp", "myBatis"],
     summary: "Sungkonghoe University Software Engineering Department Site",
     githubUrl: "https://github.com/BoBeenLee/swhome",
-    linkUrl: ""
+    linkUrl: "",
+    images: _.values(softhomeImages)
   }
 ];
