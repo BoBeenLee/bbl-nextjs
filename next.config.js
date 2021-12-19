@@ -1,13 +1,9 @@
-const path = require(`path`);
 const _ = require("lodash");
 const withImages = require("next-images");
 const localeSubpaths = {};
 
 module.exports = withImages({
   target: "serverless",
-  images: {
-    disableStaticImages: true
-  },
   reactStrictMode: true,
   productionBrowserSourceMaps: true,
   publicRuntimeConfig: {
@@ -46,10 +42,5 @@ module.exports = withImages({
       }
     });
     return config;
-  },
-  api: {
-    bodyParser: {
-      sizeLimit: "50mb"
-    }
   }
 });
