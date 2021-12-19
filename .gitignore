@@ -9,3 +9,6 @@ yarn-error.log
 .next
 out
 tsconfig.tsbuildinfo
+
+# Local Netlify folder
+.netlify
