@@ -1,18 +1,16 @@
 backend:
-  name: github
-  repo: BoBeenLee/bbl
+  name: git-gateway
   branch: master
-  preview_context: my-provider/deployment
 
-media_folder: static/images
-public_folder: /images
+media_folder: public/images
+public_folder: images
 
 collections:
   - name: "Post"
     label: "Post"
     folder: "src/posts"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{slug}}"
     fields:
       - {
           label: "Published",
