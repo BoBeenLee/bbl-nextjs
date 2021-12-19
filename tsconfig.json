@@ -25,14 +25,20 @@
     "resolveJsonModule": true,
     "noEmit": true,
     "jsx": "preserve",
-    "typeRoots": ["typings", "node_modules/@types"],
+    "typeRoots": [
+      "typings",
+      "node_modules/@types"
+    ],
+    "incremental": true
   },
-  "exclude": ["node_modules"],
+  "exclude": [
+    "node_modules"
+  ],
   "include": [
     "__generate__",
     "**/*.d.ts",
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx",
+    "**/*.tsx"
   ]
 }
