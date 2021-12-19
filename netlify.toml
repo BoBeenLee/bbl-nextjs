@@ -1,0 +1,10 @@
+[build]
+command = "npm run build:production && npm run export:production"
+publish = "out"
+ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF ../../"
+
+[[plugins]]
+package = "@netlify/plugin-nextjs"
+
+[build.environment]
+NETLIFY_NEXT_PLUGIN_SKIP = "true"
