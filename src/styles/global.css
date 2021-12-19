@@ -5,8 +5,7 @@
 /* @import "./slick-theme.min.css"; */
 
 html,
-body,
-#___gatsby {
+body {
   height: 100%;
 }
 
@@ -33,15 +32,10 @@ div.tl-wrapper {
   width: 100vw;
 }
 body,
-#___gatsby,
 div[role="group"] {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-}
-#___gatsby > div[role="group"] > .tl-edges > .tl-wrapper {
-  height: 100%;
-  overflow-y: auto;
 }
 
 article,

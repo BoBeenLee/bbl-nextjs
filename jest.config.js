@@ -16,7 +16,6 @@ module.exports = {
   },
   testRegex: "(.*(test|spec))\\.(jsx?|tsx?)$",
   testPathIgnorePatterns: [`node_modules`, `.cache`],
-  transformIgnorePatterns: [`node_modules/(?!(gatsby)/)`],
   globals: {
     "ts-jest": {
       babelConfig: ".babelrc"

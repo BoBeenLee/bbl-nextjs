@@ -39,8 +39,8 @@ const DescriptionBox = styled.div`
 
 class GithubCard extends PureComponent<IProps> {
   public static defaultProps = {
-    date: "2018-02-05T13:42:31Z",
-    description: "blog & homepage project based on gatsby",
+    date: "2021-12-19",
+    description: "blog & homepage project based on Nextjs",
     name: "bbl",
     url: "https://github.com/BoBeenLee/bbl"
   };
