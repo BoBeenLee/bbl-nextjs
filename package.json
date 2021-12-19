@@ -9,6 +9,8 @@
     "start:production": "REACT_ENV=production next dev",
     "build:staging": "REACT_ENV=staging next build",
     "build:production": "REACT_ENV=production next build",
+    "export:staging": "REACT_ENV=staging next export",
+    "export:production": "REACT_ENV=production next export",
     "prod": "cross-env NODE_ENV=production next start",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
