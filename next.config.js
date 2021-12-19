@@ -4,6 +4,7 @@ const withImages = require("next-images");
 const localeSubpaths = {};
 
 module.exports = withImages({
+  target: "serverless",
   images: {
     disableStaticImages: true
   },
