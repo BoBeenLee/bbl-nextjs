@@ -1,7 +1,3 @@
-## Prototype
-
-- [Storybook](https://bobeenlee.github.io/bbl)
-
 ## Feature
 
 - [Web APIs You [Probably] Didn't Know Existed](https://www.youtube.com/watch?v=EZpdEljk5dY)
