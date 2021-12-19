@@ -1,8 +1,8 @@
 ---
-path: '/post/oop-ffp-pp'
-title: 'oop-ffp-pp'
+path: "/post/oop-ffp-pp"
+title: "oop-ffp-pp"
 published: false
-date: '2018-03-23'
+date: "2018-03-23"
 ---
 
 Object Oriented Programming
@@ -17,4 +17,4 @@ ex) FOC, HOC, recompose, lodash
 
 Procedural Programming
 Side Effects 일어하는 부분 처리
-ex) Redux Saga, async, async function* ...
+ex) Redux Saga, async, async function\* ...

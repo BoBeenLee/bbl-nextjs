@@ -3,19 +3,7 @@ import React, { Component } from "react";
 
 import { isBrowser } from "src/utils/navigator";
 import feednami from "src/apis/feednami";
-
-export interface ITistory {
-  feed: {
-    entries: Array<{
-      guid: string;
-      title: string;
-      link: string;
-      date: Date;
-      description: string;
-      showDetails: boolean;
-    }>;
-  };
-}
+import { getFeednamiTistories } from "src/configs/tistory";
 
 // tslint:disable:object-literal-sort-keys
 const withTistory = (TargetComponent: any) => {
@@ -25,29 +13,22 @@ const withTistory = (TargetComponent: any) => {
     public static defaultProps = {};
 
     public state = {
-      tistory: []
+      tistories: []
     };
 
-    public componentDidMount() {
+    public async componentDidMount() {
       const rssUrl = "http://cultist-tp.tistory.com/rss";
 
       if (isBrowser) {
-        (feednami as any).load(rssUrl, (res: ITistory) => {
-          const tistory = _.map(res.feed.entries, article => ({
-            guid: article.guid,
-            title: article.title,
-            link: article.link,
-            date: new Date(article.date),
-            description: article.description,
-            showDetails: false
-          }));
-          this.setState({ tistory });
-        });
+        const response = await getFeednamiTistories(rssUrl);
+        this.setState({ tistories: response });
       }
     }
 
     public render() {
-      return <TargetComponent tistory={this.state.tistory} {...this.props} />;
+      return (
+        <TargetComponent tistories={this.state.tistories} {...this.props} />
+      );
     }
   };
 };

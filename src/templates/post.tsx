@@ -45,13 +45,11 @@ const SubTitleBox = styled(SubTitle)`
   font-weight: bold;
 `;
 
-export default function Template({ data }: IProps) {
+export default function PostTemplate({ data }: IProps) {
   if (!data) {
     return <div />;
   }
   const { markdownRemark: post } = data;
-
-  console.log(data);
   return (
     <Layout>
       <Root>

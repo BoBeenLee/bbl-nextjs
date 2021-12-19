@@ -4,6 +4,7 @@
   "description": "BoBeenLee",
   "main": "n/a",
   "scripts": {
+    "dev": "REACT_ENV=staging next dev",
     "start:staging": "REACT_ENV=staging next dev",
     "start:production": "REACT_ENV=production next dev",
     "build:staging": "REACT_ENV=staging next build",
@@ -71,6 +72,7 @@
     "@storybook/react": "^6.3.9",
     "@storybook/storybook-deployer": "^2.8.10",
     "@svgr/webpack": "^5.5.0",
+    "@types/date-fns": "^2.6.0",
     "@types/dotenv": "^6.1.0",
     "@types/enzyme": "^3.10.4",
     "@types/enzyme-adapter-react-16": "^1.0.5",

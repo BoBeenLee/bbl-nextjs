@@ -1,8 +1,8 @@
 ---
-path: '/post/typeorm-like-jpa'
-title: 'Typeorm like jpa'
+path: "/post/typeorm-like-jpa"
+title: "Typeorm like jpa"
 published: false
-date: '2018-03-09'
+date: "2018-03-09"
 ---
 
 [Typeorm](http://typeorm.io/#/)을 이용해보면서 예전에 개발하던 JPA와 유사한 느낌을 받았다.
@@ -56,9 +56,7 @@ public class Page extends Modified {
 
 ```javascript
 // page.js
-
 ```
-
 
 ```java
 // User.java
@@ -98,9 +96,7 @@ public class User extends Created {
 
 ```javascript
 // user.js
-
 ```
-
 
 ```java
 // Location.java
@@ -151,9 +147,9 @@ public class Location extends Created {
 	}
 }
 ```
+
 ```javascript
 // location.js
-
 ```
 
 비슷한 점이 많아 흥미로운 점이 많다.

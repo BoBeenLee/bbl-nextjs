@@ -8,10 +8,11 @@ import { media } from "src/utils/media";
 import { Seperator } from "src/components/Seperator";
 import { SubTitle } from "src/components/Title";
 import theme from "src/styles/theme";
+import { toDateTimeText } from "src/utils/datetime";
 
 interface IProps {
   title: string;
-  date: Date;
+  date: string;
   url: string;
   linkUrl: string;
 }
@@ -87,7 +88,7 @@ const ArticleLink = styled.a`
   line-height: 26px;
 `;
 
-const AniLinkBox = styled(Link)`
+const AniLinkABox = styled.a`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -101,7 +102,7 @@ const BottomSeparator = styled(Seperator)`
 
 class PostCard extends PureComponent<IProps> {
   public static defaultProps = {
-    date: new Date(),
+    date: String(new Date().valueOf()),
     linkUrl: "",
     title: "Hello World",
     url: ""
@@ -112,13 +113,13 @@ class PostCard extends PureComponent<IProps> {
     return (
       <Root>
         <TitleBox title={title} />
-        <DateBox>{format(date, "MMMM D, YYYY")}</DateBox>
+        <DateBox>{toDateTimeText(date, "MMMM D, YYYY")}</DateBox>
         {url && (
           <UrlBox>
-            <AniLinkBox href={url}>
+            <AniLinkABox href={url}>
               View Article
               <BookIcon size={25} />
-            </AniLinkBox>
+            </AniLinkABox>
           </UrlBox>
         )}
         {linkUrl && (

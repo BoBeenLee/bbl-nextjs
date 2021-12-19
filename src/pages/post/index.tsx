@@ -4,31 +4,42 @@ import styled from "styled-components";
 
 import { PostCard } from "src/components/Card";
 import Layout from "src/components/Layout";
-import withTistory from "src/hocs/withTistory";
+import { TistoryItem } from "src/configs/tistory";
+import { getAllPosts, PostItem } from "src/configs/post";
+import { getFeednamiTistories } from "src/configs/tistory";
 
 interface IProps {
-  data: any;
-  tistory: any;
-  otherPosts: any;
+  tistories: TistoryItem[];
+  allMarkdownRemark: Array<PostItem>;
 }
 
 const Root = styled.div`
   padding-top: 20px;
 `;
 
+export async function getStaticProps() {
+  const posts = getAllPosts();
+  const tistories = await getFeednamiTistories(
+    "http://cultist-tp.tistory.com/rss"
+  );
+
+  return {
+    props: {
+      allMarkdownRemark: posts,
+      tistories
+    }
+  };
+}
+
 class PostPage extends PureComponent<IProps> {
   public render() {
-    const posts = [
-      ...this.mapOtherToPosts(),
-      ...this.mapTistoryToPosts(),
-      ...this.mapRemarkToPosts()
-    ];
+    const posts = [...this.mapTistoryToPosts(), ...this.mapRemarkToPosts()];
     const postsByDESC = _.orderBy(posts, ["date"], ["desc"]);
-
+    const filterPublished = postsByDESC.filter(item => item.published);
     return (
       <Layout>
         <Root>
-          {_.map(postsByDESC, item => (
+          {_.map(filterPublished, item => (
             <PostCard key={item.id} {...item} />
           ))}
         </Root>
@@ -37,42 +48,32 @@ class PostPage extends PureComponent<IProps> {
   }
 
   private mapRemarkToPosts = () => {
-    const { allMarkdownRemark } = this.props.data;
-    const posts = allMarkdownRemark.edges;
-    return _.map(posts, ({ node }) => {
-      const {
-        id,
-        fields: { slug },
-        frontmatter: { title, date }
-      } = node;
-      return {
-        date: new Date(date),
-        id,
-        title,
-        url: slug
-      };
-    });
+    const { allMarkdownRemark } = this.props;
+    const posts = allMarkdownRemark;
+    return _.map(
+      posts,
+      ({ slug, frontmatter: { title, date, path, published } }) => {
+        return {
+          date,
+          id: slug,
+          title,
+          url: path,
+          published
+        };
+      }
+    );
   };
 
   private mapTistoryToPosts = () => {
-    const { tistory = [] } = this.props;
-    return _.map(tistory, item => ({
+    const { tistories = [] } = this.props;
+    return _.map(tistories, item => ({
       date: item.date,
       id: item.guid,
       linkUrl: item.link,
-      title: item.title
-    }));
-  };
-
-  private mapOtherToPosts = () => {
-    const { otherPosts } = this.props;
-    return _.map(otherPosts, item => ({
-      date: new Date(item.date),
-      id: item.url,
-      linkUrl: item.url,
-      title: item.title
+      title: item.title,
+      published: true
     }));
   };
 }
 
-export default withTistory(PostPage);
+export default PostPage;
