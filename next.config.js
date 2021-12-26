@@ -34,7 +34,7 @@ module.exports = withImages({
           ["@babel/plugin-proposal-class-properties", { loose: false }],
           [
             "styled-components",
-            { ssr: true, displayName: true, preprocess: false }
+            { ssr: false, displayName: true, preprocess: false }
           ]
         ]
       }
