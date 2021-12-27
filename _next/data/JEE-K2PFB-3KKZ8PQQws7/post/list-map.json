@@ -1,0 +1,1 @@
+{"pageProps":{"slug":"list-map","frontmatter":{"path":"/post/list-map","title":"list-map","published":false,"date":"2018-03-23"},"content":"<p>list and map.</p>\n<p>{\n\"1\" : { ... },\n\"2\" : { ... },\n\"3\" : { ... }\n}</p>\n<p>vs</p>\n<p>[{ id: 1, ... }, { id: 2, ... }, { id: 3, ... }]\n차이점.</p>\n"},"__N_SSG":true}
