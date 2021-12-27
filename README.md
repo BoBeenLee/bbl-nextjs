@@ -13,4 +13,4 @@
 ## Deploy
 
 - [Deploy to Storybook](https://github.com/storybooks/storybook-deployer)
-- Deploy to Netlify
+- Deploy to Zeit
