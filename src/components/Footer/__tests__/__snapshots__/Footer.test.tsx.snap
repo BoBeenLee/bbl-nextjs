@@ -2,21 +2,21 @@
 
 exports[`Link renders correctly 1`] = `
 <div
-  className="sc-bdVaJa bSBiwu"
+  className="sc-bdnylx cXkIXg"
 >
   <div
-    className="sc-bwzfXH eZCHCE"
+    className="sc-gtssRu lcfinl"
   >
     @ 2018
   </div>
   <div
-    className="sc-htpNat gcnDll"
+    className="sc-dlnjPT jcaarp"
   >
     <div
-      className="sc-bxivhb sc-ifAKCX bgIrzL"
+      className="sc-hKFyIo sc-eCApGN korkGl fNCqQY"
     >
       <a
-        className="sc-EHOje bHAJzW"
+        className="sc-jSFkmK ijdGrI"
         href="https://cultist-tp.tistory.com/"
         target="_blank"
       >
@@ -43,10 +43,10 @@ exports[`Link renders correctly 1`] = `
       </a>
     </div>
     <div
-      className="sc-bxivhb glCqXO"
+      className="sc-hKFyIo korkGl"
     >
       <a
-        className="sc-EHOje bHAJzW"
+        className="sc-jSFkmK ijdGrI"
         href="https://github.com/BoBeenLee"
         target="_blank"
       >
@@ -72,7 +72,7 @@ exports[`Link renders correctly 1`] = `
         </svg>
       </a>
       <a
-        className="sc-EHOje bHAJzW"
+        className="sc-jSFkmK ijdGrI"
         href="mailto:globaldev@naver.com"
         target="_blank"
       >
